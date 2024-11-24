@@ -1,0 +1,8 @@
+__pycache__/
+_archives/
+tests/
+**copy**.html
+**copy**.css
+**copy**.js
+_inner_templates/
+node_modules/

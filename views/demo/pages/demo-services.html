@@ -1,0 +1,358 @@
+{% extends 'demo-blank.html' %}
+
+{% block page_title %}Services - ENSET Douala{% endblock %}
+{% block page_body_id %}services{% endblock %}
+
+{% block page_hero %}
+<section id="hero" class="hero hero-small">
+    <div class="info w-75">
+      <h1>Services Demo</h1>
+      <nav class="breadcrumbs">
+        <ol>
+          <li><a href="{{ url_for('demo.index') }}">Home</a></li>
+          <li class="current">Services</li>
+        </ol>
+      </nav>
+  </div>
+</section>
+{% endblock %}
+
+{% block page_sections %}
+<!-- Services Section -->
+<section class="services section mt-4">
+
+    <!-- Section Title -->
+    <div class="container section-title" data-aos="fade-up">
+        <h2>Services</h2>
+        <div>
+            <span>Check Our</span> 
+            <span class="description-title">Services</span>
+        </div>
+    </div><!-- End Section Title -->
+  
+    <div class="container">
+        <div class="row gy-4">
+        {% for item in data1 %}
+            <!-- Service Item -->
+            <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="100">
+              <div class="icon flex-shrink-0">
+                <i class="{{ item.icon }}"></i>
+              </div>
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">{{ item.title }}</h4>
+                  <p class="card-text">{{ item.description }}</p>
+                  <a href="{{ item.details }}" class="read-more stretched-link">
+                      <span>Voir plus</span>
+                      <i class="bi bi-arrow-right"></i>
+                  </a>
+                </div>
+              </div>
+            </div> <!-- End Service Item -->
+        {% endfor %}
+        </div>
+  
+    </div>
+  
+</section><!-- End Services Section -->
+
+<!-- Services Section -->
+<section class="services section light-background">  
+    <div class="container">
+        <div class="row gy-4 mt-4">
+        {% for item in data2 %}
+            <!-- Service Item -->
+            <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="100">
+              <div class="icon flex-shrink-0">
+                <i class="{{ item.icon }}"></i>
+              </div>
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">{{ item.title }}</h4>
+                  <p class="card-text">{{ item.description }}</p>
+                  <a href="{{ item.details }}" class="read-more stretched-link">
+                      <span>Voir plus</span>
+                      <i class="bi bi-arrow-right"></i>
+                  </a>
+                </div>
+              </div>
+            </div> <!-- End Service Item -->
+        {% endfor %}
+        </div>
+    </div>  
+</section><!-- End Services Section -->
+
+<!-- Services Section -->
+<section class="services section">  
+    <div class="container">
+        <div class="row gy-4 mt-4">
+        {% for item in data3 %}
+            <!-- Service Item -->
+            <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="100">
+              <div class="icon flex-shrink-0">
+                <i class="{{ item.icon }}"></i>
+              </div>
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">{{ item.title }}</h4>
+                  <p class="card-text">{{ item.description }}</p>
+                  <div class="d-flex justify-content-start">
+                    <a href="#" class="btn btn-outline-secondary">Action 1</a>
+                    <a href="#" class="btn btn-secondary">Action 2</a>
+                  </div>
+                </div>
+              </div>
+            </div> <!-- End Service Item -->
+        {% endfor %}
+        </div>
+    </div>  
+</section><!-- End Services Section -->
+
+<!-- Services Section -->
+<section class="services section light-background">  
+    <div class="container">
+        <div class="row gy-4 mt-4">
+        {% for item in data4 %}
+            <!-- Service Item -->
+            <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="100">
+              <div class="icon flex-shrink-0">
+                <i class="{{ item.icon }}"></i>
+              </div>
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">{{ item.title }}</h4>
+                  <p class="card-text">{{ item.description }}</p>
+                  <div class="d-flex justify-content-end">
+                    <a href="#" class="btn btn-outline-primary">Action 1</a>
+                    <a href="#" class="btn btn-primary">Action 2</a>
+                  </div>
+                </div>
+              </div>
+            </div> <!-- End Service Item -->
+        {% endfor %}
+        </div>
+    </div>  
+</section><!-- End Services Section -->
+
+
+<!-- Featured Services Section -->
+<section class="services services-featured section">
+
+    <!-- Section Title -->
+    <div class="container section-title" data-aos="fade-up">
+        <h2>Services-featured</h2>
+    </div><!-- End Section Title -->
+
+    <div class="container">
+        <div class="row gy-4">
+        {% for item in data3 %}
+            <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="100">
+              <div class="service-item position-relative">
+                <div class="icon"><i class="{{ item.icon }}"></i></div>
+                <h4><a href="" class="stretched-link">{{ item.title }}</a></h4>
+                <p>{{ item.description }}</p>
+              </div>
+            </div><!-- End Service Item -->
+        {% endfor %}
+        </div>
+    </div>
+  
+</section><!-- /Featured Services Section -->
+  
+<!-- Featured Services Section -->
+<section class="services services-featured section light-background">
+
+    <div class="container">
+        <div class="row gy-4">
+        {% for item in data4 %}
+            <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="100">
+              <div class="service-item position-relative">
+                <div class="icon"><i class="{{ item.icon }}"></i></div>
+                <h4><a href="" class="stretched-link">{{ item.title }}</a></h4>
+                <p>{{ item.description }}</p>
+              </div>
+            </div><!-- End Service Item -->
+        {% endfor %}
+        </div>
+    </div>
+  
+
+</section><!-- /Featured Services Section -->
+
+
+<!-- Services Section with numbers -->
+<section class="services services-numbered section">
+
+    <!-- Section Title -->
+    <div class="container section-title" data-aos="fade-up">
+        <h2>Services-numbered</h2>
+    </div><!-- End Section Title -->
+
+    <div class="container">
+        <div class="row no-gutters">
+        {% for item in data1 %}
+            <div class="col-lg-4 col-md-6 card" data-aos="fade-up" data-aos-delay="100">
+                <div class="card-header">{{ item.number }}</div>
+                <div class="card-body">
+                    <h4 class="card-title">{{ item.title }}</h4>
+                    <p class="card-text">{{ item.description }}</p>
+                </div>
+            </div><!-- End Card Item -->
+        {% endfor %}
+        </div>
+    </div>
+  
+</section><!-- /Services Section with numbers -->
+  
+<!-- Services Section with numbers -->
+<section class="services services-numbered section light-background">
+    <div class="container">
+        <div class="row no-gutters">
+        {% for item in data2 %}
+            <div class="col-lg-4 col-md-6 card" data-aos="fade-up" data-aos-delay="100">
+                <div class="card-header">{{ item.number }}</div>
+                <div class="card-body">
+                    <h4 class="card-title">{{ item.title }}</h4>
+                    <p class="card-text">{{ item.description }}</p>
+                </div>
+            </div><!-- End Card Item -->
+        {% endfor %}
+        </div>
+    </div>
+</section><!-- /Services Section with numbers -->
+
+<!-- Services Section with numbers -->
+<section class="services services-numbered section">
+    <div class="container">
+        <div class="card-group">
+            <div class="row no-gutters">
+            {% for item in data3 %}
+                <div class="col-lg-4 col-md-6 card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card-header">{{ item.number }}</div>
+                    <div class="card-body">
+                        <h4 class="card-title">{{ item.title }}</h4>
+                        <p class="card-text">{{ item.description }}</p>
+                    </div>
+                    <div class="card-footer d-flex justify-content-end">
+                      <a href="#" class="btn btn-secondary">Action 1</a>
+                      <a href="#" class="btn btn-primary">Action 2</a>
+                    </div>
+                </div><!-- End Card Item -->
+            {% endfor %}
+            </div>
+        </div>
+    </div>
+</section><!-- /Services Section with numbers -->
+
+<!-- Services Section with numbers -->
+<section class="services services-numbered section light-background">
+    <div class="container">
+        <div class="row no-gutters">
+        {% for item in data2 %}
+            <div class="col-lg-4 col-md-6 card" data-aos="fade-up" data-aos-delay="100">
+                <div class="card-header">{{ item.number }}</div>
+                <div class="card-body">
+                    <h4 class="card-title">{{ item.title }}</h4>
+                    <p class="card-text">{{ item.description }}</p>
+                    <div class="d-flex justify-content-start">
+                      <a href="#" class="card-link">Card link</a>
+                      <a href="#" class="card-link">Another link</a>
+                    </div>
+                </div>
+            </div><!-- End Card Item -->
+        {% endfor %}
+        </div>
+    </div>  
+</section><!-- /Services Section with numbers -->
+  
+
+<!-- Services Section with images -->
+<section class="services services-imaged section">
+  
+    <!-- Section Title -->
+    <div class="container section-title" data-aos="fade-up">
+        <h2>Services-imaged</h2>
+        <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+    </div><!-- End Section Title -->
+  
+    <div class="container">
+        <div class="row gy-4">
+        {% for item in data1 %}  
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+              <div class="card service-item position-relative">
+                <img src="{{ url_for('demo.static', filename=item.image)}}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h4 class="card-title">{{ item.title }}</h4>
+                    <p class="card-text">{{ item.description }}</p>
+                </div>
+              </div>
+            </div><!-- End Service Item -->
+        {% endfor %}
+        </div>
+    </div>
+  
+</section><!-- /Services Section with images -->
+
+<!-- Services Section with images -->
+<section class="services services-imaged section light-background">  
+    <!-- Section Title -->
+    <div class="container section-title" data-aos="fade-up">
+        <h2>Services-imaged</h2>
+        <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+    </div><!-- End Section Title -->
+
+    <div class="container">
+        <div class="row gy-4">
+        {% for item in data3 %}  
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+              <div class="card service-item position-relative">
+                <img src="{{ url_for('demo.static', filename=item.image)}}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h4 class="card-title">{{ item.title }}</h4>
+                    <p class="card-text">{{ item.description }}</p>
+                    <div class="d-flex justify-content-start">
+                      <a href="#" class="card-link">Card link</a>
+                      <a href="#" class="card-link">Another link</a>
+                    </div>
+                </div>
+              </div>
+            </div><!-- End Service Item -->
+        {% endfor %}
+        </div>
+    </div>  
+</section><!-- /Services Section with images -->
+
+<!-- Services Section with images -->
+<section class="services services-imaged section">  
+    <!-- Section Title -->
+    <div class="container section-title" data-aos="fade-up">
+        <h2>Services-imaged</h2>
+    </div><!-- End Section Title -->
+
+    <div class="container">
+        <div class="card-group">
+            <div class="row gy-4">
+            {% for item in data4 %}  
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                  <div class="card service-item position-relative">
+                    <img src="{{ url_for('demo.static', filename=item.image)}}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h4 class="card-title">{{ item.title }}</h4>
+                        <p class="card-text">{{ item.description }}</p>
+                    </div>
+                    <div class="card-footer d-flex justify-content-end">
+                      <a href="#" class="btn btn-secondary">Action 1</a>
+                      <a href="#" class="btn btn-primary">Action 2</a>
+                    </div>
+                  </div>
+                </div><!-- End Service Item -->
+            {% endfor %}
+            </div>
+        </div>
+    </div>  
+</section><!-- /Services Section with images -->
+{% endblock %}
+
+{% block page_copyright %}PIGAL ENSET{% endblock %}
+
+{% block page_author_name %}Malcom Chumchoua Penda{% endblock %}
