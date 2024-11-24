@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Basic Theme{% endblock %}</title>
+    
+    <!-- Favicons -->
+    <link href="{{ url_for('static', filename='shared/img/favicon.png') }}" rel="icon">
+    <link href="{{ url_for('static', filename='shared/img/apple-touch-icon.png') }}" rel="apple-touch-icon">
+    
+    <!-- CSS Files -->
+    <link href="{{ url_for('static', filename='basic/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='basic/main.css') }}" rel="stylesheet">
+</head>
+<body>
+    <!-- Content  -->
+    {% block content %}
+        <p>Any content ...</p>
+    {% endblock %}
+    
+    <!-- Vendor JS Files -->
+    <script src="{{ url_for('static', filename='basic/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+</body>
+</html>

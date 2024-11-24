@@ -1,10 +1,11 @@
 
 from flask import render_template
 from core.config import app
-from core.utils import create_ui
+from core.utils import create_ui, register_entry
 
 
 ui = create_ui('home')
+
 
 @ui.route('/')
 def index():

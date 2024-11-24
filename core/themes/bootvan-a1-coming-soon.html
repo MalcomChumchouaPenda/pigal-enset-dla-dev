@@ -1,0 +1,129 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-32">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block page_title %}ENSET Douala{% endblock %}</title>
+    {% block page_meta %}{% endblock %}
+
+    <!-- Favicons -->
+    <link href="{{ url_for('static', filename='shared/img/favicon.png') }}" rel="icon">
+    <link href="{{ url_for('static', filename='shared/img/apple-touch-icon.png') }}" rel="apple-touch-icon">
+
+    <!-- Fonts -->
+    <!-- <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet"> -->
+
+    <!-- Vendor CSS Files -->
+    <link href="{{ url_for('static', filename='shared/fonts.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='bootvan-a1/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='bootvan-a1/vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='bootvan-a1/vendor/aos/aos.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='bootvan-a1/vendor/glightbox/css/glightbox.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='bootvan-a1/vendor/swiper/swiper-bundle.min.css') }}" rel="stylesheet">
+
+    <!-- Template CSS File -->
+    <link href="{{ url_for('static', filename='shared/color.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='bootvan-a1/css/coming-soon.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='bootvan-a1/css/preloader.css') }}" rel="stylesheet">
+
+</head>
+<body id="{% block page_body_id %}{% endblock %}">
+
+    <!-- Preloader -->
+    <div id="preloader"></div>
+    <script src="{{ url_for('static', filename='bootvan-a1/js/preloader.js') }}"></script>
+    <!-- End preloader -->
+    
+    <!-- Header  -->
+    <header id="header" class="header fixed-top">
+      <div class="container-fluid d-flex align-items-center">
+
+        <!-- Header logo -->
+        <a class="logo d-flex align-items-center me-4" href="#">
+          <img src="{{ url_for('static', filename='shared/img/logo.png') }}" alt="">
+          <div class="d-flex align-items-end justify-content-start">
+            <h1 class="sitename">ENSET Douala</h1>
+            <i class="bi bi-circle-fill"></i>
+          </div>
+        </a><!-- End Header logo -->
+
+        <!-- Header menu -->
+        <nav class="nav-menu ms-auto d-flex justify-content-end align-items-center">
+          {% block page_nav_menu %}{% endblock %}
+          <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+        </nav><!-- End Header menu -->
+
+      </div>
+    </header><!-- End Header -->
+    
+    <!-- Main  -->
+    <main id="main" class="main">
+    
+        <!-- Hero Section -->
+        <section class="hero hero-large py-5">          
+          <div class="container text-center" data-aos="fade-up" data-aos-delay="100">
+            <div class="row justify-content-center">
+              <div class="col-lg-12">
+                {% block page_main_title %}
+                  <h2>En construction</h2>
+                {% endblock %}
+
+                {% block page_main_message %}
+                <p>
+                  Cette page est en construction. 
+                  Elle sera disponible dans:
+                </p>
+                {% endblock %}
+              </div>
+              
+              <div class="countdown d-flex justify-content-center" data-count="{{ deadline }}">
+                <div>
+                  <h3 class="count-days">482</h3>
+                  <h4>Jours</h4>
+                </div>
+                <div>
+                  <h3 class="count-hours">6</h3>
+                  <h4>Heures</h4>
+                </div>
+                <div>
+                  <h3 class="count-minutes">49</h3>
+                  <h4>Minutes</h4>
+                </div>
+                <div>
+                  <h3 class="count-seconds">21</h3>
+                  <h4>Secondes</h4>
+                </div>
+              </div>
+
+              <!-- <div class="col-lg-5 hero-newsletter">
+                <p>Subscribe now to get the latest updates!</p>
+                <form action="forms/newsletter.php" method="post" class="php-email-form">
+                  <div class="newsletter-form"><input type="email" name="email" placeholder="Votre email"><input type="submit" value="Subscribe"></div>
+                  <div class="loading">Loading</div>
+                  <div class="error-message"></div>
+                  <div class="sent-message">Your subscription request has been sent. Thank you!</div>
+                </form>
+              </div> -->
+            </div>
+          </div>
+        </section>
+    
+    </main><!-- End Main -->
+    
+    <!-- Vendor JS Files -->
+    <script src="{{ url_for('static', filename='bootvan-a1/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='bootvan-a1/vendor/aos/aos.js') }}"></script>
+    <script src="{{ url_for('static', filename='bootvan-a1/vendor/glightbox/js/glightbox.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='bootvan-a1/vendor/purecounter/purecounter_vanilla.js') }}"></script>
+    <script src="{{ url_for('static', filename='bootvan-a1/vendor/imagesloaded/imagesloaded.pkgd.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='bootvan-a1/vendor/isotope-layout/isotope.pkgd.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='bootvan-a1/vendor/swiper/swiper-bundle.min.js') }}"></script>
+    
+    <!-- Main JS File -->
+    <script src="{{ url_for('static', filename='bootvan-a1/js/coming-soon.js') }}"></script>
+     
+</body>
+</html>

@@ -1,41 +1,39 @@
 
 <!-- IMPORTANT: link id must be <pageid>-link or <blockid>-link -->
 
+
+{% macro menu_item(entry) %}
+  {% if entry.children|length == 0 %}
+    <li class="">
+      <a id="{{ entry.uid }}-link"
+        {% if entry.endpoint %} 
+            href="{{ url_for(entry.endpoint, **entry.kwargs) }}" 
+        {% endif %}>{{ entry.text }}
+      </a>
+    </li>
+  {% else %}      
+    {{ menu_dropdown(entry) }}
+  {% endif %}
+{% endmacro %}
+
+{% macro menu_dropdown(entry) %}    
+<li class="dropdown">
+  <a href="#">
+    <span>{{ entry.text }}</span> 
+    <i class="bi bi-chevron-down toggle-dropdown"></i>
+  </a>
+  <ul>
+    {% for child in entry.children %}
+      {{ menu_item(child) }}
+    {% endfor %}
+  </ul>
+</li>
+{% endmacro %}
+
 <ul>
-    <li class="active"><a href="{{ url_for('demo.index') }}" id="home-link">Home</a></li>
-    <li class="dropdown"><a href="#"><span>Pages</span> 
-        <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-        <ul>
-            <li><a href="{{ url_for('demo.blank') }}" id="blank-link">Blank</a></li>
-            <li><a href="{{ url_for('demo.coming_soon') }}">Under Construction</a></li>
-            <li><a href="/not-found">404</a></li>
-        </ul>
-    </li>
-    <li class="dropdown"><a href="#"><span>Sections</span> 
-        <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-        <ul>
-            <li class="dropdown"><a href="#"><span>Hero</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-              <ul>
-                <li><a href="{{ url_for('demo.hero') }}">Hero standard</a></li>
-                <li><a href="{{ url_for('demo.hero', kind='large') }}">Hero large</a></li>
-                <li><a href="{{ url_for('demo.hero', kind='small') }}">Hero small</a></li>
-                <li><a href="{{ url_for('demo.hero', kind='carousel') }}">Hero carrousel</a></li>
-              </ul>
-            </li>
-            <li><a href="{{ url_for('demo.about') }}">About</a></li>
-            <li><a href="{{ url_for('demo.services') }}">Services</a></li>
-            <li><a href="{{ url_for('demo.speechs') }}">Speechs</a></li>
-            <li class="dropdown"><a href="#"><span>Sub-sections</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-              <ul>
-                <li><a href="#">Stats</a></li>
-                <li><a href="#">Clients</a></li>
-              </ul>
-            </li>
-            <li><a href="#">Portfolio</a></li>
-            <li><a href="#">Team</a></li>
-        </ul>
-    </li>
-    <li><a href="{{ url_for('demo.contact') }}" id="contact-link">Contact</a></li>
+    {% for entry in landing %}
+      {{ menu_item(entry) }}
+    {% endfor %}
     <li><a class="btn btn-get-started" href="#">Get Started</a></li>
 </ul>
 

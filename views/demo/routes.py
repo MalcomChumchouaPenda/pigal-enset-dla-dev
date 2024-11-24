@@ -1,7 +1,8 @@
 
 import os
 from flask import render_template, session, url_for
-from core.utils import create_ui, read_json, read_markdown
+from core.utils import create_ui, register_entry
+from core.utils import read_json, read_markdown
 
 
 _CUR_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -13,8 +14,12 @@ _JSON_URL = 'json/'
 
 
 ui = create_ui('demo')
+register_entry('home', 'Home', 'landing', 'demo.index')
+register_entry('sections', 'Sections', 'landing')
+register_entry('blank', 'Blank', 'sections', 'demo.blank')
+register_entry('coming-soon', 'Under Construction', 'sections', 'demo.coming_soon')
 
-    
+
 @ui.route('/')
 @ui.route('/index')
 def index():

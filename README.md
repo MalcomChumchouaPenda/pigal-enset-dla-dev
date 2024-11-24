@@ -1,2 +1,3 @@
-# pigal-bootstrap5-vanilla
-Template for PIGAL modules development based on Bootstrap 5 css framework and Vanilla JS
+
+# pigal-landing
+PIGAL Landing web template based on Bootstrap 4 and Flask

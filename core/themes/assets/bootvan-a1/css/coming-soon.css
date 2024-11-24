@@ -1,0 +1,660 @@
+
+/*--------------------------------------------------------------
+# Font & Color Variables
+# Help: https://bootstrapmade.com/color-system/
+--------------------------------------------------------------*/
+
+/* Fonts */
+:root {
+    --default-font: "Roboto",  system-ui, -apple-system, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    --heading-font: "Raleway",  sans-serif;
+    --nav-font: "Poppins",  sans-serif;
+  }
+  
+  
+  /* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
+  :root { 
+    --background-color: var(--white-color); /* Background color for the entire website, including individual sections */
+    --default-color: var(--secondary-color); /* Default color used for the majority of the text content across the entire website */
+    --heading-color: var(--black-color); /* Color for headings, subheadings and title throughout the website */
+    --accent-color: var(--primary-color); /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
+    --surface-color: var(--white-color); /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
+    --contrast-color: var(--white-color); /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
+  }
+  
+  /* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
+  :root {
+    --nav-color:  var(--white-color);  /* The default color of the main navmenu links */
+    --nav-hover-color: var(--white-color); /* Applied to main navmenu links when they are hovered over or active */
+    --nav-mobile-background-color: var(--white-color); /* Used as the background color for mobile navigation menu */
+    --nav-dropdown-background-color: var(--white-color); /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
+    --nav-dropdown-color: var(--secondary-color); /* Used for navigation links of the dropdown items in the navigation menu. */
+    --nav-dropdown-hover-color: var(--primary-color); /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
+  }
+  
+  
+  /* Smooth scroll */
+  :root {
+    scroll-behavior: smooth;
+  }
+  
+  
+  /*--------------------------------------------------------------
+  # General Background Classes
+  --------------------------------------------------------------*/
+  
+  /* Color Presets - These classes override global colors when applied to any section or element, providing reuse of the sam color scheme. */
+  .light-background {
+    --background-color: var(--secondary-light-color);
+    --surface-color: var(--white-color);
+  }
+  
+  .dark-background {
+    --background-color: var(--black-color);
+    --default-color: var(--white-color);
+    --heading-color: var(--white-color);
+    --surface-color: var(--black-color);
+    --contrast-color: var(--white-color);
+  }
+  
+  
+  /*--------------------------------------------------------------
+  # General Styling & Shared Classes
+  --------------------------------------------------------------*/
+  
+  /* General Styling */
+  body {
+    color: var(--default-color);
+    background-color: var(--background-color);
+    font-family: var(--default-font);
+  }
+  
+  a {
+    color: var(--accent-color);
+    text-decoration: none;
+    transition: 0.3s;
+  }
+  
+  a:hover {
+    color: color-mix(in srgb, var(--accent-color), transparent 25%);
+    text-decoration: none;
+  }
+  
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: var(--heading-color);
+    font-family: var(--heading-font);
+  }
+  
+  *::before, *::after {
+    box-sizing: border-box;
+  }
+  
+  
+  /*--------------------------------------------------------------
+  # Global Header
+  --------------------------------------------------------------*/
+  
+  .header {
+    --background-color: rgba(255, 255, 255, 0.95);
+    --default-color: var(--secondary-dark-color);
+    --heading-color: var(--secondary-dark-color);
+    --nav-color: var(--secondary-dark-color);
+    --nav-hover-color: var(--secondary-dark-color);
+    color: var(--default-color);
+    background-color: var(--background-color);
+    padding: 20px 15px 10px 25px;
+    transition: all 0.5s;
+    z-index: 9997;
+  }
+  
+  .header .logo {
+    line-height: 1;
+  }
+  
+  .header .logo img {
+    max-height: 25px;
+    margin-right: 10px;
+  }
+  
+  .header .logo h1 {
+    font-size: 22px;
+    margin: 0;
+    font-weight: 700;
+    color: var(--heading-color);
+  }
+  
+  .header .logo i {
+    font-size: 5px;
+    padding-left: 5px;
+    padding-bottom: 4px;
+    color: var(--accent-color);
+  }
+  
+  .header .btn-get-started,
+  .header .btn-get-started:focus {
+    color: var(--contrast-color);
+    background: var(--accent-color);
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 500;
+    padding: 6px 20px 8px 20px;
+    margin: 0 0 0 30px;
+    border-radius: 4px;
+    transition: 0.3s;
+    border: 2px solid var(--contrast-color);
+  }
+  
+  .header .btn-get-started:hover,
+  .header .btn-get-started:focus:hover {
+    color: var(--contrast-color);
+    background-color: color-mix(in srgb, var(--accent-color), transparent 20%);
+  }
+  
+  
+  @media (max-width: 991px) {
+  
+    .header {
+      padding: 25px 10px 15px 15px;
+    }
+  
+    .header .btn-get-started,
+    .header .btn-get-started:focus {
+      margin: 5px 15px 0 0;
+      padding: 7px 15px;
+      color: var(--contrast-color);
+      background: var(--accent-color);
+    }
+  
+  }
+  
+  
+  /* Global Header on Scroll
+  ------------------------------*/
+  
+  .scrolled .header {
+    --background-color: rgba(0, 0, 0, 90%);
+    box-shadow: none;
+  }
+  
+  .scrolled.scrolled-light .header {
+    --background-color: rgba(255, 255, 255, 0.95);
+    --default-color: var(--secondary-dark-color);
+    --heading-color: var(--secondary-dark-color);
+    --nav-color: var(--secondary-dark-color);
+    --nav-hover-color: var(--secondary-dark-color);
+  }
+  
+  .scrolled.scrolled-light .header .btn-get-started,
+  .scrolled.scrolled-light .header .btn-get-started:focus {
+    color: var(--contrast-color);
+    background: var(--accent-color);
+  }
+  
+  .scrolled.scrolled-light .header .btn-get-started:hover,
+  .scrolled.scrolled-light .header .btn-get-started:focus:hover {
+    color: var(--contrast-color);
+    background-color: color-mix(in srgb, var(--accent-color), transparent 20%);
+  }
+  
+  
+  /*--------------------------------------------------------------
+  # Disable aos animation delay on mobile devices
+  --------------------------------------------------------------*/
+  @media screen and (max-width: 768px) {
+    [data-aos-delay] {
+      transition-delay: 0 !important;
+    }
+  }
+  
+  
+  /*--------------------------------------------------------------
+  # Navigation Menu
+  --------------------------------------------------------------*/
+  /* Navmenu - Desktop */
+  @media (min-width: 992px) {
+    .nav-menu {
+      padding: 18px 0 10px 0;
+    }
+  
+    .nav-menu ul {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      list-style: none;
+      align-items: center;
+    }
+  
+    .nav-menu li {
+      position: relative;
+      margin: 0 10px;
+      padding-bottom: 5px;
+    }
+  
+    .nav-menu a,
+    .nav-menu a:focus {
+      color: var(--nav-color);
+      padding: 0 5px 0 2px;
+      font-size: 13px;
+      font-family: var(--nav-font);
+      text-transform: uppercase;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      white-space: nowrap;
+      transition: 0.3s;
+    }
+  
+    .nav-menu a i,
+    .nav-menu a:focus i {
+      font-size: 12px;
+      line-height: 0;
+      margin-left: 5px;
+      margin-right:0;
+      padding-right: 0;
+      transition: 0.3s;
+    }
+  
+    .nav-menu li:last-child a {
+      padding-right: 0;
+    }
+  
+    .nav-menu li:hover>a,
+    .nav-menu .active,
+    .nav-menu .active:focus {
+      color: var(--nav-hover-color);
+    }
+  
+    .nav-menu li a:before {
+      content: "";
+      position: absolute;
+      height: 3px;
+      bottom: -3px;
+      left: 0;
+      background-color: var(--accent-color);
+      visibility: hidden;
+      width: 0px;
+      transition: all 0.3s ease-in-out 0s;
+    }
+  
+    .nav-menu li.active a:before,
+    .nav-menu li:hover a:before {
+      visibility: visible;
+      width: 100%;
+    }
+  
+    .nav-menu li a.btn-get-started {
+      padding: 6px 20px 8px 20px;
+      margin: 0 0 0 30px;
+    }
+  
+    .nav-menu li a.btn-get-started:before,
+    .nav-menu li.active a.btn-get-started:before,
+    .nav-menu li:hover a.btn-get-started:before {
+      visibility: hidden;
+    }
+  
+    .nav-menu li.dropdown a:before,
+    .nav-menu .dropdown ul li a:before {
+      visibility: hidden;
+    }
+    
+    .nav-menu .dropdown ul {
+      margin: 0;
+      padding: 10px 0;
+      background: var(--nav-dropdown-background-color);
+      display: block;
+      position: absolute;
+      visibility: hidden;
+      left: 0;
+      top: 130%;
+      opacity: 0;
+      transition: 0.3s;
+      border-radius: 4px;
+      z-index: 99;
+      box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
+    }
+  
+    .nav-menu .dropdown ul li {
+      min-width: 200px;
+    }
+  
+    .nav-menu .dropdown ul a {
+      padding: 10px 20px;
+      font-size: 15px;
+      text-transform: none;
+      color: var(--nav-dropdown-color);
+    }
+  
+    .nav-menu .dropdown ul a i {
+      font-size: 12px;
+    }
+  
+    .nav-menu .dropdown ul a:hover,
+    .nav-menu .dropdown ul .active:hover,
+    .nav-menu .dropdown ul li:hover>a {
+      color: var(--nav-dropdown-hover-color);
+    }
+  
+    .nav-menu .dropdown:hover>ul {
+      opacity: 1;
+      top: 100%;
+      visibility: visible;
+    }
+  
+    .nav-menu .dropdown .dropdown ul {
+      top: 0;
+      left: -90%;
+      visibility: hidden;
+    }
+  
+    .nav-menu .dropdown .dropdown:hover>ul {
+      opacity: 1;
+      top: 0;
+      left: -100%;
+      visibility: visible;
+    }
+  }
+  
+  /* Navmenu - Mobile */
+  @media (max-width: 991px) {
+    .mobile-nav-toggle {
+      color: var(--nav-color);
+      font-size: 28px;
+      line-height: 0;
+      margin-right: 10px;
+      margin-left: 24px;
+      cursor: pointer;
+      transition: color 0.3s;
+    }
+  
+    .nav-menu {
+      padding: 0;
+      z-index: 9997;
+    }
+  
+    .nav-menu ul {
+      display: none;
+      list-style: none;
+      position: absolute;
+      inset: 60px 20px 20px 20px;
+      padding: 10px 0;
+      margin: 0;
+      border-radius: 6px;
+      background-color: var(--nav-mobile-background-color);
+      overflow-y: auto;
+      transition: 0.3s;
+      z-index: 9998;
+      box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
+    }
+  
+    .nav-menu a,
+    .nav-menu a:focus {
+      color: var(--nav-dropdown-color);
+      padding: 10px 20px;
+      font-family: var(--nav-font);
+      font-size: 17px;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      white-space: nowrap;
+      transition: 0.3s;
+    }
+  
+    .nav-menu a i,
+    .nav-menu a:focus i {
+      font-size: 12px;
+      line-height: 0;
+      margin-left: 5px;
+      width: 30px;
+      height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      transition: 0.3s;
+      background-color: color-mix(in srgb, var(--accent-color), transparent 90%);
+    }
+  
+    .nav-menu a i:hover,
+    .nav-menu a:focus i:hover {
+      background-color: var(--accent-color);
+      color: var(--contrast-color);
+    }
+  
+    .nav-menu a:hover,
+    .nav-menu .active,
+    .nav-menu .active:focus {
+      color: var(--nav-dropdown-hover-color);
+    }
+  
+    .nav-menu li a.btn-get-started {
+      text-transform: none;
+      font-family: var(--nav-font);
+      font-size: 17px;
+      padding: 6px 0 8px 10px;
+      margin: 0 10px 0 10px;
+    }
+  
+    .nav-menu .active i,
+    .nav-menu .active:focus i {
+      background-color: var(--accent-color);
+      color: var(--contrast-color);
+      transform: rotate(180deg);
+    }
+  
+    .nav-menu .dropdown ul {
+      position: static;
+      display: none;
+      z-index: 99;
+      padding: 10px 0;
+      margin: 10px 20px;
+      background-color: var(--nav-dropdown-background-color);
+      border: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+      box-shadow: none;
+      transition: all 0.5s ease-in-out;
+    }
+  
+    .nav-menu .dropdown ul ul {
+      background-color: rgba(33, 37, 41, 0.1);
+    }
+  
+    .nav-menu .dropdown>.dropdown-active {
+      display: block;
+      background-color: rgba(33, 37, 41, 0.03);
+    }
+  
+    .mobile-nav-active {
+      overflow: hidden;
+    }
+  
+    .mobile-nav-active .mobile-nav-toggle {
+      color: #fff;
+      position: absolute;
+      font-size: 32px;
+      top: 15px;
+      right: 15px;
+      margin-right: 0;
+      z-index: 9999;
+    }
+  
+    .mobile-nav-active .nav-menu {
+      position: fixed;
+      overflow: hidden;
+      inset: 0;
+      background: rgba(33, 37, 41, 0.8);
+      transition: 0.3s;
+    }
+  
+    .mobile-nav-active .nav-menu>ul {
+      display: block;
+    }
+  }
+  
+/*--------------------------------------------------------------
+# Hero Section
+--------------------------------------------------------------*/
+.hero {
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+    padding: 80px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .hero h2 {
+    margin: 25px 0;
+    font-size: 48px;
+    font-weight: 700;
+    color: var(--default-color)
+  }
+  
+  .hero p {
+    margin: 10px 0 0 0;
+    font-size: 24px;
+    color: var(--heading-color);
+  }
+  
+  @media (max-width: 991px) {
+    .hero h2 {
+      font-size: 32px;
+    }
+  
+    .hero p {
+      font-size: 16px;
+    }
+  }
+  
+  .hero .countdown {
+    margin-top: 25px;
+  }
+  
+  .hero .countdown div {
+    text-align: center;
+    border: none;
+    border-radius: 8px;
+    margin: 10px 10px;
+    width: 100px;
+    padding: 15px 0;
+    background-color: var(--secondary-light-color);
+  }
+  
+  .hero .countdown div h3 {
+    font-family: var(--default-font);
+    font-weight: 700;
+    font-size: 32px;
+    margin-bottom: 15px;
+  }
+  
+  .hero .countdown div h4 {
+    font-size: 16px;
+    font-weight: 600;
+  }
+  
+  @media (max-width: 991px) {
+    .hero .countdown div {
+      width: 70px;
+      padding: 10px 0;
+      margin: 10px 8px;
+    }
+  
+    .hero .countdown div h3 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+  
+    .hero .countdown div h4 {
+      font-size: 12px;
+      font-weight: 500;
+    }
+  }
+  
+  .hero .hero-newsletter {
+    margin-top: 25px;
+  }
+  
+  .hero .hero-newsletter p {
+    font-size: 18px;
+    margin: 0 0 15px 0;
+  }
+  
+  .hero .hero-newsletter .newsletter-form {
+    margin-bottom: 15px;
+    padding: 6px 8px;
+    position: relative;
+    background-color: var(--surface-color);
+    border: 1px solid color-mix(in srgb, var(--default-color), transparent 50%);
+    box-shadow: none;
+    display: flex;
+    transition: 0.3s;
+    border-radius: 5px;
+  }
+  
+  .hero .hero-newsletter .newsletter-form:focus-within {
+    border-color: var(--accent-color);
+  }
+  
+  .hero .hero-newsletter .newsletter-form input[type=email] {
+    border: 0;
+    padding: 4px;
+    width: 100%;
+    background-color: var(--surface-color);
+    color: var(--default-color);
+  }
+  
+  .hero .hero-newsletter .newsletter-form input[type=email]:focus-visible {
+    outline: none;
+  }
+  
+  .hero .hero-newsletter .newsletter-form input[type=submit] {
+    border: 0;
+    font-size: 16px;
+    padding: 0 20px;
+    margin: -7px -9px -7px 0;
+    background: var(--accent-color);
+    color: var(--contrast-color);
+    transition: 0.3s;
+    border-radius: 50px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 0;
+  }
+  
+  .hero .hero-newsletter .newsletter-form input[type=submit]:hover {
+    background: color-mix(in srgb, var(--accent-color), transparent 20%);
+  }
+  
+  .hero .social-links {
+    margin-top: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .hero .social-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid color-mix(in srgb, var(--default-color), transparent 50%);
+    font-size: 16px;
+    color: color-mix(in srgb, var(--default-color), transparent 20%);
+    margin-right: 10px;
+    transition: 0.3s;
+  }
+  
+  .hero .social-links a:hover {
+    color: var(--accent-color);
+    border-color: var(--accent-color);
+  }

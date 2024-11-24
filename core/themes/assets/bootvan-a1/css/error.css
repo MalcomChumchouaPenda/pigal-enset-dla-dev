@@ -1,0 +1,60 @@
+
+/*--------------------------------------------------------------
+# Font & Color Variables
+# Help: https://bootstrapmade.com/color-system/
+--------------------------------------------------------------*/
+
+/* Fonts */
+:root {
+    --default-font: "Roboto",  system-ui, -apple-system, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    --heading-font: "Raleway",  sans-serif;
+    --nav-font: "Poppins",  sans-serif;
+  }
+  
+  
+/* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
+:root { 
+    --background-color: var(--secondary-light-color); /* Background color for the entire website, including individual sections */
+    --default-color: var(--secondary-color); /* Default color used for the majority of the text content across the entire website */
+    --heading-color: var(--black-color); /* Color for headings, subheadings and title throughout the website */
+    --accent-color: var(--primary-color); /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
+    --surface-color: var(--white-color); /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
+    --contrast-color: var(--white-color); /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
+  }
+  
+  
+/* Smooth scroll */
+:root {
+    scroll-behavior: smooth;
+  }
+
+    
+body {
+        background: #dedede;
+    }
+
+.page-wrap {
+        min-height: 100vh;
+    }
+
+.page-wrap img {
+    width: 50px;
+    margin: 25px;
+}
+
+.page-wrap .error-number {
+    color: var(--heading-color);
+    font-family: var(--default-font);
+    font-weight: 300;
+}
+
+.page-wrap .error-message {
+    color: var(--heading-color);
+    font-family: var(--default-font);
+    font-weight: 300;
+    margin: 5px;
+}
+
+.page-wrap .btn-link {
+    color: var(--accent-color);
+}
