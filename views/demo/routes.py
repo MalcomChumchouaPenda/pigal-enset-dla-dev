@@ -1,7 +1,7 @@
 
 import os
 from flask import render_template, session, url_for
-from core.utils import create_ui, register_entry
+from core.utils import create_ui, add_entry
 from core.utils import read_json, read_markdown
 
 
@@ -14,10 +14,22 @@ _JSON_URL = 'json/'
 
 
 ui = create_ui('demo')
-register_entry('home', 'Home', 'landing', 'demo.index')
-register_entry('sections', 'Sections', 'landing')
-register_entry('blank', 'Blank', 'sections', 'demo.blank')
-register_entry('coming-soon', 'Under Construction', 'sections', 'demo.coming_soon')
+add_entry('landing', 1, 'home', 'Home', point='demo.index')
+add_entry('landing', 2, 'pages', 'Pages')
+add_entry('landing', 3, 'sections', 'Sections')
+add_entry('landing', 4, 'contact', 'Contact')
+
+add_entry('pages', 1, 'blank', 'Blank', point='demo.blank')
+add_entry('pages', 2, 'coming', 'Under Construction', point='demo.coming_soon')
+add_entry('pages', 3, '404', '404', url='/not-found')
+
+add_entry('sections', 1, 'hero1', 'Hero standard', point='demo.hero')
+add_entry('sections', 2, 'hero2', 'Hero large', point='demo.hero', kind='large')
+add_entry('sections', 3, 'hero3', 'Hero small', point='demo.hero', kind='small')
+add_entry('sections', 4, 'hero4', 'Hero carousel', point='demo.hero', kind='carousel')
+add_entry('sections', 5, 'about', 'About', point='demo.about')
+add_entry('sections', 6, 'services', 'Services', point='demo.services')
+add_entry('sections', 7, 'speechs', 'Speechs', point='demo.speechs')
 
 
 @ui.route('/')
@@ -31,7 +43,7 @@ def blank():
 
 @ui.route('/coming-soon')
 def coming_soon():
-    return render_template('demo-coming-soon.html', deadline='2024/12/31')
+    return render_template('coming-soon.html', deadline='2024/12/31')
 
 @ui.route('/about')
 def about():
@@ -78,11 +90,6 @@ def blog():
 @ui.route('/projects')
 def projects():
     return render_template('demo-projects.html')
-
-@ui.route('/contact')
-def contact():
-    return render_template('demo-contact.html')
-
 
 @ui.route('/hero')
 @ui.route('/hero/<kind>')

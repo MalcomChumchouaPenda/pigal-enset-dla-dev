@@ -1,7 +1,7 @@
 
 from flask import render_template
 from core.config import app
-from core.utils import create_ui, register_entry
+from core.utils import create_ui, add_entry
 
 
 ui = create_ui('home')

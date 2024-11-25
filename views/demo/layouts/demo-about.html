@@ -1,0 +1,116 @@
+{% extends 'landing.html' %}
+
+{% block page_title %}About - ENSET Douala{% endblock %}
+{% block page_body_id %}about{% endblock %}
+
+{% block page_hero %}
+<section id="hero" class="hero hero-small">
+    <div class="info w-75">
+      <h1>About Demo</h1>
+      <nav class="breadcrumbs">
+        <ol>
+          <li><a href="{{ url_for('demo.index') }}">Home</a></li>
+          <li class="current">About</li>
+        </ol>
+      </nav>
+  </div>
+</section>
+{% endblock %}
+
+{% block page_sections %}
+<!-- About Section -->
+<section id="about" class="about section mt-4">
+
+  <!-- Section Title -->
+  <div class="container section-title" data-aos="fade-up">
+    <h2>About #1</h2>
+    <p>About with simple markdown</p>
+  </div><!-- End Section Title -->
+
+  <div class="container">
+    <div class="row gy-4">
+      <div class="col-lg-6 content" data-aos="fade-up" data-aos-delay="100">
+        {{ items.c.text | safe }}
+      </div>
+      <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+        {{ items.d.text | safe }}
+      </div>
+    </div>
+  </div>
+
+</section><!-- /About Section -->
+
+<!-- About Section -->
+<section id="about" class="about section light-background">
+
+  <div class="container">
+    <div class="row gy-4">
+      <div class="col-lg-6 content" data-aos="fade-up" data-aos-delay="100">
+        {{ items.c.text | safe }}
+      </div>
+      <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+        {{ items.d.text | safe }}
+      </div>
+    </div>
+  </div>
+
+</section><!-- /About Section -->
+
+<!-- About Section with medias -->
+<section id="about" class="about section">
+  <!-- Section Title -->
+  <div class="container section-title" data-aos="fade-up">
+    <h2>About #2</h2>
+    <p>About with images or videos</p>
+  </div><!-- End Section Title -->
+
+  <div class="container" data-aos="fade-up" data-aos-delay="100">
+    <div class="row gy-1">
+      <div class="col-lg-6 position-relative d-flex align-items-center order-lg-2" data-aos="fade-up" data-aos-delay="200">
+        <img src="{{ url_for('demo.static', filename=items.a.image)}}" class="img-fluid flex-shrink-0" alt="">
+        <a href="items.a.video" class="glightbox pulsating-play-btn"></a>
+      </div>
+      <div class="col-lg-6 content order-lg-1" data-aos="fade-up" data-aos-delay="100">
+        {{ items.a.text | safe }}
+      </div>
+    </div>
+
+    <div class="row gy-4 my-3">
+      <div class="col-lg-6 order-lg-1">
+        <img src="{{ url_for('demo.static', filename=items.b.image)}}" class="img-fluid" alt="">
+      </div>
+      <div class="col-lg-6 content order-lg-2" data-aos="fade-up" data-aos-delay="100">
+        {{ items.b.text | safe }}
+      </div>
+    </div>
+  </div>
+</section><!-- /About Section with medias -->
+
+<!-- About Section with medias -->
+<section id="about" class="about section light-background">
+  <div class="container" data-aos="fade-up" data-aos-delay="100">
+    <div class="row gy-1">
+      <div class="col-lg-6 position-relative d-flex align-items-center order-lg-2" data-aos="fade-up" data-aos-delay="200">
+        <img src="{{ url_for('demo.static', filename=items.a.image)}}" class="img-fluid flex-shrink-0" alt="">
+        <a href="items.a.video" class="glightbox pulsating-play-btn"></a>
+      </div>
+      <div class="col-lg-6 content order-lg-1" data-aos="fade-up" data-aos-delay="100">
+        {{ items.a.text | safe }}
+      </div>
+    </div>
+
+    <div class="row gy-4 my-3">
+      <div class="col-lg-6 order-lg-1">
+        <img src="{{ url_for('demo.static', filename=items.b.image)}}" class="img-fluid" alt="">
+      </div>
+      <div class="col-lg-6 content order-lg-2" data-aos="fade-up" data-aos-delay="100">
+        {{ items.b.text | safe }}
+      </div>
+    </div>
+  </div>
+</section><!-- /About Section with medias -->
+{% endblock %}
+
+{% block page_copyright %}PIGAL ENSET{% endblock %}
+
+{% block page_author_name %}Malcom Chumchoua Penda{% endblock %}

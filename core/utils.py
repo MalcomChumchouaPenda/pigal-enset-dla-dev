@@ -18,7 +18,7 @@ def create_ui(name):
     ui = Blueprint(name,
                    f'views.{name}.routes',
                    url_prefix=url_prefix,
-                   template_folder='pages',
+                   template_folder='layouts',
                    static_folder='assets',
                    static_url_path='/assets')
     return ui
@@ -59,9 +59,10 @@ def register_api():
                     print('registering >', routes.api)
                     app.register_blueprint(routes.api)
 
-def register_entry(uid, text, parentid, endpoint=None, **kwargs):
-    entry = dict(uid=uid, text=text, endpoint=endpoint, kwargs=kwargs, children=[])
-    ENTRIES[parentid]['children'].append(entry)
+def add_entry(parent, pos, uid, text, url=None, point=None, **kwargs):
+    entry = dict(uid=uid, text=text, url=url, point=point, 
+                 kwargs=kwargs, children=[], pos=pos)
+    ENTRIES[parent]['children'].append(entry)
     ENTRIES[uid] = entry
 
 

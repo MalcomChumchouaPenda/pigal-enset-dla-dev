@@ -1,0 +1,43 @@
+
+<!-- IMPORTANT: link id must be <pageid>-link or <blockid>-link -->
+
+
+{% macro menu_item(entry) %}
+  {% if entry.children|length == 0 %}
+    <li class="">
+      <a id="{{ entry.uid }}-link"
+        {% if entry.point %} 
+          href="{{ url_for(entry.point, **entry.kwargs) }}" 
+        {% elif entry.url %} 
+          href="{{ entry.url }}" 
+        {% endif %}>{{ entry.text }}
+      </a>
+    </li>
+  {% else %}      
+    {{ menu_dropdown(entry) }}
+  {% endif %}
+{% endmacro %}
+
+{% macro menu_dropdown(entry) %}    
+<li class="dropdown">
+  <a href="#">
+    <span>{{ entry.text }}</span> 
+    <i class="bi bi-chevron-down toggle-dropdown"></i>
+  </a>
+  <ul>
+    {% for child in entry.children|sort(attribute="pos") %}
+      {{ menu_item(child) }}
+    {% endfor %}
+  </ul>
+</li>
+{% endmacro %}
+
+{% macro menu(entries) %}
+<ul>
+    {% for entry in entries|sort(attribute="pos") %}
+      {{ menu_item(entry) }}
+    {% endfor %}
+    <li><a class="btn btn-get-started" href="#">Get Started</a></li>
+</ul>
+{% endmacro %}
+
