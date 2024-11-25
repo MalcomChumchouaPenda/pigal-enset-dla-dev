@@ -1,0 +1,13 @@
+{% extends 'error.html' %}
+
+{% block page_title %}404 - ENSET Douala{% endblock %}
+{% block page_body_id %}404{% endblock %}
+{% block error_number %}404{% endblock %}
+{% block error_message %}La page que vous recherchez n'existe plus{% endblock %}
+
+{% block error_buttons %}
+<a href="{{ url_for('home.index') }}" class="btn btn-link">
+    <i class="bi bi-arrow-left mx-2"></i>
+    Retour a l'accueil
+</a>
+{% endblock %}

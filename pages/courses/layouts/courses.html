@@ -1,0 +1,119 @@
+{% extends 'landing.html' %}
+
+{% block page_title %}Formations - ENSET Douala{% endblock %}
+{% block page_body_id %}courses{% endblock %}
+
+{% block page_hero %}
+<section id="hero" class="hero">
+    <div class="info w-75">
+      <h1>Nos Formations</h1>
+      <nav class="breadcrumbs">
+        <ol>
+          <li><a href="{{ url_for('home.index') }}">Home</a></li>
+          <li class="current">Formations</li>
+        </ol>
+      </nav>
+  </div>
+  <div class="hero-bg">
+      <img src="{{ url_for('courses.static', filename='hero-bg.jpg') }}" alt="">
+  </div>
+</section>
+{% endblock %}
+
+{% block page_sections %}
+<!-- Summary Section -->
+<section class="about section mt-4">
+  <div class="container" data-aos="fade-up" data-aos-delay="100">
+    <div class="row gy-1">
+      <div class="col-lg-5 px-2 pb-5 position-relative d-flex align-items-center order-lg-2" data-aos="fade-up" data-aos-delay="200">
+        <img src="{{ url_for('courses.static', filename='courses.jpg')}}" class="img-fluid flex-shrink-0" alt="">
+      </div>
+      <div class="col-lg-7 px-5 content order-lg-1" data-aos="fade-up" data-aos-delay="100">
+        {{ summary | safe }}
+      </div>
+    </div>
+  </div>
+</section><!-- /Summary Section -->
+
+
+<!-- Services Section with images -->
+<section id="fi" class="services services-imaged light-background section pt-5">
+  {{ section_title("Formation Initiale", before="Decouvrer nos offres de")}}
+
+  <div class="container">
+      <div class="card-group">
+          <div class="row gy-4">
+          {% for item in fi %}  
+              <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                <div class="card service-item position-relative">
+                  <img src="{{ url_for('courses.static', filename=item.image)}}" class="card-img-top" alt="...">
+                  <div class="card-body">
+                      <h4 class="card-title">{{ item.nom }} - {{item.id }} </h4>
+                      <p class="card-text">{{ item.text| safe }}</p>
+                  </div>
+                  <div class="card-footer d-flex justify-content-end">
+                    <a href="#" class="btn btn-secondary">Details</a>
+                    <a href="#" class="btn btn-primary">Inscription</a>
+                  </div>
+                </div>
+              </div><!-- End Service Item -->
+          {% endfor %}
+          </div>
+      </div>
+  </div>  
+</section><!-- /Services Section with images -->
+
+<!-- Services Section with images -->
+<section id="cps" class="services services-imaged section pt-5">
+  {{ section_title("Cours de Promotion Sociale", before="Decouvrer nos", after="(CPS)") }}
+
+  <div class="container">
+      <div class="card-group">
+          <div class="row gy-4">
+          {% for item in cps %}  
+              <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                <div class="card service-item position-relative">
+                  <img src="{{ url_for('courses.static', filename=item.image)}}" class="card-img-top" alt="...">
+                  <div class="card-body">
+                      <h4 class="card-title">{{ item.nom }} - {{item.id }}</h4>
+                      <p class="card-text">{{ item.text| safe }}</p>
+                  </div>
+                  <div class="card-footer d-flex justify-content-end">
+                    <a href="#" class="btn btn-secondary">Details</a>
+                    <a href="#" class="btn btn-primary">Inscriptions</a>
+                  </div>
+                </div>
+              </div><!-- End Service Item -->
+          {% endfor %}
+          </div>
+      </div>
+  </div>  
+</section><!-- /Services Section with images -->
+
+<!-- Services Section with numbers -->
+<section id="m2r" class="services services-numbered section light-background pt-5">  
+  {{ section_title("Master Recherche", before="Explorer nos formations en") }}
+
+  <div class="container">
+      <div class="row no-gutters">
+      {% for item in m2r %}
+          <div class="col-lg-4 col-md-6 card" data-aos="fade-up" data-aos-delay="100">
+              <div class="card-header">{{ item.id }}</div>
+              <div class="card-body">
+                  <h4 class="card-title">{{ item.nom }}</h4>
+                  <p class="card-text">{{ item.text | safe }}</p>
+                  <div class="d-flex justify-content-start">
+                    <a href="#" class="card-link">Voir plus</a>
+                  </div>
+              </div>
+          </div><!-- End Card Item -->
+      {% endfor %}
+      </div>
+  </div>  
+</section><!-- /Services Section with numbers -->
+
+{% endblock %}
+
+{% block page_copyright %}PIGAL ENSET{% endblock %}
+
+{% block page_author_name %}Malcom Chumchoua Penda{% endblock %}

@@ -1,4 +1,5 @@
 
+from flask import render_template
 from core.config import app, ENTRIES
 from core.utils import register_api, register_ui
 from core.utils import init_db
@@ -17,3 +18,6 @@ def temp(module, page):
 def inject_entries():
     return {key:entry['children'] for key, entry in ENTRIES.items()}
 
+@app.errorhandler(404)
+def not_found(e):
+    return render_template('error-404.html')

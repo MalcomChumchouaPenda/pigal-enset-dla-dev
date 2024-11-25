@@ -14,7 +14,7 @@
           return;
       let selectHero = document.querySelector('.hero');
       let threshold = selectHero.clientHeight - selectHeader.clientHeight
-      if (window.scrollY > 100) {
+      if (window.scrollY > 50) {
         selectBody.classList.add('scrolled');
         if (window.scrollY > threshold) {
           selectBody.classList.add('scrolled-light');

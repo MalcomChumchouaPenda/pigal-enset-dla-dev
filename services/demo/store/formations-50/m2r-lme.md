@@ -1,0 +1,1 @@
+Le Laboratoire de Mécanique de l'ENSET (LME) propose un Master Recherche axé sur la **Mécanique et Ingénierie des Matériaux**. Cette formation approfondit les compétences en modélisation, conception mécanique et innovation technologique. Les débouchés incluent la recherche, l’enseignement supérieur et l’ingénierie avancée dans les industries mécaniques et des matériaux.

@@ -300,7 +300,8 @@ h6 {
     width: 0px;
     transition: all 0.3s ease-in-out 0s;
   }
-
+  
+  .nav-menu li a.active:before,
   .nav-menu li.active a:before,
   .nav-menu li:hover a:before {
     visibility: visible;

@@ -1,0 +1,12 @@
+
+{% macro section_title(title, before="", after="") %}
+<div class="container section-title" data-aos="fade-up">
+    <h2>{{ title }}</h2>
+    <div>
+        <span>{{ before }}</span> 
+        <span class="description-title">{{ title }}</span>
+        <span>{{ after }}</span> 
+    </div>
+</div>
+{% endmacro %}
+

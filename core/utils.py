@@ -16,7 +16,7 @@ from .config import PAGES_DIR, SERVICES_DIR, ENTRIES
 def create_ui(name):
     url_prefix = '' if name == 'home' else f'/{name}'
     ui = Blueprint(name,
-                   f'views.{name}.routes',
+                   f'pages.{name}.routes',
                    url_prefix=url_prefix,
                    template_folder='layouts',
                    static_folder='assets',
@@ -29,10 +29,11 @@ def create_api(name, db_bind=None):
                     url_prefix=f'/api/{name}',
                     template_folder=None,
                     static_folder=None)
-    api.url_prefix
+    api.store_folder = os.path.join(SERVICES_DIR, 'store', name)
     if db_bind is not None:
         app.config['SQLALCHEMY_BINDS'][name] = db_bind
     return api
+
 
 
 # REGISTRATION METHODS
@@ -43,7 +44,7 @@ def register_ui():
         if not name.startswith('_') and not name.endswith('.py'):
             routes_path = os.path.join(root_dir, name, 'routes.py')
             if os.path.isfile(routes_path):
-                routes = import_module(f'views.{name}.routes')
+                routes = import_module(f'pages.{name}.routes')
                 if hasattr(routes, 'ui'):
                     print('registering >', routes.ui)
                     app.register_blueprint(routes.ui)
@@ -118,3 +119,27 @@ def read_markdown(filepath):
     if text is None:
         return
     return md.markdown(text)
+
+
+# STORE/ASSETS ACCESS METHODS
+
+class __Store:
+
+    def __init__(self, apiname):
+        super().__init__()
+        self.folder = os.path.join(SERVICES_DIR, apiname, 'store')
+
+    def read_json(self, filename):
+        filepath = os.path.join(self.folder, filename)
+        return read_json(filepath)
+
+    def read_markdown(self, filename):
+        filepath = os.path.join(self.folder, filename)
+        return read_markdown(filepath)
+    
+    def is_file(self, filename):
+        return os.path.isfile(os.path.join(self.folder, filename))
+    
+
+def get_store(apiname):
+    return __Store(apiname)
