@@ -95,6 +95,6 @@ module_name = input('nom de la vue converti: ')
 theme_id = input('id du theme utilise: ')
 
 encodings = list_encoding()
-html_dir = os.path.join(_env.VIEWS_DIR, module_name, 'pages')
+html_dir = os.path.join(_env.PAGES_DIR, module_name, 'pages')
 search_transform_html(html_dir, module_name, theme_id)
 

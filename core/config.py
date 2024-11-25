@@ -12,7 +12,7 @@ from sqlalchemy.orm import DeclarativeBase
 _CUR_DIR = os.path.dirname(os.path.abspath(__file__))
 _APP_DIR = os.path.dirname(_CUR_DIR)
 SERVICES_DIR = os.path.join(_APP_DIR, 'services')
-VIEWS_DIR = os.path.join(_APP_DIR, 'views')
+PAGES_DIR = os.path.join(_APP_DIR, 'pages')
 STORE_DIR = os.path.join(_CUR_DIR, 'store')
 
 

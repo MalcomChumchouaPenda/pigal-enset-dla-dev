@@ -8,7 +8,7 @@ import markdown as md
 from flask import Blueprint, session, url_for
 
 from .config import app, db, migrate
-from .config import VIEWS_DIR, SERVICES_DIR, ENTRIES
+from .config import PAGES_DIR, SERVICES_DIR, ENTRIES
 
 
 # FACTORY METHODS
@@ -38,7 +38,7 @@ def create_api(name, db_bind=None):
 # REGISTRATION METHODS
 
 def register_ui():
-    root_dir = VIEWS_DIR
+    root_dir = PAGES_DIR
     for name in os.listdir(root_dir):
         if not name.startswith('_') and not name.endswith('.py'):
             routes_path = os.path.join(root_dir, name, 'routes.py')
