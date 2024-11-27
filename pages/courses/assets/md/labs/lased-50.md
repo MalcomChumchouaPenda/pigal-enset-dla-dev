@@ -1,0 +1,1 @@
+Le Laboratoire des Sciences de l'Éducation (LASED) de l'ENSET de Douala mène des recherches sur les approches pédagogiques, les innovations éducatives et les stratégies d'apprentissage. Il analyse les pratiques d'enseignement et leurs impacts, tout en formant des étudiants en Master Recherche pour contribuer à l'amélioration des systèmes éducatifs.

@@ -29,17 +29,17 @@ def _load_departments():
     items = qry.get_departments()
     for item in items:
         key = item['id'].lower()
-        # text_path = f'md/formations/{key}-100.md'
-        # if assets.is_file(text_path):
-        #     item['text'] = assets.read_markdown(text_path)
+        text_path = f'md/departments/{key}-50.md'
+        item['text'] = assets.read_markdown(text_path)
         item['image'] = f'img/departments/{key}-400x200.jpg'
-        item['text'] = assets.read_markdown(f'md/departments/gel-50.md')
     return items
 
 def _load_labs():
     items = qry.get_labs()
     for item in items:
         key = item['id'].lower()
+        text_path = f'md/labs/{key}-50.md'
+        item['text'] = assets.read_markdown(text_path)
         item['image'] = f'img/labs/{key}-400x200.jpg'
     return items
 

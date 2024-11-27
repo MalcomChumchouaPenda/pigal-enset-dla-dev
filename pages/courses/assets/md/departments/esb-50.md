@@ -1,0 +1,1 @@
+Le département des Enseignements Scientifiques de Base (ESB) de l'ENSET de Douala forme des étudiants en physique et mathématiques. Ils acquièrent des compétences en analyse, modélisation et résolution de problèmes, préparant ainsi à des carrières dans les domaines scientifiques et technologiques.

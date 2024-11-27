@@ -1,11 +1,11 @@
 
-{% macro section_title(title, before="", after="", sub=true) %}
+{% macro section_title(title, before="", after="", emphasis="", sub=true) %}
 <div class="container section-title" data-aos="fade-up">
     <h2>{{ title }}</h2>
     {% if sub %}
     <div>
         <span>{{ before }}</span> 
-        <span class="description-title">{{ title }}</span>
+        <span class="description-title">{{ emphasis }}</span>
         <span>{{ after }}</span> 
     </div>
     {% endif %}

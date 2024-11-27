@@ -1,0 +1,1 @@
+Le Laboratoire de Modélisation et Politiques Économiques (LAMPE) de l'ENSET de Douala se spécialise dans l’analyse économique, la modélisation et l’évaluation des politiques publiques. Il développe des outils pour comprendre les dynamiques économiques et propose des solutions innovantes pour les secteurs de la finance, du développement et de la gouvernance.

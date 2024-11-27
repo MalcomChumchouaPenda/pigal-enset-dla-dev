@@ -24,7 +24,7 @@
 
 <!-- Type Formation Section -->
 <section id="about" class="about section light-background pt-5">
-  {{ section_title("Types de Formation", before="Nos")}}
+  {{ section_title("Types", before="Nos", emphasis="Types de formation")}}
   <div class="container" data-aos="fade-up" data-aos-delay="100">
     {% for item in formations %}
       {% if loop.index0 % 2 == 0 %}        
@@ -52,7 +52,7 @@
 
 <!-- Domaines technniques -->
 <section id="departments" class="services services-imaged section pt-5">
-  {{ section_title("Domaines de Formation", before="Nos") }}
+  {{ section_title("Domaines", before="Nos", emphasis="Domaines de formation") }}
 
   <div class="container">
       <div class="card-group">
@@ -62,11 +62,11 @@
                 <div class="card service-item position-relative">
                   <img src="{{ url_for('courses.static', filename=item.image)}}" class="card-img-top" alt="...">
                   <div class="card-body">
-                      <h4 class="card-title">{{ item.nom }} - {{item.id }}</h4>
+                      <h4 class="card-title">{{ item.nom }} ({{item.id }})</h4>
                       <p class="card-text">{{ item.text | safe }}</p>
                       <div class="d-flex justify-content-start">
                         <a href="{{ url_for('courses.details', key=item.key)}}" class="card-link">
-                          Rechercher une formation en {{item.id }}
+                          Liste des formations en {{item.id }}
                           <i class="bi bi-arrow-right"></i>
                         </a>
                       </div>
@@ -81,7 +81,7 @@
 
 <!-- Domaines de Recherche -->
 <section id="labs" class="services services-numbered section light-background">
-  {{ section_title("Domaines de Recherche", before="Nos") }}
+  {{ section_title("Recherche", before="Nos", emphasis="Domaines de Recherche") }}
   <div class="container">
       <div class="row no-gutters">
       {% for item in labs %}
@@ -89,10 +89,10 @@
               <div class="card-header">{{ item.id }}</div>
               <div class="card-body">
                   <h4 class="card-title mt-2">{{ item.nom }}</h4>
-                  <p class="card-text">test</p>
+                  <p class="card-text">{{ item.text | safe }}</p>
                   <div class="d-flex justify-content-start">
                     <a href="#" class="card-link">
-                      Rechercher un Master du Laboratoire {{ item.id }} 
+                      Liste des Masters du Laboratoire {{ item.id }} 
                       <i class="bi bi-arrow-right"></i>
                     </a>
                   </div>

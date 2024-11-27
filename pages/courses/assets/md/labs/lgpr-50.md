@@ -1,0 +1,1 @@
+Le Laboratoire de Génie des Procédés (LGPR) de l'ENSET de Douala mène des recherches sur les procédés industriels, la valorisation des ressources locales et la gestion durable des énergies. Il développe des solutions innovantes pour l’optimisation des procédés chimiques et environnementaux, tout en formant des étudiants en Master Recherche.
