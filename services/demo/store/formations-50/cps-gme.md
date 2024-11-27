@@ -1,1 +1,0 @@
-Le département de Génie Mécanique de l'ENSET Douala propose en CPS une filière **Génie Mécanique et Productique**, axée sur la conception, fabrication, et maintenance industrielle. Les débouchés incluent les métiers de technicien supérieur, responsable de production, ou expert en mécanique et productique dans les secteurs industriels et technologiques.

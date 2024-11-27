@@ -1,0 +1,1 @@
+Le département de Génie Civil (GCI) de l'ENSET de Douala offre des formations d'ingénieurs dans le domaine du génie civil. Les étudiants y acquièrent des compétences en conception, construction et gestion d'infrastructures, avec un accent sur la résistance des matériaux et l'aménagement du territoire, répondant ainsi aux enjeux urbains et environnementaux.

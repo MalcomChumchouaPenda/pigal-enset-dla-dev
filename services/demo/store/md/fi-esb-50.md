@@ -1,0 +1,1 @@
+Le département Enseignements Scientifiques de Base (ESB) de l’ENSET de Douala propose une formation en **Ingénierie Mathématique (IMA)**. Cette filière forme des enseignants techniques et des experts en modélisation mathématique et analyse de données, avec des débouchés dans l’enseignement, la recherche, l’ingénierie et divers secteurs utilisant l’analyse quantitative avancée.

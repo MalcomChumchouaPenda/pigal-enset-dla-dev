@@ -1,0 +1,1 @@
+Le département de Génie Chimique (GCH) de l’ENSET de Douala forme dans les domaines des procédés chimiques et de la transformation industrielle. Ses programmes, combinant théorie et pratique, préparent des professionnels capables de concevoir, optimiser et superviser des procédés industriels tout en répondant aux besoins des secteurs chimique et énergétique.

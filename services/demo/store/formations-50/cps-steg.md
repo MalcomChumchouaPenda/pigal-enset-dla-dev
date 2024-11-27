@@ -1,1 +1,0 @@
-Le département de Sciences et Techniques Économiques de Gestion de l'ENSET Douala propose en CPS les filières **Comptabilité, Finance et Audit (CFA)** et **Banque et Microfinance (BMF)**. Ces formations préparent aux carrières de comptable, auditeur, analyste financier, gestionnaire bancaire ou spécialiste en microfinance dans les entreprises, banques et institutions financières.

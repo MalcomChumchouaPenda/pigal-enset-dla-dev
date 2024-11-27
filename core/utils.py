@@ -123,11 +123,11 @@ def read_markdown(filepath):
 
 # STORE/ASSETS ACCESS METHODS
 
-class __Store:
+class __Folder:
 
-    def __init__(self, apiname):
+    def __init__(self, folder):
         super().__init__()
-        self.folder = os.path.join(SERVICES_DIR, apiname, 'store')
+        self.folder = folder
 
     def read_json(self, filename):
         filepath = os.path.join(self.folder, filename)
@@ -142,4 +142,9 @@ class __Store:
     
 
 def get_store(apiname):
-    return __Store(apiname)
+    folder = os.path.join(SERVICES_DIR, apiname, 'store')
+    return __Folder(folder)
+
+def get_assets(uiname):
+    folder = os.path.join(PAGES_DIR, uiname, 'assets')
+    return __Folder(folder)

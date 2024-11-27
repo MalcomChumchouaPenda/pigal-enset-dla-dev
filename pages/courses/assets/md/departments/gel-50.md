@@ -1,0 +1,1 @@
+Le département de Génie Électrique (GEL) de l’ENSET de Douala est spécialisé dans la formation dans les domaines de l’électronique, de l’électrotechnique et des systèmes thermiques. Ses programmes, alliant théorie et pratique, visent à préparer des professionnels compétents capables de répondre aux besoins techniques et industriels du secteur électrique.

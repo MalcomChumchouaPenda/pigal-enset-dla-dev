@@ -1,21 +1,51 @@
 
 from flask import render_template
-from core.utils import create_ui
+from core.utils import create_ui, get_assets
 from services.demo import queries as qry
 
 
 ui = create_ui('courses')
+assets = get_assets('courses')
 
 @ui.route('/')
 def index():
-    # data1 = qry.get_courses()
-    # data2 = data1[:5]
-    # data3 = data1[:4]
-    # data4 = data1[:3]
-    summary = qry.get_course_types()
-    fi = qry.get_formations_by_department('FI')
-    cps = qry.get_formations_by_department('CPS')
-    m2r = qry.get_formations_by_lab()
     return render_template('courses.html', 
-                           summary=summary, 
-                           fi=fi, cps=cps, m2r=m2r)
+                           labs=_load_labs(),
+                           formations=_load_formations(),
+                           departments=_load_departments())
+
+def _load_formations():
+    items = qry.get_formations()
+    for item in items:
+        key = item['id'].lower()
+        text_path = f'md/formations/{key}-100.md'
+        if assets.is_file(text_path):
+            item['text'] = assets.read_markdown(text_path)
+            item['image'] = f'img/formations/{key}-original.jpg'
+    return items
+
+
+def _load_departments():
+    items = qry.get_departments()
+    for item in items:
+        key = item['id'].lower()
+        # text_path = f'md/formations/{key}-100.md'
+        # if assets.is_file(text_path):
+        #     item['text'] = assets.read_markdown(text_path)
+        item['image'] = f'img/departments/{key}-400x200.jpg'
+        item['text'] = assets.read_markdown(f'md/departments/gel-50.md')
+    return items
+
+def _load_labs():
+    items = qry.get_labs()
+    for item in items:
+        key = item['id'].lower()
+        item['image'] = f'img/labs/{key}-400x200.jpg'
+    return items
+
+
+@ui.route('/<key>')
+def details(key):
+    unit = qry.get_unit_by_key(key)
+    return render_template('courses-details.html',
+                           unit=unit)

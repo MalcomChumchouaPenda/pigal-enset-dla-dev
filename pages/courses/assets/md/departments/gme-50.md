@@ -1,0 +1,1 @@
+Le département de Génie Mécanique (GME) de l’ENSET de Douala offre des formations initiales et des Cours de Promotion Sociale (CPS) dans des domaines tels que la conception, la fabrication et la maintenance mécanique. Ces programmes visent à former des ingénieurs, des enseignants et des professionnels hautement qualifiés, répondant aux besoins du secteur industriel.

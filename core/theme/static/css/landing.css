@@ -541,19 +541,36 @@ h6 {
   overflow: hidden;
 }
 
-.hero.hero-large {
-min-height: 100vh;
-display: flex;
-align-items: start;
-justify-content: center;
+.hero.hero-large,
+.hero.hero-100 {
+  min-height: 100vh;
+  display: flex;
+  align-items: start;
+  justify-content: center;
 }
 
-.hero.hero-small {
-max-height: 30vh;
-min-height:20vh;
+.hero.hero-75 {
+  min-height: 75vh;
+  display: flex;
+  align-items: start;
+  justify-content: center;
+}
+  
+.hero.hero-50 {
+max-height: 55vh;
+min-height:45vh;
 display: flex;
 align-items: center;
 justify-content: center;
+}
+  
+.hero.hero-small,
+.hero.hero-25 {
+  max-height: 30vh;
+  min-height:20vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .hero .info {
@@ -1071,23 +1088,36 @@ color: var(--accent-color);
   font-size: 15px;
 }
 
-  .about .content ul {
+.about .content ol {
+  font-size: 15px;
+}
+
+.about .content ul {
   list-style: none;
   padding: 0;
-  }
+  font-size: 15px;
+}
   
   .about .content ul li {
-  display: flex;
-  align-items: flex-start;
-  margin-top: 10px;
+    display: flex;
+    align-items: flex-start;
+  }
+
+  .about .content ul li p {
+    padding-bottom: 10px;
   }
   
-  .about .content ul i {
+  .about .content ul li>a {
+    padding-bottom: 5px;
+  }
+
+  .about .content ul li>i {
   flex-shrink: 0;
-  font-size: 22px;
+  font-size: 13px;
   color: var(--accent-color);
-  margin-right: 20px;
-  line-height: 0;
+  padding-top: 2px;
+  margin-right: 10px;
+  /* line-height: 0; */
   }
   
   

@@ -1,0 +1,30 @@
+[
+    {
+        "id":"LME",
+        "nom":"Laboratoire de Mécanique"
+    },
+    {
+        "id":"GIA",
+        "nom":"Laboratoire de Génie Informatique et Automatique"
+    },
+    {
+        "id":"LRVB",
+        "nom":"Laboratoire de Recherche et de Valorisation du Bois"
+    },
+    {
+        "id":"LGPR",
+        "nom":"Laboratoire de Génie des Procédés"
+    },
+    {
+        "id":"LAREGA",
+        "nom":"Laboratoire de Recherche en Gestion Appliquée"
+    },
+    {
+        "id":"LAMPE",
+        "nom":"Laboratoire de Modelisation et Politiques Economiques"
+    },
+    {
+        "id":"LASED",
+        "nom":"Laboratoire des Sciences de l'Education"
+    }
+]

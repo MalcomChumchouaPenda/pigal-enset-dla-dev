@@ -1,0 +1,1 @@
+Le département de Génie Civil de l'ENSET Douala propose en CPS la filière **Bâtiments et Travaux Publics (BTP)**, orientée vers la conception, construction et gestion d’infrastructures. Les débouchés incluent les métiers de technicien supérieur en BTP, conducteur de travaux, chef de chantier et consultant en construction durable pour les secteurs public et privé.
