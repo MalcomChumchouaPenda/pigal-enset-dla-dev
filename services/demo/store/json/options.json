@@ -1,9 +1,15 @@
 [
     {
-        "id":"BTPPRO",
+        "id":"BTP-PRO",
         "nom":"Batiments et Travaux Publics",
         "unit_id":"GCI",
         "formation_id":"CPS"
+    },
+    {
+        "id":"BTP",
+        "nom":"Batiments et Travaux Publics",
+        "unit_id":"GCI",
+        "formation_id":"FI"
     },
     {
         "id":"RT",

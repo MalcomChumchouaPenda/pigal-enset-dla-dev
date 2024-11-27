@@ -1,7 +1,7 @@
 
 import os
+# import pandas as pd
 from core.utils import get_store
-
 
 store = get_store('demo')
 
@@ -32,6 +32,32 @@ def get_formations():
 def get_labs():
     return store.read_json('json/labs.json')
 
+def get_diplomas():
+    return store.read_json('json/diplomas.json')
+
+def get_options(formation=None, unit=None):
+    options = store.read_json('json/options.json')
+    if formation:
+        options = [o for o in options if o['formation_id']==formation]
+    if unit:
+        options = [o for o in options if o['unit_id']==unit]
+    return options
+
+def get_courses(formation=None, unit=None):
+    courses = store.read_json('json/courses.json')
+    diplomas = store.read_json('json/diplomas.json')
+    diplomas = {d['id']:d for d in diplomas}
+    options = get_options(formation=formation, unit=unit)
+    options = {o['id']:o for o in options}
+    filters = list(options.keys())
+    items = []
+    for item in courses:
+        if item['option_id'] in filters:
+            item.update(diplomas[item['diploma_id']])
+            item.update(options[item['option_id']])
+            item['id'] = f"{item['option_id']}-{item['diploma_id']}"
+            items.append(item)
+    return items
 
 # LRVB - LGPR - LME - GIA - LASED - LAREGA - LAMPE
 

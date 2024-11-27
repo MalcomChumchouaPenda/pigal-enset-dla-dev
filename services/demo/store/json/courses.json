@@ -1,15 +1,23 @@
 [
     {
-        "option_id":"BTPPRO",
+        "option_id":"BTP-PRO",
         "diploma_id":"BTS"
     },
     {
-        "option_id":"BTPPRO",
+        "option_id":"BTP-PRO",
         "diploma_id":"LPRO"
     },
     {
-        "option_id":"BTPPRO",
+        "option_id":"BTP-PRO",
         "diploma_id":"MPRO"
+    },
+    {
+        "option_id":"BTP",
+        "diploma_id":"DIPET1"
+    },
+    {
+        "option_id":"BTP",
+        "diploma_id":"DIPET2"
     },
     {
         "option_id":"RT",

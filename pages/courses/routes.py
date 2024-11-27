@@ -24,7 +24,6 @@ def _load_formations():
             item['image'] = f'img/formations/{key}-original.jpg'
     return items
 
-
 def _load_departments():
     items = qry.get_departments()
     for item in items:
@@ -42,6 +41,51 @@ def _load_labs():
         item['text'] = assets.read_markdown(text_path)
         item['image'] = f'img/labs/{key}-400x200.jpg'
     return items
+
+
+@ui.route("/list", defaults={'formation':None, 'unit':None})
+@ui.route("/list/all", defaults={'formation':None, 'unit':None})
+@ui.route("/list/all/<unit>", defaults={'formation':None})
+@ui.route("/list/<formation>", defaults={'unit':None})
+@ui.route("/list/<formation>/<unit>")
+def list(formation, unit):
+    diplomas = qry.get_diplomas()
+    courses = qry.get_courses(formation=formation, unit=unit)
+    for item in diplomas:
+        item['courses'] = [c for c in courses 
+                           if c['diploma_id']==item['id']]
+    header = _create_list_header(formation, unit)
+    return render_template('courses-list.html', 
+                           header=header,
+                           unit=unit,
+                           diplomas=diplomas,
+                           formation=formation)
+
+def _create_list_header(formation, unit):
+    if formation is None and unit is None:
+        title = 'Liste complete des offres de formation'
+        image = 'img/hero-bg.jpg'
+        link = '...'
+    elif formation is not None and unit is None:
+        title = f'Liste des formations de {formation}'
+        link = f'{formation.upper()}'
+        image = f'img/formations/{formation.lower()}-400x200.jpg'      
+    elif formation is None and unit is not None:
+        title = f'Liste des formations de {unit}'
+        link = f'{unit.upper()}'
+        if formation == 'M2R':
+            image = f'img/labs/{unit.lower()}-400x200.jpg'
+        else:
+            image = f'img/departments/{unit.lower()}-400x200.jpg'
+    else:
+        title = f'Liste des formations {formation} de {unit}'
+        link = f'{unit.upper()} ({formation.upper()})'
+        if formation == 'M2R':
+            image = f'img/labs/{unit.lower()}-400x200.jpg'
+        else:
+            image = f'img/departments/{unit.lower()}-400x200.jpg'
+    return dict(title=title, link=link, image=image)
+
 
 
 @ui.route('/<key>')
