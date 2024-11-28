@@ -1,1 +1,0 @@
-Le département de l'Industrie Textile et d'Habillement (ITH) de l'ENSET de Douala forme des ingénieurs spécialisés en textile, habillement et matériaux. Les formations permettent aux étudiants de maîtriser les technologies et processus industriels pour répondre aux besoins d'un secteur textile en constante évolution.

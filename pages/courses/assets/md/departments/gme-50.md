@@ -1,1 +1,0 @@
-Le département de Génie Mécanique (GME) de l'ENSET de Douala forme des ingénieurs spécialisés dans la conception, la fabrication et la maintenance des systèmes mécaniques. Les formations développent des compétences techniques pour répondre aux défis industriels modernes et aux besoins du marché.

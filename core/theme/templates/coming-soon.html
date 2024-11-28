@@ -26,7 +26,7 @@
 
     <!-- Template CSS File -->
     <link href="{{ url_for('static', filename='css/color.css') }}" rel="stylesheet">
-    <link href="{{ url_for('static', filename='css/coming-soon.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/login.css') }}" rel="stylesheet">
     <link href="{{ url_for('static', filename='css/preloader.css') }}" rel="stylesheet">
 
 </head>
@@ -61,8 +61,7 @@
     </header><!-- End Header -->
     
     <!-- Main  -->
-    <main id="main" class="main">
-    
+    <main id="main" class="main d-flex justify-content-start align-items-center">
         <!-- Hero Section -->
         <section class="hero hero-large py-5">          
           <div class="container text-center" data-aos="fade-up" data-aos-delay="100">
@@ -71,7 +70,7 @@
                 {% block page_main_title %}
                   <h2>En construction</h2>
                 {% endblock %}
-
+            
                 {% block page_main_message %}
                 <p>
                   Cette page est en construction. 
@@ -98,17 +97,8 @@
                   <h4>Secondes</h4>
                 </div>
               </div>
-
-              <!-- <div class="col-lg-5 hero-newsletter">
-                <p>Subscribe now to get the latest updates!</p>
-                <form action="forms/newsletter.php" method="post" class="php-email-form">
-                  <div class="newsletter-form"><input type="email" name="email" placeholder="Votre email"><input type="submit" value="Subscribe"></div>
-                  <div class="loading">Loading</div>
-                  <div class="error-message"></div>
-                  <div class="sent-message">Your subscription request has been sent. Thank you!</div>
-                </form>
-              </div> -->
-            </div>
+            
+            </div>         
           </div>
         </section>
     
@@ -124,7 +114,7 @@
     <script src="{{ url_for('static', filename='vendor/swiper/swiper-bundle.min.js') }}"></script>
     
     <!-- Main JS File -->
-    <script src="{{ url_for('static', filename='js/coming-soon.js') }}"></script>
+   <script src="{{ url_for('static', filename='js/coming-soon.js') }}"></script>
      
 </body>
 </html>

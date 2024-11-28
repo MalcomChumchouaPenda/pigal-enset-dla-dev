@@ -1,1 +1,0 @@
-Le département d'Économie Sociale et Familiale (ESF) de l'ENSET de Douala propose des formations en nutrition, diététique, puériculture, gérontologie, esthétique, cosmétique et coiffure, préparant les étudiants à intervenir dans les secteurs du bien-être, de la santé et de la beauté.

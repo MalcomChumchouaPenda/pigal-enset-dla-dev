@@ -26,7 +26,7 @@
 
     <!-- Template CSS File -->
     <link href="{{ url_for('static', filename='css/color.css') }}" rel="stylesheet">
-    <link href="{{ url_for('static', filename='css/landing.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/login.css') }}" rel="stylesheet">
     <link href="{{ url_for('static', filename='css/preloader.css') }}" rel="stylesheet">
 
 </head>
@@ -38,11 +38,11 @@
     <!-- End preloader -->
     
     <!-- Header  -->
-    <header id="header" class="header fixed-top">
-      <div class="container-fluid d-flex align-items-center">
+    <header id="header" class="header mx-3 mx-lg-5 pb-0">
+      <div class="container-fluid d-flex align-items-center ps-0 py-4">
 
         <!-- Header logo -->
-        <a class="logo d-flex align-items-center me-4" href="#">
+        <a class="logo d-flex align-items-center ms-0 me-4" href="#">
           <img src="{{ url_for('static', filename='img/logo.png') }}" alt="">
           <div class="d-flex align-items-end justify-content-start">
             <h1 class="sitename">ENSET Douala</h1>
@@ -53,7 +53,7 @@
         <!-- Header menu -->
         <nav class="nav-menu ms-auto d-flex justify-content-end align-items-center">
           {% from "menu.html" import menu %}
-          {% block page_nav_menu %}{{ menu(landing, started_url='/') }}{% endblock %}
+          {% block page_nav_menu %}{{ menu(login) }}{% endblock %}
           <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
         </nav><!-- End Header menu -->
 
@@ -61,44 +61,14 @@
     </header><!-- End Header -->
     
     <!-- Main  -->
-    <main id="main" class="main">
-    
-        <!-- Hero Section -->
-        {% block page_hero %}{% endblock %}
-
-        <!-- Custom Sections -->
-         {% from "sections.html" import section_title %}
-        {% block page_sections %}{% endblock %}
-    
+    <main id="main" class="main d-flex justify-content-start align-items-center mx-3 py-4">
+      <!-- Hero Section -->
+      <section id="hero" class="hero section">
+        <div class="container form-wrapper">
+          {% block page_form %}{% endblock %}
+        </div>
+      </section><!-- /Hero Section -->
     </main><!-- End Main -->
-    
-    <!-- Footer  -->
-    <footer id="footer" class="footer dark-background">
-
-        <!-- Footer Contents -->
-        {% block page_footer %}{% endblock %}
-
-        <!-- Footer Copyright -->
-        <div class="container copyright text-center mt-4">
-            <p>© 
-                <span>Copyright</span> 
-                <strong class="px-1 sitename">
-                    {% block page_copyright %}CINFO ENSET{% endblock %}
-                </strong> 
-                <span>All Rights Reserved</span>
-            </p>
-            <div class="credits">
-                Designed by 
-                <a href="{% block page_author_site %}#{% endblock %}">
-                    {% block page_author_name %}Malcom Chumchoua Penda{% endblock %}
-                </a>
-            </div>
-        </div><!-- End Footer copyright -->
-
-    </footer><!-- ENd Footer -->
-    
-    <!-- Scroll Top -->
-    <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
     
     <!-- Vendor JS Files -->
     <script src="{{ url_for('static', filename='vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
@@ -110,7 +80,7 @@
     <script src="{{ url_for('static', filename='vendor/swiper/swiper-bundle.min.js') }}"></script>
     
     <!-- Main JS File -->
-    <script src="{{ url_for('static', filename='js/landing.js') }}"></script>
+    {% block page_scripts %}{% endblock %}
      
 </body>
 </html>

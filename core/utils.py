@@ -2,10 +2,11 @@
 import os
 import re
 import json
+from datetime import datetime
 from importlib import import_module
 
 import markdown as md
-from flask import Blueprint, session, url_for
+from flask import Blueprint, session, render_template
 
 from .config import app, db, migrate
 from .config import PAGES_DIR, SERVICES_DIR, ENTRIES
@@ -148,3 +149,14 @@ def get_store(apiname):
 def get_assets(uiname):
     folder = os.path.join(PAGES_DIR, uiname, 'assets')
     return __Folder(folder)
+
+
+# DEFAULT PAGES
+
+def render_coming_soon(deadline=None):
+    with app.app_context():
+        if deadline is None:
+            now = datetime.now()
+            deadline = f'{now.year}/12/31'
+        page = render_template('coming-soon.html', deadline=deadline)
+    return page

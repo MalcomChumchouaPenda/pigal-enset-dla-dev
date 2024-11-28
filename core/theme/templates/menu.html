@@ -32,12 +32,17 @@
 </li>
 {% endmacro %}
 
-{% macro menu(entries) %}
+{% macro menu(entries, started_url='') %}
 <ul>
-    {% for entry in entries|sort(attribute="pos") %}
-      {{ menu_item(entry) }}
-    {% endfor %}
-    <li><a class="btn btn-get-started" href="#">Get Started</a></li>
+  {% for entry in entries|sort(attribute="pos") %}
+    {{ menu_item(entry) }}
+  {% endfor %}
+
+  {% if started_url %}
+    <li>
+      <a class="btn btn-get-started" href="{{ started_url }}">Connexion</a>
+    </li>
+  {% endif %}
 </ul>
 {% endmacro %}
 

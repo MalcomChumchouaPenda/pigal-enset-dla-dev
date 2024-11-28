@@ -1,1 +1,0 @@
-Le département de Génie Forestier (GFO) de l'ENSET de Douala forme des experts en gestion et conservation des ressources forestières. Ses formations couvrent l'aménagement forestier, la gestion durable des forêts et la protection de l'environnement, préparant les étudiants à des carrières techniques et environnementales.

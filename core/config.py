@@ -37,7 +37,10 @@ migrate = Migrate(directory=migrations_dir)
 
 # BASIC ENTRIES
 
+LOGIN_ENTRY = dict(uid='login', children=[])
 LANDING_ENTRY = dict(uid='landing', children=[])
 DASHBOARD_ENTRY = dict(uid='dashboard', children=[])
-ENTRIES = dict(landing=LANDING_ENTRY, dashboard=DASHBOARD_ENTRY)
+ENTRIES = dict(login=LOGIN_ENTRY,
+               landing=LANDING_ENTRY, 
+               dashboard=DASHBOARD_ENTRY)
 

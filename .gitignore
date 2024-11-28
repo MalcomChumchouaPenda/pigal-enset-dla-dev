@@ -4,5 +4,6 @@ tests/
 **copy**.html
 **copy**.css
 **copy**.js
+**copy**/
 _inner_templates/
 node_modules/

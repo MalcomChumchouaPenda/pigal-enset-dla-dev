@@ -1,21 +1,21 @@
 {% extends 'landing.html' %}
 
-{% block page_title %}Actualites - ENSET Douala{% endblock %}
-{% block page_body_id %}events{% endblock %}
+{% block page_title %}Recherche - ENSET Douala{% endblock %}
+{% block page_body_id %}research{% endblock %}
 
 {% block page_hero %}
 <section id="hero" class="hero hero-25">
     <div class="info w-75">
-      <h1>Nos Actualites</h1>
+      <h1>Activites de Recherche</h1>
       <nav class="breadcrumbs">
         <ol>
           <li><a href="{{ url_for('home.index') }}">Home</a></li>
-          <li class="current">Actualites</li>
+          <li class="current">Recherche</li>
         </ol>
       </nav>
   </div>
   <div class="hero-bg">
-      <img src="{{ url_for('events.static', filename='img/hero.jpg') }}" alt="">
+      <img src="{{ url_for('research.static', filename='img/hero.jpg') }}" alt="">
   </div>
 </section>
 {% endblock %}
