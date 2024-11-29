@@ -17,3 +17,13 @@
     {% endfor %}
   {% endcall %}
 {% endblock %}
+
+{% block page_sections %}
+    
+ {{ coming_soon_section("Mot du Directeur", default_deadline(), id="welcome") }}
+ {{ coming_soon_section("A propos", default_deadline(), id="about") }}
+ {{ coming_soon_section("Stats", default_deadline(), id="stats") }}
+ {{ coming_soon_section("Actions", default_deadline(), id="features") }}
+ {{ coming_soon_section("Nos actualites", default_deadline(), id="events") }}
+
+{% endblock %}

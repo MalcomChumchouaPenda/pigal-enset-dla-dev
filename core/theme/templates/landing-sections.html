@@ -20,8 +20,8 @@
 </div>
 {% endmacro %}
 
-{% macro coming_soon_section(title, deadline) %}
-<section class="coming-soon section">
+{% macro coming_soon_section(title, deadline, id="") %}
+<section id="{{ id }}" class="coming-soon section">
     {{ section_title(title, emphasis=title, after="(En construction)")}}    
     <div class="container">
         <div class="row gy-1">

@@ -19,3 +19,10 @@
   </div>
   {% endcall %}
 {% endblock %}
+
+{% block page_sections %}
+    
+ {{ coming_soon_section("Notre mission", default_deadline(), id="goal") }}
+ {{ coming_soon_section("Nos Laboratoires", default_deadline(), id="labs") }}
+
+{% endblock %}
