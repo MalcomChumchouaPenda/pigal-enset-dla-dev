@@ -4,18 +4,18 @@
 {% block page_body_id %}research{% endblock %}
 
 {% block page_hero %}
-<section id="hero" class="hero hero-25">
-    <div class="info w-75">
-      <h1>Activites de Recherche</h1>
-      <nav class="breadcrumbs">
-        <ol>
-          <li><a href="{{ url_for('home.index') }}">Home</a></li>
-          <li class="current">Recherche</li>
-        </ol>
-      </nav>
+  {% call hero("25") %}
+  <div class="info w-75">
+    <h1>Activites de Recherche</h1>
+    <nav class="breadcrumbs">
+      <ol>
+        <li><a href="{{ url_for('home.index') }}">Home</a></li>
+        <li class="current">Recherche</li>
+      </ol>
+    </nav>
   </div>
   <div class="hero-bg">
       <img src="{{ url_for('research.static', filename='img/hero.jpg') }}" alt="">
   </div>
-</section>
+  {% endcall %}
 {% endblock %}

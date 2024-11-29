@@ -4,8 +4,8 @@
 {% block page_body_id %}events{% endblock %}
 
 {% block page_hero %}
-<section id="hero" class="hero hero-25">
-    <div class="info w-75">
+  {% call hero("25") %}
+  <div class="info w-75">
       <h1>Nos Actualites</h1>
       <nav class="breadcrumbs">
         <ol>
@@ -17,5 +17,5 @@
   <div class="hero-bg">
       <img src="{{ url_for('events.static', filename='img/hero.jpg') }}" alt="">
   </div>
-</section>
+  {% endcall %}
 {% endblock %}

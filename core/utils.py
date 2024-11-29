@@ -153,10 +153,12 @@ def get_assets(uiname):
 
 # DEFAULT PAGES
 
-def render_coming_soon(deadline=None):
+def default_deadline():
+    now = datetime.now()
+    return f'{now.year}/12/31'
+
+def render_coming_soon(title, style, deadline=default_deadline()):
     with app.app_context():
-        if deadline is None:
-            now = datetime.now()
-            deadline = f'{now.year}/12/31'
-        page = render_template('coming-soon.html', deadline=deadline)
+        page = render_template(f'{style}-coming-soon.html', 
+                               title=title, deadline=deadline)
     return page

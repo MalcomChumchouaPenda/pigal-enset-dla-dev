@@ -1,0 +1,85 @@
+
+{% macro coming_soon_counter(deadline) %}
+<div class="countdown d-flex justify-content-center" data-count="{{ deadline }}">
+    <div>
+        <h3 class="count-days">365</h3>
+        <h4>Jours</h4>
+    </div>
+    <div>
+        <h3 class="count-hours">1</h3>
+        <h4>Heures</h4>
+    </div>
+    <!-- <div>
+        <h3 class="count-minutes">0</h3>
+        <h4>Minutes</h4>
+    </div>
+    <div>
+        <h3 class="count-seconds">0</h3>
+        <h4>Secondes</h4>
+    </div> -->
+</div>
+{% endmacro %}
+
+{% macro coming_soon_section(title, deadline) %}
+<section class="coming-soon section">
+    {{ section_title(title, emphasis=title, after="(En construction)")}}    
+    <div class="container">
+        <div class="row gy-1">
+            <div class="col-12">
+                Cette section est en cours de maintenance ou de developpement. 
+                Elle sera disponible dans:
+            </div>
+            <div class="col-12 countdown" data-count="{{ deadline }}">
+                <i class="me-2 bi bi-clock"></i>
+                <span><em class="count-days">0</em> jours,</span> 
+                <span><em class="count-hours">0</em> heures,</span>
+                <span><em class="count-minutes">0</em> minutes et</span>
+                <span><em class="count-seconds">0</em> secondes.</span>
+            </div>
+        </div>
+    </div>
+  </section>
+{% endmacro %}
+
+
+{% macro section_title(
+    title, 
+    before="", 
+    after="", 
+    emphasis="", 
+    sub=true) %}
+<div class="container section-title">
+    <h2>{{ title }}</h2>
+    {% if sub %}
+    <div>
+        <span>{{ before }}</span> 
+        <span class="description-title">{{ emphasis }}</span>
+        <span>{{ after }}</span> 
+    </div>
+    {% endif %}
+</div>
+{% endmacro %}
+
+{% macro hero(size) %}
+<section id="hero" class="hero hero-{{ size }} pt-0 pb-5">
+    {{ caller() }}
+</section>
+{% endmacro %}
+
+{% macro hero_carousel(size, interval="2000") %}
+<section id="hero" class="hero hero-{{ size }} pt-0 pb-5">  
+    <div id="hero-carousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="{{ interval }}">
+
+        {{ caller() }}
+
+        <a class="carousel-control-prev" href="#hero-carousel" role="button" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
+        </a>
+        <a class="carousel-control-next" href="#hero-carousel" role="button" data-bs-slide="next">
+            <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
+        </a>
+        <ol class="carousel-indicators"></ol>
+    </div>
+</section>
+{% endmacro %}
+

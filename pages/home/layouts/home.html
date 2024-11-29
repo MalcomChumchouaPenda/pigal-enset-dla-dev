@@ -1,23 +1,19 @@
 {% extends 'landing.html' %}
 
-{% block page_title %}Index - ENSET Douala{% endblock %}
+{% block page_title %}ENSET Douala{% endblock %}
 {% block page_body_id %}home{% endblock %}
 
 {% block page_hero %}
-<section id="hero" class="hero hero-large py-5">
-  <div class="info w-75 my-5">
-    <h1>Theme landing-a1</h1>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-      sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-      Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi 
-      ut aliquip ex ea commodo consequat.
-    </p>
-    <a href="#about" class="btn-get-started my-4">Get Started</a>
-  </div>
-  <div class="hero-bg">
-    <img src="{{ url_for('home.static', filename='img/hero.jpg') }}" alt="">
-  </div>
-</section>
-{% endblock %}
+  {% call hero_carousel("large", interval="3000") %}
+    {% for hero in heros %}
 
+      <div class="carousel-item {%if loop.first %} active {% endif %}">
+        <img src="{{ url_for('home.static', filename=hero.img) }}" alt="">
+        <div class="carousel-container">
+          {{ hero.msg | safe }}
+        </div>
+      </div><!-- End Carousel Item -->
+
+    {% endfor %}
+  {% endcall %}
+{% endblock %}

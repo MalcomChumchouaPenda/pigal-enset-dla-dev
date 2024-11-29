@@ -32,6 +32,11 @@
 </head>
 <body id="{% block page_body_id %}{% endblock %}">
 
+    <!-- Jinja macros -->
+    {% from "menu.html" import menu %}
+    {% from "landing-sections.html" import coming_soon_section, section_title %}
+    {% from "landing-sections.html" import hero, hero_carousel %}
+
     <!-- Preloader -->
     <div id="preloader"></div>
     <script src="{{ url_for('static', filename='js/preloader.js') }}"></script>
@@ -52,9 +57,10 @@
 
         <!-- Header menu -->
         <nav class="nav-menu ms-auto d-flex justify-content-end align-items-center">
-          {% from "menu.html" import menu %}
+
           {% block page_nav_menu %}{{ menu(landing, started_url='/') }}{% endblock %}
           <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+
         </nav><!-- End Header menu -->
 
       </div>
@@ -62,13 +68,11 @@
     
     <!-- Main  -->
     <main id="main" class="main">
-    
-        <!-- Hero Section -->
-        {% block page_hero %}{% endblock %}
 
-        <!-- Custom Sections -->
-         {% from "sections.html" import section_title %}
-        {% block page_sections %}{% endblock %}
+        {% block page_hero %}{% endblock %}
+        {% block page_sections %}
+          {{ coming_soon_section("Section", default_deadline()) }}
+        {% endblock %}
     
     </main><!-- End Main -->
     
@@ -111,6 +115,7 @@
     
     <!-- Main JS File -->
     <script src="{{ url_for('static', filename='js/landing.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/coming-soon.js') }}"></script>
      
 </body>
 </html>

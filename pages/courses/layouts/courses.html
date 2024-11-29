@@ -4,18 +4,18 @@
 {% block page_body_id %}courses{% endblock %}
 
 {% block page_hero %}
-<section id="hero" class="hero hero-25">
+  {% call hero("25") %}
     <div class="info w-75">
-      <h1>Nos Formations</h1>
-      <nav class="breadcrumbs">
-        <ol>
-          <li><a href="{{ url_for('home.index') }}">Home</a></li>
-          <li class="current">Formations</li>
-        </ol>
-      </nav>
-  </div>
-  <div class="hero-bg">
-      <img src="{{ url_for('courses.static', filename='img/hero.jpg') }}" alt="">
-  </div>
-</section>
+        <h1>Nos Formations</h1>
+        <nav class="breadcrumbs">
+          <ol>
+            <li><a href="{{ url_for('home.index') }}">Home</a></li>
+            <li class="current">Formations</li>
+          </ol>
+        </nav>
+    </div>
+    <div class="hero-bg">
+        <img src="{{ url_for('courses.static', filename='img/hero.jpg') }}" alt="">
+    </div>
+  {% endcall %}
 {% endblock %}
