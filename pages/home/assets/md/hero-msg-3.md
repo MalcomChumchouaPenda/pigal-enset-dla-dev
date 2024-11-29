@@ -1,5 +1,7 @@
-## Welcome with message 3
+## Realisez vos activites en ligne
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
+Connectez vous a des espaces dediees afin de benefier de services et de realiser vos activites academiques ou administratives en ligne
 
-<a href="#about" class="btn-get-started">Read Other</a>
+- [Etudiants](#)
+- [Enseignants](#)
+- [Responsables](#)

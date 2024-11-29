@@ -1,5 +1,6 @@
-## Welcome with message 2
+## Decouvrez nos actualites
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit
+Obtenez les informations les plus recentes sur les opportunites,
+les activites et les evenements a venir au sein de notre etablissement
 
-<a href="#about" class="btn-get-started">Read More</a>
+[Actualites](#)

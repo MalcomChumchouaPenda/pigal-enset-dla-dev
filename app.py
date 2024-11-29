@@ -4,6 +4,7 @@ from core.config import app, ENTRIES
 from core.utils import register_api, register_ui
 from core.utils import init_db
 from core.utils import default_deadline
+from pages.home.constants import CONTACT, LANDING_MENU, LOGIN_MENU
 
 
 register_api()
@@ -21,7 +22,12 @@ def inject_entries():
 
 @app.context_processor
 def inject_defaults():
-    return {'default_deadline':default_deadline}
+    return {'default_deadline':default_deadline, 'contact':CONTACT}
+
+@app.context_processor
+def inject_menus():
+    return {'landing':LANDING_MENU['children'], 
+            'login':LOGIN_MENU['children']}
 
 @app.errorhandler(404)
 def not_found(e):

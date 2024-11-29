@@ -597,7 +597,37 @@ justify-content: center;
 
 .hero .info p {
   color: color-mix(in srgb, var(--default-color), transparent 20%);
-  font-size: 18px;
+  font-weight: 400;
+  font-size: 25px;
+  max-width: 50%;
+}
+
+.hero .info ul {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+  font-size: 16px;
+  font-weight: 400;
+
+}
+.hero .info a,
+.hero .info ul li>a {
+  color: var(--contrast-color);
+  background: var(--accent-color);
+  font-family: var(--heading-font);
+  font-weight: 500;
+  font-size: 15px;
+  letter-spacing: 1px;
+  display: inline-block;
+  padding: 8px 32px;
+  border-radius: 4px;
+  transition: 0.4s;
+  margin: 15px 10px;
+  animation: fadeInLeft 1s both 0.4s;
+
 }
 
 .hero .hero-bg {
@@ -928,6 +958,15 @@ margin: 4px 10px;
 color: var(--accent-color);
 } 
 
+/* Section buttons */
+
+.section .btn.btn-view-all {
+  margin-top: 22px;
+  padding: 15px 50px;
+  font-size: 16px;
+  font-weight: 400;
+  border-radius: 8px;
+}
 
 /*--------------------------------------------------------------
 # Global Footer
@@ -1425,7 +1464,7 @@ color: var(--accent-color);
   --------------------------------------------------------------*/
   .services .service-item {
   position: relative;
-  height: 100%;
+  /* height: 85%; */
   margin-bottom: 30px;
   }
   

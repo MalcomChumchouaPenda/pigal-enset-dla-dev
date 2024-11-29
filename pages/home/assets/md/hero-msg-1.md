@@ -1,5 +1,6 @@
-## Welcome with message 1
+## Bienvenue a l'ENSET de Douala
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+Vous etes sur le portail web de l'ENSET de Douala. Decouvrer nos programmes de formation ou de recherche
 
-<a href="#about" class="btn-get-started">Read More</a>
+[Formations](#)
+[Recherche](#)

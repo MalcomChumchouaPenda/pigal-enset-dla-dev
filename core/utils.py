@@ -61,11 +61,27 @@ def register_api():
                     print('registering >', routes.api)
                     app.register_blueprint(routes.api)
 
-def add_entry(parent, pos, uid, text, url=None, point=None, **kwargs):
-    entry = dict(uid=uid, text=text, url=url, point=point, 
-                 kwargs=kwargs, children=[], pos=pos)
-    ENTRIES[parent]['children'].append(entry)
-    ENTRIES[uid] = entry
+# PAGE ENTRIES
+
+class _Entry(dict):
+
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
+        self['children'] = []
+
+    def add_entry(self, uid, text, parent=None, url=None, point=None, **kwargs):
+        entry = _Entry(uid=uid, text=text, url=url, 
+                        point=point, kwargs=kwargs, 
+                        pos=len(self['children']))
+        self[uid] = entry
+        if parent is None:
+            self['children'].append(entry)
+        else:
+            self[parent]['children'].append(entry)
+
+def create_menu():
+    return _Entry()
+
 
 
 # DATABASE METHODS
@@ -113,7 +129,6 @@ def read_json(filepath):
     if text:
         data = json.loads(text)
         return data
-
 
 def read_markdown(filepath):
     text = read_text(filepath)

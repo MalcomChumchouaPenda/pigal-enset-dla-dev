@@ -1,0 +1,32 @@
+[
+    {
+        "id":"news-1",
+        "title":"Veritatis asperiores",
+        "level":0
+    },
+    {
+        "id":"news-2",
+        "title":"Magnam soluta odio exercitationem reprehenderi",
+        "level":0
+    },
+    {
+        "id":"news-3",
+        "title":"Voluptatem et qui exercitationem",
+        "level":0
+    },
+    {
+        "id":"news-4",
+        "title":"Duis aute irure dolor",
+        "level":1
+    },
+    {
+        "id":"news-5",
+        "title":"Exea commodo dignissimos provident",
+        "level":1
+    },
+    {
+        "id":"news-6",
+        "title":"Ullamco laboris nisi ut aliquip consequat",
+        "level":2
+    }
+]
