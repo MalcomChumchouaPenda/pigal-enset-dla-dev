@@ -1,0 +1,9 @@
+
+.courses {
+    border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 75%);
+    border-radius: 0%;
+}
+
+.course-item {
+    border-color: transparent;
+}

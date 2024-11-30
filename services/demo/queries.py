@@ -3,10 +3,9 @@ import os
 # import pandas as pd
 from core.utils import get_store
 
+
 store = get_store('demo')
 
-def get_courses():
-    return store.read_json('md/courses-tests.json')
 
 def get_course_types(short=True):
     if short is True:
@@ -47,17 +46,27 @@ def get_courses(formation=None, unit=None):
     courses = store.read_json('json/courses.json')
     diplomas = store.read_json('json/diplomas.json')
     diplomas = {d['id']:d for d in diplomas}
+    levels = store.read_json('json/levels.json')
+    levels = {l['id']:l for l in levels}
     options = get_options(formation=formation, unit=unit)
     options = {o['id']:o for o in options}
     filters = list(options.keys())
-    items = []
-    for item in courses:
-        if item['option_id'] in filters:
-            item.update(diplomas[item['diploma_id']])
-            item.update(options[item['option_id']])
-            item['id'] = f"{item['option_id']}-{item['diploma_id']}"
-            items.append(item)
-    return items
+    results = []
+    for course in courses:
+        option_id = course['option_id']
+        if  option_id in filters:
+            option = options[option_id]
+            diploma_id = course['diploma_id']
+            diploma = diplomas[diploma_id]
+            level_id = course['level_id']
+            level = levels[level_id]
+            course['level_name'] = level['nom']
+            course['diploma_name'] = diploma['nom']
+            course['formation_id'] = option['formation_id']
+            course.update(options[course['option_id']])
+            course['id'] = f"{option_id}-{level_id}"
+            results.append(course)
+    return results
 
 # LRVB - LGPR - LME - GIA - LASED - LAREGA - LAMPE
 

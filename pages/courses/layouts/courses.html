@@ -1,28 +1,97 @@
-{% extends 'landing.html' %}
+{% extends 'landing-page.html' %}
 
 {% block page_title %}Formations - ENSET Douala{% endblock %}
 {% block page_body_id %}courses{% endblock %}
 
 {% block page_hero %}
   {% call hero("25") %}
-    <div class="info w-75">
-        <h1>Nos Formations</h1>
-        <nav class="breadcrumbs">
-          <ol>
-            <li><a href="{{ url_for('home.index') }}">Home</a></li>
-            <li class="current">Formations</li>
-          </ol>
-        </nav>
-    </div>
-    <div class="hero-bg">
-        <img src="{{ url_for('courses.static', filename='img/hero.jpg') }}" alt="">
-    </div>
+  <div class="info">
+    {{ hero_msg | safe }}
+  </div>
+  <div class="hero-bg">
+      <img src="{{ url_for('research.static', filename='img/hero.jpg') }}" alt="">
+  </div>
   {% endcall %}
 {% endblock %}
 
 {% block page_sections %}
     
- {{ coming_soon_section("Nos programmes", default_deadline(), id="programs") }}
- {{ coming_soon_section("Nos Domaines", default_deadline(), id="domains") }}
+<!-- Type Formation Section -->
+<section id="about" class="about section light-background pt-5">
+  {{ section_title("Programmes", before="Nos programmes de", emphasis="formation")}}
+  <div class="container" data-aos="fade-up" data-aos-delay="100">
+    {% for item in formations %}
+      {% if loop.index0 % 2 == 0 %}        
+        <div class="row gy-4 mb-3">
+          <div class="col-lg-6 position-relative d-flex align-items-center order-lg-2" data-aos="fade-up" data-aos-delay="200">
+            <img src="{{ url_for('courses.static', filename=item.image)}}" class="img-fluid flex-shrink-0" alt="">
+          </div>
+          <div class="col-lg-6 content order-lg-1 pt-1" data-aos="fade-up" data-aos-delay="100">
+            {{ item.text | safe }}
+          </div>
+        </div>
+      {% else %}  
+        <div class="row gy-4 mb-3">
+          <div class="col-lg-6 position-relative d-flex align-items-center order-lg-1" data-aos="fade-up" data-aos-delay="200">
+            <img src="{{ url_for('courses.static', filename=item.image)}}" class="img-fluid flex-shrink-0" alt="">
+          </div>
+          <div class="col-lg-6 content order-lg-2 pt-1" data-aos="fade-up" data-aos-delay="100">
+            {{ item.text | safe }}
+          </div>
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+</section><!-- End Type Formation Section -->
 
+<!-- Domaines technniques -->
+<section id="departments" class="services services-imaged section pt-5">
+  {{ section_title("Domaines", before="Nos", emphasis="Domaines de formation") }}
+
+  <div class="container">
+    <div class="row row-cols-1 row-cols-md-3 gy-4">
+    {% for item in departments %}  
+      <div class="col" data-aos="fade-up" data-aos-delay="100">
+        <div class="card service-item position-relative h-100">
+          <img src="{{ url_for('courses.static', filename=item.image)}}" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h4 class="card-title">{{ item.nom }} ({{item.id }})</h4>
+            <p class="card-text">{{ item.text | safe }}</p>
+            <div class="d-flex justify-content-start">
+              <a href="{{ url_for('courses.list', unit=item.id) }}" class="card-link">
+                Liste des formations en {{item.id }}
+                <i class="bi bi-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div><!-- End Service Item -->
+    {% endfor %}
+    </div>
+  </div>  
+</section><!-- End Domaines techniques -->
+
+<!-- Domaines de Recherche -->
+<section id="labs" class="services services-numbered section light-background">
+  {{ section_title("Recherche", before="Nos", emphasis="Domaines de Recherche") }}
+  <div class="container">
+      <div class="row  row-cols-1 row-cols-md-3 no-gutters">
+      {% for item in labs %}
+          <div class="col card pt-2" data-aos="fade-up" data-aos-delay="100">
+              <div class="card-header">{{ item.id }}</div>
+              <div class="card-body">
+                  <h4 class="card-title mt-2">{{ item.nom }}</h4>
+                  <p class="card-text">{{ item.text | safe }}</p>
+                  <div class="d-flex justify-content-start">
+                    <a href="{{ url_for('courses.list', formation='M2R', unit=item.id) }}" class="card-link">
+                      Liste des Masters du Laboratoire {{ item.id }} 
+                      <i class="bi bi-arrow-right"></i>
+                    </a>
+                  </div>
+              </div>
+          </div><!-- End Card Item -->
+      {% endfor %}
+      </div>
+  </div>  
+</section><!-- End Domaines de recherche -->
 {% endblock %}

@@ -28,6 +28,7 @@
     <link href="{{ url_for('static', filename='css/color.css') }}" rel="stylesheet">
     <link href="{{ url_for('static', filename='css/landing.css') }}" rel="stylesheet">
     <link href="{{ url_for('static', filename='css/preloader.css') }}" rel="stylesheet">
+    {% block page_css %}{% endblock %}
 
 </head>
 <body id="{% block page_body_id %}{% endblock %}">
@@ -166,6 +167,7 @@
     <!-- Main JS File -->
     <script src="{{ url_for('static', filename='js/landing.js') }}"></script>
     <script src="{{ url_for('static', filename='js/coming-soon.js') }}"></script>
-     
+    {% block page_js %}{% endblock %}
+
 </body>
 </html>

@@ -1,0 +1,34 @@
+[
+    {
+        "id":"DIPET1-NIV1",
+        "nom":"1er Annee DIPET I"
+    },
+    {
+        "id":"DIPET1-NIV3",
+        "nom":"3e Annee DIPET I"
+    },
+    {
+        "id":"DIPET2-NIV4",
+        "nom":"1er Annee DIPET II"
+    },
+    {
+        "id":"BTS-NIV1",
+        "nom":"1er Annee BTS"
+    },
+    {
+        "id":"LPRO-NIV3",
+        "nom":"3e Annee Licence Professionnel"
+    },
+    {
+        "id":"MPRO-NIV4",
+        "nom":"1er Annee Master Professionnel"
+    },
+    {
+        "id":"MPRO-NIV5",
+        "nom":"2eme Annee Master Professionnel"
+    },
+    {
+        "id":"M2R-NIV5",
+        "nom":"2eme Annee Master Recherche"
+    }
+]

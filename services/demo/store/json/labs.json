@@ -1,0 +1,14 @@
+[
+    {
+        "id":"LME",
+        "nom":"Laboratoire de Mécanique"
+    },
+    {
+        "id":"GIA",
+        "nom":"Laboratoire de Génie Informatique et Automatique"
+    },
+    {
+        "id":"LAREGA",
+        "nom":"Laboratoire de Recherche en Gestion Appliquée"
+    }
+]

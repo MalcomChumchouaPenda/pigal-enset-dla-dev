@@ -1,0 +1,32 @@
+[
+    {
+        "id":"DIPET1",
+        "abbr":"DIPET I (LICENCE)",
+        "nom":"DIPET I"
+    },
+    {
+        "id":"DIPET2",
+        "abbr":"DIPET II (MASTER)",
+        "nom":"DIPET II"
+    },
+    {
+        "id":"LPRO",
+        "abbr":"LICENCE PRO",
+        "nom":"Licence Professionnel"
+    },
+    {
+        "id":"MPRO",
+        "abbr":"MASTER PRO",
+        "nom":"Master Professionnel"
+    },
+    {
+        "id":"M2R",
+        "abbr":"MASTER RECHERCHE",
+        "nom":"Master II Recherche"
+    },
+    {
+        "id":"BTS",
+        "abbr":"BTS",
+        "nom":"Brevet de Technicien Superieur"
+    }
+]

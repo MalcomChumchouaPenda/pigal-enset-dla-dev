@@ -598,8 +598,8 @@ justify-content: center;
 .hero .info p {
   color: color-mix(in srgb, var(--default-color), transparent 20%);
   font-weight: 400;
-  font-size: 25px;
-  max-width: 50%;
+  font-size: 16px;
+  max-width: 100%;
 }
 
 .hero .info ul {
@@ -681,18 +681,33 @@ z-index: 2;
 }  
 
 
-.hero .breadcrumbs ol {
-  display: flex;
-  flex-wrap: wrap;
-  list-style: none;
-  justify-content: center;
-  padding: 0;
-  margin: 0;
-  font-size: 16px;
-  font-weight: 400;
+.hero .breadcrumb {
+  /* display: flex; */
+  /* flex-wrap: wrap; */
+  /* list-style: none; */
+  /* justify-content: center; */
+  padding-top: 10px;
+  /* margin: 0; */
+  /* font-size: 16px; */
+  /* font-weight: 400; */
 }
 
-.hero .breadcrumbs ol li+li {
+
+.hero .breadcrumb-item a {
+  color: var(--accent-color);
+  /* color: red; */
+  /* background-color: transparent; */
+  /* padding: 0; */
+  /* margin: 0; */
+  /* font-size: 16px; */
+  /* font-weight: 400; */
+}
+
+.hero .breadcrumb-item a:hover{
+  color: color-mix(in srgb, var(--accent-color), transparent 20%);  
+}
+
+/* .hero .breadcrumbs ol li+li {
   padding-left: 10px;
 }
 
@@ -701,7 +716,7 @@ z-index: 2;
   display: inline-block;
   padding-right: 10px;
   color: color-mix(in srgb, var(--default-color), transparent 70%);
-}
+} */
 
 
 .hero .btn-get-started {
@@ -958,7 +973,7 @@ margin: 4px 10px;
 color: var(--accent-color);
 } 
 
-/* Section buttons */
+/* Section controls */
 
 .section .btn.btn-view-all {
   margin-top: 22px;
@@ -967,6 +982,26 @@ color: var(--accent-color);
   font-weight: 400;
   border-radius: 8px;
 }
+
+.section input {
+  box-shadow: none;
+}
+
+.section input:focus {
+  box-shadow: none;
+  border-color: color-mix(in srgb, var(--accent-color), transparent 50%);
+}
+
+.section input::placeholder {
+  font-style: italic;
+  opacity: 0.5;
+}
+
+
+/* .section .btn i.bi {
+  font-size: 15px;
+  font-weight: bold;
+} */
 
 /*--------------------------------------------------------------
 # Global Footer
@@ -1125,126 +1160,6 @@ color: var(--accent-color);
   visibility: visible;
   opacity: 1;
 }
-
-
-/*--------------------------------------------------------------
-# Coming Soon Section
---------------------------------------------------------------*/
-
-#coming-soon .main {
-  min-height: 80vh;
-  margin: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-#coming-soon .header {
-  --background-color: rgba(255, 255, 255, 0.95);
-  --default-color: var(--secondary-dark-color);
-  --heading-color: var(--secondary-dark-color);
-  --nav-color: var(--secondary-dark-color);
-  --nav-hover-color: var(--secondary-dark-color);
-}
-
-#coming-soon .header .btn-get-started,
-#coming-soon .header .btn-get-started:focus {
-  color: var(--contrast-color);
-  background: var(--accent-color);
-}
-
-#coming-soon .header .btn-get-started:hover,
-#coming-soon .header .btn-get-started:focus:hover {
-  color: var(--contrast-color);
-  background-color: color-mix(in srgb, var(--accent-color), transparent 20%);
-  border-color: transparent;
-}
-
-#coming-soon .hero {
-  --background-color: rgba(255, 255, 255, 0.95);
-  --default-color: var(--secondary-dark-color);
-  --heading-color: var(--secondary-dark-color);
-  width: 100%;
-  height: 100%;
-  position: relative;
-  padding: 180px 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-#coming-soon .hero h2 {
-  margin: 25px 0;
-  font-size: 48px;
-  font-weight: 700;
-  color: var(--default-color)
-}
-
-#coming-soon .hero p {
-  margin: 10px 0 0 0;
-  font-size: 24px;
-  color: var(--heading-color);
-}
-
-@media (max-width: 991px) {
-  #coming-soon .hero h2 {
-    font-size: 32px;
-  }
-
-  #coming-soon .hero p {
-    font-size: 16px;
-  }
-}
-
-#coming-soon .hero .countdown {
-  margin-top: 25px;
-}
-
-#coming-soon .hero .countdown div {
-  text-align: center;
-  border: none;
-  border-radius: 8px;
-  margin: 10px 10px;
-  width: 100px;
-  padding: 15px 0;
-  background-color: var(--secondary-light-color);
-}
-
-#coming-soon .hero .countdown div h3 {
-  font-family: var(--default-font);
-  font-weight: 700;
-  font-size: 32px;
-  margin-bottom: 15px;
-}
-
-#coming-soon .hero .countdown div h4 {
-  font-size: 16px;
-  font-weight: 600;
-}
-
-@media (max-width: 991px) {
-  #coming-soon .hero .countdown div {
-    width: 70px;
-    padding: 10px 0;
-    margin: 10px 8px;
-  }
-
-  #coming-soon .hero .countdown div h3 {
-    font-size: 24px;
-    margin-bottom: 10px;
-  }
-
-  #coming-soon .hero .countdown div h4 {
-    font-size: 12px;
-    font-weight: 500;
-  }
-}
-
-#coming-soon .footer {
-  min-height: 20vh;
-  margin:0;
-}
-
 
 /*--------------------------------------------------------------
 # About Section
@@ -2697,4 +2612,405 @@ color: var(--accent-color);
       width: 75%;
     }
   }
+
+
+/*--------------------------------------------------------------
+# Coming Soon Page
+--------------------------------------------------------------*/
+
+#coming-soon .main {
+  min-height: 80vh;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#coming-soon .header {
+  --background-color: rgba(255, 255, 255, 0.95);
+  --default-color: var(--secondary-dark-color);
+  --heading-color: var(--secondary-dark-color);
+  --nav-color: var(--secondary-dark-color);
+  --nav-hover-color: var(--secondary-dark-color);
+}
+
+#coming-soon .header .btn-get-started,
+#coming-soon .header .btn-get-started:focus {
+  color: var(--contrast-color);
+  background: var(--accent-color);
+}
+
+#coming-soon .header .btn-get-started:hover,
+#coming-soon .header .btn-get-started:focus:hover {
+  color: var(--contrast-color);
+  background-color: color-mix(in srgb, var(--accent-color), transparent 20%);
+  border-color: transparent;
+}
+
+#coming-soon .hero {
+  --background-color: rgba(255, 255, 255, 0.95);
+  --default-color: var(--secondary-dark-color);
+  --heading-color: var(--secondary-dark-color);
+  width: 100%;
+  height: 100%;
+  position: relative;
+  padding: 180px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#coming-soon .hero h2 {
+  margin: 25px 0;
+  font-size: 48px;
+  font-weight: 700;
+  color: var(--default-color)
+}
+
+#coming-soon .hero p {
+  margin: 10px 0 0 0;
+  font-size: 24px;
+  color: var(--heading-color);
+}
+
+@media (max-width: 991px) {
+  #coming-soon .hero h2 {
+    font-size: 32px;
+  }
+
+  #coming-soon .hero p {
+    font-size: 16px;
+  }
+}
+
+#coming-soon .hero .countdown {
+  margin-top: 25px;
+}
+
+#coming-soon .hero .countdown div {
+  text-align: center;
+  border: none;
+  border-radius: 8px;
+  margin: 10px 10px;
+  width: 100px;
+  padding: 15px 0;
+  background-color: var(--secondary-light-color);
+}
+
+#coming-soon .hero .countdown div h3 {
+  font-family: var(--default-font);
+  font-weight: 700;
+  font-size: 32px;
+  margin-bottom: 15px;
+}
+
+#coming-soon .hero .countdown div h4 {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+@media (max-width: 991px) {
+  #coming-soon .hero .countdown div {
+    width: 70px;
+    padding: 10px 0;
+    margin: 10px 8px;
+  }
+
+  #coming-soon .hero .countdown div h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+
+  #coming-soon .hero .countdown div h4 {
+    font-size: 12px;
+    font-weight: 500;
+  }
+}
+
+#coming-soon .footer {
+  min-height: 20vh;
+  margin:0;
+}
+
+/*--------------------------------------------------------------
+# Listing Page
+--------------------------------------------------------------*/
+
+#listing .main {
+  min-height: 80vh;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: start;
+}
+
+#listing .header {
+  --background-color: rgba(255, 255, 255, 0.95);
+  --default-color: var(--secondary-dark-color);
+  --heading-color: var(--secondary-dark-color);
+  --nav-color: var(--secondary-dark-color);
+  --nav-hover-color: var(--secondary-dark-color);
+}
+
+#listing .header .btn-get-started,
+#listing .header .btn-get-started:focus {
+  color: var(--contrast-color);
+  background: var(--accent-color);
+}
+
+#listing .header .btn-get-started:hover,
+#listing .header .btn-get-started:focus:hover {
+  color: var(--contrast-color);
+  background-color: color-mix(in srgb, var(--accent-color), transparent 20%);
+  border-color: transparent;
+}
+
+#listing .hero {
+  --background-color: rgba(255, 255, 255, 0.95);
+  --default-color: var(--secondary-dark-color);
+  --heading-color: var(--secondary-dark-color);
+  width: 100%;
+  min-height: 15%;
+  position: relative;
+  padding: 140px 0 0 0;
+  display: flex;
+  align-items: start;
+  justify-content: start;
+}
+
+#listing .hero h1 {
+  margin: 25px 0 0 0;
+  font-size: 36px;
+  font-weight: 800;
+  color: var(--default-color)
+}
+
+#listing .hero h2 {
+  margin: 25px 0 0 0;
+  font-size: 32px;
+  font-weight: 800;
+  color: var(--default-color)
+}
+
+#listing .hero h3 {
+  margin: 25px 0 0 0;
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--default-color)
+}
+
+#listing .hero h4 {
+  margin: 25px 0 0 0;
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--default-color)
+}
+
+#listing .hero h5 {
+  margin: 25px 0 0 0;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--default-color)
+}
+
+#listing .hero h6 {
+  margin: 25px 0 0 0;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--default-color)
+}
+
+
+#listing .hero p {
+  margin: 10px 0 0 0;
+  font-size: 20px;
+  color: var(--heading-color);
+}
+
+#listing .results {
+  width: 100%;
+  font-size: 16px;
+}
+
+#listing .results h1 {
+  font-family: var(--nav-font);
+  font-size: 26px;
+  font-weight: 700px;
+}
+
+#listing .results h2 {
+  font-family: var(--nav-font);
+  font-size: 24px;
+  font-weight: 700px;
+}
+
+#listing .results h3 {
+  font-family: var(--nav-font);
+  font-size: 22px;
+  font-weight: 700px;
+}
+
+#listing .results h4 {
+  font-family: var(--nav-font);
+  font-size: 20px;
+  font-weight: 700px;
+}
+
+#listing .results h5 {
+  font-family: var(--nav-font);
+  font-size: 18px;
+  font-weight: 700px;
+  font-style: italic;
+}
+
+#listing .results h6 {
+  font-family: var(--nav-font);
+  font-size: 16px;
+  font-weight: 700px;
+  font-style: italic;
+}
+
+#listing .results a {
+  padding: 0;
+  color: var(--accent-color);
+  text-decoration: underline;
+  text-underline-offset: 7px;
+}
+
+#listing .results a:hover {
+  color: color-mix(in srgb, var(--accent-color), transparent 20%);
+}
+#listing .results .btn-link {
+  padding: 12px 4px;
+}
+
+
+#listing .pagination-page-info {
+  color: var(--default-color);
+  opacity: 0.75;
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+#listing .pagination .page-link:focus {
+  box-shadow: none;
+}
+
+#listing .pagination .page-item .page-link {
+  padding: 5px 10px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+#listing .pagination .page-item.active .page-link {
+  background-color: var(--accent-color);
+  border-color: var(--accent-color);
+}
+
+#listing .pagination .page-item.disabled .page-link {
+  color: var(--default-color);
+  opacity: 0.5;
+}
+
+
+
+#listing .section .container {
+  padding-left: 200px;
+  margin-left: 0;
+}
+
+#listing .footer {
+  min-height: 20vh;
+  margin:0;
+}
+
+@media (max-width: 991px) {
+  #listing .hero {
+    padding: 140px 0 0 0;
+  }
+    
+  #listing .hero h1 {
+    font-size: 28px;
+    font-weight: 800;
+  }
+
+  #listing .hero h2 {
+    font-size: 24px;
+    font-weight: 800;
+  }
+
+  #listing .hero h3 {
+    font-size: 20px;
+    font-weight: 800;
+  }
+
+  #listing .hero h4 {
+    font-size: 20px;
+    font-weight: 700;
+  }
+
+  #listing .hero h5 {
+    font-size: 18px;
+    font-weight: 700;
+  }
+
+  #listing .hero h6 {
+    font-size: 16px;
+    font-weight: 700;
+  }
+
+  #listing .hero p {
+    font-size: 14px;
+  }
+
+  #listing .results {
+    font-size: 14px;
+    line-height: 1.8;
+  }
   
+  #listing .results h1 {
+    font-family: var(--nav-font);
+    font-size: 26px;
+    font-weight: 700px;
+  }
+  
+  #listing .results h2 {
+    font-family: var(--nav-font);
+    font-size: 24px;
+    font-weight: 700px;
+  }
+  
+  #listing .results h3 {
+    font-family: var(--nav-font);
+    font-size: 22px;
+    font-weight: 700px;
+  }
+  
+  #listing .results h4 {
+    font-family: var(--nav-font);
+    font-size: 20px;
+    font-weight: 700px;
+  }
+  
+  #listing .results h5 {
+    font-family: var(--nav-font);
+    font-size: 18px;
+    font-weight: 700px;
+    font-style: italic;
+  }
+  
+  #listing .results h6 {
+    font-family: var(--nav-font);
+    font-size: 16px;
+    font-weight: 700px;
+    font-style: italic;
+  }
+  
+  #listing .section .container {
+    padding-left: 40px;
+    margin-left: 0;
+  }
+}
+

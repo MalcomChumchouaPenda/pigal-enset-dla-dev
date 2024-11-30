@@ -1,0 +1,30 @@
+[
+    {
+        "id":"GEL",
+        "nom":"Génie Electrique"
+    },
+    {
+        "id":"GINFO",
+        "nom":"Génie Informatique"
+    },
+    {
+        "id":"GCH",
+        "nom":"Génie Chimique"
+    },
+    {
+        "id":"GCI",
+        "nom":"Génie Civil"
+    },
+    {
+        "id":"STEG",
+        "nom":"Sciences et Techniques Economiques de Gestion"
+    },
+    {
+        "id":"TAD",
+        "nom":"Techniques Administratives"
+    },
+    {
+        "id":"SED",
+        "nom":"Sciences de l'Education"
+    }
+]

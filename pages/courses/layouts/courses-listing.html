@@ -1,0 +1,65 @@
+{% extends 'landing-listing.html' %}
+
+{% block page_copyright %}PIGAL ENSET{% endblock %}
+{% block page_author_name %}Malcom Chumchoua Penda{% endblock %}
+
+{% block listing_topic %} Formations {% endblock %}
+{% block listing_css %} 
+  <link href="{{ url_for('courses.static', filename='css/courses.css') }}" rel="stylesheet">
+{% endblock %}
+
+{% block listing_header %} 
+<h3>{{ header.title }}</h3>
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="{{ url_for('home.index') }}">Accueil</a></li>
+    <li class="breadcrumb-item"><a href="{{ url_for('courses.index') }}">Formations</a></li>
+    <li class="breadcrumb-item active" aria-current="page">{{ header.link }}</li>
+  </ol>
+</nav>
+{% endblock %}
+
+{% block listing_search_form %}
+<form>
+    <div class="input-group mb-3">
+        <input type="text" class="form-control" placeholder="Rechercher une formation" aria-label="Search filter" aria-describedby="button-addon2">
+        <button class="btn btn-primary" type="button" id="button-addon2">
+            <i class="bi bi-search"></i>
+        </button>
+    </div>                                          
+</form>
+{% endblock %}
+
+{% block listing_results %}
+{{ pagination.info }}
+<ul class="list-group w-100 pt-3 courses">
+  {% for item in courses %}
+    <li class="list-group-item mb-3 ps-0 course-item">
+      <h4 class="d-flex flex-lg-row flex-column">
+        {{ item.level_name }} - {{ item.nom }} ({{ item.option_id }})
+      </h4>
+      <p class="text-secondary mb-2">
+        {% if item.formation_id == 'CPS' %} 
+          <span>Cours du soir, </span>
+        {% else %} 
+          <span>Cours du jour,</span>
+        {% endif %}
+        {% if item.open %}
+          <span>Inscription ouverte, </span>
+        {% else %} 
+          <span class="text-danger">Inscription clôturée, </span>
+        {% endif %}
+        Annee academique {{ item.annee }}
+      </p>
+      {{ item.text | safe }}
+      <div class="d-flex justify-content-start justify-content-lg-end gx-4 pt-0">
+        <a class="btn btn-link">Voir plus</a>
+        <a class="btn btn-link">S'inscrire</a>
+      </div>
+    </li>
+  {% endfor %}
+</ul>
+<dic class="d-flex justify-content-start">
+  {{ pagination.links }}
+</dic>
+{% endblock %}
