@@ -10,6 +10,7 @@ event_assets = get_assets('events')
 
 
 @ui.route('/')
+@ui.route('/login')
 def index():
     about = _load_about()
     heros = _load_heros()
