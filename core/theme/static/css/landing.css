@@ -11,6 +11,22 @@
   --nav-font: "Poppins",  sans-serif;
 }
 
+/* Fonts size */
+:root {
+  --default-font-size: 14px;
+  --h1-font-size: 24px;
+  --h1-font-weight: 700;
+  --h2-font-size: 22px;
+  --h2-font-weight: 600;
+  --h3-font-size: 20px;
+  --h3-font-weight: 600;
+  --h4-font-size: 18px;
+  --h4-font-weight: 600;
+  --h5-font-size: 16px;
+  --h5-font-weight: 600;
+  --h6-font-size: 16px;
+  --h6-font-weight: 600;
+}
 
 /* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
 :root { 
@@ -327,7 +343,7 @@ a:hover {
 
   .header .nav-menu .dropdown ul a {
     padding: 10px 20px;
-    font-size: 15px;
+    font-size: var(--default-font-size);
     text-transform: none;
     color: var(--nav-dropdown-color);
   }
@@ -575,7 +591,7 @@ justify-content: center;
 .hero .info p {
   color: color-mix(in srgb, var(--default-color), transparent 20%);
   font-weight: 400;
-  font-size: 16px;
+  font-size: var(--h5-font-size);
   max-width: 100%;
 }
 
@@ -586,7 +602,7 @@ justify-content: center;
   justify-content: center;
   padding: 0;
   margin: 0;
-  font-size: 16px;
+  font-size: var(--h5-font-size);
   font-weight: 400;
 
 }
@@ -597,7 +613,7 @@ justify-content: center;
   background: var(--accent-color);
   font-family: var(--heading-font);
   font-weight: 500;
-  font-size: 15px;
+  font-size: var(--default-font-size);
   letter-spacing: 1px;
   display: inline-block;
   padding: 8px 32px;
@@ -655,6 +671,8 @@ z-index: 2;
 (max-height: 480px) {
   .hero .info {
     padding: 100px 0 60px 0;
+    margin: 0;
+    width: 75%;
   }
 }  
 
@@ -666,7 +684,7 @@ z-index: 2;
   /* justify-content: center; */
   padding-top: 10px;
   /* margin: 0; */
-  /* font-size: 16px; */
+  /* font-size: var(--h5-font-size); */
   /* font-weight: 400; */
 }
 
@@ -677,7 +695,7 @@ z-index: 2;
   /* background-color: transparent; */
   /* padding: 0; */
   /* margin: 0; */
-  /* font-size: 16px; */
+  /* font-size: var(--h5-font-size); */
   /* font-weight: 400; */
 }
 
@@ -702,7 +720,7 @@ z-index: 2;
   background: var(--accent-color);
   font-family: var(--heading-font);
   font-weight: 500;
-  font-size: 15px;
+  font-size: var(--default-font-size);
   letter-spacing: 1px;
   display: inline-block;
   padding: 8px 32px;
@@ -768,7 +786,8 @@ z-index: 2;
 
 .hero .carousel-container {
   position: absolute;
-  inset: 90px 64px 64px 64px;
+  inset: 90px 64px 34px 44px;
+  padding: 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -787,7 +806,7 @@ z-index: 2;
 }
 
 .hero .carousel-item p {
-  font-size: 16px;
+  font-size: var(--h5-font-size);
   width: 100%;
   animation: fadeInLeft 1s both 0.2s;
 }
@@ -797,7 +816,7 @@ z-index: 2;
   background: var(--accent-color);
   font-family: var(--heading-font);
   font-weight: 500;
-  font-size: 15px;
+  font-size: var(--default-font-size);
   letter-spacing: 1px;
   display: inline-block;
   padding: 8px 32px;
@@ -916,29 +935,29 @@ section, .section {
 /* Section titles */
 
 .section h1 {
-  font-size: 24px;
-  font-weight: 700;
+  font-size: var(--h1-font-size);
+  font-weight: var(--h1-font-weight);
 }
 .section h2 {
-  font-size: 22px;
-  font-weight: 600;
+  font-size: var(--h2-font-size);
+  font-weight: var(--h2-font-weight);
 }
 .section h3 {
-  font-size: 20px;
-  font-weight: 600;
+  font-size: var(--h3-font-size);
+  font-weight: var(--h3-font-weight);
 }
 .section h4 {
-  font-size: 18px;
-  font-weight: 600;
+  font-size: var(--h4-font-size);
+  font-weight: var(--h4-font-weight);
 }
 .section h5 {
-  font-size: 16px;
-  font-weight: 600;
+  font-size: var(--h5-font-size);
+  font-weight: var(--h5-font-weight);
 }
 
 .section h6 {
-  font-size: 16px;
-  font-weight: 600;
+  font-size: var(--h6-font-size);
+  font-weight: var(--h6-font-weight);
 }
 
 .section p {
@@ -975,8 +994,8 @@ margin: 4px 10px;
 .section .section-title div  {
   color: var(--heading-color);
   margin: 10px 0 0 0;
-  font-size: 24px;
-  font-weight: 700;
+  font-size: var(--h1-font-size);
+  font-weight: var(--h1-font-weight);
   font-family: var(--heading-font);
 }
 
@@ -989,7 +1008,7 @@ color: var(--accent-color);
 .section .btn.btn-view-all {
   margin-top: 22px;
   padding: 15px 50px;
-  font-size: 16px;
+  font-size: var(--h5-font-size);
   font-weight: 400;
   border-radius: 8px;
 }
@@ -1050,7 +1069,7 @@ color: var(--accent-color);
 }
 
 .speech-item .speech-content ul i {
-font-size: 20px;
+font-size: var(--h3-font-size);
 color: var(--accent-color);
 margin-left: -22px;
 margin-right: 0;
@@ -1084,7 +1103,7 @@ line-height: 0;
     font-size: 35px;
     line-height: 30px;
     display: block;
-    font-weight: 700;
+    font-weight: var(--h1-font-weight);
     margin-left: 60px;
 }
     
@@ -1093,15 +1112,20 @@ line-height: 0;
     padding: 15px 0 0 0;
     margin: 0 0 0 60px;
     font-family: var(--heading-font);
-    font-size: 14px;
+    font-size: var(--default-font-size);
 }
+
+/*--------------------------------------------------------------
+# About Section
+--------------------------------------------------------------*/
+
+
 
   /*--------------------------------------------------------------
   # features Section
   --------------------------------------------------------------*/
   .features .feature-item {
       position: relative;
-      /* height: 85%; */
       margin-bottom: 30px;
     }
     
@@ -1126,14 +1150,14 @@ line-height: 0;
     
   .features .feature-item .card-title {
     color: var(--heading-color);
-    font-weight: 700;
+    font-weight: var(--h1-font-weight);
     margin-bottom: 10px;
-    font-size: 20px;
+    font-size: var(--h3-font-size);
     transition: 0.3s;
     }
     
   .features .feature-item .card-text {
-    font-size: 14px;
+    font-size: var(--default-font-size);
     color: color-mix(in srgb, var(--default-color), transparent 30%);
     margin-bottom: 10px;
     }
@@ -1143,8 +1167,8 @@ line-height: 0;
     align-items: center;
     color: color-mix(in srgb, var(--default-color), transparent 50%);
     transition: 0.3s;
-    font-weight: 700;
-    font-size: 14px;
+    font-weight: var(--h1-font-weight);
+    font-size: var(--default-font-size);
     }
     
   .features .feature-item .read-more i {
@@ -1195,7 +1219,7 @@ line-height: 0;
 
 .features-numbered .card .card-header {
   display: block;
-  font-size: 24px;
+  font-size: var(--h1-font-size);
   font-weight: 400;
   color: var(--accent-color);
   background-color: transparent;
@@ -1205,15 +1229,15 @@ line-height: 0;
 
 .features-numbered .card .card-title {
   color: color-mix(in srgb, var(--heading-color), transparent 20%);
-  font-size: 24px;
-  font-weight: 600;
+  font-size: var(--h1-font-size);
+  font-weight: var(--h2-font-weight);
   padding: 0;
   margin: 20px 0;
 }
 
 .features-numbered .card p {
   color: color-mix(in srgb, var(--default-color), transparent 40%);
-  font-size: 15px;
+  font-size: var(--default-font-size);
   margin: 0;
   padding: 0;
 }
@@ -1224,7 +1248,7 @@ line-height: 0;
 }
 
 .features-numbered .card-link {
-  font-size: 14px;
+  font-size: var(--default-font-size);
   padding: 12px 0;
 }
 
@@ -1259,21 +1283,21 @@ line-height: 0;
 
 .features-imaged .card .card-title {
   color: color-mix(in srgb, var(--heading-color), transparent 20%);
-  font-size: 18px;
-  font-weight: 700;
+  font-size: var(--h4-font-size);
+  font-weight: var(--h1-font-weight);
   padding: 0;
   margin: 10px 0;
 }
 
 .features-imaged .card p {
   color: color-mix(in srgb, var(--default-color), transparent 40%);
-  font-size: 15px;
+  font-size: var(--default-font-size);
   margin: 0;
   padding: 0;
 }
 
 .features-imaged .card-link {
-  font-size: 14px;
+  font-size: var(--default-font-size);
   padding: 12px 0;
 }
 
@@ -1302,21 +1326,21 @@ line-height: 0;
 
 .news .card .card-title {
   color: color-mix(in srgb, var(--heading-color), transparent 20%);
-  font-size: 18px;
-  font-weight: 700;
+  font-size: var(--h4-font-size);
+  font-weight: var(--h1-font-weight);
   padding: 0;
   margin: 10px 0;
 }
 
 .news .card p {
   color: color-mix(in srgb, var(--default-color), transparent 40%);
-  font-size: 15px;
+  font-size: var(--default-font-size);
   margin: 0;
   padding: 0;
 }
 
 .news .card-link {
-  font-size: 14px;
+  font-size: var(--default-font-size);
   padding: 12px 0;
 }
 
@@ -1338,7 +1362,7 @@ line-height: 0;
 .footer {
   color: var(--default-color);
   background-color: var(--background-color);
-  font-size: 14px;
+  font-size: var(--default-font-size);
   position: relative;
   min-height: 15vh;
 }
@@ -1360,14 +1384,14 @@ line-height: 0;
 
 .footer .footer-about .logo span {
   font-size: 26px;
-  font-weight: 700;
+  font-weight: var(--h1-font-weight);
   letter-spacing: 1px;
   font-family: var(--heading-font);
   color: var(--heading-color);
 }
 
 .footer .footer-about p {
-  font-size: 14px;
+  font-size: var(--default-font-size);
   font-family: var(--heading-font);
 }
 
@@ -1377,7 +1401,7 @@ line-height: 0;
   justify-content: center;
   width: 30px;
   height: 30px;
-  font-size: 16px;
+  font-size: var(--h5-font-size);
   color: var(--default-color);
   opacity: 0.7;
   margin-right: 5px;
@@ -1390,7 +1414,7 @@ line-height: 0;
 }
 
 .footer h4 {
-  font-size: 16px;
+  font-size: var(--h5-font-size);
   font-weight: bold;
   position: relative;
   padding-bottom: 12px;
@@ -1482,7 +1506,7 @@ line-height: 0;
 }
 
 .scroll-top i {
-  font-size: 24px;
+  font-size: var(--h1-font-size);
   color: var(--contrast-color);
   line-height: 0;
 }
