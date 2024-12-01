@@ -2773,7 +2773,7 @@ color: var(--accent-color);
   width: 100%;
   min-height: 15%;
   position: relative;
-  padding: 140px 0 0 0;
+  padding: 120px 0 0 0;
   display: flex;
   align-items: start;
   justify-content: start;
@@ -2928,7 +2928,7 @@ color: var(--accent-color);
 
 @media (max-width: 991px) {
   #listing .hero {
-    padding: 140px 0 0 0;
+    padding: 100px 0 0 0;
   }
     
   #listing .hero h1 {
@@ -3008,8 +3008,13 @@ color: var(--accent-color);
     font-style: italic;
   }
   
+  #listing .pagination .page-item .page-link {
+    font-size: 13px;
+  }
+
   #listing .section .container {
-    padding-left: 40px;
+    padding-right: 20px;
+    padding-left: 30px;
     margin-left: 0;
   }
 }

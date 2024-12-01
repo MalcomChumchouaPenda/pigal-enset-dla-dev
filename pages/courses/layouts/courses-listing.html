@@ -9,7 +9,7 @@
 {% endblock %}
 
 {% block listing_header %} 
-<h3>{{ header.title }}</h3>
+<h1>{{ header.title }}</h1>
 <nav aria-label="breadcrumb">
   <ol class="breadcrumb">
     <li class="breadcrumb-item"><a href="{{ url_for('home.index') }}">Accueil</a></li>
@@ -34,11 +34,11 @@
 {{ pagination.info }}
 <ul class="list-group w-100 pt-3 courses">
   {% for item in courses %}
-    <li class="list-group-item mb-3 ps-0 course-item">
+    <li class="list-group-item course-item">
       <h4 class="d-flex flex-lg-row flex-column">
         {{ item.level_name }} - {{ item.nom }} ({{ item.option_id }})
       </h4>
-      <p class="text-secondary mb-2">
+      <p class="text-secondary pb-1">
         {% if item.formation_id == 'CPS' %} 
           <span>Cours du soir, </span>
         {% else %} 
