@@ -1,173 +1,77 @@
 
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-32">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block page_title %}ENSET Douala{% endblock %}</title>
-    {% block page_meta %}{% endblock %}
+{% extends 'landing-base.html' %}
 
-    <!-- Favicons -->
-    <link href="{{ url_for('static', filename='img/favicon.png') }}" rel="icon">
-    <link href="{{ url_for('static', filename='img/apple-touch-icon.png') }}" rel="apple-touch-icon">
+{% block body_class %} body-page {% endblock %}
+{% block footer_class %} dark-background {% endblock %}
 
-    <!-- Fonts -->
-    <!-- <link href="https://fonts.googleapis.com" rel="preconnect">
-    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet"> -->
 
-    <!-- Vendor CSS Files -->
-    <link href="{{ url_for('static', filename='css/fonts.css') }}" rel="stylesheet">
-    <link href="{{ url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
-    <link href="{{ url_for('static', filename='vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
-    <link href="{{ url_for('static', filename='vendor/aos/aos.css') }}" rel="stylesheet">
-    <link href="{{ url_for('static', filename='vendor/glightbox/css/glightbox.min.css') }}" rel="stylesheet">
-    <link href="{{ url_for('static', filename='vendor/swiper/swiper-bundle.min.css') }}" rel="stylesheet">
+{% block base_hero %} 
+  {% block page_hero %}
+  <p>Page Hero</p>
+  {% endblock %}
+{% endblock %}
 
-    <!-- Template CSS File -->
-    <link href="{{ url_for('static', filename='css/color.css') }}" rel="stylesheet">
-    <link href="{{ url_for('static', filename='css/landing.css') }}" rel="stylesheet">
-    <link href="{{ url_for('static', filename='css/preloader.css') }}" rel="stylesheet">
-    {% block page_css %}{% endblock %}
+{% block base_main %}
+  {% block page_main %}
+  <p class="w-100 text-center py-5 my-5">Page Main</p>
+  {% endblock %}
+{% endblock %}
 
-</head>
-<body id="{% block page_body_id %}{% endblock %}">
+{% block base_footer %} 
+<div class="container footer-top">
+  <div class="row gy-4 px-4 px-lg-1">
 
-    <!-- Jinja macros -->
-    {% from "menu.html" import menu %}
-    {% from "landing-sections.html" import coming_soon_section, section_title %}
-    {% from "landing-sections.html" import hero, hero_carousel %}
-
-    <!-- Preloader -->
-    <div id="preloader"></div>
-    <script src="{{ url_for('static', filename='js/preloader.js') }}"></script>
-    <!-- End preloader -->
-    
-    <!-- Header  -->
-    <header id="header" class="header fixed-top">
-      <div class="container-fluid d-flex align-items-center">
-
-        <!-- Header logo -->
-        <a class="logo d-flex align-items-center me-4" href="#">
-          <img src="{{ url_for('static', filename='img/logo.png') }}" alt="">
-          <div class="d-flex align-items-end justify-content-start">
-            <h1 class="sitename">ENSET Douala</h1>
-            <i class="bi bi-circle-fill"></i>
-          </div>
-        </a><!-- End Header logo -->
-
-        <!-- Header menu -->
-        <nav class="nav-menu ms-auto d-flex justify-content-end align-items-center">
-          {% block page_nav_menu %}{{ menu(landing, started_url='/login') }}{% endblock %}
-          <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
-
-        </nav><!-- End Header menu -->
-
+    <div class="col-lg-6 col-md-12 footer-about">
+      <a href="#" class="logo d-flex align-items-center">
+        <span class="sitename">ENSET Douala</span>
+      </a>
+      <div class="footer-contact pt-3">
+        <p>{{ contact.addresse }}</p>
+        <p>{{ contact.ville }}</p>
+        <p class="mt-3"><strong>Tel:</strong> <span>{{ contact.tel }}</span></p>
+        <p><strong>Email:</strong> <span>{{ contact.email }}</span></p>
       </div>
-    </header><!-- End Header -->
-    
-    <!-- Main  -->
-    <main id="main" class="main">
+      <div class="social-links d-flex mt-4">
+        <a href="{{ contact.twitter }}"><i class="bi bi-twitter-x"></i></a>
+        <a href="{{ contact.facebook }}"><i class="bi bi-facebook"></i></a>
+        <a href="{{ contact.instagram }}"><i class="bi bi-instagram"></i></a>
+        <a href="{{ contact.linkedin }}"><i class="bi bi-linkedin"></i></a>
+      </div>
+    </div>
 
-        {% block page_hero %}{% endblock %}
-        {% block page_sections %}
-          {{ coming_soon_section("Section", default_deadline()) }}
-        {% endblock %}
-    
-    </main><!-- End Main -->
-    
-    <!-- Footer  -->
-    <footer id="footer" class="footer dark-background">
-
-        <!-- Footer Contents -->
-        {% block page_footer %}
-        <div class="container footer-top">
-          <div class="row gy-4 px-4 px-lg-1">
-
-            <div class="col-lg-6 col-md-12 footer-about">
-              <a href="#" class="logo d-flex align-items-center">
-                <span class="sitename">ENSET Douala</span>
-              </a>
-              <div class="footer-contact pt-3">
-                <p>{{ contact.addresse }}</p>
-                <p>{{ contact.ville }}</p>
-                <p class="mt-3"><strong>Tel:</strong> <span>{{ contact.tel }}</span></p>
-                <p><strong>Email:</strong> <span>{{ contact.email }}</span></p>
-              </div>
-              <div class="social-links d-flex mt-4">
-                <a href="{{ contact.twitter }}"><i class="bi bi-twitter-x"></i></a>
-                <a href="{{ contact.facebook }}"><i class="bi bi-facebook"></i></a>
-                <a href="{{ contact.instagram }}"><i class="bi bi-instagram"></i></a>
-                <a href="{{ contact.linkedin }}"><i class="bi bi-linkedin"></i></a>
-              </div>
-            </div>
-
-            <div class="col-lg-6 col-md-12">
-              <div class="row">
-                {% block page_footer_links %}
-                <div class="col-lg-6 col-md-12 footer-links">
-                    <h4>Hic solutasetp</h4>
-                    <ul>
-                      <li><i class="bi bi-chevron-right"></i><a href="#">Molestiae accusamus iure</a></li>
-                      <li><i class="bi bi-chevron-right"></i><a href="#">Excepturi dignissimos</a></li>
-                      <li><i class="bi bi-chevron-right"></i><a href="#">Suscipit distinctio</a></li>
-                      <li><i class="bi bi-chevron-right"></i><a href="#">Dilecta</a></li>
-                      <li><i class="bi bi-chevron-right"></i><a href="#">Sit quas consectetur</a></li>
-                    </ul>
-                </div>
-                <div class="col-lg-6 col-md-12 footer-links">
-                    <h4>Nobis illum</h4>
-                    <ul>
-                      <li><i class="bi bi-chevron-right"></i><a href="#">Ipsam</a></li>
-                      <li><i class="bi bi-chevron-right"></i><a href="#">Laudantium dolorum</a></li>
-                      <li><i class="bi bi-chevron-right"></i><a href="#">Dinera</a></li>
-                      <li><i class="bi bi-chevron-right"></i><a href="#">Trodelas</a></li>
-                      <li><i class="bi bi-chevron-right"></i><a href="#">Flexo</a></li>
-                    </ul>
-                </div>
-                {% endblock %}
-              </div>
-            </div>
-            
-          </div>
+    <div class="col-lg-6 col-md-12">
+      <div class="row">
+      {% block page_links %}
+        <div class="col-lg-6 col-md-12 footer-links">
+            <h4>Hic solutasetp</h4>
+            <ul>
+              <li><i class="bi bi-chevron-right"></i><a href="#">Molestiae accusamus iure</a></li>
+              <li><i class="bi bi-chevron-right"></i><a href="#">Excepturi dignissimos</a></li>
+              <li><i class="bi bi-chevron-right"></i><a href="#">Suscipit distinctio</a></li>
+              <li><i class="bi bi-chevron-right"></i><a href="#">Dilecta</a></li>
+              <li><i class="bi bi-chevron-right"></i><a href="#">Sit quas consectetur</a></li>
+            </ul>
         </div>
-        {% endblock %}
-
-        <!-- Footer Copyright -->
-        <div class="container copyright text-center mt-4">
-            <p>© 
-                <span>Copyright</span> 
-                <strong class="px-1 sitename">
-                    {% block page_copyright %}CINFO ENSET{% endblock %}
-                </strong> 
-                <span>All Rights Reserved</span>
-            </p>
-            <div class="credits">
-                Designed by 
-                <a href="{% block page_author_site %}#{% endblock %}">
-                    {% block page_author_name %}Malcom Chumchoua Penda{% endblock %}
-                </a>
-            </div>
-        </div><!-- End Footer copyright -->
-
-    </footer><!-- ENd Footer -->
+        <div class="col-lg-6 col-md-12 footer-links">
+            <h4>Nobis illum</h4>
+            <ul>
+              <li><i class="bi bi-chevron-right"></i><a href="#">Ipsam</a></li>
+              <li><i class="bi bi-chevron-right"></i><a href="#">Laudantium dolorum</a></li>
+              <li><i class="bi bi-chevron-right"></i><a href="#">Dinera</a></li>
+              <li><i class="bi bi-chevron-right"></i><a href="#">Trodelas</a></li>
+              <li><i class="bi bi-chevron-right"></i><a href="#">Flexo</a></li>
+            </ul>
+        </div>
+      {% endblock %}
+      </div>
+    </div>
     
-    <!-- Scroll Top -->
-    <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-    
-    <!-- Vendor JS Files -->
-    <script src="{{ url_for('static', filename='vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
-    <script src="{{ url_for('static', filename='vendor/aos/aos.js') }}"></script>
-    <script src="{{ url_for('static', filename='vendor/glightbox/js/glightbox.min.js') }}"></script>
-    <script src="{{ url_for('static', filename='vendor/purecounter/purecounter_vanilla.js') }}"></script>
-    <script src="{{ url_for('static', filename='vendor/imagesloaded/imagesloaded.pkgd.min.js') }}"></script>
-    <script src="{{ url_for('static', filename='vendor/isotope-layout/isotope.pkgd.min.js') }}"></script>
-    <script src="{{ url_for('static', filename='vendor/swiper/swiper-bundle.min.js') }}"></script>
-    
-    <!-- Main JS File -->
-    <script src="{{ url_for('static', filename='js/landing.js') }}"></script>
-    <script src="{{ url_for('static', filename='js/coming-soon.js') }}"></script>
-    {% block page_js %}{% endblock %}
+  </div>
+</div>
+{% endblock %}
 
-</body>
-</html>
+{% block base_authors %}
+  {% block page_authors %}
+  <a>Malcom Chumchoua Penda</a>
+  {% endblock %}
+{% endblock %}

@@ -1,25 +1,4 @@
 
-{% macro coming_soon_counter(deadline) %}
-<div class="countdown d-flex justify-content-center" data-count="{{ deadline }}">
-    <div>
-        <h3 class="count-days">365</h3>
-        <h4>Jours</h4>
-    </div>
-    <div>
-        <h3 class="count-hours">1</h3>
-        <h4>Heures</h4>
-    </div>
-    <!-- <div>
-        <h3 class="count-minutes">0</h3>
-        <h4>Minutes</h4>
-    </div>
-    <div>
-        <h3 class="count-seconds">0</h3>
-        <h4>Secondes</h4>
-    </div> -->
-</div>
-{% endmacro %}
-
 {% macro coming_soon_section(title, deadline, id="") %}
 <section id="{{ id }}" class="coming-soon section">
     {{ section_title(title, emphasis=title, after="(En construction)")}}    
