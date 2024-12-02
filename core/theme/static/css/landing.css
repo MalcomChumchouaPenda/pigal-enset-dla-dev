@@ -60,15 +60,12 @@
 --------------------------------------------------------------*/
 
 /* General Styling */
+
 body {
   color: var(--default-color);
   background-color: var(--background-color);
   font-family: var(--default-font);
   min-height: 100vh;
-}
-
-.main {
-  min-height: 85vh;
 }
 
 
@@ -145,6 +142,24 @@ a {
   border-color: color-mix(in srgb, var(--default-color), transparent 75%);
 }
 
+
+/* General inputs  */
+
+input {
+  box-shadow: none;
+}
+
+input:focus,
+input.form-control:focus {
+  box-shadow: none;
+  border-color: color-mix(in srgb, var(--accent-color), transparent 50%);
+}
+
+input::placeholder,
+input.form-control::placeholder {
+  font-style: italic;
+  opacity: 0.5;
+}
 
 /*--------------------------------------------------------------
 # Header  Classes
@@ -229,6 +244,7 @@ a {
   box-shadow: none;
 }
 
+.body-listing .header,
 .scrolled.scrolled-light .header {
   --background-color: rgba(255, 255, 255, 0.95);
   --default-color: var(--secondary-dark-color);
@@ -237,12 +253,17 @@ a {
   --nav-hover-color: var(--secondary-dark-color);
 }
 
+
+.body-listing .header .btn-get-started,
+.body-listing .header .btn-get-started:focus,
 .scrolled.scrolled-light .header .btn-get-started,
 .scrolled.scrolled-light .header .btn-get-started:focus {
   color: var(--contrast-color);
   background: var(--accent-color);
 }
 
+.body-listing .header .btn-get-started:hover,
+.body-listing .header .btn-get-started:focus:hover 
 .scrolled.scrolled-light .header .btn-get-started:hover,
 .scrolled.scrolled-light .header .btn-get-started:focus:hover {
   color: var(--contrast-color);
@@ -558,35 +579,6 @@ a {
   overflow: hidden;
 }
 
-.hero.hero-large,
-.hero.hero-100 {
-  min-height: 100vh;
-  display: flex;
-  align-items: start;
-  justify-content: center;
-}
-
-.hero.hero-75 {
-  min-height: 75vh;
-  display: flex;
-  align-items: start;
-  justify-content: center;
-}
-  
-.hero.hero-50 {
-min-height:50vh;
-display: flex;
-align-items: center;
-justify-content: center;
-}
-  
-.hero.hero-small,
-.hero.hero-25 {
-  min-height:25vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
 
 .hero .info {
   position: relative;
@@ -930,11 +922,67 @@ z-index: 2;
 }
 
 
+/* Hero variants */
+
+.hero.hero-large,
+.hero.hero-100 {
+  min-height: 100vh;
+  display: flex;
+  align-items: start;
+  justify-content: center;
+}
+
+.hero.hero-75 {
+  min-height: 75vh;
+  display: flex;
+  align-items: start;
+  justify-content: center;
+}
+  
+.hero.hero-50 {
+min-height:50vh;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+  
+.hero.hero-small,
+.hero.hero-25 {
+  min-height:25vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.body-listing .hero{
+  --background-color: var(--white-color);
+  --default-color: var(--secondary-dark-color);
+  --heading-color: var(--secondary-dark-color);
+  --surface-color: var(--white-color);
+  --contrast-color: var(--white-color);
+  width: 100%;
+  min-height: 15%;
+  position: relative;
+  padding: 120px 0 0 150px;
+  display: flex;
+  align-items: start;
+  justify-content: start;
+}
+
+.body-listing .hero .container {
+  margin: 0;
+}
+
+
 /*--------------------------------------------------------------
-# Sections Classes
+# Main Classes
 --------------------------------------------------------------*/
 
-section, .section {
+.main {
+  min-height: 85vh;
+}
+
+.main .section {
   color: var(--default-color);
   background-color: var(--background-color);
   padding: 20px 10px;
@@ -945,11 +993,21 @@ section, .section {
 }
 
 @media (max-width: 991px) {
-  section, .section {
+  .main .section {
     scroll-margin-top: 76px;
     padding: 40px 25px 20px 10px;
   }
 }
+
+/* main variants */
+
+.body-listing .main {
+  padding: 10px 50px 0 150px;
+  display: flex;
+  align-items: start;
+  justify-content: start;
+}
+
 
 /* Section titles */
 
@@ -1022,6 +1080,7 @@ margin: 4px 10px;
 color: var(--accent-color);
 } 
 
+
 /* Section controls */
 
 .section .btn.btn-view-all {
@@ -1032,26 +1091,18 @@ color: var(--accent-color);
   border-radius: 8px;
 }
 
-.section input {
-  box-shadow: none;
-}
-
-.section input:focus {
-  box-shadow: none;
-  border-color: color-mix(in srgb, var(--accent-color), transparent 50%);
-}
-
-.section input::placeholder {
-  font-style: italic;
-  opacity: 0.5;
-}
 
 /* 
 Underline styles - details of technique here: 
 https://nickymeuleman.netlify.app/blog/css-animated-wrapping-underline 
 */
 
+.section .btn-link,
 .section a {
+  margin: 5px;
+  padding: 0 2px 1px 2px;
+  color: var(--accent-color);
+  font-size: var(--default-font-size);
   font-weight: var(--default-font-weight);
   text-decoration: none;
   background-image: 
@@ -1064,6 +1115,7 @@ https://nickymeuleman.netlify.app/blog/css-animated-wrapping-underline
   transition: background-size 400ms;
 }
 
+.section .btn-link:hover,
 .section a:hover {  
   background-size: 0 1px, 100% 1px;
 }
@@ -1394,6 +1446,69 @@ line-height: 0;
   border: none;
   background-color: transparent;
 }
+
+/*--------------------------------------------------------------
+# Results Section
+--------------------------------------------------------------*/
+
+.results p {
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+.results .pagination-page-info {
+  color: var(--default-color);
+  opacity: 0.75;
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+.results .pagination .page-item {
+  padding: 0;
+  margin: 0;
+  font-size: var(--default-font-size);
+  font-weight: var(--h6-font-weight);
+}
+
+/* .results .pagination .page-item.active {
+  padding: 0;
+  margin: 0;
+} */
+
+.results .pagination .page-item .page-link {
+  margin: 0;
+  padding: 5px 10px;
+  color: var(--accent-color);
+  font-size: var(--default-font-size);
+  font-weight: var(--default-font-weight);
+  border-color: transparent;
+  text-decoration: none;
+  background-image: none;
+}
+
+.results .pagination .page-item .page-link:focus {
+  box-shadow: none;
+}
+
+.results .pagination .page-item:hover .page-link {
+  /* border-color: var(--accent-color); */
+  background-color: var(--secondary-light-color);
+}
+
+.results .pagination .page-item.active .page-link {
+  margin: 0;
+  color: var(--contrast-color);
+  background-color: var(--accent-color);
+  border-color: var(--accent-color);
+  border-radius: 0;
+}
+
+.results .pagination .page-item.disabled .page-link {
+  margin: 0;
+  color: var(--default-color);
+  opacity: 0.5;
+}
+
 
 /*--------------------------------------------------------------
 # Footer classes
