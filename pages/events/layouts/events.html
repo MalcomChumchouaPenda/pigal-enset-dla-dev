@@ -5,15 +5,15 @@
 
 {% block page_hero %}
   {% call hero("25") %}
-  <div class="info w-75">
-      <h1>Nos Actualites</h1>
-      <nav class="breadcrumbs">
-        <ol>
-          <li><a href="{{ url_for('home.index') }}">Home</a></li>
-          <li class="current">Actualites</li>
-        </ol>
-      </nav>
-  </div>
+  <div class="hero-info w-75 d-flex flex-column justify-content-center align-items-center">
+    <h1>Nos Actualites</h1>
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="{{ url_for('home.index') }}">Home</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Actualites</li>
+      </ol>
+    </nav>
+  </div> 
   <div class="hero-bg">
       <img src="{{ url_for('events.static', filename='img/hero.jpg') }}" alt="">
   </div>

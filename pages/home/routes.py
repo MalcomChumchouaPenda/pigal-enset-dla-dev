@@ -13,7 +13,7 @@ event_assets = get_assets('events')
 @ui.route('/login')
 def index():
     about = _load_about()
-    heros = _load_heros()[:1]
+    heros = _load_heros()
     speech = _load_speech()
     events = _load_events()
     features = _load_features()

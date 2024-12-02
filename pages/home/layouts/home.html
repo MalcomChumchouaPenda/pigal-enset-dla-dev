@@ -12,7 +12,7 @@
     {% for hero in heros %}
       <div class="carousel-item {%if loop.first %} active {% endif %}">
         <img src="{{ url_for('home.static', filename=hero.img) }}" alt="">
-        <div class="carousel-container info">
+        <div class="carousel-container hero-info">
           {{ hero.msg | safe }}
         </div>
       </div><!-- End Carousel Item -->

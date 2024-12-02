@@ -625,33 +625,33 @@ input[type=file]::file-selector-button {
 }
 
 
-.hero .info {
+.hero .hero-info {
   position: relative;
   inset: 0;
   z-index: 3;
   padding: 150px 0 60px 0;
 }
 
-.hero .info h1 {
+.hero .hero-info h1 {
   font-size: 42px;
   font-weight: 700;
   margin-bottom: 15px;
 }
 
-.hero .info h2 {
+.hero .hero-info h2 {
   font-size: 35px;
   font-weight: 700;
   margin-bottom: 15px;
 }
 
-.hero .info p {
+.hero .hero-info p {
   color: color-mix(in srgb, var(--default-color), transparent 20%);
   font-weight: 400;
   font-size: var(--h5-font-size);
   max-width: 100%;
 }
 
-.hero .info ul {
+.hero .hero-info ul {
   display: flex;
   flex-wrap: wrap;
   list-style: none;
@@ -663,8 +663,8 @@ input[type=file]::file-selector-button {
 
 }
 
-.hero .info a,
-.hero .info ul li>a {
+.hero .hero-info a,
+.hero .hero-info ul li>a {
   color: var(--contrast-color);
   background: var(--accent-color);
   font-family: var(--heading-font);
@@ -704,71 +704,69 @@ inset: 0;
 z-index: 2;
 }
 
+.hero .breadcrumb-item {
+  font-size: var(--h5-font-size);
+  color: var(--accent-color);
+}
+
+.hero .breadcrumb-item::before {
+  font-size: var(--h5-font-size);
+  color: var(--contrast-color);
+}
+
+.hero .breadcrumb-item.active {
+  color: var(--contrast-color);
+}
+
+.hero .breadcrumb-item a {
+  font-size: var(--h5-font-size);
+  font-weight: var(--h5-font-weight);
+  color: var(--accent-color);
+  background: transparent;
+  margin: 0;
+  padding: 0 4px 2px 4px;
+  text-decoration: none;
+  background-image: 
+    linear-gradient(transparent, transparent),
+    linear-gradient(color-mix(in srgb, var(--accent-color), transparent 25%), 
+                    color-mix(in srgb, var(--accent-color), transparent 25%));
+  background-size: 100% 2px, 0 2px;
+  background-position: 100% 100%, 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size 400ms;
+}
+
+.hero .breadcrumb-item a:hover {  
+  background-size: 0 2px, 100% 2px;
+}
 
 @media (max-width: 768px) {
-  .hero .info {
+  .hero .hero-info {
     width: 100%;
   }
 
-  .hero .info h1 {
+  .hero .hero-info h1 {
     font-size: 32px;
   }
 
-  .hero .info h2 {
+  .hero .hero-info h2 {
     font-size: 25px;
   }
 
-  .hero .info p {
+  .hero .hero-info p {
     font-size: 12px;
   }
 }
 
 @media (max-width: 768px),
 (max-height: 480px) {
-  .hero .info {
+  .hero .hero-info {
     padding: 100px 0 60px 0;
     margin: 0;
     width: 75%;
   }
 }  
 
-
-.hero .breadcrumb {
-  /* display: flex; */
-  /* flex-wrap: wrap; */
-  /* list-style: none; */
-  /* justify-content: center; */
-  padding-top: 10px;
-  /* margin: 0; */
-  /* font-size: var(--h5-font-size); */
-  /* font-weight: 400; */
-}
-
-
-.hero .breadcrumb-item a {
-  color: var(--accent-color);
-  /* color: red; */
-  /* background-color: transparent; */
-  /* padding: 0; */
-  /* margin: 0; */
-  /* font-size: var(--h5-font-size); */
-  /* font-weight: 400; */
-}
-
-.hero .breadcrumb-item a:hover{
-  color: color-mix(in srgb, var(--accent-color), transparent 20%);  
-}
-
-/* .hero .breadcrumbs ol li+li {
-  padding-left: 10px;
-}
-
-.hero .breadcrumbs ol li+li::before {
-  content: "/";
-  display: inline-block;
-  padding-right: 10px;
-  color: color-mix(in srgb, var(--default-color), transparent 70%);
-} */
 
 
 .hero .btn-get-started {
@@ -1234,6 +1232,7 @@ color: var(--accent-color);
 /* Section controls */
 
 .section .btn.btn-view-all {
+  color: var(--contrast-color);
   margin-top: 22px;
   padding: 15px 50px;
   font-size: var(--h5-font-size);
