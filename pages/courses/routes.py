@@ -102,9 +102,14 @@ def _add_description(courses):
     return courses
     
 
+@ui.route('/details')
+def details():
+    prev_url = request.args.get('prev_url')
+    prev = request.args.get('prev')
+    key = request.args.get('key')
+    course = qry.get_course(key)
+    return render_template('courses-details.html', 
+                           course=course,
+                           prev_url=prev_url, 
+                           prev=prev)
 
-@ui.route('/<key>')
-def details(key):
-    unit = qry.get_unit_by_key(key)
-    return render_template('courses-details.html',
-                           unit=unit)

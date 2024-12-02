@@ -1,6 +1,5 @@
 {% extends 'landing-listing.html' %}
 
-
 {% block meta_title %}Recherche Formation - ENSET Douala{% endblock %}
 {% block body_id %}courses-list{% endblock %}
 {% block listing_authors %}
@@ -39,7 +38,6 @@
 {% endblock %}
 
 {% block listing_main %}
-<!-- Domaines de Recherche -->
 <section class="results section">
   <div class="container">
     <div class="row">
@@ -53,20 +51,20 @@
                 </h4>
                 <p class="text-secondary pb-1">
                   {% if item.formation_id == 'CPS' %} 
-                    <span>Cours du soir, </span>
+                    <span>Cours du soir</span>, 
                   {% else %} 
-                    <span>Cours du jour,</span>
+                    <span>Cours du jour</span>,
                   {% endif %}
                   {% if item.open %}
-                    <span>Inscription ouverte, </span>
+                    <span>Inscription ouverte</span>, 
                   {% else %} 
-                    <span class="text-danger">Inscription clôturée, </span>
+                    <span class="text-danger">Inscription clôturée</span>, 
                   {% endif %}
                   Annee academique {{ item.annee }}
                 </p>
                 {{ item.text | safe }}
                 <div class="d-flex justify-content-start gx-4 pt-0">
-                  <a class="btn btn-link ms-0">Voir plus</a>
+                  <a class="btn btn-link ms-0" href="{{ url_for('courses.details',key=item.id, prev_url=request.path, prev=header.link) }}">Voir plus</a>
                   <a class="btn btn-link">S'inscrire</a>
                 </div>
               </li>
@@ -78,5 +76,5 @@
         </div>
     </div>
   </div>  
-</section><!-- End Domaines de recherche -->
+</section>
 {% endblock %}

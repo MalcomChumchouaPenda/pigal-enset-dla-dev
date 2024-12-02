@@ -214,7 +214,7 @@ input.form-control::placeholder {
 
 .header .btn-get-started:hover,
 .header .btn-get-started:focus:hover {
-  color: var(--default-color);
+  color: var(--contrast-color);
   background: var(--accent-color);
   border: 2px solid var(--accent-color);
 }
@@ -235,6 +235,7 @@ input.form-control::placeholder {
 }
 
 .body-form .header,
+.body-details .header,
 .body-listing .header,
 .scrolled.scrolled-light .header {
   --background-color: rgba(255, 255, 255, 0.95);
@@ -246,6 +247,8 @@ input.form-control::placeholder {
 
 .body-form .header .btn-get-started,
 .body-form .header .btn-get-started:focus,
+.body-details .header .btn-get-started,
+.body-details .header .btn-get-started:focus,
 .body-listing .header .btn-get-started,
 .body-listing .header .btn-get-started:focus,
 .scrolled.scrolled-light .header .btn-get-started,
@@ -256,6 +259,8 @@ input.form-control::placeholder {
 
 .body-form .header .btn-get-started:hover,
 .body-form .header .btn-get-started:focus:hover
+.body-details .header .btn-get-started:hover,
+.body-details .header .btn-get-started:focus:hover
 .body-listing .header .btn-get-started:hover,
 .body-listing .header .btn-get-started:focus:hover 
 .scrolled.scrolled-light .header .btn-get-started:hover,
@@ -318,6 +323,10 @@ input.form-control::placeholder {
   .header .nav-menu .active,
   .header .nav-menu .active:focus {
     color: var(--nav-hover-color);
+  }
+
+  .header .nav-menu li:hover>a.btn-get-started {
+    color: var(--contrast-color);
   }
 
   .header .nav-menu li a:before {
@@ -973,6 +982,11 @@ justify-content: center;
   margin: 0;
 }
 
+.body-details .hero{
+  width: 0%;
+  min-height: 0;
+}
+
 .body-form .hero{
   --background-color: var(--white-color);
   --default-color: var(--secondary-dark-color);
@@ -992,7 +1006,6 @@ justify-content: center;
 .coming-soon-hero {
   margin-top: 100px;
 }
-
 
 .coming-soon-hero .countdown {
   margin-top: 25px;
@@ -1081,6 +1094,17 @@ justify-content: center;
   min-height: 0;
   max-height: 0;
 }
+
+.body-details .main{
+  width: 100%;
+  min-height: 85vh;
+  position: relative;
+  padding: 140px 0 0 0;
+  display: flex;
+  align-items: start;
+  justify-content: start;
+}
+
 
 /* Section titles */
 
@@ -1580,6 +1604,18 @@ line-height: 0;
   margin: 0;
   color: var(--default-color);
   opacity: 0.5;
+}
+
+
+/*--------------------------------------------------------------
+# Details classes
+--------------------------------------------------------------*/
+
+.details-info {
+  border-radius: 5px;
+  background: var(--secondary-light-color);
+  padding: 15px;
+  height: 100%;
 }
 
 
