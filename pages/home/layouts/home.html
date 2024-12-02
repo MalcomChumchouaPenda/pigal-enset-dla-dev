@@ -26,14 +26,14 @@
   <div class="container">
       <div class="row gy-4 speech-item">
           <!-- Speech Author -->
-          <div class="col-lg-3 speech-author" data-aos="fade-up" data-aos-delay="100">
+          <div class="col-lg-3 speech-author">
               <img src="{{ url_for('home.static', filename='img/person-2.jpg')}}" alt="">
               <h6 class="speech-author-name">Pr Ndjiakomo Essiane Salome</h6>
               <p class="speech-author-role">Directeur de l'ENSET de Douala</p>
           </div> <!-- End Speech Author -->
 
           <!-- Speech Content -->
-          <div class="col-lg-6 speech-content" data-aos="fade-up" data-aos-delay="200">
+          <div class="col-lg-6 speech-content">
               {{ speech | safe }}
           </div> <!-- End Speech Content -->
       </div>
@@ -45,10 +45,10 @@
   {{ section_title('Nous', before='A Propos de', emphasis='Nous') }}
   <div class="container">
     <div class="row gy-4">
-      <div class="col-lg-6 col-12 content" data-aos="fade-up" data-aos-delay="100">
+      <div class="col-lg-6 col-12 about-content">
         {{ about.left | safe }}
       </div>
-      <div class="col-lg-6 col-12 content" data-aos="fade-up" data-aos-delay="100">
+      <div class="col-lg-6 col-12 about-content">
         {{ about.right | safe }}
       </div>
     </div>
@@ -58,7 +58,7 @@
 <!-- Stats Section -->
 <section id="stats" class="stats section">
   {{ section_title('Stats', before='Quelques', emphasis='Statistiques') }}
-  <div class="container" data-aos="fade-up" data-aos-delay="100">
+  <div class="container">
 
     <div class="row gy-4 my-2">
       <div class="col-lg-3 col-md-6 my-0">
@@ -104,12 +104,12 @@
       <div class="row gy-4 mt-4">
       {% for item in features %}
           <!-- feature Item -->
-          <div class="col-lg-4 col-md-6 feature-item d-flex" data-aos="fade-up" data-aos-delay="100">
+          <div class="col-lg-4 col-md-6 features-item d-flex">
             <div class="card">
               <div class="card-body">
                 <h4 class="card-title">{{ item.title }}</h4>
                 <p class="card-text">{{ item.description }}</p>
-                <a href="#" class="read-more stretched-link">
+                <a href="#" class="btn-read-more stretched-link">
                     <span>Voir plus</span>
                     <i class="bi bi-arrow-right"></i>
                 </a>
@@ -128,7 +128,7 @@
   <div class="container">
       <div class="row row-cols-1 row-cols-md-3 gy-2">
       {% for item in events %}  
-          <div class="col" data-aos="fade-up" data-aos-delay="100">
+          <div class="col news-item">
             <div class="card position-relative h-100">
               <img src="{{ item.image }}" class="card-img-top" alt="...">
               <div class="card-body">
@@ -142,7 +142,7 @@
           </div><!-- End feature Item -->
       {% endfor %}
       </div>
-      <div class="d-flex justify-content-center">
+      <div class="d-flex justify-content-center news-footer">
         <a class="btn btn-primary btn-view-all">Voir toutes les Actualites</a>
       </div>
   </div>  

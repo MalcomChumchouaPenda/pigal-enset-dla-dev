@@ -268,4 +268,22 @@
     }
   }
 
+  /**
+   * Section Animation
+   */
+
+  function addFadeUp(elt, delay) {
+    elt.setAttribute('data-aos', 'fade-up');
+    elt.setAttribute('data-aos-delay', delay)
+  }
+
+  document.querySelectorAll('.section-title').forEach(content => addFadeUp(content, '100'));
+  document.querySelectorAll('.about-content').forEach(content => addFadeUp(content, '100'));
+  document.querySelectorAll('.speech-content').forEach(content => addFadeUp(content, '200'));
+  document.querySelectorAll('.speech-author').forEach(content => addFadeUp(content, '200'));
+  document.querySelectorAll('.stats-item').forEach(content => addFadeUp(content, '100'));
+  document.querySelectorAll('.features-item').forEach(content => addFadeUp(content, '100'));
+  document.querySelectorAll('.news-item').forEach(content => addFadeUp(content, '100'));
+  document.querySelectorAll('.news-footer').forEach(content => addFadeUp(content, '100'));
+
 })();

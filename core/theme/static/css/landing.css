@@ -1124,31 +1124,31 @@ line-height: 0;
   /*--------------------------------------------------------------
   # features Section
   --------------------------------------------------------------*/
-  .features .feature-item {
+  .features .features-item {
       position: relative;
       margin-bottom: 30px;
     }
     
-  .features .feature-item .card,
-  .features .feature-item .card-body {
+  .features .features-item .card,
+  .features .features-item .card-body {
       margin: 0;
       padding: 0;
       border: none;
       background-color: transparent;
     }
   
-  .features .feature-item .icon {
+  .features .features-item .icon {
       margin-right: 20px;
     }
     
-  .features .feature-item .icon i {
+  .features .features-item .icon i {
     color: var(--accent-color);
     font-size: 40px;
     line-height: 0;
     transition: 0.3s;
     }
     
-  .features .feature-item .card-title {
+  .features .features-item .card-title {
     color: var(--heading-color);
     font-weight: var(--h1-font-weight);
     margin-bottom: 10px;
@@ -1156,13 +1156,13 @@ line-height: 0;
     transition: 0.3s;
     }
     
-  .features .feature-item .card-text {
+  .features .features-item .card-text {
     font-size: var(--default-font-size);
     color: color-mix(in srgb, var(--default-color), transparent 30%);
     margin-bottom: 10px;
     }
     
-  .features .feature-item .read-more {
+  .features .features-item .btn-read-more {
     display: flex;
     align-items: center;
     color: color-mix(in srgb, var(--default-color), transparent 50%);
@@ -1171,13 +1171,13 @@ line-height: 0;
     font-size: var(--default-font-size);
     }
     
-  .features .feature-item .read-more i {
+  .features .features-item .btn-read-more i {
     margin-left: 8px;
     }
     
-    /* .features .feature-item:hover .card-title,
-    .features .feature-item:hover .read-more,
-    .features .feature-item:hover .icon i {
+    /* .features .features-item:hover .card-title,
+    .features .features-item:hover .btn-read-more,
+    .features .features-item:hover .icon i {
     color: var(--accent-color);
     } */
   
@@ -1189,18 +1189,18 @@ line-height: 0;
     }
   
       
-  .features .feature-item .btn-outline-primary {  
+  .features .features-item .btn-outline-primary {  
       color: var(--primary-color);
       border-color: color-mix(in srgb, var(--primary-color), transparent 75%);
     }
   
-  .features .feature-item .btn-outline-primary:hover {  
+  .features .features-item .btn-outline-primary:hover {  
       color: var(--contrast-color);
       background-color: var(--primary-color);
       border-color: transparent;
     }
   
-  .features .feature-item .btn-outline-secondary{  
+  .features .features-item .btn-outline-secondary{  
       border-color: color-mix(in srgb, var(--default-color), transparent 75%);
     }
 
