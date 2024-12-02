@@ -278,6 +278,7 @@
   }
 
   document.querySelectorAll('.section-title').forEach(content => addFadeUp(content, '50'));
+  document.querySelectorAll('.coming-soon-content').forEach(content => addFadeUp(content, '100'));
   document.querySelectorAll('.about-content').forEach(content => addFadeUp(content, '100'));
   document.querySelectorAll('.speech-content').forEach(content => addFadeUp(content, '200'));
   document.querySelectorAll('.speech-author').forEach(content => addFadeUp(content, '200'));
