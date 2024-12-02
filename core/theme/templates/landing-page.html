@@ -13,7 +13,9 @@
 
 {% block base_main %}
   {% block page_main %}
-  <p class="w-100 text-center py-5 my-5">Page Main</p>
+   <div class="py-4 my-2">
+      {{ coming_soon_section("Section", default_deadline()) }}
+   </div>
   {% endblock %}
 {% endblock %}
 

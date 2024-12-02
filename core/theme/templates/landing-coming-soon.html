@@ -1,41 +1,36 @@
-{% extends 'landing-page.html' %}
+{% extends 'landing-form.html' %}
 
 
-{% block page_title %} {{ title }} - ENSET Douala{% endblock %}
+{% block meta_title %} {{ title }} - ENSET Douala{% endblock %}
 {% block body_id %}coming-soon{% endblock %}
 
-{% block page_hero %}
-<!-- Hero Section -->
-<section class="hero py-5">          
-  <div class="container text-center" data-aos="fade-up" data-aos-delay="100">
-    <div class="row justify-content-center">
-      <div class="col-lg-12">
-        <h2>En construction</h2>
-        <p>Cette page est en construction. Elle sera disponible dans:</p>
-      </div>
+{% block form_hero %}
+<div class="container text-center coming-soon-hero" data-aos="fade-up" data-aos-delay="100">
+  <div class="row justify-content-center">
+    <div class="col-lg-12">
+      <h2>En construction</h2>
+      <p>Cette page est en construction. Elle sera disponible dans:</p>
+    </div>
       
-      <div class="countdown d-flex justify-content-center" data-count="{{ deadline }}">
-        <div>
-          <h3 class="count-days">482</h3>
-          <h4>Jours</h4>
-        </div>
-        <div>
-          <h3 class="count-hours">6</h3>
-          <h4>Heures</h4>
-        </div>
-        <div>
-          <h3 class="count-minutes">49</h3>
-          <h4>Minutes</h4>
-        </div>
-        <div>
-          <h3 class="count-seconds">21</h3>
-          <h4>Secondes</h4>
-        </div>
+    <div class="countdown d-flex justify-content-center" data-count="{{ deadline }}">
+      <div>
+        <h3 class="count-days">482</h3>
+        <h4>Jours</h4>
       </div>
-    
-    </div>         
-  </div>
-</section>
+      <div>
+        <h3 class="count-hours">6</h3>
+        <h4>Heures</h4>
+      </div>
+      <div>
+        <h3 class="count-minutes">49</h3>
+        <h4>Minutes</h4>
+      </div>
+      <div>
+        <h3 class="count-seconds">21</h3>
+        <h4>Secondes</h4>
+      </div>
+    </div>
+  </div>         
+</div>
 {% endblock %}
-
-{% block page_main %}{% endblock %}
+   
