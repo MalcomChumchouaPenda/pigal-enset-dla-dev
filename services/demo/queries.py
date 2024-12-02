@@ -19,6 +19,13 @@ def get_events():
     return store.read_json('json/events.json')
 
 
+def get_pays():
+    return store.read_json('json/pays.json')
+
+def get_professions():
+    return store.read_json('json/professions.json')
+
+
 def get_intro(topic, size):
     return store.read_markdown(f'md/intro-{topic}-{size}.md')
 

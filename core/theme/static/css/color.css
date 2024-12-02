@@ -8,7 +8,9 @@
     --white-color: #ffffff;
     --black-color: #222222;
     --success-color: rgb(5, 109, 95);
-    --danger-color: rgb(141, 46, 72);
+    --danger-color: rgb(233, 70, 97);
+    /* --danger-color: #d63374; */
+    /* --bs-form-invalid-color: #d63374; */
 }
 
 /* Transparent color system */

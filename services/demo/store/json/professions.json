@@ -1,0 +1,7 @@
+[
+    {"nom_profession":"etudiant", "code_profession":"ETUDI"},
+    {"nom_profession":"soudeur", "code_profession":"SOUD"},
+    {"nom_profession":"chaudronnier", "code_profession":"CHAUDR"},
+    {"nom_profession":"tuyauteur", "code_profession":"TUYAU"},
+    {"nom_profession":"autres", "code_profession":"AUTR"}
+]

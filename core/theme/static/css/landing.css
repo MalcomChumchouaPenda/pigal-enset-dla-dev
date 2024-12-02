@@ -111,6 +111,10 @@ a {
   text-decoration: none;
 } */
 
+.btn {
+  border-radius: 5px;
+}
+
 .btn-primary {  
   color: var(--contrast-color);
   background: var(--primary-color);
@@ -123,6 +127,12 @@ a {
 }
 
 .btn-secondary {
+  background-color: color-mix(in srgb, var(--secondary-color), transparent 20%);
+  border-color: color-mix(in srgb, var(--secondary-color), transparent 20%);
+}
+
+.btn.btn-secondary:hover {
+  background-color: color-mix(in srgb, var(--secondary-color), transparent 30%);
   border-color: color-mix(in srgb, var(--secondary-color), transparent 50%);
 }
 
@@ -145,21 +155,47 @@ a {
 
 /* General inputs  */
 
-input {
+select, input {
   box-shadow: none;
 }
 
-input:focus,
-input.form-control:focus {
+select:focus, select.form-select:focus,
+input:focus, input.form-control:focus {
   box-shadow: none;
   border-color: color-mix(in srgb, var(--accent-color), transparent 50%);
 }
 
-input::placeholder,
-input.form-control::placeholder {
+select::placeholder, select.form-select::placeholder,
+input::placeholder, input.form-control::placeholder {
   font-style: italic;
   opacity: 0.5;
 }
+
+input.form-control.is-invalid {
+  border-color: color-mix(in srgb, var(--danger-color), transparent 65%);
+  background: none;
+  padding-right: inherit;
+}
+
+input.form-control.is-invalid:hover,
+input.form-control.is-invalid:focus {
+  box-shadow: none;
+  border-color: var(--danger-color);
+}
+
+.invalid-feedback {
+  color: var(--danger-color);
+}
+
+.form-label {
+  color: color-mix(in srgb, var(--default-color), transparent 35%);
+}
+
+input[type=file]::-webkit-file-upload-button,
+input[type=file]::file-selector-button {
+  background-color: var(--secondary-light-color);
+}
+
 
 /*--------------------------------------------------------------
 # Header  Classes
@@ -988,18 +1024,8 @@ justify-content: center;
 }
 
 .body-form .hero{
-  --background-color: var(--white-color);
-  --default-color: var(--secondary-dark-color);
-  --heading-color: var(--secondary-dark-color);
-  --surface-color: var(--white-color);
-  --contrast-color: var(--white-color);
-  width: 100%;
-  min-height: 85vh;
-  position: relative;
-  padding: 140px 0 0 0;
-  display: flex;
-  align-items: start;
-  justify-content: start;
+  min-height: 0;
+  max-height: 0;
 }
 
 
@@ -1091,8 +1117,19 @@ justify-content: center;
 }
 
 .body-form .main {
-  min-height: 0;
-  max-height: 0;
+  --background-color: var(--white-color);
+  --default-color: var(--secondary-dark-color);
+  --heading-color: var(--secondary-dark-color);
+  --surface-color: var(--white-color);
+  --contrast-color: var(--white-color);
+  width: 100%;
+  min-height: 85vh;
+  position: relative;
+  padding: 140px 0 0 0;
+  display: flex;
+  align-items: start;
+  justify-content: start;
+  overflow: auto;
 }
 
 .body-details .main{
@@ -1612,12 +1649,62 @@ line-height: 0;
 --------------------------------------------------------------*/
 
 .details-info {
-  border-radius: 5px;
-  background: var(--secondary-light-color);
   padding: 15px;
   height: 100%;
+  background: transparent;
 }
 
+.details-info p {  
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+.details-info.details-rounded {
+  border-radius: 5px;
+  background: var(--secondary-light-color);
+}
+
+
+/*--------------------------------------------------------------
+# Wizard classes
+--------------------------------------------------------------*/
+
+/* Hide all steps by default: */
+.tab {
+  display: none;
+}
+  
+.tab .field {
+  display: flex;
+  flex-direction: column;
+  justify-items: start;
+  align-items: start;
+  padding: 25px 10px 10px 10px;
+}
+
+  /* Make circles that indicate the steps of the form: */
+  .step {
+    height: 10px;
+    width: 10px;
+    margin: 0 2px;
+    background-color: var(--secondary-color);
+    border: none;
+    border-radius: 50%;
+    display: inline-block;
+    opacity: 0.5;
+  }
+  
+  /* Mark the active step: */
+  .step.active {
+    opacity: 1;
+  }
+  
+  /* Mark the steps that are finished and valid: */
+  .step.finish {
+    background-color: var(--accent-color);
+  }
+  
+  
 
 /*--------------------------------------------------------------
 # Footer classes

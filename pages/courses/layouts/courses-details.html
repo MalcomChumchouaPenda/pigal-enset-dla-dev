@@ -20,7 +20,7 @@
     </div>
     <div class="row ms-3 me-2 g-4 pb-4">
         <div class="col-lg-6 col-12">
-            <div class="details-info">
+            <div class="details-info details-rounded">
                 <h5>Qualifications et Debouches</h5>
                 <p>
                     This free lorem ipsum generator lets you choose how many sentences, 
@@ -31,7 +31,7 @@
             </div>
         </div>
         <div class="col-lg-6 col-12">
-            <div class="details-info">
+            <div class="details-info details-rounded">
                 <h5>Deroulement de la Formation</h5>
                 <p>
                     This free lorem ipsum generator lets you choose how many sentences, 
@@ -42,7 +42,7 @@
             </div>
         </div>
         <div class="col-lg-6 col-12">
-            <div class="details-info">
+            <div class="details-info details-rounded">
                 <h5>Cout de la Formation</h5>
                 <p>
                     This free lorem ipsum generator lets you choose how many sentences, 
@@ -53,7 +53,7 @@
             </div>
         </div>
         <div class="col-lg-6 col-12">
-            <div class="details-info">
+            <div class="details-info details-rounded">
                 <h5>Conditions d'admission</h5>
                 <p>
                     This free lorem ipsum generator lets you choose how many sentences, 
@@ -61,11 +61,12 @@
                     markup and specify how big the text should be. It currently supports 
                     standard Lorem Ipsum, Marvel Ipsum, Batman Ipsum and Pokemon Ipsum.
                 </p>
-                <div class="d-flex justify-content-center py-3">
-                    <a class="btn btn-primary w-75">Demarrer une inscription</a>
-                </div>
             </div>
         </div>
+    </div>
+    <div class="d-flex justify-content-center py-3">
+        <a class="btn btn-primary w-25 py-3"
+           href="{{ url_for('admission.index') }}">Demarrer une inscription</a>
     </div>
 </div>
 {% endblock %}
