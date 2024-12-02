@@ -13,3 +13,10 @@
 .course-item > p {
     margin-bottom: 0;
 }
+
+@media (max-width: 991px) {
+    .course-item {
+        padding: 0 10px 20px 0;
+    }
+  }
+  

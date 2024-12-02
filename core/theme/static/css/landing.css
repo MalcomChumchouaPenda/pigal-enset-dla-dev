@@ -1060,6 +1060,14 @@ justify-content: center;
 }
 
 @media (max-width: 991px) {
+  
+  .body-listing .hero{
+    padding: 120px 10px 0 20px;
+    display: flex;
+    align-items: start;
+    justify-content: start;
+  }
+
   .coming-soon-hero {
     padding: 0 50px;
   }
@@ -1100,12 +1108,6 @@ justify-content: center;
   line-height: 24px;
 }
 
-@media (max-width: 991px) {
-  .main .section {
-    scroll-margin-top: 76px;
-    padding: 40px 25px 20px 10px;
-  }
-}
 
 /* main variants */
 
@@ -1140,6 +1142,20 @@ justify-content: center;
   display: flex;
   align-items: start;
   justify-content: start;
+}
+
+@media (max-width: 991px) {
+  .body-listing .main {
+    padding: 10px 10px 0 20px;
+    display: flex;
+    align-items: start;
+    justify-content: start;
+  }
+
+  .main .section {
+    scroll-margin-top: 76px;
+    padding: 40px 25px 20px 10px;
+  }
 }
 
 

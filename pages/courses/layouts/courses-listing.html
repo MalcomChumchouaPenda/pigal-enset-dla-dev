@@ -49,7 +49,7 @@
                 <h4 class="d-flex flex-lg-row flex-column">
                   {{ item.level_name }} - {{ item.nom }} ({{ item.option_id }})
                 </h4>
-                <p class="text-secondary pb-1">
+                <div class="text-secondary pb-1">
                   {% if item.formation_id == 'CPS' %} 
                     <span>Cours du soir</span>, 
                   {% else %} 
@@ -60,8 +60,8 @@
                   {% else %} 
                     <span class="text-danger">Inscription clôturée</span>, 
                   {% endif %}
-                  Annee academique {{ item.annee }}
-                </p>
+                  <span class="text-nowrap">Annee academique {{ item.annee }}</span>
+                </div>
                 {{ item.text | safe }}
                 <div class="d-flex justify-content-start gx-4 pt-0">
                   <a class="btn btn-link ms-0" href="{{ url_for('courses.details',key=item.id, prev_url=request.path, prev=header.link) }}">Voir plus</a>
