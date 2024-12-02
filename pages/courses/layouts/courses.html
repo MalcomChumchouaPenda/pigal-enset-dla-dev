@@ -23,19 +23,19 @@
     {% for item in formations %}
       {% if loop.index0 % 2 == 0 %}        
         <div class="row gy-4 mb-3">
-          <div class="col-lg-6 position-relative d-flex align-items-center order-lg-2" data-aos="fade-up" data-aos-delay="200">
+          <div class="col-lg-6 position-relative d-flex align-items-center order-lg-2 px-3" data-aos="fade-up" data-aos-delay="200">
             <img src="{{ url_for('courses.static', filename=item.image)}}" class="img-fluid flex-shrink-0" alt="">
           </div>
-          <div class="col-lg-6 content order-lg-1 pt-1" data-aos="fade-up" data-aos-delay="100">
+          <div class="col-lg-6 order-lg-1 pt-1 px-3" data-aos="fade-up" data-aos-delay="100">
             {{ item.text | safe }}
           </div>
         </div>
       {% else %}  
         <div class="row gy-4 mb-3">
-          <div class="col-lg-6 position-relative d-flex align-items-center order-lg-1" data-aos="fade-up" data-aos-delay="200">
+          <div class="col-lg-6 position-relative d-flex align-items-center order-lg-1 px-3" data-aos="fade-up" data-aos-delay="200">
             <img src="{{ url_for('courses.static', filename=item.image)}}" class="img-fluid flex-shrink-0" alt="">
           </div>
-          <div class="col-lg-6 content order-lg-2 pt-1" data-aos="fade-up" data-aos-delay="100">
+          <div class="col-lg-6 order-lg-2 pt-1 px-3" data-aos="fade-up" data-aos-delay="100">
             {{ item.text | safe }}
           </div>
         </div>
