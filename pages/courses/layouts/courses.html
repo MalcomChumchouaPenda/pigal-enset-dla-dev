@@ -1,7 +1,7 @@
 {% extends 'landing-page.html' %}
 
-{% block page_title %}Formations - ENSET Douala{% endblock %}
-{% block page_body_id %}courses{% endblock %}
+{% block meta_title %}Formations - ENSET Douala{% endblock %}
+{% block body_id %}courses{% endblock %}
 
 {% block page_hero %}
   {% call hero("25") %}
@@ -9,12 +9,12 @@
     {{ hero_msg | safe }}
   </div>
   <div class="hero-bg">
-      <img src="{{ url_for('research.static', filename='img/hero.jpg') }}" alt="">
+    <img src="{{ url_for('research.static', filename='img/hero.jpg') }}" alt="">
   </div>
   {% endcall %}
 {% endblock %}
 
-{% block page_sections %}
+{% block page_main %}
     
 <!-- Type Formation Section -->
 <section id="about" class="about section light-background pt-5">
@@ -45,18 +45,18 @@
 </section><!-- End Type Formation Section -->
 
 <!-- Domaines technniques -->
-<section id="departments" class="services services-imaged section pt-5">
+<section id="departments" class="features features-imaged section pt-5">
   {{ section_title("Domaines", before="Nos", emphasis="Domaines de formation") }}
 
   <div class="container">
     <div class="row row-cols-1 row-cols-md-3 gy-4">
     {% for item in departments %}  
-      <div class="col" data-aos="fade-up" data-aos-delay="100">
-        <div class="card service-item position-relative h-100">
+      <div class="col">
+        <div class="card features-item position-relative h-100">
           <img src="{{ url_for('courses.static', filename=item.image)}}" class="card-img-top" alt="...">
           <div class="card-body">
             <h4 class="card-title">{{ item.nom }} ({{item.id }})</h4>
-            <p class="card-text">{{ item.text | safe }}</p>
+            <div class="card-text">{{ item.text | safe }}</div>
             <div class="d-flex justify-content-start">
               <a href="{{ url_for('courses.list', unit=item.id) }}" class="card-link">
                 Liste des formations en {{item.id }}
@@ -65,23 +65,23 @@
             </div>
           </div>
         </div>
-      </div><!-- End Service Item -->
+      </div><!-- End feature Item -->
     {% endfor %}
     </div>
   </div>  
 </section><!-- End Domaines techniques -->
 
 <!-- Domaines de Recherche -->
-<section id="labs" class="services services-numbered section light-background">
+<section id="labs" class="features features-numbered section light-background">
   {{ section_title("Recherche", before="Nos", emphasis="Domaines de Recherche") }}
   <div class="container">
       <div class="row  row-cols-1 row-cols-md-3 no-gutters">
       {% for item in labs %}
-          <div class="col card pt-2" data-aos="fade-up" data-aos-delay="100">
+          <div class="col card pt-2 features-item">
               <div class="card-header">{{ item.id }}</div>
               <div class="card-body">
                   <h4 class="card-title mt-2">{{ item.nom }}</h4>
-                  <p class="card-text">{{ item.text | safe }}</p>
+                  <div class="card-text">{{ item.text | safe }}</div>
                   <div class="d-flex justify-content-start">
                     <a href="{{ url_for('courses.list', formation='M2R', unit=item.id) }}" class="card-link">
                       Liste des Masters du Laboratoire {{ item.id }} 

@@ -14,6 +14,7 @@
 /* Fonts size */
 :root {
   --default-font-size: 14px;
+  --default-font-weight: normal;
   --h1-font-size: 24px;
   --h1-font-weight: 700;
   --h2-font-size: 22px;
@@ -126,6 +127,23 @@ a:hover {
 .btn-secondary {
   border-color: color-mix(in srgb, var(--secondary-color), transparent 50%);
 }
+
+      
+.btn-outline-primary {  
+  color: var(--primary-color);
+  border-color: color-mix(in srgb, var(--primary-color), transparent 75%);
+}
+
+.btn-outline-primary:hover {  
+  color: var(--contrast-color);
+  background-color: var(--primary-color);
+  border-color: transparent;
+}
+
+.btn-outline-secondary{  
+  border-color: color-mix(in srgb, var(--default-color), transparent 75%);
+}
+
 
 /*--------------------------------------------------------------
 # Header  Classes
@@ -1081,6 +1099,10 @@ line-height: 0;
 # About Section
 --------------------------------------------------------------*/
 
+.about-content p {  
+  text-align: justify;
+  text-justify: inter-word;
+}
 
 /*--------------------------------------------------------------
 # Stats Section
@@ -1115,112 +1137,101 @@ line-height: 0;
     font-size: var(--default-font-size);
 }
 
+
 /*--------------------------------------------------------------
-# About Section
+# features Section
 --------------------------------------------------------------*/
-
-
-
-  /*--------------------------------------------------------------
-  # features Section
-  --------------------------------------------------------------*/
-  .features .features-item {
-      position: relative;
-      margin-bottom: 30px;
-    }
+.features .features-item {
+  position: relative;
+  padding: 15px;
+}
     
-  .features .features-item .card,
-  .features .features-item .card-body {
-      margin: 0;
-      padding: 0;
-      border: none;
-      background-color: transparent;
-    }
-  
-  .features .features-item .icon {
+.features .features-item .card {
+  margin: 0;
+  border: none;
+  margin-bottom: 30px;
+  background-color: transparent;
+}
+
+.features .features-item .card p {
+  font-size: var(--default-font-size);
+  font-weight: var(--default-font-weight);
+  margin: 0;
+  padding: 0;
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+.features .features-item .icon {
       margin-right: 20px;
-    }
+}
     
-  .features .features-item .icon i {
+.features .features-item .icon i {
     color: var(--accent-color);
     font-size: 40px;
     line-height: 0;
     transition: 0.3s;
-    }
+}
     
-  .features .features-item .card-title {
+.features .features-item .card-title {
     color: var(--heading-color);
+    font-size: var(--h1-font-size);
     font-weight: var(--h1-font-weight);
     margin-bottom: 10px;
-    font-size: var(--h3-font-size);
     transition: 0.3s;
-    }
+}
     
-  .features .features-item .card-text {
+.features .features-item .card-text {
     font-size: var(--default-font-size);
-    color: color-mix(in srgb, var(--default-color), transparent 30%);
+    font-weight: var(--default-font-weight);
+    color: color-mix(in srgb, var(--default-color), transparent 20%);;
     margin-bottom: 10px;
-    }
+    text-align: justify;
+    text-justify: inter-word;
+}
     
-  .features .features-item .btn-read-more {
+.features .features-item .btn-read-more {
     display: flex;
     align-items: center;
     color: color-mix(in srgb, var(--default-color), transparent 50%);
     transition: 0.3s;
     font-weight: var(--h1-font-weight);
     font-size: var(--default-font-size);
-    }
+}
     
-  .features .features-item .btn-read-more i {
+.features .features-item .btn-read-more i {
     margin-left: 8px;
-    }
+}
     
     /* .features .features-item:hover .card-title,
-    .features .features-item:hover .btn-read-more,
-    .features .features-item:hover .icon i {
+.features .features-item:hover .btn-read-more,
+.features .features-item:hover .icon i {
     color: var(--accent-color);
-    } */
+} */
   
-  
-  .features .btn {
+
+.features .btn {
       margin: 12px 2px 5px 2px;
       /* font-size: 12px; */
       border-radius: 3px;
-    }
+}
   
-      
-  .features .features-item .btn-outline-primary {  
-      color: var(--primary-color);
-      border-color: color-mix(in srgb, var(--primary-color), transparent 75%);
-    }
-  
-  .features .features-item .btn-outline-primary:hover {  
-      color: var(--contrast-color);
-      background-color: var(--primary-color);
-      border-color: transparent;
-    }
-  
-  .features .features-item .btn-outline-secondary{  
-      border-color: color-mix(in srgb, var(--default-color), transparent 75%);
-    }
 
+/* feature numbered  */
 
-/*--------------------------------------------------------------
-# feature numbered
---------------------------------------------------------------*/
 .features-numbered .card {
   background-color: var(--surface-color);
   color: var(--default-color);
   border: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
-  padding: 40px;
-  margin: -1px;
   border-radius: 0;
+  padding: 20px;
+  margin: 0;
 }
 
 .features-numbered .card .card-header {
   display: block;
-  font-size: var(--h1-font-size);
-  font-weight: 400;
+  font-size: var(--h4-font-size);
+  font-weight: var(--h4-font-weight);
   color: var(--accent-color);
   background-color: transparent;
   border: none;
@@ -1229,18 +1240,12 @@ line-height: 0;
 
 .features-numbered .card .card-title {
   color: color-mix(in srgb, var(--heading-color), transparent 20%);
-  font-size: var(--h1-font-size);
-  font-weight: var(--h2-font-weight);
+  font-size: var(--h4-font-size);
+  font-weight: var(--h4-font-weight);
   padding: 0;
   margin: 20px 0;
 }
 
-.features-numbered .card p {
-  color: color-mix(in srgb, var(--default-color), transparent 40%);
-  font-size: var(--default-font-size);
-  margin: 0;
-  padding: 0;
-}
 
 .features-numbered .card-body {
   margin: 0;
@@ -1272,6 +1277,10 @@ line-height: 0;
 /*--------------------------------------------------------------
 # features imaged
 --------------------------------------------------------------*/
+.features-imaged .card {
+  padding: 0;
+}
+
 .features-imaged .img {
   border-radius: 8px;
   overflow: hidden;
@@ -1287,13 +1296,6 @@ line-height: 0;
   font-weight: var(--h1-font-weight);
   padding: 0;
   margin: 10px 0;
-}
-
-.features-imaged .card p {
-  color: color-mix(in srgb, var(--default-color), transparent 40%);
-  font-size: var(--default-font-size);
-  margin: 0;
-  padding: 0;
 }
 
 .features-imaged .card-link {
@@ -1337,6 +1339,8 @@ line-height: 0;
   font-size: var(--default-font-size);
   margin: 0;
   padding: 0;
+  text-align: justify;
+  text-justify: inter-word;
 }
 
 .news .card-link {
