@@ -3,6 +3,10 @@
 {% block meta_title %}Actualites - ENSET Douala{% endblock %}
 {% block body_id %}events{% endblock %}
 
+{% block custom_css %} 
+  <link href="{{ url_for('events.static', filename='css/events.css') }}" rel="stylesheet">
+{% endblock %}
+
 {% block page_hero %}
   {% call hero("25") %}
   <div class="hero-info w-75 d-flex flex-column justify-content-center align-items-center">
@@ -18,4 +22,30 @@
       <img src="{{ url_for('events.static', filename='img/hero.jpg') }}" alt="">
   </div>
   {% endcall %}
+{% endblock %}
+
+{% block page_main %}
+<section class="news section">
+  <div class="container pt-5">
+    <div class="row gy-5 pt-5">
+    {% for item in news %}
+      <div class="col-lg-4 col-md-6">
+        <article class="news-item">
+          <img src="{{ url_for('events.static', filename=item.image) }}" alt="" class="img-fluid">
+          <h5 class="news-title ms-0 ps-0 py-2">
+            <a href="blog-details.html">{{ item.title }}</a>
+          </h5>
+          <div class="d-flex justify-content-between">
+            <div class="news-category">{{ item.category }}</div>
+            <span class="news-date mx-2"><i class="bi bi-clock mx-2"></i>{{ item.date }}</span>
+          </div>
+        </article>
+      </div><!-- End post list item -->
+    {% endfor %}
+    </div><!-- End blog posts list -->
+    <div class="d-flex justify-content-center py-5">
+      {{ pagination.links }}
+    </div>
+  </div>
+</section><!-- /Blog Posts 2 Section -->
 {% endblock %}
