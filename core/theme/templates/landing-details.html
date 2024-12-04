@@ -2,9 +2,8 @@
 {% extends 'landing-base.html' %}
 
 {% block body_class %} body-details {% endblock %}
-{% block footer_class %}{% endblock %}
-
 {% block base_hero %}<br class="hero">{% endblock %}
+
 {% block base_main %}
     {% block details_main %}
     <p class="w-100 text-center py-5 my-5">Details main</p>
@@ -12,7 +11,59 @@
 {% endblock %}
 
 
-{% block base_footer %}{% endblock %}
+{% block base_footer %} 
+<div class="container footer-top">
+  <div class="row gy-4 px-4 px-lg-1">
+
+    <div class="col-lg-6 col-md-12 footer-about">
+      <a href="#" class="logo d-flex align-items-center">
+        <span class="sitename">ENSET Douala</span>
+      </a>
+      <div class="footer-contact pt-3">
+        <p>{{ contact.addresse }}</p>
+        <p>{{ contact.ville }}</p>
+        <p class="mt-3"><strong>Tel:</strong> <span>{{ contact.tel }}</span></p>
+        <p><strong>Email:</strong> <span>{{ contact.email }}</span></p>
+      </div>
+      <div class="social-links d-flex mt-4">
+        <a href="{{ contact.twitter }}"><i class="bi bi-twitter-x"></i></a>
+        <a href="{{ contact.facebook }}"><i class="bi bi-facebook"></i></a>
+        <a href="{{ contact.instagram }}"><i class="bi bi-instagram"></i></a>
+        <a href="{{ contact.linkedin }}"><i class="bi bi-linkedin"></i></a>
+      </div>
+    </div>
+
+    <div class="col-lg-6 col-md-12">
+      <div class="row">
+      {% block listing_links %}
+        <div class="col-lg-6 col-md-12 footer-links">
+            <h4>Hic solutasetp</h4>
+            <ul>
+              <li><i class="bi bi-chevron-right"></i><a href="#">Molestiae accusamus iure</a></li>
+              <li><i class="bi bi-chevron-right"></i><a href="#">Excepturi dignissimos</a></li>
+              <li><i class="bi bi-chevron-right"></i><a href="#">Suscipit distinctio</a></li>
+              <li><i class="bi bi-chevron-right"></i><a href="#">Dilecta</a></li>
+              <li><i class="bi bi-chevron-right"></i><a href="#">Sit quas consectetur</a></li>
+            </ul>
+        </div>
+        <div class="col-lg-6 col-md-12 footer-links">
+            <h4>Nobis illum</h4>
+            <ul>
+              <li><i class="bi bi-chevron-right"></i><a href="#">Ipsam</a></li>
+              <li><i class="bi bi-chevron-right"></i><a href="#">Laudantium dolorum</a></li>
+              <li><i class="bi bi-chevron-right"></i><a href="#">Dinera</a></li>
+              <li><i class="bi bi-chevron-right"></i><a href="#">Trodelas</a></li>
+              <li><i class="bi bi-chevron-right"></i><a href="#">Flexo</a></li>
+            </ul>
+        </div>
+      {% endblock %}
+      </div>
+    </div>
+    
+  </div>
+</div>
+{% endblock %}
+
 {% block base_authors %}
   {% block details_authors %}
   <a>Malcom Chumchoua Penda</a>

@@ -44,12 +44,11 @@ def _load_features():
     return assets.read_json(f'json/features.json')
 
 def _load_events():
-    items = event_assets.read_json(f'json/news.json')
-    events = []
-    for item in items:
+    events = event_assets.read_json('json/events.json')
+    recent = []
+    for item in events:
         if item['level'] == 0:
-            key = item['id']
-            events.append(item)
-            item['image'] = f'/events/assets/img/{key}.jpg'
-            item['text'] = event_assets.read_markdown(f'md/{key}-100.md')
-    return events
+            item_id = item["id"]
+            item['text'] = event_assets.read_markdown(f'md/{item_id}-100.md')
+            recent.append(item)
+    return recent

@@ -1650,6 +1650,66 @@ line-height: 0;
 
 
 /*--------------------------------------------------------------
+# events section
+--------------------------------------------------------------*/
+.events img {
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.events .card {
+  border-color: transparent;
+}
+
+.events-title {
+  color: color-mix(in srgb, var(--heading-color), transparent 20%);
+  /* font-size: var(--h5-font-size);
+  font-weight: var(--h5-font-weight); */
+  padding: 0;
+  margin: 10px 0;
+}
+
+.events-title a {
+font-size: inherit;
+font-weight: inherit;
+background: none;
+margin: 0;
+color: var(--default-color);
+}
+
+.events-title a:hover{
+  background: none;
+  color: var(--accent-color);
+}
+
+.events-category,
+.events-date {
+color: color-mix(in srgb, var(--default-color), transparent 30%);
+}
+
+
+
+.events .card p {
+  color: color-mix(in srgb, var(--default-color), transparent 40%);
+  font-size: var(--default-font-size);
+  margin: 0;
+  padding: 0;
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+.events .card-link {
+  font-size: var(--default-font-size);
+  padding-top: 12px;
+}
+
+.events .card-footer {
+  border: none;
+  background-color: transparent;
+}
+
+
+/*--------------------------------------------------------------
 # Wizard classes
 --------------------------------------------------------------*/
 

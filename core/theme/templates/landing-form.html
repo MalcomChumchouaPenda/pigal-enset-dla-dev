@@ -2,16 +2,14 @@
 {% extends 'landing-base.html' %}
 
 {% block body_class %} body-form {% endblock %}
-{% block footer_class %}{% endblock %}
-
 {% block base_hero %}<br class="hero">{% endblock %}
 {% block base_main %}
   {% block form_main %}<p>Form Main</p>{% endblock %}
 {% endblock %}
-{% block base_footer %}{% endblock %}
 
+{% block base_footer %}
+  {% block form_footer %}<br>{% endblock %}
+{% endblock %}
 {% block base_authors %}
-  {% block form_authors %}
-  <a>Malcom Chumchoua Penda</a>
-  {% endblock %}
+  {% block form_authors %}<a>Malcom Chumchoua Penda</a>{% endblock %}
 {% endblock %}
