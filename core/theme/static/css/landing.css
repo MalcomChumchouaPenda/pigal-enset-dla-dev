@@ -758,21 +758,21 @@ inset: 0;
 z-index: 2;
 }
 
-.hero .breadcrumb-item {
+.hero-info .breadcrumb-item {
   font-size: var(--h5-font-size);
   color: var(--accent-color);
 }
 
-.hero .breadcrumb-item::before {
+.hero-info .breadcrumb-item::before {
   font-size: var(--h5-font-size);
   color: var(--contrast-color);
 }
 
-.hero .breadcrumb-item.active {
+.hero-info .breadcrumb-item.active {
   color: var(--contrast-color);
 }
 
-.hero .breadcrumb-item a {
+.hero-info .breadcrumb-item a {
   font-size: var(--h5-font-size);
   font-weight: var(--h5-font-weight);
   color: var(--accent-color);
@@ -790,7 +790,7 @@ z-index: 2;
   transition: background-size 400ms;
 }
 
-.hero .breadcrumb-item a:hover {  
+.hero-info .breadcrumb-item a:hover {  
   background-size: 0 2px, 100% 2px;
 }
 
@@ -820,8 +820,6 @@ z-index: 2;
     width: 75%;
   }
 }  
-
-
 
 .hero .btn-get-started {
   color: var(--contrast-color);

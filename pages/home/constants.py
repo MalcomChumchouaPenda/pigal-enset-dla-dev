@@ -7,7 +7,7 @@ LANDING_MENU.add_entry('courses', 'Formations', point='courses.index')
 LANDING_MENU.add_entry('events', 'Actualités', point='events.index')
 LANDING_MENU.add_entry('organisation', 'Organisation', point='organisation.index')
 LANDING_MENU.add_entry('spaces', 'Espaces')
-LANDING_MENU.add_entry('contact', 'Contact', url="#contacts")
+LANDING_MENU.add_entry('contact', 'Contact', url="#contact")
 LANDING_MENU.add_entry('admission', 'Inscription', point='admission.index', parent='spaces')
 LANDING_MENU.add_entry('project_a', 'Projet A', point='project_a.index', parent='spaces')
 LANDING_MENU.add_entry('project_b', 'Projet B', point='project_b.index', parent='spaces')
@@ -27,3 +27,14 @@ CONTACT = {
     "instagram":"",
     "linkedin":""
 }
+
+LINKS = [
+    {
+        "group":"Liens Utiles",
+        "links":[
+            {"url":"#", "nom":"Universite de Douala"},
+            {"url":"#", "nom":"Systhag Online"},
+            {"url":"#", "nom":"Ministere de l'Enseignement Superieur"}
+        ]
+    }
+]

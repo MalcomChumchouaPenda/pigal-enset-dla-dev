@@ -4,7 +4,8 @@ from core.config import app, ENTRIES
 from core.utils import register_api, register_ui
 from core.utils import init_db
 from core.utils import default_deadline
-from pages.home.constants import CONTACT, LANDING_MENU, LOGIN_MENU
+from pages.home.constants import CONTACT, LINKS
+from pages.home.constants import LANDING_MENU, LOGIN_MENU
 
 
 register_api()
@@ -22,7 +23,9 @@ def inject_entries():
 
 @app.context_processor
 def inject_defaults():
-    return {'default_deadline':default_deadline, 'contact':CONTACT}
+    return {'default_deadline':default_deadline, 
+            'contact':CONTACT,
+            'links':LINKS}
 
 @app.context_processor
 def inject_menus():
