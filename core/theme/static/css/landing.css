@@ -1477,7 +1477,7 @@ line-height: 0;
 }
 
 .features .features-item .icon {
-      margin-right: 20px;
+  margin-right: 20px;
 }
     
 .features .features-item .icon i {
@@ -1594,6 +1594,7 @@ line-height: 0;
 --------------------------------------------------------------*/
 .features-imaged .card {
   padding: 0;
+  border-color: color-mix(in srgb, var(--default-color), transparent 85%);
 }
 
 .features-imaged .img {

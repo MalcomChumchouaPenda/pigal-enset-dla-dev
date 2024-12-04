@@ -5,8 +5,14 @@
 
 {% block page_hero %}
   {% call hero("25") %}
-  <div class="hero-info">
-    {{ hero_msg | safe }}
+  <div class="hero-info d-flex flex-column justify-content-center align-items-center">
+    <h2>Nos Offres de formation</h2>
+    <nav aria-label="breadcrumb mt-1">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="{{ url_for('home.index') }}">Home</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Formations</li>
+      </ol>
+    </nav>
   </div>
   <div class="hero-bg">
     <img src="{{ url_for('courses.static', filename='img/hero.jpg') }}" alt="">

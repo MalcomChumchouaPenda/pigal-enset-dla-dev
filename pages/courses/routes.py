@@ -12,13 +12,9 @@ assets = get_assets('courses')
 @ui.route('/')
 def index():
     return render_template('courses.html',
-                           hero_msg=_load_hero_msg(), 
                            labs=_load_labs(),
                            formations=_load_formations(),
                            departments=_load_departments())
-
-def _load_hero_msg():
-    return assets.read_markdown(f'md/hero-msg.md')
 
 def _load_formations():
     items = qry.get_formations()
