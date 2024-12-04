@@ -1500,8 +1500,8 @@ line-height: 0;
     font-weight: var(--default-font-weight);
     color: color-mix(in srgb, var(--default-color), transparent 20%);;
     margin-bottom: 10px;
-    text-align: justify;
-    text-justify: inter-word;
+    /* text-align: justify;
+    text-justify: inter-word; */
 }
     
 .features .features-item .btn-read-more {
@@ -1511,12 +1511,18 @@ line-height: 0;
     transition: 0.3s;
     font-weight: var(--h1-font-weight);
     font-size: var(--default-font-size);
+    background: none;
 }
     
+.features .features-item .btn-read-more:hover{
+  background: none;
+  color: var(--accent-color);
+}
+
 .features .features-item .btn-read-more i {
     margin-left: 8px;
 }
-    
+  
     /* .features .features-item:hover .card-title,
 .features .features-item:hover .btn-read-more,
 .features .features-item:hover .icon i {

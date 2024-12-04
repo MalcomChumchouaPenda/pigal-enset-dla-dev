@@ -56,40 +56,32 @@
 </section><!-- /About Section -->
 
 <!-- Stats Section -->
-<section id="stats" class="stats section">
+<section id="stats" class="stats section mt-4">
   {{ section_title('Stats', before='Quelques', emphasis='Statistiques') }}
   <div class="container">
 
     <div class="row gy-4 my-2">
-      <div class="col-lg-3 col-md-6 my-0">
+      <div class="col-lg-4 col-md-6 my-0">
         <div class="stats-item">
           <i class="bi bi-emoji-smile"></i>
           <span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="1" class="purecounter"></span>
-          <p><strong>Happy Clients</strong> <span>consequuntur quae</span></p>
+          <p><strong>Enseignants formees par an</strong> <span> dans les domaines techniques ou industrielles</span></p>
         </div>
       </div><!-- End Stats Item -->
 
-      <div class="col-lg-3 col-md-6 my-0">
+      <div class="col-lg-4 col-md-6 my-0">
         <div class="stats-item">
           <i class="bi bi-journal-richtext"></i>
           <span data-purecounter-start="0" data-purecounter-end="521" data-purecounter-duration="1" class="purecounter"></span>
-          <p><strong>Projects</strong> <span>adipisci atque cum quia aut</span></p>
+          <p><strong>Ingenieurs et professionnels formees par an</strong> <span>en cours du jour ou du soir</span></p>
         </div>
       </div><!-- End Stats Item -->
 
-      <div class="col-lg-3 col-md-6 my-0">
+      <div class="col-lg-4 col-md-6 my-0">
         <div class="stats-item">
           <i class="bi bi-headset"></i>
           <span data-purecounter-start="0" data-purecounter-end="1453" data-purecounter-duration="1" class="purecounter"></span>
-          <p><strong>Hours Of Support</strong> <span>aut commodi quaerat</span></p>
-        </div>
-      </div><!-- End Stats Item -->
-
-      <div class="col-lg-3 col-md-6 my-0">
-        <div class="stats-item">
-          <i class="bi bi-people"></i>
-          <span data-purecounter-start="0" data-purecounter-end="32" data-purecounter-duration="1" class="purecounter"></span>
-          <p><strong>Hard Workers</strong> <span>rerum asperiores dolor</span></p>
+          <p><strong>Programmes disponibles</strong> <span>de formation professionnelle ou de recherche</span></p>
         </div>
       </div><!-- End Stats Item -->
 
@@ -101,17 +93,18 @@
 <!-- Features Section -->
 <section class="features section light-background">  
   <div class="container">
-      <div class="row gy-4 mt-4">
+      <div class="row gy-4 mt-0">
       {% for item in features %}
           <!-- feature Item -->
-          <div class="col-lg-4 col-md-6 features-item d-flex">
+          <div class="col-lg-4 col-md-6 features-item d-flex mt-1">
             <div class="card">
               <div class="card-body">
                 <h4 class="card-title">{{ item.title }}</h4>
                 <div class="card-text">{{ item.description }}</div>
-                <a href="#" class="btn-read-more stretched-link">
-                    <span>Voir plus</span>
-                    <i class="bi bi-arrow-right"></i>
+                <a href="{{ url_for(item.point) }}" 
+                   class="btn-read-more stretched-link ms-0">
+                    <span>{{ item.action }}</span>
+                    <i class="bi bi-three-dots pt-2"></i>
                 </a>
               </div>
             </div>
@@ -131,7 +124,7 @@
         <div class="card">
           <div class="card-body">
             <img src="{{ url_for('events.static', filename=item.image) }}" alt="" class="img-fluid">
-            <h5 class="events-title ms-0 ps-0 py-2">
+            <h5 class="events-title ms-0 mt-3 mb-0 ps-0 py-2">
               <a class="stretched-link" href="{{ url_for('events.details', id=item.id) }}">{{ item.title }}</a>
             </h5>
             <div class="d-flex justify-content-between">

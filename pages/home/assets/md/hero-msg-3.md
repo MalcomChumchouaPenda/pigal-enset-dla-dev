@@ -2,6 +2,4 @@
 
 Connectez vous a des espaces dediees afin de benefier de services et de realiser vos activites academiques ou administratives en ligne
 
-- [Etudiants](#)
-- [Enseignants](#)
-- [Responsables](#)
+[Connexion](/login)
