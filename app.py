@@ -34,4 +34,4 @@ def inject_menus():
 
 @app.errorhandler(404)
 def not_found(e):
-    return render_template('error-404.html')
+    return render_template('base-error-404.html')
