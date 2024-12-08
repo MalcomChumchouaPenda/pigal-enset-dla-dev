@@ -8,9 +8,7 @@ assets = get_assets('home')
 event_assets = get_assets('events')
 
 
-
 @ui.route('/')
-@ui.route('/login')
 def index():
     about = _load_about()
     heros = _load_heros()
@@ -52,3 +50,19 @@ def _load_events():
             item['text'] = event_assets.read_markdown(f'md/{item_id}-100.md')
             recent.append(item)
     return recent
+
+
+@ui.route('/login')
+def login():
+    portals = _load_portals()
+    return render_template('home-login.html',
+                           portals=portals,
+                           default_portal=None)
+
+def _load_portals():
+    return [        
+        {'nom':'-- Choisissez un portail --', 'id':None},
+        {'nom':'Etudiants', 'id':'student'},
+        {'nom':'Enseignants', 'id':'teacher'},
+        {'nom':'Administration', 'id':'admin'},
+    ]
