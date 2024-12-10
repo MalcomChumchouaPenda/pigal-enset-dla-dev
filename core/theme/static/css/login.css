@@ -171,35 +171,13 @@ input[type=file]::file-selector-button {
   min-height: 70vh;
 }
 
-.login-form-100 {
+.login-form {
   width: 100%;
 }
 
-.login-form,
-.login-form-75 {
-  width: 75%;
-}
-
-.login-form-50 {
-  width: 50%;
-}
-
-.login-form-25 {
-  width: 25%;
-}
 
 @media (max-width: 991px) {
-  .login-form,
-  .login-form-100,
-  .login-form-75,
-  .login-form-50,
-  .login-form-25 {
-    width: 100%;
-  }
   
-  .login-form-25 {
-    width: 50%;
-  }
 }
 
 

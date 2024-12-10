@@ -5,47 +5,59 @@
 
 
 {% block login_form %}
-<form class="login-form-25 d-flex flex-column align-items-center" 
+<form class="login-form container d-flex flex-column align-items-center" 
       method="post" action="{{ url_for('home.login') }}" 
       enctype="multipart/form-data">
-
+    
     <!-- Header -->
-    <h4 class="py-5">Connexion</h4>
+    <div class="row w-100 d-flex justify-content-center">
+        <div class="col-10 text-center">
+            <h4 class="py-5">Connexion Portail ENSET</h4>
+        </div>
+    </div>
 
     <!-- Portail -->
-    <div class="field my-2 w-100">
-        <select class="form-select is-required" 
-            id="formationInscr" name="formationInscr" 
-            oninput="this.className = 'form-select is-required'">
-            {% for portal in portals %}
-            <option value="{{ portal.id }}" {% if portal.id == default_portal %}selected{% endif %}>
-                {{ portal.nom | safe }}
-            </option>
-            {% endfor %}
-        </select>
+    <div class="field row my-2 w-100 d-flex justify-content-center">
+        <div class="col-10 col-lg-4">
+            <select class="form-select is-required" 
+                id="formationInscr" name="formationInscr" 
+                oninput="this.className = 'form-select is-required'">
+                {% for portal in portals %}
+                <option value="{{ portal.id }}" {% if portal.id == default_portal %}selected{% endif %}>
+                    {{ portal.nom | safe }}
+                </option>
+                {% endfor %}
+            </select>
+        </div>
     </div><!-- End Portail -->
 
     <!-- Identifiant -->
-    <div class="field my-2 w-100">
-        <input type="text" class="form-control is-required" 
-            id="userId" name="userId"
-            placeholder="Saisissez votre identifiant" 
-            oninput="this.className = 'form-control is-required'">
-        <div class="invalid-feedback">Champ obligatoire</div>
+    <div class="field row my-2 w-100 d-flex justify-content-center">
+        <div class="col-10 col-lg-4">
+            <input type="text" class="form-control is-required" 
+                id="userId" name="userId"
+                placeholder="Saisissez votre identifiant" 
+                oninput="this.className = 'form-control is-required'">
+            <div class="invalid-feedback">Champ obligatoire</div>            
+        </div>
     </div><!-- End Identifiant -->
 
     <!-- Securite -->
-    <div class="field my-2 w-100">
-        <input type="password" class="form-control is-required" 
-            id="userPwd" name="userPwd"
-            placeholder="Saisissez votre mot de passe" 
-            oninput="this.className = 'form-control is-required'">
-        <div class="invalid-feedback">Champ obligatoire</div>
+    <div class="field row my-2 w-100 d-flex justify-content-center">
+        <div class="col-10 col-lg-4">
+            <input type="password" class="form-control is-required" 
+                id="userPwd" name="userPwd"
+                placeholder="Saisissez votre mot de passe" 
+                oninput="this.className = 'form-control is-required'">
+            <div class="invalid-feedback">Champ obligatoire</div>            
+        </div>
     </div><!-- End Securite -->
 
-    <div class="d-flex flex-column pt-5 w-100 align-items-start">
-        <input class="btn btn-primary w-100" type="submit" value="Connexion">
-        <a class="btn btn-link my-4">Identifiant ou Mot de passe oublie ?</a>
+    <div class="row pt-5 w-100 d-flex justify-content-center">
+        <div class="col-10 col-lg-4 flex-column align-items-start">
+            <input class="btn btn-primary w-100" type="submit" value="Connexion">
+            <a class="btn btn-link my-4">Identifiant ou Mot de passe oublie ?</a>
+        </div>
     </div>
 
 </form> 
