@@ -4,8 +4,7 @@
 <head>
     <meta charset="UTF-32">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block page_title %}Connexion - ENSET Douala{% endblock %}</title>
-    {% block page_meta %}{% endblock %}
+    <title>Connexion - ENSET Douala</title>
 
     <!-- Favicons -->
     <link href="{{ url_for('static', filename='img/favicon.png') }}" rel="icon">
@@ -42,9 +41,62 @@
     <!-- Main  -->
     <main class="login-form-wrapper d-flex justify-content-center my-0">
       <!-- Form -->
-       {% block login_form %}
-       <h5>Demo Form</h5>
-       {% endblock %}
+       <form class="login-form container d-flex flex-column align-items-center" 
+             method="post" action="{{ url_for('login') }}" 
+             enctype="multipart/form-data">
+           
+           <!-- Header -->
+           <div class="row w-100 d-flex justify-content-center">
+               <div class="col-10 text-center">
+                   <h4 class="py-5">Connexion Portail ENSET</h4>
+               </div>
+           </div>
+       
+           <!-- Portail -->
+           <div class="field row my-2 w-100 d-flex justify-content-center">
+               <div class="col-10 col-lg-4">
+                   <select class="form-select is-required" 
+                       id="formationInscr" name="formationInscr" 
+                       oninput="this.className = 'form-select is-required'">
+                       {% for portal in portals %}
+                       <option value="{{ portal.id }}" {% if portal.id == default_portal %}selected{% endif %}>
+                           {{ portal.nom | safe }}
+                       </option>
+                       {% endfor %}
+                   </select>
+               </div>
+           </div><!-- End Portail -->
+       
+           <!-- Identifiant -->
+           <div class="field row my-2 w-100 d-flex justify-content-center">
+               <div class="col-10 col-lg-4">
+                   <input type="text" class="form-control is-required" 
+                       id="userId" name="userId"
+                       placeholder="Saisissez votre identifiant" 
+                       oninput="this.className = 'form-control is-required'">
+                   <div class="invalid-feedback">Champ obligatoire</div>            
+               </div>
+           </div><!-- End Identifiant -->
+       
+           <!-- Securite -->
+           <div class="field row my-2 w-100 d-flex justify-content-center">
+               <div class="col-10 col-lg-4">
+                   <input type="password" class="form-control is-required" 
+                       id="userPwd" name="userPwd"
+                       placeholder="Saisissez votre mot de passe" 
+                       oninput="this.className = 'form-control is-required'">
+                   <div class="invalid-feedback">Champ obligatoire</div>            
+               </div>
+           </div><!-- End Securite -->
+       
+           <div class="row pt-5 w-100 d-flex justify-content-center">
+               <div class="col-10 col-lg-4 flex-column align-items-start">
+                   <input class="btn btn-primary w-100" type="submit" value="Connexion">
+                   <a class="btn btn-link my-4">Identifiant ou Mot de passe oublie ?</a>
+               </div>
+           </div>
+       
+       </form><!-- End Form -->
     </main><!-- End Main  -->
 
     <!-- Footer  -->
@@ -53,17 +105,12 @@
       <div class="container copyright text-center mt-4">
           <p>© 
               <span>Copyright</span> 
-              <strong class="px-1 sitename">
-                  {% block footer_copyright %}CINFO ENSET{% endblock %}
-              </strong> 
+              <strong class="px-1 sitename">CINFO ENSET</strong> 
               <span>All Rights Reserved</span>
           </p>
           <div class="credits d">
               <span>Designed by </span>
-              {% block _base_authors %}
-              <a href="">Demo Author 1, </a>
-              <a href="">Demo Author 2</a>
-              {% endblock %}
+              <a>Malcom Chumchoua Penda</a>
           </div>
       </div><!-- End Footer copyright -->
   </footer><!-- ENd Footer -->

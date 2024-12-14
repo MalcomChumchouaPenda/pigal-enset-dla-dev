@@ -14,7 +14,7 @@
     {
         "title":"Des services en ligne",
         "description":"Obtenez des informations ou realiser des operations administratives ou academiques en ligne grace a des portails dedies aux enseignants, etudiants et personnels administratifs",
-        "point":"home.login",
+        "point":"login",
         "action":"Se connecter"
     }
 ]

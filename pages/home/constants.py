@@ -39,3 +39,10 @@ LINKS = [
         ]
     }
 ]
+
+PORTALS = [        
+    {'nom':'-- Choisissez un portail --', 'id':None},
+    {'nom':'Etudiants', 'id':'student'},
+    {'nom':'Enseignants', 'id':'teacher'},
+    {'nom':'Administration', 'id':'admin'},
+]

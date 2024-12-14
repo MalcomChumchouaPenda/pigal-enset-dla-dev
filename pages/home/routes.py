@@ -51,18 +51,3 @@ def _load_events():
             recent.append(item)
     return recent
 
-
-@ui.route('/login')
-def login():
-    portals = _load_portals()
-    return render_template('home-login.html',
-                           portals=portals,
-                           default_portal=None)
-
-def _load_portals():
-    return [        
-        {'nom':'-- Choisissez un portail --', 'id':None},
-        {'nom':'Etudiants', 'id':'student'},
-        {'nom':'Enseignants', 'id':'teacher'},
-        {'nom':'Administration', 'id':'admin'},
-    ]
