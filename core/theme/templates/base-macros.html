@@ -56,3 +56,30 @@
   </div>
 </a>
 {% endmacro %}
+
+
+<!-- Login field generator -->
+
+{% macro login_text_field(id, name) %}
+<div class="field row my-2 w-100 d-flex justify-content-center">
+    <div class="col-10 col-lg-4">
+        <input type="text" class="form-control is-required" 
+            id="{{ id }}" name="{{ id }}"
+            placeholder="Saisissez votre {{ name }}" 
+            oninput="this.className = 'form-control is-required'">
+        <div class="invalid-feedback">Champ obligatoire</div>            
+    </div>
+</div>
+{% endmacro %}
+
+{% macro login_pwd_field(id, name) %}
+  <div class="field row my-2 w-100 d-flex justify-content-center">
+      <div class="col-10 col-lg-4">
+          <input type="password" class="form-control is-required" 
+              id="{{ id }}" name="{{ id }}"
+              placeholder="Saisissez votre {{ name }}" 
+              oninput="this.className = 'form-control is-required'">
+          <div class="invalid-feedback">Champ obligatoire</div>            
+      </div>
+  </div>
+{% endmacro %}

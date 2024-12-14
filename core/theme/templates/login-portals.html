@@ -1,0 +1,43 @@
+
+{% extends 'login-base.html' %}
+
+{% block login_form %}
+    <form class="login-form container d-flex flex-column align-items-center" 
+        method="post" action="{{ url_for('login') }}" 
+        enctype="multipart/form-data">
+        
+        
+        <!-- Header -->
+        <div class="row w-100 d-flex justify-content-center">
+            <div class="col-10 text-center">
+                <h4 class="py-5">Connexion Portails ENSET</h4>
+            </div>
+        </div>
+
+        <!-- Portails -->
+        <div class="field row my-2 w-100 d-flex justify-content-center">
+            <div class="col-10 col-lg-4">
+                <select class="form-select is-required" 
+                    id="portalId" name="portalId" 
+                    oninput="this.className = 'form-select is-required'">
+                    <option value="None" selected>-- Choisissez un portail --</option>
+                    {% for portal in portals %}
+                        <option value="{{ portal.id }}">Portail {{ portal.nom }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+        </div><!-- End Portails -->
+
+
+        <div class="row pt-5 w-100 d-flex justify-content-center">
+            <div class="col-10 col-lg-4 flex-column align-items-start">
+                <input class="btn btn-primary w-100" type="submit" value="Continuer">
+            </div>
+        </div>
+
+    </form>
+{% endblock %}
+
+{% block login_authors %}
+    <a>Malcom Chumchoua Penda</a>
+{% endblock %}

@@ -35,11 +35,11 @@ db = SQLAlchemy(model_class=DeclarativeBase)
 migrate = Migrate(directory=migrations_dir)
 
 
-# BASIC ENTRIES/LINKS
+# LOGIN CONFIGURATION
 
-LOGIN_ENTRY = dict(uid='login', children=[])
-LANDING_ENTRY = dict(uid='landing', children=[])
-DASHBOARD_ENTRY = dict(uid='dashboard', children=[])
-ENTRIES = dict(login=LOGIN_ENTRY,
-               landing=LANDING_ENTRY, 
-               dashboard=DASHBOARD_ENTRY)
+PORTALS = [        
+    {'nom':'Admissions', 'id':'candidate'},
+    {'nom':'Etudiants', 'id':'student'},
+    {'nom':'Enseignants', 'id':'teacher'},
+    {'nom':'Administration', 'id':'admin'},
+]

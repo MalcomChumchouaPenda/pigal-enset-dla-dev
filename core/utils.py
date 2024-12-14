@@ -9,7 +9,7 @@ import markdown as md
 from flask import Blueprint, session, render_template
 
 from .config import app, db, migrate
-from .config import PAGES_DIR, SERVICES_DIR, ENTRIES
+from .config import PAGES_DIR, SERVICES_DIR
 
 
 # FACTORY METHODS

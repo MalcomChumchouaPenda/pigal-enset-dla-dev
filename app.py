@@ -1,10 +1,10 @@
 
-from flask import render_template
-from core.config import app, ENTRIES
+from flask import render_template, request, redirect, url_for
+from core.config import app, PORTALS
 from core.utils import register_api, register_ui
 from core.utils import init_db
 from core.utils import default_deadline
-from pages.home.constants import CONTACT, LINKS, PORTALS
+from pages.home.constants import CONTACT, LINKS
 from pages.home.constants import LANDING_MENU, LOGIN_MENU
 
 
@@ -26,20 +26,28 @@ def not_found(e):
                            message=message,
                            actions=actions)
 
-@app.route('/login')
+
+
+@app.route('/login', methods=['GET', 'POST'])
 def login():
-    return render_template('base-login.html',
-                           portals=PORTALS,
-                           default_portal=None)
+    if request.method == 'POST':
+        id = request.form['portalId']
+        return redirect(url_for('login_portal', id=id))
+    return render_template('login-portals.html')
 
 
-@app.context_processor
-def inject_entries():
-    return {key:entry['children'] for key, entry in ENTRIES.items()}
+@app.route('/login/<id>', methods=['GET', 'POST'])
+def login_portal(id):
+    if request.method == 'POST':
+        return 'Ok data'
+    return render_template(f'login-{id}.html')
+
+
 
 @app.context_processor
 def inject_defaults():
     return {'default_deadline':default_deadline, 
+            'portals': PORTALS,
             'contact':CONTACT,
             'links':LINKS}
 
