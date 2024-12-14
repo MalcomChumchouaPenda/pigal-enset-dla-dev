@@ -1,15 +1,23 @@
 
 {% extends 'landing-base.html' %}
 
+{% block _base_meta %}
+  {% block form_meta %}
+  <title>ENSET Douala</title>
+  {% endblock %}
+{% endblock %}
+
 {% block body_class %} body-form {% endblock %}
-{% block base_hero %}<br class="hero">{% endblock %}
-{% block base_main %}
+{% block _base_hero %}<br class="hero">{% endblock %}
+{% block _base_main %}
   {% block form_main %}<p>Form Main</p>{% endblock %}
 {% endblock %}
 
-{% block base_footer %}
+{% block _base_footer %}
    {{ light_contact_footer(contact) }}
 {% endblock %}
-{% block base_authors %}
-  {% block form_authors %}<a>Malcom Chumchoua Penda</a>{% endblock %}
+{% block _base_authors %}
+  {% block form_authors %}
+  <a>Malcom Chumchoua Penda</a>
+  {% endblock %}
 {% endblock %}

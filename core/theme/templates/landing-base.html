@@ -4,7 +4,10 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block meta_title %}ENSET Douala{% endblock %}</title>
+    
+    {% block _base_meta %}
+    <title>ENSET Douala</title>
+    {% endblock %}
 
     <!-- Favicons -->
     <link href="{{ url_for('static', filename='img/favicon.png') }}" rel="icon">
@@ -47,6 +50,7 @@
     <!-- Header  -->
     <header id="header" class="header fixed-top">
       <div class="container-fluid d-flex align-items-center">
+      {% block _base_header %}
 
         <!-- Header logo -->
         {{ nav_brand() }}
@@ -56,18 +60,19 @@
           {{ nav_menu(landing, started_url='/login') }}
           <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
         </nav><!-- End Header menu -->
-
+    
+      {% endblock %}
       </div>
     </header><!-- End Header -->
 
     <!-- Hero  -->
-    {% block base_hero %}
+    {% block _base_hero %}
     <p class="hero">Demo Hero</p>
     {% endblock %}
 
     <!-- Main  -->
     <main id="main" class="main">
-        {% block base_main %}
+        {% block _base_main %}
         <p class="w-100 text-center py-5 my-5">Demo Main</p>
         {% endblock %}
     </main>
@@ -76,7 +81,7 @@
     <footer id="footer" class="footer dark-background">
 
         <!-- Footer Contents -->
-        {% block base_footer %} 
+        {% block _base_footer %} 
         <p class="w-100 text-center py-5">Demo Footer </p>
         {% endblock %}
         
@@ -84,14 +89,12 @@
         <div class="container copyright text-center mt-4">
             <p>© 
                 <span>Copyright</span> 
-                <strong class="px-1 sitename">
-                    {% block footer_copyright %}CINFO ENSET{% endblock %}
-                </strong> 
+                <strong class="px-1 sitename">CINFO ENSET</strong> 
                 <span>All Rights Reserved</span>
             </p>
-            <div class="credits d">
+            <div class="credits">
                 <span>Designed by </span>
-                {% block base_authors %}
+                {% block _base_authors %}
                 <a href="">Demo Author 1, </a>
                 <a href="">Demo Author 2</a>
                 {% endblock %}

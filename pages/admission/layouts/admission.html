@@ -1,6 +1,8 @@
 {% extends 'landing-form.html' %}
 
-{% block meta_title %}Admission - ENSET Douala{% endblock %}
+{% block form_meta %}
+<title>Admission - ENSET Douala</title>
+{% endblock %}
 
 {% block custom_css %} 
   <link href="{{ url_for('admission.static', filename='css/form.css') }}" rel="stylesheet">

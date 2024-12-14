@@ -1,17 +1,21 @@
 
 {% extends 'landing-base.html' %}
 
+{% block _base_meta %}
+  {% block page_meta %}
+  <title>ENSET Douala</title>
+  {% endblock %}
+{% endblock %}
+
 {% block body_class %} body-page {% endblock %}
-{% block footer_class %} dark-background {% endblock %}
 
-
-{% block base_hero %} 
+{% block _base_hero %} 
   {% block page_hero %}
   <p>Page Hero</p>
   {% endblock %}
 {% endblock %}
 
-{% block base_main %}
+{% block _base_main %}
   {% block page_main %}
    <div class="py-4 my-2">
       {{ coming_soon_section("Section", default_deadline()) }}
@@ -19,11 +23,11 @@
   {% endblock %}
 {% endblock %}
 
-{% block base_footer %}
+{% block _base_footer %}
    {{ full_contact_footer(contact, links) }}
 {% endblock %}
 
-{% block base_authors %}
+{% block _base_authors %}
   {% block page_authors %}
   <a>Malcom Chumchoua Penda</a>
   {% endblock %}

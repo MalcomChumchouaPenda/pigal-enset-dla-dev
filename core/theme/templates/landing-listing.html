@@ -3,7 +3,13 @@
 
 {% block body_class %} body-listing {% endblock %}
 
-{% block base_hero %} 
+{% block _base_meta %}
+  {% block listing_meta %}
+  <title>ENSET Douala</title>
+  {% endblock %}
+{% endblock %}
+
+{% block _base_hero %} 
 <div class="hero">
     {% block listing_hero %}
     <p>Listing Hero</p>
@@ -11,17 +17,17 @@
 </div>
 {% endblock %}
 
-{% block base_main %}
+{% block _base_main %}
   {% block listing_main %}
   <p class="w-100 py-5 my-5">Listing Main</p>
   {% endblock %}
 {% endblock %}
 
-{% block base_footer %}
+{% block _base_footer %}
    {{ light_contact_footer(contact) }}
 {% endblock %}
 
-{% block base_authors %}
+{% block _base_authors %}
   {% block listing_authors %}
   <a>Malcom Chumchoua Penda</a>
   {% endblock %}
