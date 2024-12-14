@@ -1,6 +1,7 @@
 
 from core.utils import create_menu
 
+
 LANDING_MENU = create_menu()
 LANDING_MENU.add_entry('home', 'Accueil', point='home.index')
 LANDING_MENU.add_entry('courses', 'Formations', point='courses.index')

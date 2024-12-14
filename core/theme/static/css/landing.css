@@ -37,6 +37,7 @@
   --accent-color: var(--primary-color); /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
   --surface-color: var(--white-color); /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
   --contrast-color: var(--white-color); /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
+  --inverted-background-color: var(--secondary-light-color); /* Inverted background color for the entire website, including individual sections */
 }
 
 /* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
@@ -79,6 +80,7 @@ body {
 .light-background {
   --background-color: var(--secondary-light-color);
   --surface-color: var(--white-color);
+  --inverted-background-color: var(--white-color);
 }
 
 .dark-background {
@@ -87,6 +89,7 @@ body {
   --heading-color: var(--white-color);
   --surface-color: var(--black-color);
   --contrast-color: var(--white-color);
+  --inverted-background-color: var(--white-color);
 }
 
 /* Disable aos animation delay on mobile devices */
@@ -1592,7 +1595,8 @@ line-height: 0;
 --------------------------------------------------------------*/
 .features-imaged .card {
   padding: 0;
-  border-color: color-mix(in srgb, var(--default-color), transparent 85%);
+  background-color: color-mix(in srgb, var(--inverted-background-color), transparent 30%);
+  border-color: color-mix(in srgb, var(--inverted-background-color), transparent 25%);
 }
 
 .features-imaged .img {
@@ -1675,11 +1679,11 @@ line-height: 0;
 }
 
 .events-title a {
-font-size: inherit;
-font-weight: inherit;
-background: none;
-margin: 0;
-color: var(--default-color);
+  font-size: inherit;
+  font-weight: inherit;
+  background: none;
+  margin: 0;
+  color: var(--default-color);
 }
 
 .events-title a:hover{
@@ -1689,7 +1693,7 @@ color: var(--default-color);
 
 .events-category,
 .events-date {
-color: color-mix(in srgb, var(--default-color), transparent 30%);
+  color: color-mix(in srgb, var(--default-color), transparent 30%);
 }
 
 
@@ -1731,8 +1735,8 @@ color: color-mix(in srgb, var(--default-color), transparent 30%);
   padding: 25px 10px 10px 10px;
 }
 
-  /* Make circles that indicate the steps of the form: */
-  .step {
+/* Make circles that indicate the steps of the form: */
+.step {
     height: 10px;
     width: 10px;
     margin: 0 2px;
@@ -1741,17 +1745,17 @@ color: color-mix(in srgb, var(--default-color), transparent 30%);
     border-radius: 50%;
     display: inline-block;
     opacity: 0.5;
-  }
+}
   
-  /* Mark the active step: */
-  .step.active {
+/* Mark the active step: */
+.step.active {
     opacity: 1;
-  }
+}
   
-  /* Mark the steps that are finished and valid: */
-  .step.finish {
+/* Mark the steps that are finished and valid: */
+.step.finish {
     background-color: var(--accent-color);
-  }
+}
   
   
 
