@@ -33,28 +33,43 @@ body {
         background: #dedede;
     }
 
-.page-wrap {
+.error-content-wrapper {
         min-height: 100vh;
     }
 
-.page-wrap img {
+.error-content-wrapper img {
     width: 50px;
     margin: 25px;
+    padding-bottom: 40px;
 }
 
-.page-wrap .error-number {
+.error-content-wrapper .error-number {
     color: var(--heading-color);
     font-family: var(--default-font);
     font-weight: 300;
 }
 
-.page-wrap .error-message {
+.error-content-wrapper .error-message {
     color: var(--heading-color);
     font-family: var(--default-font);
     font-weight: 300;
     margin: 5px;
 }
 
-.page-wrap .btn-link {
+.error-content-wrapper .btn-link {
+    padding: 8px 2px 8px 0;
     color: var(--accent-color);
+    text-decoration: none;
+    background-image: 
+      linear-gradient(transparent, transparent),
+      linear-gradient(color-mix(in srgb, var(--accent-color), transparent 25%), 
+                      color-mix(in srgb, var(--accent-color), transparent 25%));
+    background-size: 100% 2px, 0 2px;
+    background-position: 100% 100%, 0 100%;
+    background-repeat: no-repeat;
+    transition: background-size 400ms;
+}
+
+.error-content-wrapper .btn-link:hover {  
+  background-size: 0 2px, 100% 2px;
 }
