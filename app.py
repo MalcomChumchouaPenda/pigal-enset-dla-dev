@@ -1,5 +1,5 @@
 
-from flask import render_template, url_for
+from flask import render_template
 from core.config import app, ENTRIES
 from core.utils import register_api, register_ui
 from core.utils import init_db
@@ -20,8 +20,7 @@ def temp(module, page):
 @app.errorhandler(404)
 def not_found(e):
     message = "La page que vous recherchez n'existe plus"
-    actions = [{"text":"Retour a l'accueil", "url":url_for("home.index")},
-               {"text":"Just a test", "url":"#"}]
+    actions = [{"text":"Retour a l'accueil", "point":"home.index"}]
     return render_template('base-error.html',
                            number=404,
                            message=message,

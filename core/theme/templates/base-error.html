@@ -43,7 +43,7 @@
                     <div class="d-flex justify-content-center">
                         <div class="d-flex flex-column justify-content-start align-items-start">
                         {% for action in actions %}
-                            <a href="{{ action.url }}" class="btn btn-link">
+                           <a href="{{ url_for(action.point) }}" class="btn btn-link">
                                 <i class="bi bi-arrow-left ms-0 me-1"></i>
                                 {{ action.text }}
                             </a>
