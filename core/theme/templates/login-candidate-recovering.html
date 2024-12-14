@@ -3,45 +3,50 @@
 
 {% block login_form %}
     <form class="login-form container d-flex flex-column align-items-center" 
-        method="post" action="{{ url_for('login_portal', id='student') }}" 
+        method="post" action="{{ url_for('login_recovering', id='candidate') }}" 
         enctype="multipart/form-data">
         
         
         <!-- Header -->
         <div class="row w-100 d-flex justify-content-center">
             <div class="col-10 text-center">
-                <h4 class="py-5">Portail Etudiants</h4>
+                <h5 class="py-5">Recuperation Numero Dossier</h5>
             </div>
         </div>
         
-        <!-- Identifiant -->
+        <!-- Annee -->
         <div class="field row my-2 w-100 d-flex justify-content-center">
             <div class="col-10 col-lg-4">
                 <input type="text" class="form-control is-required" 
-                    id="userId" name="userId"
-                    placeholder="Saisissez votre matricule" 
+                    id="year" name="year" placeholder="Indiquer l'annee academique" 
                     oninput="this.className = 'form-control is-required'">
                 <div class="invalid-feedback">Champ obligatoire</div>            
             </div>
-        </div><!-- End Identifiant -->
+        </div><!-- End Annee -->
 
-        <!-- Securite -->
+        <!-- Noms -->
         <div class="field row my-2 w-100 d-flex justify-content-center">
             <div class="col-10 col-lg-4">
-                <input type="password" class="form-control is-required" 
-                    id="userPwd" name="userPwd"
-                    placeholder="Saisissez votre mot de passe" 
+                <input type="text" class="form-control is-required" 
+                    id="userName" name="userName" placeholder="Saisissez vos noms et prenoms" 
                     oninput="this.className = 'form-control is-required'">
                 <div class="invalid-feedback">Champ obligatoire</div>            
             </div>
-        </div><!-- End Securite -->
+        </div><!-- End Formation-->
+        
+        <!-- Date Naissance -->
+        <div class="field row my-2 w-100 d-flex justify-content-center">
+            <div class="col-10 col-lg-4">
+                <input type="email" class="form-control is-required" 
+                    id="birthDate" name="birthDate" placeholder="Precisez votre Date de naissance" 
+                    oninput="this.className = 'form-control is-required'">
+                <div class="invalid-feedback">Champ obligatoire</div>            
+            </div>
+        </div><!-- End Date Naissance-->
 
         <div class="row pt-5 w-100 d-flex justify-content-center">
             <div class="col-10 col-lg-4 flex-column align-items-start">
-                <input class="btn btn-primary w-100" type="submit" value="Connexion">
-                <a class="btn btn-link my-4" href="{{ url_for('login_recovering', id='student') }}">
-                    Matricule ou mot de passe oublié ?
-                </a>
+                <input class="btn btn-primary w-100" type="submit" value="Continuer">
             </div>
         </div>
 

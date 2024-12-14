@@ -42,6 +42,11 @@ def login_portal(id):
         return 'Ok data'
     return render_template(f'login-{id}.html')
 
+@app.route('/login/<id>/recovering', methods=['GET', 'POST'])
+def login_recovering(id):
+    if request.method == 'POST':
+        return 'Ok data recovered'
+    return render_template(f'login-{id}-recovering.html')
 
 
 @app.context_processor
