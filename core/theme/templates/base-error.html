@@ -27,7 +27,7 @@
     <link href="{{ url_for('static', filename='css/preloader.css') }}" rel="stylesheet">
 
 </head>
-<body id="{% block body_id %}{% endblock %}">
+<body id="{{ _base_body_id }}">
 
     <!-- Preloader -->
     <div id="preloader"></div>

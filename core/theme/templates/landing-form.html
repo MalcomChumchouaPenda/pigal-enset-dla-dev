@@ -1,23 +1,29 @@
 
 {% extends 'landing-base.html' %}
+{% set _base_body_class = 'body-form' %}
 
 {% block _base_meta %}
   {% block form_meta %}
-  <title>ENSET Douala</title>
+    <title>ENSET Douala</title>
   {% endblock %}
 {% endblock %}
 
-{% block body_class %} body-form {% endblock %}
-{% block _base_hero %}<br class="hero">{% endblock %}
+{% block _base_hero %}
+  <br class="hero">
+{% endblock %}
+
 {% block _base_main %}
-  {% block form_main %}<p>Form Main</p>{% endblock %}
+  {% block form_main %}
+    <p>Form Main</p>
+  {% endblock %}
 {% endblock %}
 
 {% block _base_footer %}
    {{ light_contact_footer(contact) }}
 {% endblock %}
+
 {% block _base_authors %}
   {% block form_authors %}
-  <a>Malcom Chumchoua Penda</a>
+    <a>Malcom Chumchoua Penda</a>
   {% endblock %}
 {% endblock %}

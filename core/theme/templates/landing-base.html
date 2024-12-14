@@ -34,7 +34,7 @@
     {% block custom_css %}{% endblock %}
 
 </head>
-<body id="{% block body_id %}{% endblock %}" class="{% block body_class %}{% endblock %}">
+<body id="{{ _base_body_id }}" class="{{ _base_body_class }}">
 
     <!-- Jinja macros -->
     {% from "base-macros.html" import nav_menu, nav_brand %}

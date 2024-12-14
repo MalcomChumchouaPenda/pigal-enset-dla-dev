@@ -1,25 +1,24 @@
 
 {% extends 'landing-base.html' %}
-
-{% block body_class %} body-listing {% endblock %}
+{% set _base_body_class = 'body-listing' %}
 
 {% block _base_meta %}
   {% block listing_meta %}
-  <title>ENSET Douala</title>
+    <title>ENSET Douala</title>
   {% endblock %}
 {% endblock %}
 
 {% block _base_hero %} 
-<div class="hero">
-    {% block listing_hero %}
-    <p>Listing Hero</p>
-    {% endblock %}
-</div>
+  <div class="hero">
+      {% block listing_hero %}
+        <p>Listing Hero</p>
+      {% endblock %}
+  </div>
 {% endblock %}
 
 {% block _base_main %}
   {% block listing_main %}
-  <p class="w-100 py-5 my-5">Listing Main</p>
+    <p class="w-100 py-5 my-5">Listing Main</p>
   {% endblock %}
 {% endblock %}
 
@@ -29,6 +28,6 @@
 
 {% block _base_authors %}
   {% block listing_authors %}
-  <a>Malcom Chumchoua Penda</a>
+    <a>Malcom Chumchoua Penda</a>
   {% endblock %}
 {% endblock %}

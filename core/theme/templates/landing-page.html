@@ -1,25 +1,24 @@
 
 {% extends 'landing-base.html' %}
+{% set _base_body_class = 'body-page' %}
 
 {% block _base_meta %}
   {% block page_meta %}
-  <title>ENSET Douala</title>
+    <title>ENSET Douala</title>
   {% endblock %}
 {% endblock %}
 
-{% block body_class %} body-page {% endblock %}
-
 {% block _base_hero %} 
   {% block page_hero %}
-  <p>Page Hero</p>
+    <p>Page Hero</p>
   {% endblock %}
 {% endblock %}
 
 {% block _base_main %}
   {% block page_main %}
-   <div class="py-4 my-2">
-      {{ coming_soon_section("Section", default_deadline()) }}
-   </div>
+    <div class="py-4 my-2">
+        {{ coming_soon_section("Section", default_deadline()) }}
+    </div>
   {% endblock %}
 {% endblock %}
 
@@ -29,6 +28,6 @@
 
 {% block _base_authors %}
   {% block page_authors %}
-  <a>Malcom Chumchoua Penda</a>
+    <a>Malcom Chumchoua Penda</a>
   {% endblock %}
 {% endblock %}

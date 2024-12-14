@@ -1,31 +1,27 @@
 {% extends 'landing-page.html' %}
 
 {% block page_meta %}
-<title>Organisation - ENSET Douala</title>
+  <title>Organisation - ENSET Douala</title>
 {% endblock %}
-
-{% block body_id %}organisation{% endblock %}
 
 {% block page_hero %}
   {% call hero("25") %}
-  <div class="hero-info w-75 d-flex flex-column align-items-center">
-    <h1>Notre Organisation</h1>
-    <nav aria-label="breadcrumb">
-      <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="{{ url_for('home.index') }}">Home</a></li>
-        <li class="breadcrumb-item active" aria-current="page">Organisation</li>
-      </ol>
-    </nav>
-  </div>
-  <div class="hero-bg">
-    <img src="{{ url_for('organisation.static', filename='img/hero.jpg') }}" alt="">
-  </div>
+    <div class="hero-info w-75 d-flex flex-column align-items-center">
+      <h1>Notre Organisation</h1>
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="{{ url_for('home.index') }}">Home</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Organisation</li>
+        </ol>
+      </nav>
+    </div>
+    <div class="hero-bg">
+      <img src="{{ url_for('organisation.static', filename='img/hero.jpg') }}" alt="">
+    </div>
   {% endcall %}
 {% endblock %}
 
 {% block page_main %}
-    
- {{ coming_soon_section("Historique", default_deadline(), id="history") }}
- {{ coming_soon_section("Organigramme", default_deadline(), id="units") }}
-
+  {{ coming_soon_section("Historique", default_deadline(), id="history") }}
+  {{ coming_soon_section("Organigramme", default_deadline(), id="units") }}
 {% endblock %}

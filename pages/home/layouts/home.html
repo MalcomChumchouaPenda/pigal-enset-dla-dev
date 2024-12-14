@@ -1,14 +1,8 @@
 {% extends 'landing-page.html' %}
 
 {% block page_meta %}
-<title>ENSET Douala</title>
+  <title>ENSET Douala</title>
 {% endblock %}
-
-{% block body_id %}home{% endblock %}
-{% block page_authors %}
-  <a>Malcom Chumchoua Penda</a>
-{% endblock %}
-
 
 {% block page_hero %}
   {% call hero_carousel("large", interval="3000") %}
@@ -24,124 +18,127 @@
 {% endblock %}
 
 {% block page_main %}    
-<!-- Speechs Section -->
-<section class="speechs section mt-4">
-  <div class="container">
-      <div class="row gy-4 speech-item">
-          <!-- Speech Author -->
-          <div class="col-lg-3 speech-author">
-              <img src="{{ url_for('home.static', filename='img/person-2.jpg')}}" alt="">
-              <h6 class="speech-author-name">Pr Ndjiakomo Essiane Salome</h6>
-              <p class="speech-author-role">Directeur de l'ENSET de Douala</p>
-          </div> <!-- End Speech Author -->
+  <!-- Speechs Section -->
+  <section class="speechs section mt-4">
+    <div class="container">
+        <div class="row gy-4 speech-item">
+            <!-- Speech Author -->
+            <div class="col-lg-3 speech-author">
+                <img src="{{ url_for('home.static', filename='img/person-2.jpg')}}" alt="">
+                <h6 class="speech-author-name">Pr Ndjiakomo Essiane Salome</h6>
+                <p class="speech-author-role">Directeur de l'ENSET de Douala</p>
+            </div> <!-- End Speech Author -->
 
-          <!-- Speech Content -->
-          <div class="col-lg-6 speech-content">
-              {{ speech | safe }}
-          </div> <!-- End Speech Content -->
-      </div>
-  </div>
-</section><!-- End Speechs Section -->
+            <!-- Speech Content -->
+            <div class="col-lg-6 speech-content">
+                {{ speech | safe }}
+            </div> <!-- End Speech Content -->
+        </div>
+    </div>
+  </section><!-- End Speechs Section -->
 
-<!-- About Section -->
-<section id="about" class="about section light-background mt-4">
-  {{ section_title('Nous', before='A Propos de', emphasis='Nous') }}
-  <div class="container">
-    <div class="row gy-4">
-      <div class="col-lg-6 col-12 about-content">
-        {{ about.left | safe }}
-      </div>
-      <div class="col-lg-6 col-12 about-content">
-        {{ about.right | safe }}
+  <!-- About Section -->
+  <section id="about" class="about section light-background mt-4">
+    {{ section_title('Nous', before='A Propos de', emphasis='Nous') }}
+    <div class="container">
+      <div class="row gy-4">
+        <div class="col-lg-6 col-12 about-content">
+          {{ about.left | safe }}
+        </div>
+        <div class="col-lg-6 col-12 about-content">
+          {{ about.right | safe }}
+        </div>
       </div>
     </div>
-  </div>
-</section><!-- /About Section -->
+  </section><!-- /About Section -->
 
-<!-- Stats Section -->
-<section id="stats" class="stats section mt-4">
-  {{ section_title('Stats', before='Quelques', emphasis='Statistiques') }}
-  <div class="container">
+  <!-- Stats Section -->
+  <section id="stats" class="stats section mt-4">
+    {{ section_title('Stats', before='Quelques', emphasis='Statistiques') }}
+    <div class="container">
 
-    <div class="row gy-4 my-2">
-      <div class="col-lg-4 col-md-6 my-0">
-        <div class="stats-item">
-          <i class="bi bi-emoji-smile"></i>
-          <span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="1" class="purecounter"></span>
-          <p><strong>Enseignants formees par an</strong> <span> dans les domaines techniques ou industrielles</span></p>
-        </div>
-      </div><!-- End Stats Item -->
+      <div class="row gy-4 my-2">
+        <div class="col-lg-4 col-md-6 my-0">
+          <div class="stats-item">
+            <i class="bi bi-emoji-smile"></i>
+            <span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="1" class="purecounter"></span>
+            <p><strong>Enseignants formees par an</strong> <span> dans les domaines techniques ou industrielles</span></p>
+          </div>
+        </div><!-- End Stats Item -->
 
-      <div class="col-lg-4 col-md-6 my-0">
-        <div class="stats-item">
-          <i class="bi bi-journal-richtext"></i>
-          <span data-purecounter-start="0" data-purecounter-end="521" data-purecounter-duration="1" class="purecounter"></span>
-          <p><strong>Ingenieurs et professionnels formees par an</strong> <span>en cours du jour ou du soir</span></p>
-        </div>
-      </div><!-- End Stats Item -->
+        <div class="col-lg-4 col-md-6 my-0">
+          <div class="stats-item">
+            <i class="bi bi-journal-richtext"></i>
+            <span data-purecounter-start="0" data-purecounter-end="521" data-purecounter-duration="1" class="purecounter"></span>
+            <p><strong>Ingenieurs et professionnels formees par an</strong> <span>en cours du jour ou du soir</span></p>
+          </div>
+        </div><!-- End Stats Item -->
 
-      <div class="col-lg-4 col-md-6 my-0">
-        <div class="stats-item">
-          <i class="bi bi-headset"></i>
-          <span data-purecounter-start="0" data-purecounter-end="1453" data-purecounter-duration="1" class="purecounter"></span>
-          <p><strong>Programmes disponibles</strong> <span>de formation professionnelle ou de recherche</span></p>
-        </div>
-      </div><!-- End Stats Item -->
+        <div class="col-lg-4 col-md-6 my-0">
+          <div class="stats-item">
+            <i class="bi bi-headset"></i>
+            <span data-purecounter-start="0" data-purecounter-end="1453" data-purecounter-duration="1" class="purecounter"></span>
+            <p><strong>Programmes disponibles</strong> <span>de formation professionnelle ou de recherche</span></p>
+          </div>
+        </div><!-- End Stats Item -->
 
+      </div>
     </div>
-  </div>
-</section>
-<!-- End Stats Section -->
+  </section>
+  <!-- End Stats Section -->
 
-<!-- Features Section -->
-<section class="features section light-background">  
-  <div class="container">
-      <div class="row gy-4 mt-0">
-      {% for item in features %}
-          <!-- feature Item -->
-          <div class="col-lg-4 col-md-6 features-item d-flex mt-1">
-            <div class="card">
-              <div class="card-body">
-                <h4 class="card-title">{{ item.title }}</h4>
-                <div class="card-text">{{ item.description }}</div>
-                <a href="{{ url_for(item.point) }}" 
-                   class="btn-read-more stretched-link ms-0">
-                    <span>{{ item.action }}</span>
-                    <i class="bi bi-three-dots pt-2"></i>
-                </a>
+  <!-- Features Section -->
+  <section class="features section light-background">  
+    <div class="container">
+        <div class="row gy-4 mt-0">
+        {% for item in features %}
+            <!-- feature Item -->
+            <div class="col-lg-4 col-md-6 features-item d-flex mt-1">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">{{ item.title }}</h4>
+                  <div class="card-text">{{ item.description }}</div>
+                  <a href="{{ url_for(item.point) }}" 
+                    class="btn-read-more stretched-link ms-0">
+                      <span>{{ item.action }}</span>
+                      <i class="bi bi-three-dots pt-2"></i>
+                  </a>
+                </div>
+              </div>
+            </div> <!-- End feature Item -->
+        {% endfor %}
+        </div>
+    </div>  
+  </section><!-- End Features Section -->
+
+  <section class="events section"> 
+    {{ section_title('Actualites', before='Nos', emphasis='Actualites') }}
+    <div class="container pt-2">
+      <div class="row gy-5">
+      {% for item in events %}
+        <div class="col-lg-4 col-md-6">
+          <div class="card" data-aos="fade-up" data-aos-delay="200">
+            <div class="card-body">
+              <img src="{{ url_for('events.static', filename=item.image) }}" alt="" class="img-fluid">
+              <h5 class="events-title ms-0 mt-3 mb-0 ps-0 py-2">
+                <a class="stretched-link" href="{{ url_for('events.details', id=item.id) }}">{{ item.title }}</a>
+              </h5>
+              <div class="d-flex justify-content-between">
+                <div class="events-category">{{ item.category }}</div>
+                <span class="events-date mx-2"><i class="bi bi-clock mx-2"></i>{{ item.date }}</span>
               </div>
             </div>
-          </div> <!-- End feature Item -->
-      {% endfor %}
-      </div>
-  </div>  
-</section><!-- End Features Section -->
-
-
-<section class="events section"> 
-  {{ section_title('Actualites', before='Nos', emphasis='Actualites') }}
-  <div class="container pt-2">
-    <div class="row gy-5">
-    {% for item in events %}
-      <div class="col-lg-4 col-md-6">
-        <div class="card" data-aos="fade-up" data-aos-delay="200">
-          <div class="card-body">
-            <img src="{{ url_for('events.static', filename=item.image) }}" alt="" class="img-fluid">
-            <h5 class="events-title ms-0 mt-3 mb-0 ps-0 py-2">
-              <a class="stretched-link" href="{{ url_for('events.details', id=item.id) }}">{{ item.title }}</a>
-            </h5>
-            <div class="d-flex justify-content-between">
-              <div class="events-category">{{ item.category }}</div>
-              <span class="events-date mx-2"><i class="bi bi-clock mx-2"></i>{{ item.date }}</span>
-            </div>
           </div>
-        </div>
-      </div><!-- End post list item -->
-    {% endfor %}
-    </div><!-- End blog posts list -->
-    <div class="d-flex justify-content-center pt-1 pb-5" data-aos="fade-up" data-aos-delay="200">
-      <a class="btn btn-primary btn-view-all" href="{{ url_for('events.index') }}">Voir toutes les Actualites</a>
+        </div><!-- End post list item -->
+      {% endfor %}
+      </div><!-- End blog posts list -->
+      <div class="d-flex justify-content-center pt-1 pb-5" data-aos="fade-up" data-aos-delay="200">
+        <a class="btn btn-primary btn-view-all" href="{{ url_for('events.index') }}">Voir toutes les Actualites</a>
+      </div>
     </div>
-  </div>
-</section><!-- /features Section with images -->
+  </section><!-- /features Section with images -->
+{% endblock %}
+
+{% block page_authors %}
+  <a>Malcom Chumchoua Penda</a>
 {% endblock %}
