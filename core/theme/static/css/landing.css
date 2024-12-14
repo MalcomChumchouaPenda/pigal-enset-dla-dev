@@ -327,9 +327,9 @@ input[type=file]::file-selector-button {
   box-shadow: none;
 }
 
-.body-form .header,
-.body-details .header,
-.body-listing .header,
+.form-wrapper .header,
+.details-wrapper .header,
+.listing-wrapper .header,
 .scrolled.scrolled-light .header {
   --background-color: rgba(255, 255, 255, 0.95);
   --default-color: var(--secondary-dark-color);
@@ -338,24 +338,24 @@ input[type=file]::file-selector-button {
   --nav-hover-color: var(--secondary-dark-color);
 }
 
-.body-form .header .btn-get-started,
-.body-form .header .btn-get-started:focus,
-.body-details .header .btn-get-started,
-.body-details .header .btn-get-started:focus,
-.body-listing .header .btn-get-started,
-.body-listing .header .btn-get-started:focus,
+.form-wrapper .header .btn-get-started,
+.form-wrapper .header .btn-get-started:focus,
+.details-wrapper .header .btn-get-started,
+.details-wrapper .header .btn-get-started:focus,
+.listing-wrapper .header .btn-get-started,
+.listing-wrapper .header .btn-get-started:focus,
 .scrolled.scrolled-light .header .btn-get-started,
 .scrolled.scrolled-light .header .btn-get-started:focus {
   color: var(--contrast-color);
   background: var(--accent-color);
 }
 
-.body-form .header .btn-get-started:hover,
-.body-form .header .btn-get-started:focus:hover
-.body-details .header .btn-get-started:hover,
-.body-details .header .btn-get-started:focus:hover
-.body-listing .header .btn-get-started:hover,
-.body-listing .header .btn-get-started:focus:hover 
+.form-wrapper .header .btn-get-started:hover,
+.form-wrapper .header .btn-get-started:focus:hover
+.details-wrapper .header .btn-get-started:hover,
+.details-wrapper .header .btn-get-started:focus:hover
+.listing-wrapper .header .btn-get-started:hover,
+.listing-wrapper .header .btn-get-started:focus:hover 
 .scrolled.scrolled-light .header .btn-get-started:hover,
 .scrolled.scrolled-light .header .btn-get-started:focus:hover {
   color: var(--contrast-color);
@@ -1052,7 +1052,7 @@ justify-content: center;
   justify-content: center;
 }
 
-.body-listing .hero{
+.listing-wrapper .hero{
   --background-color: var(--white-color);
   --default-color: var(--secondary-dark-color);
   --heading-color: var(--secondary-dark-color);
@@ -1067,16 +1067,16 @@ justify-content: center;
   justify-content: start;
 }
 
-.body-listing .hero .container {
+.listing-wrapper .hero .container {
   margin: 0;
 }
 
-.body-details .hero{
+.details-wrapper .hero{
   width: 0%;
   min-height: 0;
 }
 
-.body-form .hero{
+.form-wrapper .hero{
   min-height: 0;
   max-height: 0;
 }
@@ -1114,7 +1114,7 @@ justify-content: center;
 
 @media (max-width: 991px) {
   
-  .body-listing .hero{
+  .listing-wrapper .hero{
     padding: 120px 10px 0 20px;
     display: flex;
     align-items: start;
@@ -1164,14 +1164,14 @@ justify-content: center;
 
 /* main variants */
 
-.body-listing .main {
+.listing-wrapper .main {
   padding: 10px 50px 0 150px;
   display: flex;
   align-items: start;
   justify-content: start;
 }
 
-.body-form .main {
+.form-wrapper .main {
   --background-color: var(--white-color);
   --default-color: var(--secondary-dark-color);
   --heading-color: var(--secondary-dark-color);
@@ -1187,7 +1187,7 @@ justify-content: center;
   overflow: auto;
 }
 
-.body-details .main{
+.details-wrapper .main{
   width: 100%;
   min-height: 85vh;
   position: relative;
@@ -1198,7 +1198,7 @@ justify-content: center;
 }
 
 @media (max-width: 991px) {
-  .body-listing .main {
+  .listing-wrapper .main {
     padding: 10px 10px 0 20px;
     display: flex;
     align-items: start;
@@ -1381,7 +1381,7 @@ line-height: 0;
 
 
 /*--------------------------------------------------------------
-# About Section
+# section about
 --------------------------------------------------------------*/
 
 .about-content p {  

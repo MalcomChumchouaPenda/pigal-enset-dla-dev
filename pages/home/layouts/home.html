@@ -19,7 +19,7 @@
 
 {% block page_main %}    
   <!-- Speechs Section -->
-  <section class="speechs section mt-4">
+  <section class="section speechs mt-4">
     <div class="container">
         <div class="row gy-4 speech-item">
             <!-- Speech Author -->
@@ -37,8 +37,8 @@
     </div>
   </section><!-- End Speechs Section -->
 
-  <!-- About Section -->
-  <section id="about" class="about section light-background mt-4">
+  <!-- section about -->
+  <section id="about" class="section about light-background mt-4">
     {{ section_title('Nous', before='A Propos de', emphasis='Nous') }}
     <div class="container">
       <div class="row gy-4">
@@ -50,10 +50,10 @@
         </div>
       </div>
     </div>
-  </section><!-- /About Section -->
+  </section><!-- /section about -->
 
   <!-- Stats Section -->
-  <section id="stats" class="stats section mt-4">
+  <section id="stats" class="section stats mt-4">
     {{ section_title('Stats', before='Quelques', emphasis='Statistiques') }}
     <div class="container">
 
@@ -88,7 +88,7 @@
   <!-- End Stats Section -->
 
   <!-- Features Section -->
-  <section class="features section light-background">  
+  <section class="section features light-background">  
     <div class="container">
         <div class="row gy-4 mt-0">
         {% for item in features %}
@@ -111,7 +111,7 @@
     </div>  
   </section><!-- End Features Section -->
 
-  <section class="events section"> 
+  <section class="section events"> 
     {{ section_title('Actualites', before='Nos', emphasis='Actualites') }}
     <div class="container pt-2">
       <div class="row gy-5">
