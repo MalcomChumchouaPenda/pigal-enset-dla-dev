@@ -12,12 +12,14 @@ event_assets = get_assets('events')
 def index():
     about = _load_about()
     heros = _load_heros()
+    stats = _load_stats()
     speech = _load_speech()
     events = _load_events()
     features = _load_features()
     return render_template('home.html', 
                            about=about,
                            heros=heros,
+                           stats=stats,
                            speech=speech,
                            events=events,
                            features=features)
@@ -37,6 +39,9 @@ def _load_about():
     left = assets.read_markdown(f'md/about-left.md')
     right = assets.read_markdown(f'md/about-right.md')
     return dict(left=left, right=right)
+
+def _load_stats():
+    return assets.read_json('json/stats.json')
 
 def _load_features():
     return assets.read_json(f'json/features.json')

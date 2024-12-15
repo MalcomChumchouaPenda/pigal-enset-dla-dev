@@ -1,0 +1,17 @@
+[
+    {
+        "icon":"bi bi-emoji-smile",
+        "text":"<strong>Enseignants formees par an</strong> dans les domaines techniques ou industrielles",
+        "value": 250
+    },
+    {
+        "icon":"bi bi-journal-richtext",
+        "text":"<strong>Ingenieurs et professionnels formees par an</strong> en cours du jour ou du soir",
+        "value": 540
+    },
+    {
+        "icon":"bi bi-headset",
+        "text":"<strong>Programmes disponibles</strong> de formation professionnelle ou de recherche",
+        "value": 1500
+    }
+]
