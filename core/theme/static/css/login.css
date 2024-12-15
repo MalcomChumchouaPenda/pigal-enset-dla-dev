@@ -175,9 +175,13 @@ input[type=file]::file-selector-button {
   width: 100%;
 }
 
+.login-help {
+  color: color-mix(in srgb, var(--default-color), transparent 25%);
+}
+
 
 @media (max-width: 991px) {
-  
+
 }
 
 
@@ -203,6 +207,12 @@ input[type=file]::file-selector-button {
 .login-form-wrapper a:hover {  
   background-size: 0 1px, 100% 1px;
 }
+
+
+.login-message-icon {
+  color: var(--accent-color);
+}
+
 
 
 /*--------------------------------------------------------------

@@ -34,18 +34,19 @@
     <!-- End preloader -->
     
     <!-- Logo -->
-    <div class="login-logo d-flex justify-content-center align-items-end">
-      <img src="{{ url_for('static', filename='img/logo.png') }}" alt="">
-    </div>
+    {% block login_logo %}
+        <div class="login-logo d-flex justify-content-center align-items-end">
+            <img src="{{ url_for('static', filename='img/logo.png') }}" alt="">
+        </div>
+    {% endblock %}
       
-    <!-- Main  -->
+    <!-- Main Form  -->
     <main class="login-form-wrapper d-flex justify-content-center my-0">
-
-        <!-- Form -->
         {% from 'base-macros.html' import login_pwd_field, login_text_field %}
         {% block login_form %}{% endblock %}
-        
-    </main><!-- End Main  -->
+    </main><!-- End Main Form  -->
+    
+
 
     <!-- Footer  -->
     <footer id="footer" class="footer my-0">        

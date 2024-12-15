@@ -39,13 +39,26 @@ def login():
 @app.route('/login/<id>', methods=['GET', 'POST'])
 def login_portal(id):
     if request.method == 'POST':
-        return 'Ok data'
+        title = 'Connexion reussie'
+        message = "La procedure d'authentification s'est terminee avec succes"
+        actions = [{"text":"Aller a l'accueil", "point":"home.index"}]
+        return render_template('login-confirmation.html',
+                               title=title,
+                               message=message,
+                               actions=actions)
     return render_template(f'login-{id}.html')
+
 
 @app.route('/login/<id>/recovering', methods=['GET', 'POST'])
 def login_recovering(id):
     if request.method == 'POST':
-        return 'Ok data recovered'
+        title = 'Recuperation terminee'
+        message = "La procedure de recuperation s'est terminee avec succes"
+        actions = [{"text":"Aller a l'accueil", "point":"home.index"}]
+        return render_template('login-confirmation.html',
+                               title=title,
+                               message=message,
+                               actions=actions)
     return render_template(f'login-{id}-recovering.html')
 
 
