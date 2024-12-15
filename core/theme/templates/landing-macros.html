@@ -1,7 +1,7 @@
 
 {% macro coming_soon_section(title, deadline, id="") %}
 <section id="{{ id }}" class="coming-soon section">
-    {{ section_title(title, emphasis=title, after="(En construction)")}}    
+    {{ section_title(title, subtitle = title + " <strong>(En construction)</strong>")}}    
     <div class="container coming-soon-content">
         <div class="row gy-1">
             <div class="col-12">
@@ -21,20 +21,13 @@
 {% endmacro %}
 
 
-{% macro section_title(
-    title, 
-    before="", 
-    after="", 
-    emphasis="", 
-    sub=true) %}
+{% macro section_title(title, subtitle="") %}
 <div class="container section-title">
     <h2>{{ title }}</h2>
-    {% if sub %}
-    <div>
-        <span>{{ before }}</span> 
-        <span class="description-title">{{ emphasis }}</span>
-        <span>{{ after }}</span> 
-    </div>
+    {% if subtitle|length > 0 %}
+      <div class="sub-title">
+        {{ subtitle | safe }}
+      </div>
     {% endif %}
 </div>
 {% endmacro %}

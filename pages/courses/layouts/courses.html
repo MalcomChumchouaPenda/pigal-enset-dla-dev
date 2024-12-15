@@ -24,7 +24,7 @@
 {% block page_main %}
   <!-- Type Formation Section -->
   <section id="about" class="section about light-background pt-5">
-    {{ section_title("Programmes", before="Nos programmes de", emphasis="formation")}}
+    {{ section_title("Programmes", subtitle="Nos programmes de <strong>formation</strong>") }}
     <div class="container about-content">
       {% for item in formations %}
         {% if loop.index0 % 2 == 0 %}        
@@ -52,7 +52,7 @@
 
   <!-- Domaines technniques -->
   <section id="departments" class="section features features-imaged pt-5">
-    {{ section_title("Domaines", before="Nos", emphasis="Domaines de formation") }}
+    {{ section_title("Domaines", subtitle="Nos <strong>Domaines de formation</strong>") }}
 
     <div class="container">
       <div class="row row-cols-1 row-cols-md-3 gy-4">
@@ -79,7 +79,7 @@
 
   <!-- Domaines de Recherche -->
   <section id="labs" class="section features features-numbered light-background mt-2 pt-4">
-    {{ section_title("Recherche", before="Nos", emphasis="Domaines de Recherche") }}
+    {{ section_title("Recherche", subtitle="Nos <strong>Domaines de Recherche</strong>") }}
     <div class="container">
         <div class="row  row-cols-1 row-cols-md-3 no-gutters">
         {% for item in labs %}

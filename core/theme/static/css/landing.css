@@ -1285,8 +1285,11 @@ margin: 4px 10px;
   font-family: var(--heading-font);
 }
 
-.section .section-title div .description-title {
-color: var(--accent-color);
+.section .section-title .sub-title b,
+.section .section-title .sub-title strong {
+  color: var(--accent-color);
+  font-size: var(--h1-font-size);
+  font-weight: var(--h1-font-weight);
 } 
 
 
@@ -1418,6 +1421,9 @@ line-height: 0;
   /* line-height: 0; */
 }
 
+.about-content img {
+  border-radius: 2%;
+}
 
 /*--------------------------------------------------------------
 # Stats Section
