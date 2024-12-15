@@ -1400,7 +1400,7 @@ line-height: 0;
   
 .about-content ul li {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
 }
 
 .about-content ul li p {
