@@ -6,7 +6,7 @@ from datetime import datetime
 from importlib import import_module
 
 import markdown as md
-from flask import Blueprint, session, render_template
+from flask import Blueprint, render_template
 
 from .config import app, db, migrate
 from .config import PAGES_DIR, SERVICES_DIR

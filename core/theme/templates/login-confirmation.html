@@ -4,36 +4,27 @@
 {% block login_logo %}<br>{% endblock %}
 
 {% block login_form %}
-<div class="login-message container d-flex flex-column justify-content-center">
-    <div class="row justify-content-center">
-        <div class="col-10 col-md-6">
-            <div class="login-message-icon my-3">
-                <h2><i class="bi bi-check-circle"></i></h2>                
-            </div>
-            <h4 class="login-message-title">{{ title }}</h4>            
-            <p class="login-message-content py-1">{{ message | safe }}</p>        
-            <div class="d-flex justify-content-start my-0">
-                <div class="d-flex flex-column justify-content-start align-items-start my-0">
-                {% for action in actions %}
-                    <a href="{{ url_for(action.point) }}" class="btn btn-link">
-                        <h6>{{ action.text }}<i class="bi bi-arrow-right mx-1"></i></h6>
-                    </a>
-                {% endfor %}
+    <div class="login-message container d-flex flex-column justify-content-center">
+        <div class="row justify-content-center">
+            <div class="col-10 col-md-6">
+                <div class="login-message-icon my-3">
+                    <h2><i class="bi bi-check-circle"></i></h2>                
                 </div>
-            </div>  
-        </div>
-    </div>    
-</div>
+                <h4 class="login-message-title">{{ title }}</h4>            
+                <p class="login-message-content py-1">{{ message | safe }}</p>        
+                <div class="d-flex justify-content-start my-0">
+                    <div class="d-flex flex-column justify-content-start align-items-start my-0">
+                    {% for action in actions %}
+                        <a href="{{ url_for(action.point) }}" class="btn btn-link">
+                            <h6>{{ action.text }}<i class="bi bi-arrow-right mx-1"></i></h6>
+                        </a>
+                    {% endfor %}
+                    </div>
+                </div>  
+            </div>
+        </div>    
+    </div>
 {% endblock %}
-
-<div class="login-message d-flex flex-column justify-content-center align-items-stretch h-100">
-    <i class="bi bi-check-circle"></i>
-    <p class="pt-0 pb-3 login-help">
-        Saisissez votre email, cliquez sur continuer 
-        et nous vous enverrons par mail votre identifiant 
-        et votre mot de passe
-    </p>       
-</div>
 
 {% block login_authors %}
     <a>Malcom Chumchoua Penda</a>
