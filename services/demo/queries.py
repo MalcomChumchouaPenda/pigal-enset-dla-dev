@@ -7,18 +7,6 @@ from core.utils import get_store
 store = get_store('demo')
 
 
-def get_course_types(short=True):
-    if short is True:
-        return store.read_markdown('md/course-types-150.md')
-    return store.read_markdown('md/course-types-300.md')
-
-def get_research_labs():
-    return store.read_json('json/research.json')
-
-def get_events():
-    return store.read_json('json/events.json')
-
-
 def get_pays():
     return store.read_json('json/pays.json')
 
@@ -26,8 +14,6 @@ def get_professions():
     return store.read_json('json/professions.json')
 
 
-def get_intro(topic, size):
-    return store.read_markdown(f'md/intro-{topic}-{size}.md')
 
 def get_departments():
     return store.read_json('json/departments.json')
