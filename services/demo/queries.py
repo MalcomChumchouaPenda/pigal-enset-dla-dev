@@ -14,6 +14,8 @@ def get_professions():
     return store.read_json('json/professions.json')
 
 
+def get_events():
+    return store.read_json('json/events.json')
 
 def get_departments():
     return store.read_json('json/departments.json')

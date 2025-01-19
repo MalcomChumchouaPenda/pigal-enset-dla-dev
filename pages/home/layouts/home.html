@@ -108,7 +108,7 @@
         <div class="col-lg-4 col-md-6">
           <div class="card" data-aos="fade-up" data-aos-delay="200">
             <div class="card-body">
-              <img src="{{ url_for('events.static', filename=item.image) }}" alt="" class="img-fluid">
+              <img src="{{ item.image }}" alt="" class="img-fluid">
               <h5 class="events-title ms-0 mt-3 mb-0 ps-0 py-2">
                 <a class="stretched-link" href="{{ url_for('events.details', id=item.id) }}">{{ item.title }}</a>
               </h5>

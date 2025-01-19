@@ -29,8 +29,8 @@ def create_api(name, db_bind=None):
                     f'services.{name}.routes',
                     url_prefix=f'/api/{name}',
                     template_folder=None,
-                    static_folder=None)
-    api.store_folder = os.path.join(SERVICES_DIR, 'store', name)
+                    static_folder='store')
+    # api.store_folder = os.path.join(SERVICES_DIR, 'store', name)
     if db_bind is not None:
         app.config['SQLALCHEMY_BINDS'][name] = db_bind
     return api

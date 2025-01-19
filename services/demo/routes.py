@@ -1,4 +1,5 @@
 
+import os
 from core.utils import create_api
 from . import queries as qry
 
@@ -9,6 +10,7 @@ api = create_api('demo')
 @api.route('/')
 def root():
     return {'info':'Demo Api'}
+
 
 @api.route("/formations")
 def get_formations():

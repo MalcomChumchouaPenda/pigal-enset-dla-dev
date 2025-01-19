@@ -1,6 +1,7 @@
 
 from flask import render_template
 from core.utils import create_ui, get_assets
+from services.demo import queries as qry
 
 
 ui = create_ui('home')
@@ -47,7 +48,7 @@ def _load_features():
     return assets.read_json(f'json/features.json')
 
 def _load_events():
-    events = event_assets.read_json('json/events.json')
+    events = qry.get_events()
     recent = []
     for item in events:
         if item['level'] == 0:
