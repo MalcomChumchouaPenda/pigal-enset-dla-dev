@@ -52,8 +52,6 @@ def _load_events():
     recent = []
     for item in events:
         if item['level'] == 0:
-            item_id = item["id"]
-            item['text'] = event_assets.read_markdown(f'md/{item_id}-100.md')
             recent.append(item)
     return recent
 
