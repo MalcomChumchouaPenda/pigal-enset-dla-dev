@@ -7,3 +7,4 @@ tests/
 **copy**/
 _inner_templates/
 node_modules/
+*.db

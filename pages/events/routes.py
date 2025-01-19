@@ -2,6 +2,7 @@
 from flask import render_template
 from flask_paginate import Pagination, get_page_args
 from core.utils import create_ui, get_assets
+from core.config import db
 from services.demo import queries as qry
 
 
@@ -11,7 +12,7 @@ assets = get_assets('events')
 
 @ui.route('/')
 def index():
-    events = qry.get_events()
+    events = qry.get_events(db.session)
     events, pagination = _create_paginated_events(events)
     return render_template('events.html', 
                            events=events,
@@ -31,8 +32,6 @@ def _create_paginated_events(events):
 
 @ui.route('/details/<id>')
 def details(id):
-    events = qry.get_events()
-    for event in events:
-        if event['id'] == id:
-            return render_template('events-details.html', event=event)
+    event = qry.get_event(db.session, id=id)
+    return render_template('events-details.html', event=event)
 

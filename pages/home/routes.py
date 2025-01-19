@@ -1,6 +1,7 @@
 
 from flask import render_template
 from core.utils import create_ui, get_assets
+from core.config import db
 from services.demo import queries as qry
 
 
@@ -48,10 +49,6 @@ def _load_features():
     return assets.read_json(f'json/features.json')
 
 def _load_events():
-    events = qry.get_events()
-    recent = []
-    for item in events:
-        if item['level'] == 0:
-            recent.append(item)
-    return recent
+    recent_events = qry.get_events(db.session, level=0)
+    return recent_events
 

@@ -12,6 +12,11 @@ from .config import app, db, migrate
 from .config import PAGES_DIR, SERVICES_DIR
 
 
+# CONSTANTS
+
+_LOCAL_DBS = []
+
+
 # FACTORY METHODS
 
 def create_ui(name):
@@ -24,16 +29,17 @@ def create_ui(name):
                    static_url_path='/assets')
     return ui
 
-def create_api(name, db_bind=None):
+
+def create_api(name, local_db=None):
     api = Blueprint(name,
                     f'services.{name}.routes',
                     url_prefix=f'/api/{name}',
                     template_folder=None,
                     static_folder='store')
-    # api.store_folder = os.path.join(SERVICES_DIR, 'store', name)
-    if db_bind is not None:
-        app.config['SQLALCHEMY_BINDS'][name] = db_bind
+    if local_db:
+        _LOCAL_DBS.append(name)
     return api
+
 
 
 
@@ -87,11 +93,10 @@ def create_menu():
 # DATABASE METHODS
 
 def init_db():
-    db.init_app(app)
     migrate.init_app(app, db)
     with app.app_context():
         db.create_all()
-          
+
 
 # FILES I/O METHODS
 

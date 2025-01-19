@@ -1,16 +1,49 @@
 
-import os
-from core.utils import create_api
+from datetime import datetime as dt
+from core.config import db
+from core.utils import create_api, get_store
 from . import queries as qry
+from . import schemas as sch
 
 
-api = create_api('demo')
+api = create_api('demo', local_db=True)
+store = get_store('demo')
+TIME_EXP = r'%d/%m/%Y'
+
+
+@api.before_app_first_request
+def init_db():
+    session = db.session
+    categories = init_categories(session)
+    _ = init_events(session, categories)
+
+def init_categories(session):
+    names = ['Formation', 'Organisation', 'Recherche']
+    result = {}
+    for name in names:
+        id_ = name[:3].upper()
+        category = sch.Category(id=id_, name=name)
+        result[name] = category
+        session.merge(category)
+    session.commit()
+    return result
+
+def init_events(session, categories):
+    records = store.read_json('json/events.json')
+    result = []
+    for record in records:
+        record['date'] = dt.strptime(record['date'], TIME_EXP)
+        record['category'] = categories[record['category']]
+        event = sch.Event(**record)
+        session.merge(event)
+        result.append(event)
+    session.commit()
+    return result
 
 
 @api.route('/')
 def root():
     return {'info':'Demo Api'}
-
 
 @api.route("/formations")
 def get_formations():
@@ -41,5 +74,4 @@ def get_options(formation, unit):
 @api.route("/courses/<formation>/<unit>")
 def get_courses(formation, unit):
     return qry.get_courses(formation=formation, unit=unit)
-
 

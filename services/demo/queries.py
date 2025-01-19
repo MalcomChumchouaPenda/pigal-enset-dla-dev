@@ -2,6 +2,7 @@
 import os
 # import pandas as pd
 from core.utils import get_store
+from . import schemas as sch
 
 
 store = get_store('demo')
@@ -14,8 +15,17 @@ def get_professions():
     return store.read_json('json/professions.json')
 
 
-def get_events():
-    return store.read_json('json/events.json')
+def get_events(session, level=None):
+    query = session.query(sch.Event)
+    if level is not None:
+        query = query.filter_by(level=level)
+    return query.all()
+
+def get_event(session, id):
+    query = session.query(sch.Event)
+    query = query.filter_by(id=id)
+    return query.one()
+
 
 def get_departments():
     return store.read_json('json/departments.json')
