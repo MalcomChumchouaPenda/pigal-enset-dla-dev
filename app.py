@@ -3,8 +3,8 @@ import os
 from flask import render_template, request, redirect, url_for
 from flask import send_from_directory
 from core.config import app, PORTALS, PAGES_DIR, SERVICES_DIR
-from core.utils import register_api, register_ui
-from core.utils import init_db
+from core.utils import register_api, register_ui, init_db
+from core.utils import read_markdown
 from core.utils import default_deadline
 from pages.home.constants import CONTACT, LINKS
 from pages.home.constants import LANDING_MENU, LOGIN_MENU
@@ -89,8 +89,18 @@ def inject_menus():
             'login':LOGIN_MENU['children']}
 
 
-# @app.template_filter('image_link')
-# def convert_to_image_link(raw_link):
-#     if raw_link.startswith('@pages'):
-#         pass
-#     return '/api/demo/img/events/event-3.jpg'
+@app.template_filter('safe_md')
+def convert_to_safe(md_link):
+    if '/store/' in md_link:
+        md_dir = SERVICES_DIR
+    elif '/assets/' in md_link:
+        md_dir = PAGES_DIR
+    else:
+        raise RuntimeError(f'Invalid Path -> {md_link}')
+    if md_link.startswith('/'):
+        md_link = md_link[1:]
+    md_link = os.path.normpath(md_link)
+    filename = os.path.join(md_dir, md_link)
+    safe = app.jinja_env.filters['safe']
+    return safe(read_markdown(filename))
+

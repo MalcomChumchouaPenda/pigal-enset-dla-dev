@@ -41,5 +41,5 @@ def details(id):
 def _add_description(events):
     for item in events:
         item_id = item["id"]
-        item['text'] = assets.read_markdown(f'md/{item_id}-100.md')
+        # item['text'] = assets.read_markdown(f'md/{item_id}-100.md')
     return events
