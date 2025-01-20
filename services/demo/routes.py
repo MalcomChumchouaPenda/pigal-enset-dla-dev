@@ -16,6 +16,8 @@ def init_db():
     session = db.session
     categories = init_categories(session)
     _ = init_events(session, categories)
+    _ = init_pays(session)
+    _ = init_professions(session)
 
 def init_categories(session):
     names = ['Formation', 'Organisation', 'Recherche']
@@ -35,6 +37,27 @@ def init_events(session, categories):
         record['date'] = dt.strptime(record['date'], TIME_EXP)
         record['category'] = categories[record['category']]
         event = sch.Event(**record)
+        session.merge(event)
+        result.append(event)
+    session.commit()
+    return result
+
+def init_pays(session):
+    records = store.read_json('json/pays.json')
+    result = []
+    for record in records:
+        print('\t', record)
+        event = sch.Pays(**record)
+        session.merge(event)
+        result.append(event)
+    session.commit()
+    return result
+
+def init_professions(session):
+    records = store.read_json('json/professions.json')
+    result = []
+    for record in records:
+        event = sch.Profession(**record)
         session.merge(event)
         result.append(event)
     session.commit()

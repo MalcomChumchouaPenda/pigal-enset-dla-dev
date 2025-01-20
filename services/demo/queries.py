@@ -8,11 +8,13 @@ from . import schemas as sch
 store = get_store('demo')
 
 
-def get_pays():
-    return store.read_json('json/pays.json')
+def get_pays(session):
+    query = session.query(sch.Pays)
+    return query.all()
 
-def get_professions():
-    return store.read_json('json/professions.json')
+def get_professions(session):
+    query = session.query(sch.Profession)
+    return query.all()
 
 
 def get_events(session, level=None):

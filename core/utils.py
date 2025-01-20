@@ -114,31 +114,36 @@ def list_encoding():
 
 encodings = list_encoding()
 
-def read_text(filepath):
+def read_text(filepath, encoding='utf-8', coerce=True):
     try:
-        with open(filepath, 'r') as f:
+        valid = None
+        with open(filepath, 'r', encoding=encoding) as f:
             text = f.read()
-        return text
+            valid = True
     except UnicodeDecodeError:
+        if not coerce:
+            raise
         for enc in encodings:
             print('- test read with', enc, 'for', filepath)
             try:
                 with open(filepath, 'r', encoding=enc) as f:
                     text = f.read()
-                return text
+                    valid = True
             except UnicodeDecodeError:
                 pass
+    finally:
+        if not valid:
+            raise RuntimeError(f'Unable to read text in {filepath}')
+        return text
 
-def read_json(filepath):
-    text = read_text(filepath)
-    if text:
-        data = json.loads(text)
-        return data
 
-def read_markdown(filepath):
-    text = read_text(filepath)
-    if text is None:
-        return
+def read_json(filepath, encoding='utf-8', coerce=True):
+    text = read_text(filepath, encoding=encoding, coerce=coerce)
+    data = json.loads(text)
+    return data
+
+def read_markdown(filepath, encoding='utf-8', coerce=True):
+    text = read_text(filepath, encoding=encoding, coerce=coerce)
     return md.markdown(text)
 
 
@@ -150,13 +155,17 @@ class __Folder:
         super().__init__()
         self.folder = folder
 
-    def read_json(self, filename):
+    def read_json(self, filename, encoding='utf-8', coerce=True):
         filepath = os.path.join(self.folder, filename)
-        return read_json(filepath)
+        return read_json(filepath, 
+                         encoding=encoding, 
+                         coerce=coerce)
 
-    def read_markdown(self, filename):
+    def read_markdown(self, filename, encoding='utf-8', coerce=True):
         filepath = os.path.join(self.folder, filename)
-        return read_markdown(filepath)
+        return read_markdown(filepath, 
+                             encoding=encoding, 
+                             coerce=coerce)
     
     def is_file(self, filename):
         return os.path.isfile(os.path.join(self.folder, filename))

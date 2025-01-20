@@ -4,7 +4,9 @@ tests/
 **copy**.html
 **copy**.css
 **copy**.js
+**copy**.json
 **copy**/
 _inner_templates/
 node_modules/
-*.db
+core/store/**.db
+core/store/migrations/

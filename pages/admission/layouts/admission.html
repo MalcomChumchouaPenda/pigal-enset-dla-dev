@@ -93,8 +93,8 @@
                 id="paysInscr" name="paysInscr"
                 oninput="this.className = 'form-select is-required'">
                 {% for record in pays %}
-                <option value="{{ record.code_pays }}" {% if record.code_pays == 'CM' %}selected{% endif %}>
-                    {{ record.nom_pays }}
+                <option value="{{ record.id }}" {% if record.id == 'CM' %}selected{% endif %}>
+                    {{ record.name }}
                 </option>
                 {% endfor %}
               </select>
@@ -112,8 +112,8 @@
                   id="professionInscr" name="professionInscr"
                   oninput="this.className = 'form-select is-required'">
                   {% for record in professions %}
-                  <option value="{{ record.code_profession }}">
-                    {{ record.nom_profession }}
+                  <option value="{{ record.id }}">
+                    {{ record.name }}
                   </option>
                   {% endfor %}
               </select>

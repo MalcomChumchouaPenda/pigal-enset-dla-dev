@@ -1,5 +1,6 @@
 
 from flask import render_template, request
+from core.config import db
 from core.utils import create_ui
 from services.demo import queries as qry
 
@@ -16,10 +17,8 @@ def index():
                                meta_title='Inscription',
                                title=title,
                                message=message)  
-    # formations = qry.read_opened_formations()
-    # niveaux = qry.read_niveaux() 
-    pays = qry.get_pays()   
-    professions = qry.get_professions()
+    pays = qry.get_pays(db.session)   
+    professions = qry.get_professions(db.session)
     return render_template('admission.html', 
                            numero=1,
                            pays=pays,

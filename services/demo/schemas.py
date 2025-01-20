@@ -16,7 +16,6 @@ class Event(db.Model):
     level = db.Column(db.Integer, default=0)
     category_id = db.Column(db.String, db.ForeignKey('categories.id'))
 
-
 class Category(db.Model):
     __bind_key__ = 'demo'
     __tablename__ = 'categories'
@@ -25,5 +24,16 @@ class Category(db.Model):
     events = db.relationship('Event', backref='category', cascade=CASCADE)
 
 
+class Pays(db.Model):
+    __bind_key__ = 'demo'
+    __tablename__ = 'pays'
+    id = db.Column(db.String(2), primary_key=True)
+    name = db.Column(db.String(200), nullable=False)
+    group = db.Column(db.String(150), nullable=True)
 
+class Profession(db.Model):
+    __bind_key__ = 'demo'
+    __tablename__ = 'profession'
+    id = db.Column(db.String(10), primary_key=True)
+    name = db.Column(db.String(100), nullable=False)
 
