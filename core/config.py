@@ -4,7 +4,6 @@ from uuid import uuid4
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
-from sqlalchemy.orm import DeclarativeBase
 
 
 # CONFIGURATION PATHS

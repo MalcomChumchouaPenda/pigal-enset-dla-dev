@@ -85,8 +85,8 @@ def inject_defaults():
 
 @app.context_processor
 def inject_menus():
-    return {'landing':LANDING_MENU['children'], 
-            'login':LOGIN_MENU['children']}
+    return {'landing_entries':LANDING_MENU, 
+            'login_entries':LOGIN_MENU}
 
 
 @app.template_filter('safe_md')

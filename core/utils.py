@@ -67,27 +67,6 @@ def register_api():
                     print('registering >', routes.api)
                     app.register_blueprint(routes.api)
 
-# PAGE ENTRIES
-
-class _Entry(dict):
-
-    def __init__(self, **kwargs):
-        super().__init__(**kwargs)
-        self['children'] = []
-
-    def add_entry(self, uid, text, parent=None, url=None, point=None, **kwargs):
-        entry = _Entry(uid=uid, text=text, url=url, 
-                        point=point, kwargs=kwargs, 
-                        pos=len(self['children']))
-        self[uid] = entry
-        if parent is None:
-            self['children'].append(entry)
-        else:
-            self[parent]['children'].append(entry)
-
-def create_menu():
-    return _Entry()
-
 
 
 # DATABASE METHODS

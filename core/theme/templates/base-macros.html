@@ -7,16 +7,18 @@
     <li class="">
       <a id="{{ entry.uid }}-link"
         {% if entry.point %} 
-          href="{{ url_for(entry.point, **entry.kwargs) }}" 
+          {% if entry.kwargs %}
+            href="{{ url_for(entry.point, **entry.kwargs) }}" 
+          {% else %}
+            href="{{ url_for(entry.point) }}" 
+          {% endif %}
         {% elif entry.url %} 
           href="{{ entry.url }}" 
         {% endif %}
         {% if entry.uid == active %}
           class="active"
         {% endif %}>
-
         {{ entry.text }}
-
       </a>
     </li>
   {% else %}      
@@ -41,7 +43,7 @@
 
 {% macro nav_menu(entries, started_url='', active='') %}
 <ul>
-  {% for entry in entries|sort(attribute="pos") %}
+  {% for entry in entries %}
     {{ menu_item(entry, active=active) }}
   {% endfor %}
 
