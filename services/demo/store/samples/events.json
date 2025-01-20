@@ -2,7 +2,7 @@
     {
         "id":"event-1",
         "title":"Veritatis asperiores",
-        "category":"Formation",
+        "category_id":"FORMA",
         "date":"10/01/2024",
         "image":"/demo/store/img/events/event-1.jpg",
         "text":"/demo/store/md/events/event-1-100.md",
@@ -11,7 +11,7 @@
     {
         "id":"event-2",
         "title":"Magnam soluta odio exercitationem reprehenderi",
-        "category":"Formation",
+        "category_id":"FORMA",
         "date":"05/04/2024",
         "image":"/demo/store/img/events/event-2.jpg",
         "text":"/demo/store/md/events/event-2-100.md",
@@ -20,7 +20,7 @@
     {
         "id":"event-3",
         "title":"Voluptatem et qui exercitationem",
-        "category":"Formation",
+        "category_id":"FORMA",
         "date":"07/04/2024",
         "image":"/demo/store/img/events/event-3.jpg",
         "text":"/demo/store/md/events/event-3-100.md",
@@ -29,7 +29,7 @@
     {
         "id":"event-4",
         "title":"Duis aute irure dolor",
-        "category":"Recherche",
+        "category_id":"RECH",
         "date":"15/06/2024",
         "image":"/demo/store/img/events/event-4.jpg",
         "text":"/demo/store/md/events/event-4-100.md",
@@ -38,7 +38,7 @@
     {
         "id":"event-5",
         "title":"Exea commodo dignissimos provident",
-        "category":"Recherche",
+        "category_id":"RECH",
         "date":"05/10/2024",
         "image":"/demo/store/img/events/event-5.jpg",
         "text":"/demo/store/md/events/event-5-100.md",
@@ -47,7 +47,7 @@
     {
         "id":"event-6",
         "title":"Ullamco laboris nisi ut aliquip consequat",
-        "category":"Organisation",
+        "category_id":"ORG",
         "date":"25/11/2024",
         "image":"/demo/store/img/events/event-6.jpg",
         "text":"/demo/store/md/events/event-6-100.md",

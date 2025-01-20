@@ -1,0 +1,14 @@
+[
+    {
+        "id":"FORMA",
+        "name":"Formation"
+    },
+    {
+        "id":"RECH",
+        "name":"Recherche"
+    },
+    {
+        "id":"ORG",
+        "name":"Organisation"
+    }
+]
