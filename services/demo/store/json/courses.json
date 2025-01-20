@@ -1,324 +1,416 @@
 [
     {
+        "id":"CHI1",
         "option_id":"CHI",
         "diploma_id":"DIPET1",
         "level_id":"DIPET1-NIV1",
         "open":true,
-        "annee":"2024/2025"
+        "period":"2024/2025",
+        "text":"/demo/store/md/courses/default-50.md"
     },
     {
+        "id":"CHI3",
         "option_id":"CHI",
         "diploma_id":"DIPET1",
         "level_id":"DIPET1-NIV3",
         "open":false,
-        "annee":"2024/2025"
+        "period":"2024/2025",
+        "text":"/demo/store/md/courses/default-50.md"
     },
     {
+        "id":"CHI4",
         "option_id":"CHI",
         "diploma_id":"DIPET2",
         "level_id":"DIPET2-NIV4",
         "open":false,
-        "annee":"2024/2025"
+        "period":"2024/2025",
+        "text":"/demo/store/md/courses/default-50.md"
     },
     {
+        "id":"CPBTP1",
         "option_id":"BTP-PRO",
         "diploma_id":"BTS",
         "level_id":"BTS-NIV1",
         "open":true,
-        "annee":"2024/2025"
+        "period":"2024/2025",
+        "text":"/demo/store/md/courses/default-50.md"
     },
     {
+        "id":"CPBTP3",
         "option_id":"BTP-PRO",
         "diploma_id":"LPRO",
         "level_id":"LPRO-NIV3",
         "open":true,
-        "annee":"2024/2025"
+        "period":"2024/2025",
+        "text":"/demo/store/md/courses/default-50.md"
     },
     {
+        "id":"CPBTP4",
         "option_id":"BTP-PRO",
         "diploma_id":"MPRO",
         "level_id":"MPRO-NIV4",
         "open":true,
-        "annee":"2024/2025"
+        "period":"2024/2025",
+        "text":"/demo/store/md/courses/default-50.md"
     },
     {
+        "id":"CPBTP5",
         "option_id":"BTP-PRO",
         "diploma_id":"MPRO",
         "level_id":"MPRO-NIV5",
         "open":false,
-        "annee":"2024/2025"
+        "period":"2024/2025",
+        "text":"/demo/store/md/courses/default-50.md"
     },
     {
+        "id":"BTP1",
         "option_id":"BTP",
         "diploma_id":"DIPET1",
         "level_id":"DIPET1-NIV1",
         "open":false,
-        "annee":"2024/2025"
+        "period":"2024/2025",
+        "text":"/demo/store/md/courses/default-50.md"
     },
     {
+        "id":"BTP4",
         "option_id":"BTP",
         "diploma_id":"DIPET2",
         "level_id":"DIPET2-NIV4",
         "open":false,
-        "annee":"2024/2025"
+        "period":"2024/2025",
+        "text":"/demo/store/md/courses/default-50.md"
     },
     {
+        "id":"CPGRT3",
         "option_id":"RT",
         "diploma_id":"LPRO",
         "level_id":"LPRO-NIV3",
         "open":true,
-        "annee":"2024/2025"
+        "period":"2024/2025",
+        "text":"/demo/store/md/courses/default-50.md"
     },
     {
+        "id":"CPGRT4",
         "option_id":"RT",
         "diploma_id":"MPRO",
         "level_id":"MPRO-NIV4",
         "open":true,
-        "annee":"2024/2025"
+        "period":"2024/2025",
+        "text":"/demo/store/md/courses/default-50.md"
     },
     {
+        "id":"CPGRT5",
         "option_id":"RT",
         "diploma_id":"MPRO",
         "level_id":"MPRO-NIV5",
         "open":true,
-        "annee":"2024/2025"
+        "period":"2024/2025",
+        "text":"/demo/store/md/courses/default-50.md"
     },
     {
+        "id":"CPIEE3",
         "option_id":"IEE",
         "diploma_id":"LPRO",
         "level_id":"LPRO-NIV3",
         "open":true,
-        "annee":"2024/2025"
+        "period":"2024/2025",
+        "text":"/demo/store/md/courses/default-50.md"
     },
     {
+        "id":"CPIEE4",
         "option_id":"IEE",
         "diploma_id":"MPRO",
         "level_id":"MPRO-NIV4",
         "open":true,
-        "annee":"2024/2025"
+        "period":"2024/2025",
+        "text":"/demo/store/md/courses/default-50.md"
     },
     {
+        "id":"CPIEE5",
         "option_id":"IEE",
         "diploma_id":"MPRO",
         "level_id":"MPRO-NIV5",
         "open":true,
-        "annee":"2024/2025"
+        "period":"2024/2025",
+        "text":"/demo/store/md/courses/default-50.md"
     },
     {
+        "id":"CPCFA3",
         "option_id":"CFA",
         "diploma_id":"LPRO",
         "level_id":"LPRO-NIV3",
         "open":true,
-        "annee":"2024/2025"
+        "period":"2024/2025",
+        "text":"/demo/store/md/courses/default-50.md"
     },
     {
+        "id":"CPCFA4",
         "option_id":"CFA",
         "diploma_id":"MPRO",
         "level_id":"MPRO-NIV4",
         "open":true,
-        "annee":"2024/2025"
+        "period":"2024/2025",
+        "text":"/demo/store/md/courses/default-50.md"
     },
     {
+        "id":"CPCFA5",
         "option_id":"CFA",
         "diploma_id":"MPRO",
         "level_id":"MPRO-NIV5",
         "open":false,
-        "annee":"2024/2025"
+        "period":"2024/2025",
+        "text":"/demo/store/md/courses/default-50.md"
     },
     {
+        "id":"CPBMF3",
         "option_id":"BMF",
         "diploma_id":"LPRO",
         "level_id":"LPRO-NIV3",
         "open":false,
-        "annee":"2024/2025"
+        "period":"2024/2025",
+        "text":"/demo/store/md/courses/default-50.md"
     },
     {
+        "id":"CPBMF4",
         "option_id":"BMF",
         "diploma_id":"MPRO",
         "level_id":"MPRO-NIV4",
         "open":false,
-        "annee":"2024/2025"
+        "period":"2024/2025",
+        "text":"/demo/store/md/courses/default-50.md"
     },
     {
+        "id":"CPBMF5",
         "option_id":"BMF",
         "diploma_id":"MPRO",
         "level_id":"MPRO-NIV5",
         "open":true,
-        "annee":"2024/2025"
+        "period":"2024/2025",
+        "text":"/demo/store/md/courses/default-50.md"
     },
     {
+        "id":"ETD1",
         "option_id":"ET",
         "diploma_id":"DIPET1",
         "level_id":"DIPET1-NIV1",
         "open":true,
-        "annee":"2024/2025"
+        "period":"2024/2025",
+        "text":"/demo/store/md/courses/default-50.md"
     },
     {
+        "id":"ETD4",
         "option_id":"ET",
         "diploma_id":"DIPET2",
         "level_id":"DIPET2-NIV4",
         "open":true,
-        "annee":"2024/2025"
+        "period":"2024/2025",
+        "text":"/demo/store/md/courses/default-50.md"
     },
     {
+        "id":"END1",
         "option_id":"EN",
         "diploma_id":"DIPET1",
         "level_id":"DIPET1-NIV1",
         "open":true,
-        "annee":"2024/2025"
+        "period":"2024/2025",
+        "text":"/demo/store/md/courses/default-50.md"
     },
     {
+        "id":"END4",
         "option_id":"EN",
         "diploma_id":"DIPET2",
         "level_id":"DIPET2-NIV4",
         "open":true,
-        "annee":"2024/2025"
+        "period":"2024/2025",
+        "text":"/demo/store/md/courses/default-50.md"
     },
     {
+        "id":"TER1",
         "option_id":"TER",
         "diploma_id":"DIPET1",
         "level_id":"DIPET1-NIV1",
         "open":true,
-        "annee":"2024/2025"
+        "period":"2024/2025",
+        "text":"/demo/store/md/courses/default-50.md"
     },
     {
+        "id":"TER4",
         "option_id":"TER",
         "diploma_id":"DIPET2",
         "level_id":"DIPET2-NIV4",
         "open":true,
-        "annee":"2024/2025"
+        "period":"2024/2025",
+        "text":"/demo/store/md/courses/default-50.md"
     },
     {
+        "id":"G2I1",
         "option_id":"II",
         "diploma_id":"DIPET1",
         "level_id":"DIPET1-NIV1",
         "open":true,
-        "annee":"2024/2025"
+        "period":"2024/2025",
+        "text":"/demo/store/md/courses/default-50.md"
     },
     {
+        "id":"G2I4",
         "option_id":"II",
         "diploma_id":"DIPET2",
         "level_id":"DIPET2-NIV4",
         "open":true,
-        "annee":"2024/2025"
+        "period":"2024/2025",
+        "text":"/demo/store/md/courses/default-50.md"
     },
     {
+        "id":"TIC1",
         "option_id":"TIC",
         "diploma_id":"DIPET1",
         "level_id":"DIPET1-NIV1",
         "open":true,
-        "annee":"2024/2025"
+        "period":"2024/2025",
+        "text":"/demo/store/md/courses/default-50.md"
     },
     {
+        "id":"TIC4",
         "option_id":"TIC",
         "diploma_id":"DIPET2",
         "level_id":"DIPET2-NIV4",
         "open":true,
-        "annee":"2024/2025"
+        "period":"2024/2025",
+        "text":"/demo/store/md/courses/default-50.md"
     },
     {
+        "id":"ECO1",
         "option_id":"ECO",
         "diploma_id":"DIPET1",
         "level_id":"DIPET1-NIV1",
         "open":true,
-        "annee":"2024/2025"
+        "period":"2024/2025",
+        "text":"/demo/store/md/courses/default-50.md"
     },
     {
+        "id":"ECO4",
         "option_id":"ECO",
         "diploma_id":"DIPET2",
         "level_id":"DIPET2-NIV4",
         "open":true,
-        "annee":"2024/2025"
+        "period":"2024/2025",
+        "text":"/demo/store/md/courses/default-50.md"
     },
     {
+        "id":"CFI1",
         "option_id":"CF",
         "diploma_id":"DIPET1",
         "level_id":"DIPET1-NIV1",
         "open":true,
-        "annee":"2024/2025"
+        "period":"2024/2025",
+        "text":"/demo/store/md/courses/default-50.md"
     },
     {
+        "id":"CFI4",
         "option_id":"CF",
         "diploma_id":"DIPET2",
         "level_id":"DIPET2-NIV4",
         "open":true,
-        "annee":"2024/2025"
+        "period":"2024/2025",
+        "text":"/demo/store/md/courses/default-50.md"
     },
     {
+        "id":"MKG1",
         "option_id":"MKG",
         "diploma_id":"DIPET1",
         "level_id":"DIPET1-NIV1",
         "open":true,
-        "annee":"2024/2025"
+        "period":"2024/2025",
+        "text":"/demo/store/md/courses/default-50.md"
     },
     {
+        "id":"MKG4",
         "option_id":"MKG",
         "diploma_id":"DIPET2",
         "level_id":"DIPET2-NIV4",
         "open":true,
-        "annee":"2024/2025"
+        "period":"2024/2025",
+        "text":"/demo/store/md/courses/default-50.md"
     },
     {
+        "id":"MIO1",
         "option_id":"MIO",
         "diploma_id":"DIPET1",
         "level_id":"DIPET1-NIV1",
         "open":true,
-        "annee":"2024/2025"
+        "period":"2024/2025",
+        "text":"/demo/store/md/courses/default-50.md"
     },
     {
+        "id":"MIO4",
         "option_id":"MIO",
         "diploma_id":"DIPET2",
         "level_id":"DIPET2-NIV4",
         "open":false,
-        "annee":"2024/2025"
+        "period":"2024/2025",
+        "text":"/demo/store/md/courses/default-50.md"
     },
     {
+        "id":"CAD4",
         "option_id":"CAD",
         "diploma_id":"DIPET2",
         "level_id":"DIPET2-NIV4",
         "open":false,
-        "annee":"2024/2025"
+        "period":"2024/2025",
+        "text":"/demo/store/md/courses/default-50.md"
     },
     {
+        "id":"COR4",
         "option_id":"CO",
         "diploma_id":"DIPET2",
         "level_id":"DIPET2-NIV4",
         "open":true,
-        "annee":"2024/2025"
+        "period":"2024/2025",
+        "text":"/demo/store/md/courses/default-50.md"
     },
     {
+        "id":"IAM2R",
         "option_id":"IA",
         "diploma_id":"M2R",
         "level_id":"M2R-NIV5",
         "open":true,
-        "annee":"2024/2025"
+        "period":"2024/2025",
+        "text":"/demo/store/md/courses/default-50.md"
     },
     {
+        "id":"ETHM2R",
         "option_id":"ETH",
         "diploma_id":"M2R",
         "level_id":"M2R-NIV5",
         "open":true,
-        "annee":"2024/2025"
+        "period":"2024/2025",
+        "text":"/demo/store/md/courses/default-50.md"
     },
     {
+        "id":"FIEM2R",
         "option_id":"FIE",
         "diploma_id":"M2R",
         "level_id":"M2R-NIV5",
         "open":true,
-        "annee":"2024/2025"
+        "period":"2024/2025",
+        "text":"/demo/store/md/courses/default-50.md"
     },
     {
+        "id":"MAN2R",
         "option_id":"MAN",
         "diploma_id":"M2R",
         "level_id":"M2R-NIV5",
         "open":false,
-        "annee":"2024/2025"
+        "period":"2024/2025",
+        "text":"/demo/store/md/courses/default-50.md"
     },
     {
+        "id":"E3M2R",
         "option_id":"E3M",
         "diploma_id":"M2R",
         "level_id":"M2R-NIV5",
         "open":true,
-        "annee":"2024/2025"
+        "period":"2024/2025",
+        "text":"/demo/store/md/courses/default-50.md"
     }
 ]

@@ -1,14 +1,20 @@
 [
     {
         "id":"LME",
-        "nom":"Laboratoire de Mécanique"
+        "name":"Laboratoire de MÃ©canique",
+        "text":"/demo/store/md/labs/lme-50.md",
+        "image":"/demo/store/img/labs/lme-original.jpg"
     },
     {
         "id":"GIA",
-        "nom":"Laboratoire de Génie Informatique et Automatique"
+        "name":"Laboratoire de GÃ©nie Informatique et Automatique",
+        "text":"/demo/store/md/labs/gia-50.md",
+        "image":"/demo/store/img/labs/gia-original.jpg"
     },
     {
         "id":"LAREGA",
-        "nom":"Laboratoire de Recherche en Gestion Appliquée"
+        "name":"Laboratoire de Recherche en Gestion AppliquÃ©e",
+        "text":"/demo/store/md/labs/larega-50.md",
+        "image":"/demo/store/img/labs/larega-original.jpg"
     }
 ]

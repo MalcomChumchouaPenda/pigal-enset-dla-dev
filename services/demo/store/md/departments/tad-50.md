@@ -1,0 +1,1 @@
+Le département des Techniques Administratives (TAD) de l'ENSET de Douala forme des professionnels en gestion et organisation d'entreprises. Les formations offrent des compétences en management, communication et administration, préparant les étudiants à relever les défis du monde professionnel et organisationnel.

@@ -1,0 +1,1 @@
+Le département de Génie Informatique (GINFO) de l'ENSET de Douala forme des experts en informatique industrielle et technologies de l'information et de la communication. Les formations couvrent le développement logiciel, les systèmes embarqués, les réseaux et la gestion des TIC, offrant ainsi des compétences techniques avancées.

@@ -30,19 +30,19 @@
         {% if loop.index0 % 2 == 0 %}        
           <div class="row gy-4 mb-3">
             <div class="col-lg-6 position-relative d-flex align-items-center order-lg-2 px-3" data-aos="fade-up" data-aos-delay="200">
-              <img src="{{ url_for('courses.static', filename=item.image)}}" class="img-fluid flex-shrink-0" alt="">
+              <img src="{{ item.image }}" class="img-fluid flex-shrink-0" alt="">
             </div>
             <div class="col-lg-6 order-lg-1 pt-1 px-3" data-aos="fade-up" data-aos-delay="100">
-              {{ item.text | safe }}
+              {{ item.text | safe_md }}
             </div>
           </div>
         {% else %}  
           <div class="row gy-4 mb-3">
             <div class="col-lg-6 position-relative d-flex align-items-center order-lg-1 px-3" data-aos="fade-up" data-aos-delay="200">
-              <img src="{{ url_for('courses.static', filename=item.image)}}" class="img-fluid flex-shrink-0" alt="">
+              <img src="{{ item.image }}" class="img-fluid flex-shrink-0" alt="">
             </div>
             <div class="col-lg-6 order-lg-2 pt-1 px-3" data-aos="fade-up" data-aos-delay="100">
-              {{ item.text | safe }}
+              {{ item.text | safe_md }}
             </div>
           </div>
         {% endif %}
@@ -59,10 +59,10 @@
       {% for item in departments %}  
         <div class="col">
           <div class="card features-item position-relative h-100">
-            <img src="{{ url_for('courses.static', filename=item.image)}}" class="card-img-top" alt="...">
+            <img src="{{ item.image }}" class="card-img-top" alt="...">
             <div class="card-body">
-              <h4 class="card-title">{{ item.nom }} ({{item.id }})</h4>
-              <div class="card-text">{{ item.text | safe }}</div>
+              <h4 class="card-title">{{ item.name }} ({{item.id }})</h4>
+              <div class="card-text">{{ item.text | safe_md }}</div>
               <div class="d-flex justify-content-start">
                 <a href="{{ url_for('courses.list', unit=item.id) }}" class="card-link">
                   Liste des formations en {{item.id }}
@@ -86,8 +86,8 @@
             <div class="col card pt-2 pe-5 features-item">
                 <div class="card-header">{{ item.id }}</div>
                 <div class="card-body">
-                    <h4 class="card-title mt-2">{{ item.nom }}</h4>
-                    <div class="card-text">{{ item.text | safe }}</div>
+                    <h4 class="card-title mt-2">{{ item.name }}</h4>
+                    <div class="card-text">{{ item.text | safe_md }}</div>
                     <div class="d-flex justify-content-start">
                       <a href="{{ url_for('courses.list', formation='M2R', unit=item.id) }}" class="card-link">
                         Liste des Masters du Laboratoire {{ item.id }} 

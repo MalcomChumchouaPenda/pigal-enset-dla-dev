@@ -116,13 +116,12 @@ encodings = list_encoding()
 
 def read_text(filepath, encoding='utf-8', coerce=True):
     try:
-        valid = None
         with open(filepath, 'r', encoding=encoding) as f:
             text = f.read()
-            valid = True
     except UnicodeDecodeError:
         if not coerce:
             raise
+        valid = None
         for enc in encodings:
             print('- test read with', enc, 'for', filepath)
             try:
@@ -130,11 +129,10 @@ def read_text(filepath, encoding='utf-8', coerce=True):
                     text = f.read()
                     valid = True
             except UnicodeDecodeError:
-                pass
-    finally:
+                continue
         if not valid:
             raise RuntimeError(f'Unable to read text in {filepath}')
-        return text
+    return text
 
 
 def read_json(filepath, encoding='utf-8', coerce=True):

@@ -5,7 +5,7 @@
         "category":"Formation",
         "date":"10/01/2024",
         "image":"/demo/store/img/events/event-1.jpg",
-        "text":"/demo/store/md/event-1-100.md",
+        "text":"/demo/store/md/events/event-1-100.md",
         "level":0
     },
     {
@@ -14,7 +14,7 @@
         "category":"Formation",
         "date":"05/04/2024",
         "image":"/demo/store/img/events/event-2.jpg",
-        "text":"/demo/store/md/event-2-100.md",
+        "text":"/demo/store/md/events/event-2-100.md",
         "level":1
     },
     {
@@ -23,7 +23,7 @@
         "category":"Formation",
         "date":"07/04/2024",
         "image":"/demo/store/img/events/event-3.jpg",
-        "text":"/demo/store/md/event-3-100.md",
+        "text":"/demo/store/md/events/event-3-100.md",
         "level":1
     },
     {
@@ -32,7 +32,7 @@
         "category":"Recherche",
         "date":"15/06/2024",
         "image":"/demo/store/img/events/event-4.jpg",
-        "text":"/demo/store/md/event-4-100.md",
+        "text":"/demo/store/md/events/event-4-100.md",
         "level":0
     },
     {
@@ -41,7 +41,7 @@
         "category":"Recherche",
         "date":"05/10/2024",
         "image":"/demo/store/img/events/event-5.jpg",
-        "text":"/demo/store/md/event-5-100.md",
+        "text":"/demo/store/md/events/event-5-100.md",
         "level":1
     },
     {
@@ -50,7 +50,7 @@
         "category":"Organisation",
         "date":"25/11/2024",
         "image":"/demo/store/img/events/event-6.jpg",
-        "text":"/demo/store/md/event-6-100.md",
+        "text":"/demo/store/md/events/event-6-100.md",
         "level":0
     }
 ]

@@ -8,7 +8,7 @@
 {% block details_main %}
     <div class="container">
         <div class="row ms-3 mt-2 mb-4">
-            <h4>{{ course.level_name }} - {{ course.nom }}</h4>
+            <h4>{{ course.level.name }} - {{ course.option.name }}</h4>
             <nav aria-label="breadcrumb">
             <ol class="breadcrumb mt-4">
                 <li class="breadcrumb-item"><a href="{{ url_for('home.index') }}">Accueil</a></li>

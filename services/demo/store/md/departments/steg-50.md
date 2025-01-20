@@ -1,0 +1,1 @@
+Le département des Sciences et Techniques économiques de Gestion (STEG) de l'ENSET de Douala propose des formations en gestion et sciences économiques. Les étudiants y développent des compétences en management, analyse économique et stratégie pour répondre aux enjeux des entreprises et organisations modernes.

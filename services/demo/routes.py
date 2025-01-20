@@ -18,6 +18,13 @@ def init_db():
     _ = init_events(session, categories)
     _ = init_pays(session)
     _ = init_professions(session)
+    _ = init_formations(session)
+    _ = init_departments(session)
+    _ = init_labs(session)
+    _ = init_levels(session)
+    _ = init_diplomas(session)
+    _ = init_options(session)
+    _ = init_courses(session)
 
 def init_categories(session):
     names = ['Formation', 'Organisation', 'Recherche']
@@ -36,9 +43,9 @@ def init_events(session, categories):
     for record in records:
         record['date'] = dt.strptime(record['date'], TIME_EXP)
         record['category'] = categories[record['category']]
-        event = sch.Event(**record)
-        session.merge(event)
-        result.append(event)
+        obj = sch.Event(**record)
+        session.merge(obj)
+        result.append(obj)
     session.commit()
     return result
 
@@ -46,10 +53,9 @@ def init_pays(session):
     records = store.read_json('json/pays.json')
     result = []
     for record in records:
-        print('\t', record)
-        event = sch.Pays(**record)
-        session.merge(event)
-        result.append(event)
+        obj = sch.Pays(**record)
+        session.merge(obj)
+        result.append(obj)
     session.commit()
     return result
 
@@ -57,9 +63,79 @@ def init_professions(session):
     records = store.read_json('json/professions.json')
     result = []
     for record in records:
-        event = sch.Profession(**record)
-        session.merge(event)
-        result.append(event)
+        obj = sch.Profession(**record)
+        session.merge(obj)
+        result.append(obj)
+    session.commit()
+    return result
+
+def init_formations(session):
+    records = store.read_json('json/formations.json')
+    result = []
+    for record in records:
+        obj = sch.Formation(**record)
+        session.merge(obj)
+        result.append(obj)
+    session.commit()
+    return result
+
+def init_departments(session):
+    records = store.read_json('json/departments.json')
+    result = []
+    for record in records:
+        obj = sch.Department(**record)
+        session.merge(obj)
+        result.append(obj)
+    session.commit()
+    return result
+
+def init_labs(session):
+    records = store.read_json('json/labs.json')
+    result = []
+    for record in records:
+        obj = sch.Lab(**record)
+        session.merge(obj)
+        result.append(obj)
+    session.commit()
+    return result
+
+def init_levels(session):
+    records = store.read_json('json/levels.json')
+    result = []
+    for record in records:
+        obj = sch.Level(**record)
+        session.merge(obj)
+        result.append(obj)
+    session.commit()
+    return result
+
+def init_diplomas(session):
+    records = store.read_json('json/diplomas.json')
+    result = []
+    for record in records:
+        obj = sch.Diploma(**record)
+        session.merge(obj)
+        result.append(obj)
+    session.commit()
+    return result
+
+def init_options(session):
+    records = store.read_json('json/options.json')
+    result = []
+    for record in records:
+        obj = sch.Option(**record)
+        session.merge(obj)
+        result.append(obj)
+    session.commit()
+    return result
+
+def init_courses(session):
+    records = store.read_json('json/courses.json')
+    result = []
+    for record in records:
+        obj = sch.Course(**record)
+        session.merge(obj)
+        result.append(obj)
     session.commit()
     return result
 

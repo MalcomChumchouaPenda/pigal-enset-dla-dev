@@ -1,0 +1,1 @@
+Le Laboratoire de Recherche en Gestion Appliquée (LAREGA) de l'ENSET de Douala explore des domaines tels que le management des organisations, la gestion des ressources humaines et la finance d'entreprise. Il développe des solutions pour améliorer la performance organisationnelle et forme des étudiants en Master Recherche à relever les défis économiques et managériaux.

@@ -1,0 +1,1 @@
+Le département de Génie Civil (GCI) de l'ENSET de Douala forme des inGénieurs spécialisés dans la conception, la construction et la gestion d'infrastructures. Les étudiants développent des compétences en résistance des matériaux et aménagement du territoire, en réponse aux défis urbains et environnementaux actuels.

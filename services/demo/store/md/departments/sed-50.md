@@ -1,0 +1,1 @@
+Le département des Sciences de l'éducation (SED) de l'ENSET de Douala prépare des professionnels de l'enseignement et de la pédagogie. Ses formations fournissent aux étudiants les compétences nécessaires pour devenir enseignants et formateurs, capables d'encadrer et de former les futurs élèves-professeurs.

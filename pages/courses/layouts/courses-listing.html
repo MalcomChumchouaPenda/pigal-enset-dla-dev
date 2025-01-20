@@ -46,7 +46,7 @@
               {% for item in courses %}
                 <li class="list-group-item course-item">
                   <h4 class="d-flex flex-lg-row flex-column">
-                    {{ item.level_name }} - {{ item.nom }} ({{ item.option_id }})
+                    {{ item.level.name }} - {{ item.option.name }} ({{ item.option_id }})
                   </h4>
                   <div class="text-secondary pb-1">
                     {% if item.formation_id == 'CPS' %} 
@@ -61,7 +61,7 @@
                     {% endif %}
                     <span class="text-nowrap">Annee academique {{ item.annee }}</span>
                   </div>
-                  {{ item.text | safe }}
+                  {{ item.text | safe_md }}
                   <div class="d-flex justify-content-start gx-4 pt-0">
                     <a class="btn btn-link ms-0" href="{{ url_for('courses.details',key=item.id, prev_url=request.path, prev=header.link) }}">Voir plus</a>
                     <a class="btn btn-link" href="{{ url_for('admission.index') }}">S'inscrire</a>
