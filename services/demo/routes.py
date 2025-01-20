@@ -38,7 +38,7 @@ def init_categories(session):
     return result
 
 def init_events(session, categories):
-    records = store.read_json('json/events.json')
+    records = store.read_json('samples/events.json')
     result = []
     for record in records:
         record['date'] = dt.strptime(record['date'], TIME_EXP)
@@ -50,7 +50,7 @@ def init_events(session, categories):
     return result
 
 def init_pays(session):
-    records = store.read_json('json/pays.json')
+    records = store.read_json('samples/pays.json')
     result = []
     for record in records:
         obj = sch.Pays(**record)
@@ -60,7 +60,7 @@ def init_pays(session):
     return result
 
 def init_professions(session):
-    records = store.read_json('json/professions.json')
+    records = store.read_json('samples/professions.json')
     result = []
     for record in records:
         obj = sch.Profession(**record)
@@ -70,7 +70,7 @@ def init_professions(session):
     return result
 
 def init_formations(session):
-    records = store.read_json('json/formations.json')
+    records = store.read_json('samples/formations.json')
     result = []
     for record in records:
         obj = sch.Formation(**record)
@@ -80,7 +80,7 @@ def init_formations(session):
     return result
 
 def init_departments(session):
-    records = store.read_json('json/departments.json')
+    records = store.read_json('samples/departments.json')
     result = []
     for record in records:
         obj = sch.Department(**record)
@@ -90,7 +90,7 @@ def init_departments(session):
     return result
 
 def init_labs(session):
-    records = store.read_json('json/labs.json')
+    records = store.read_json('samples/labs.json')
     result = []
     for record in records:
         obj = sch.Lab(**record)
@@ -100,7 +100,7 @@ def init_labs(session):
     return result
 
 def init_levels(session):
-    records = store.read_json('json/levels.json')
+    records = store.read_json('samples/levels.json')
     result = []
     for record in records:
         obj = sch.Level(**record)
@@ -110,7 +110,7 @@ def init_levels(session):
     return result
 
 def init_diplomas(session):
-    records = store.read_json('json/diplomas.json')
+    records = store.read_json('samples/diplomas.json')
     result = []
     for record in records:
         obj = sch.Diploma(**record)
@@ -120,7 +120,7 @@ def init_diplomas(session):
     return result
 
 def init_options(session):
-    records = store.read_json('json/options.json')
+    records = store.read_json('samples/options.json')
     result = []
     for record in records:
         obj = sch.Option(**record)
@@ -130,7 +130,7 @@ def init_options(session):
     return result
 
 def init_courses(session):
-    records = store.read_json('json/courses.json')
+    records = store.read_json('samples/courses.json')
     result = []
     for record in records:
         obj = sch.Course(**record)
