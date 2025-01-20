@@ -797,7 +797,7 @@ z-index: 2;
   background-size: 0 2px, 100% 2px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 991px) {
   .hero .hero-info {
     width: 100%;
   }
@@ -815,7 +815,7 @@ z-index: 2;
   }
 }
 
-@media (max-width: 768px),
+@media (max-width: 991px),
 (max-height: 480px) {
   .hero .hero-info {
     padding: 100px 0 60px 0;
