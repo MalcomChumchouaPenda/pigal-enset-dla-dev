@@ -2,7 +2,7 @@
 <!-- IMPORTANT: link id must be <pageid>-link or <blockid>-link -->
 
 
-{% macro menu_item(entry) %}
+{% macro menu_item(entry, active='') %}
   {% if entry.children|length == 0 %}
     <li class="">
       <a id="{{ entry.uid }}-link"
@@ -10,7 +10,13 @@
           href="{{ url_for(entry.point, **entry.kwargs) }}" 
         {% elif entry.url %} 
           href="{{ entry.url }}" 
-        {% endif %}>{{ entry.text }}
+        {% endif %}
+        {% if entry.uid == active %}
+          class="active"
+        {% endif %}>
+
+        {{ entry.text }}
+
       </a>
     </li>
   {% else %}      
@@ -33,10 +39,10 @@
 {% endmacro %}
 
 
-{% macro nav_menu(entries, started_url='') %}
+{% macro nav_menu(entries, started_url='', active='') %}
 <ul>
   {% for entry in entries|sort(attribute="pos") %}
-    {{ menu_item(entry) }}
+    {{ menu_item(entry, active=active) }}
   {% endfor %}
 
   {% if started_url %}
