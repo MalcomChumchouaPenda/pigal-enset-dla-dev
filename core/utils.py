@@ -9,7 +9,7 @@ import markdown as md
 from flask import Blueprint, render_template
 
 from .config import app, db, migrate
-from .config import PAGES_DIR, SERVICES_DIR
+from .config import PAGES_DIR, SERVICES_DIR, PORTALS
 
 
 # CONSTANTS
@@ -168,3 +168,29 @@ def render_coming_soon(title, style, deadline=default_deadline()):
         page = render_template(f'{style}-coming-soon.html', 
                                title=title, deadline=deadline)
     return page
+
+
+# CUSTOM FILTERS
+
+@app.template_filter('safe_md')
+def convert_to_safe(md_link):
+    if '/store/' in md_link:
+        md_dir = SERVICES_DIR
+    elif '/assets/' in md_link:
+        md_dir = PAGES_DIR
+    else:
+        raise RuntimeError(f'Invalid Path -> {md_link}')
+    if md_link.startswith('/'):
+        md_link = md_link[1:]
+    md_link = os.path.normpath(md_link)
+    filename = os.path.join(md_dir, md_link)
+    safe = app.jinja_env.filters['safe']
+    return safe(read_markdown(filename))
+
+
+# CONTEXT PROCESSORS
+
+@app.context_processor
+def inject_utils():
+    return {'default_deadline':default_deadline, 
+            'portals': PORTALS}
