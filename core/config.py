@@ -18,9 +18,9 @@ STORE_DIR = os.path.join(_CUR_DIR, 'store')
 # BASIC CONFIGURATION
 
 app = Flask('core.config',
-            template_folder='theme/templates',
-            static_folder='theme/static',
-            static_url_path='/theme/static')
+            template_folder='theme/landing/templates',
+            static_folder='theme/landing/static',
+            static_url_path='/theme/landing/static')
 app.config['SECRET_KEY'] = uuid4().hex
 
 
