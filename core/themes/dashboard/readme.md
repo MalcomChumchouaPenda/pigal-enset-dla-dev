@@ -1,0 +1,1 @@
+This folder contains theme for Dashboard pages
