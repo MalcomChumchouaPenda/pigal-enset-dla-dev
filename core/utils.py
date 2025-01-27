@@ -19,15 +19,16 @@ _LOCAL_DBS = []
 
 # FACTORY METHODS
 
-def create_ui(name):
-    url_prefix = '' if name == 'home' else f'/{name}'
-    ui = Blueprint(name,
-                   f'pages.{name}.routes',
-                   url_prefix=url_prefix,
-                   template_folder='layouts',
-                   static_folder='assets',
-                   static_url_path='/assets')
-    return ui
+# def create_ui(name):
+#     url_prefix = '' if name == 'home' else f'/{name}'
+#     print(__name__, 'test')
+#     ui = Blueprint(name,
+#                    f'pages.{name}.routes',
+#                    url_prefix=url_prefix,
+#                    template_folder='layouts',
+#                    static_folder='assets',
+#                    static_url_path='/assets')
+#     return ui
 
 
 def create_api(name, local_db=None):
@@ -45,16 +46,16 @@ def create_api(name, local_db=None):
 
 # REGISTRATION METHODS
 
-def register_ui():
-    root_dir = PAGES_DIR
-    for name in os.listdir(root_dir):
-        if not name.startswith('_') and not name.endswith('.py'):
-            routes_path = os.path.join(root_dir, name, 'routes.py')
-            if os.path.isfile(routes_path):
-                routes = import_module(f'pages.{name}.routes')
-                if hasattr(routes, 'ui'):
-                    print('registering >', routes.ui)
-                    app.register_blueprint(routes.ui)
+# def register_ui():
+#     root_dir = PAGES_DIR
+#     for name in os.listdir(root_dir):
+#         if not name.startswith('_') and not name.endswith('.py'):
+#             routes_path = os.path.join(root_dir, name, 'routes.py')
+#             if os.path.isfile(routes_path):
+#                 routes = import_module(f'pages.{name}.routes')
+#                 if hasattr(routes, 'ui'):
+#                     print('registering >', routes.ui)
+#                     app.register_blueprint(routes.ui)
                 
 def register_api():
     root_dir = SERVICES_DIR

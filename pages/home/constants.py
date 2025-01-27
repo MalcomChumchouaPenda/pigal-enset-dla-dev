@@ -1,19 +1,19 @@
 
 LANDING_MENU = [
-    {'uid':'home', 'text':'Accueil', 'point':'home.index'},
-    {'uid':'courses', 'text':'Formations', 'point':'courses.index'},
-    {'uid':'events', 'text':'Actualités', 'point':'events.index'},
-    {'uid':'organisation', 'text':'Organisation', 'point':'organisation.index'},
+    {'uid':'home', 'text':'Accueil', 'url':'/'},
+    {'uid':'courses', 'text':'Formations', 'url':'/formations'},
+    {'uid':'events', 'text':'Actualités', 'url':'/actualites'},
+    {'uid':'organisation', 'text':'Organisation', 'url':'/organisation'},
     {'uid':'spaces', 'text':'Espaces', 'children':[
-        {'uid':'admission', 'text':'Inscription', 'point':'admission.index'},
-        {'uid':'project_a', 'text':'Projet A', 'point':'project_a.index'},
-        {'uid':'project_b', 'text':'Projet B', 'point':'project_b.index'}
+        {'uid':'admission', 'text':'Inscription', 'url':'/inscription'},
+        {'uid':'project_a', 'text':'Projet A', 'url':'/projets/a'},
+        {'uid':'project_b', 'text':'Projet B', 'url':'/projets/b'}
     ]},
     {'uid':'contact', 'text':'Contact', 'url':'#contact'}
 ]
 
 LOGIN_MENU = [
-    {'uid':'home', 'text':'Accueil', 'point':'home.index'},
+    {'uid':'home', 'text':'Accueil', 'url':'/'},
     {'uid':'project_a', 'text':'Projet A', 'point':'project_a.index'}
 ]
 

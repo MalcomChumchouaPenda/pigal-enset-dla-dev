@@ -5,7 +5,7 @@ from pages.home import constants as cst
 
 
 utl.register_api()
-utl.register_ui()
+# utl.register_ui()
 utl.init_db()
 
 

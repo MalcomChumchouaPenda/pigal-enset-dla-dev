@@ -1,16 +1,18 @@
 
-from flask import render_template, request
+from flask import Blueprint, render_template, request
 from flask_paginate import Pagination, get_page_args
-from core.utils import create_ui, get_assets
 from core.config import db
 from services.demo import queries as qry
 
 
-ui = create_ui('courses')
-assets = get_assets('courses')
+bp = Blueprint('courses', __name__,
+                url_prefix='/formations',
+                template_folder='layouts',
+                static_folder='assets',
+                static_url_path='/assets')
 
 
-@ui.route('/')
+@bp.route('/')
 def index():
     session = db.session
     return render_template('courses.html',
@@ -18,11 +20,11 @@ def index():
                            formations=qry.get_formations(session),
                            departments=qry.get_departments(session))
 
-@ui.route("/list", defaults={'formation':None, 'unit':None})
-@ui.route("/list/all", defaults={'formation':None, 'unit':None})
-@ui.route("/list/all/<unit>", defaults={'formation':None})
-@ui.route("/list/<formation>", defaults={'unit':None})
-@ui.route("/list/<formation>/<unit>")
+@bp.route("/list", defaults={'formation':None, 'unit':None})
+@bp.route("/list/all", defaults={'formation':None, 'unit':None})
+@bp.route("/list/all/<unit>", defaults={'formation':None})
+@bp.route("/list/<formation>", defaults={'unit':None})
+@bp.route("/list/<formation>/<unit>")
 def list(formation, unit):
     header = _create_list_header(formation, unit)
     courses = qry.get_courses(db.session, formation=formation, unit=unit)
@@ -64,7 +66,7 @@ def _create_paginated_courses(courses):
     return page_courses, pagination
 
 
-@ui.route('/details')
+@bp.route('/details')
 def details():
     prev_url = request.args.get('prev_url')
     prev = request.args.get('prev')

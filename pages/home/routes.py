@@ -1,16 +1,19 @@
 
-from flask import render_template
-from core.utils import create_ui, get_assets
+from flask import Blueprint, render_template
+from core.utils import get_assets
 from core.config import db
 from services.demo import queries as qry
 
 
-ui = create_ui('home')
 assets = get_assets('home')
-event_assets = get_assets('events')
+bp = Blueprint('home', __name__,
+                url_prefix='/',
+                template_folder='layouts',
+                static_folder='assets',
+                static_url_path='/assets')
 
 
-@ui.route('/')
+@bp.route('/')
 def index():
     speech = '/home/assets/md/speech.md'
     left = '/home/assets/md/about-left.md'

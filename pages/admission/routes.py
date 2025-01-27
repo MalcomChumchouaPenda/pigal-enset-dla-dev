@@ -1,14 +1,17 @@
 
-from flask import render_template, request
+from flask import Blueprint, render_template, request
 from core.config import db
-from core.utils import create_ui
 from services.demo import queries as qry
 
 
-ui = create_ui('admission')
+bp = Blueprint('admission', __name__,
+                url_prefix='/inscription',
+                template_folder='layouts',
+                static_folder='assets',
+                static_url_path='/assets')
 
 
-@ui.route('/', methods=['GET', 'POST'])
+@bp.route('/', methods=['GET', 'POST'])
 def index():
     if request.method == 'POST':
         title='Inscription termine'

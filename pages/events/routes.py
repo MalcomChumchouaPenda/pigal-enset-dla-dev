@@ -1,16 +1,18 @@
 
-from flask import render_template
+from flask import Blueprint, render_template
 from flask_paginate import Pagination, get_page_args
-from core.utils import create_ui, get_assets
 from core.config import db
 from services.demo import queries as qry
 
 
-ui = create_ui('events')
-assets = get_assets('events')
+bp = Blueprint('events', __name__,
+                url_prefix='/actualites',
+                template_folder='layouts',
+                static_folder='assets',
+                static_url_path='/assets')
 
 
-@ui.route('/')
+@bp.route('/')
 def index():
     events = qry.get_events(db.session)
     events, pagination = _create_paginated_events(events)
@@ -30,7 +32,7 @@ def _create_paginated_events(events):
                             css_framework='bootstrap5', display_msg=info)
     return page_events, pagination
 
-@ui.route('/details/<id>')
+@bp.route('/details/<id>')
 def details(id):
     event = qry.get_event(db.session, id=id)
     return render_template('events-details.html', event=event)

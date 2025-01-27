@@ -24,7 +24,7 @@ def stored_file(sname, fname):
 def not_found(e):
     print('\n', e)
     message = "La page que vous recherchez n'existe plus"
-    actions = [{"text":"Retour a l'accueil", "point":"home.index"}]
+    actions = [{"text":"Retour a l'accueil", "url":"/"}]
     return render_template('base-error.html',
                            number=404,
                            message=message,
@@ -45,7 +45,7 @@ def login_portal(id):
     if request.method == 'POST':
         title = 'Connexion reussie'
         message = "La procedure d'authentification s'est terminee avec succes"
-        actions = [{"text":"Aller a l'accueil", "point":"home.index"}]
+        actions = [{"text":"Aller a l'accueil", "url":"/"}]
         return render_template('login-confirmation.html',
                                title=title,
                                message=message,
@@ -58,7 +58,7 @@ def login_recovering(id):
     if request.method == 'POST':
         title = 'Recuperation terminee'
         message = "La procedure de recuperation s'est terminee avec succes"
-        actions = [{"text":"Aller a l'accueil", "point":"home.index"}]
+        actions = [{"text":"Aller a l'accueil", "url":"/"}]
         return render_template('login-confirmation.html',
                                title=title,
                                message=message,

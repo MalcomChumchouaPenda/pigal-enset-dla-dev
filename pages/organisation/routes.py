@@ -1,10 +1,13 @@
 
-from flask import render_template
-from core.utils import create_ui
+from flask import Blueprint, render_template
 
 
-ui = create_ui('organisation')
+bp = Blueprint('organisation', __name__,
+                url_prefix='/organisation',
+                template_folder='layouts',
+                static_folder='assets',
+                static_url_path='/assets')
 
-@ui.route('/')
+@bp.route('/')
 def index():
     return render_template('organisation.html')
