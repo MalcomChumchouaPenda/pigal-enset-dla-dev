@@ -1,17 +1,4 @@
 
-LANDING_MENU = [
-    {'uid':'home', 'text':'Accueil', 'url':'/'},
-    {'uid':'courses', 'text':'Formations', 'url':'/formations'},
-    {'uid':'events', 'text':'Actualités', 'url':'/actualites'},
-    {'uid':'organisation', 'text':'Organisation', 'url':'/organisation'},
-    {'uid':'spaces', 'text':'Espaces', 'children':[
-        {'uid':'admission', 'text':'Inscription', 'url':'/inscription'},
-        {'uid':'project_a', 'text':'Projet A', 'url':'/projets/a'},
-        {'uid':'project_b', 'text':'Projet B', 'url':'/projets/b'}
-    ]},
-    {'uid':'contact', 'text':'Contact', 'url':'#contact'}
-]
-
 LOGIN_MENU = [
     {'uid':'home', 'text':'Accueil', 'url':'/'},
     {'uid':'project_a', 'text':'Projet A', 'point':'project_a.index'}

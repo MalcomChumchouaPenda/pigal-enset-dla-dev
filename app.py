@@ -1,11 +1,11 @@
 
 from core.config import app
 from core import utils as utl
-from pages.home import constants as cst
+from pages.landing.home import constants as cst
+from pages.landing.main import MENU as LANDING_MENU
 
 
 utl.register_api()
-# utl.register_ui()
 utl.init_db()
 
 
@@ -13,6 +13,6 @@ utl.init_db()
 def inject_constants():
     return {'contact':cst.CONTACT,
             'links':cst.LINKS,
-            'landing_entries':cst.LANDING_MENU, 
+            'landing_entries':LANDING_MENU, 
             'login_entries':cst.LOGIN_MENU}
 
