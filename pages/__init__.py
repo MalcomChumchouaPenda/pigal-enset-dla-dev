@@ -1,2 +1,2 @@
 
-from .landing.main import *
+from .main import *

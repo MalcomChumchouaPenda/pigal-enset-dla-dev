@@ -1,8 +1,8 @@
 
 from core.config import app
 from core import utils as utl
-from pages.landing.home import constants as cst
-from pages.landing.main import MENU as LANDING_MENU
+from pages.home import constants as cst
+from pages.main import MENU as LANDING_MENU
 
 
 utl.register_api()

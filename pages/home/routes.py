@@ -25,7 +25,7 @@ def index():
         img = f'/home/assets/img/hero-bg-{i+1}.jpg'
         heros.append(dict(msg=msg, img=img))
     events = qry.get_events(db.session, level=0)
-    features = assets.read_json(f'json/features.json')
+    features = assets.read_json('json/features.json')
     stats = assets.read_json('json/stats.json')
     return render_template('home.html', 
                            about=about,

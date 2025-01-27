@@ -12,10 +12,6 @@ from .config import app, db, migrate
 from .config import PAGES_DIR, SERVICES_DIR, PORTALS
 
 
-# CONSTANTS
-
-_LOCAL_DBS = []
-
 
 # FACTORY METHODS
 
@@ -37,8 +33,6 @@ def create_api(name, local_db=None):
                     url_prefix=f'/api/{name}',
                     template_folder=None,
                     static_folder='store')
-    if local_db:
-        _LOCAL_DBS.append(name)
     return api
 
 
@@ -135,12 +129,16 @@ class __Folder:
 
     def read_json(self, filename, encoding='utf-8', coerce=True):
         filepath = os.path.join(self.folder, filename)
+        filepath = os.path.normpath(filepath)
+        print('\n\tjson', filename, filepath)
         return read_json(filepath, 
                          encoding=encoding, 
                          coerce=coerce)
 
     def read_markdown(self, filename, encoding='utf-8', coerce=True):
         filepath = os.path.join(self.folder, filename)
+        filepath = os.path.normpath(filepath)
+        print('\n\tmarkdown', filename, filepath)
         return read_markdown(filepath, 
                              encoding=encoding, 
                              coerce=coerce)

@@ -25,6 +25,7 @@ app.config['SECRET_KEY'] = uuid4().hex
 
 
 # DATABASE CONFIGURATION
+
 db_binds = {}
 for key in os.listdir(SERVICES_DIR):
     service_dir = os.path.join(SERVICES_DIR, key)
@@ -47,3 +48,5 @@ PORTALS = [
     {'nom':'Enseignants', 'id':'teacher'},
     {'nom':'Administration', 'id':'admin'},
 ]
+
+# LOGIN CONFIGURATION
