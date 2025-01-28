@@ -7,6 +7,7 @@ from flask_migrate import Migrate
 from flask_security import Security, SQLAlchemyUserDatastore, auth_required, hash_password
 from flask_security.models import fsqla_v3 as fsqla
 
+
 # CONFIGURATION PATHS
 
 _CUR_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -18,10 +19,10 @@ STORE_DIR = os.path.join(_CUR_DIR, 'store')
 
 # BASIC CONFIGURATION
 
-app = Flask('core.config',
-            template_folder='themes/landing/templates',
-            static_folder='themes/landing/static',
-            static_url_path='/themes/landing/static')
+app = Flask(__name__,
+            template_folder='layouts',
+            static_folder='assets',
+            static_url_path='/assets')
 app.config['SECRET_KEY'] = uuid4().hex
 
 
