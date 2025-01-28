@@ -4,7 +4,8 @@ from uuid import uuid4
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
-
+from flask_security import Security, SQLAlchemyUserDatastore, auth_required, hash_password
+from flask_security.models import fsqla_v3 as fsqla
 
 # CONFIGURATION PATHS
 
@@ -36,6 +37,8 @@ default_db_path = os.path.join(STORE_DIR, '_main.db')
 migrations_dir = os.path.join(STORE_DIR, 'migrations')
 app.config["SQLALCHEMY_DATABASE_URI"] = f"sqlite:///{default_db_path}"
 app.config['SQLALCHEMY_BINDS'] = db_binds
+app.config["SQLALCHEMY_ENGINE_OPTIONS"] = {"pool_pre_ping": True,}
+app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 db = SQLAlchemy(app)
 migrate = Migrate(directory=migrations_dir)
 
@@ -49,4 +52,22 @@ PORTALS = [
     {'nom':'Administration', 'id':'admin'},
 ]
 
-# LOGIN CONFIGURATION
+# SECURITY CONFIGURATION
+
+app.config['SECURITY_PASSWORD_SALT'] = 'salt'
+app.config["REMEMBER_COOKIE_SAMESITE"] = "strict"
+app.config["SESSION_COOKIE_SAMESITE"] = "strict"
+
+
+# SECURITY MODELS
+
+fsqla.FsModels.set_db_info(db)
+
+class Role(db.Model, fsqla.FsRoleMixin):
+    pass
+
+class User(db.Model, fsqla.FsUserMixin):
+    pass
+
+user_datastore = SQLAlchemyUserDatastore(db, User, Role)
+security = Security(app, user_datastore)

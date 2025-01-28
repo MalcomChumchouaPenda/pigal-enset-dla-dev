@@ -6,62 +6,11 @@ from datetime import datetime
 from importlib import import_module
 
 import markdown as md
-from flask import Blueprint, render_template
+from flask import render_template
+from flask_security import hash_password
 
-from .config import app, db, migrate
+from .config import app, db, migrate, security
 from .config import PAGES_DIR, SERVICES_DIR, PORTALS
-
-
-
-# FACTORY METHODS
-
-# def create_ui(name):
-#     url_prefix = '' if name == 'home' else f'/{name}'
-#     print(__name__, 'test')
-#     ui = Blueprint(name,
-#                    f'pages.{name}.routes',
-#                    url_prefix=url_prefix,
-#                    template_folder='layouts',
-#                    static_folder='assets',
-#                    static_url_path='/assets')
-#     return ui
-
-
-def create_api(name, local_db=None):
-    api = Blueprint(name,
-                    f'services.{name}.routes',
-                    url_prefix=f'/api/{name}',
-                    template_folder=None,
-                    static_folder='store')
-    return api
-
-
-
-
-# REGISTRATION METHODS
-
-# def register_ui():
-#     root_dir = PAGES_DIR
-#     for name in os.listdir(root_dir):
-#         if not name.startswith('_') and not name.endswith('.py'):
-#             routes_path = os.path.join(root_dir, name, 'routes.py')
-#             if os.path.isfile(routes_path):
-#                 routes = import_module(f'pages.{name}.routes')
-#                 if hasattr(routes, 'ui'):
-#                     print('registering >', routes.ui)
-#                     app.register_blueprint(routes.ui)
-                
-def register_api():
-    root_dir = SERVICES_DIR
-    for name in os.listdir(root_dir):
-        if not name.startswith('_') and not name.endswith('.py'):
-            routes_path = os.path.join(root_dir, name, 'routes.py')
-            if os.path.isfile(routes_path):
-                routes = import_module(f'services.{name}.routes')
-                if hasattr(routes, 'api'):
-                    print('registering >', routes.api)
-                    app.register_blueprint(routes.api)
-
 
 
 # DATABASE METHODS
@@ -70,6 +19,9 @@ def init_db():
     migrate.init_app(app, db)
     with app.app_context():
         db.create_all()
+        if not security.datastore.find_user(email="test@me.com"):
+            security.datastore.create_user(email="test@me.com", password=hash_password("password"))
+        db.session.commit()
 
 
 # FILES I/O METHODS
@@ -130,7 +82,6 @@ class __Folder:
     def read_json(self, filename, encoding='utf-8', coerce=True):
         filepath = os.path.join(self.folder, filename)
         filepath = os.path.normpath(filepath)
-        print('\n\tjson', filename, filepath)
         return read_json(filepath, 
                          encoding=encoding, 
                          coerce=coerce)
@@ -138,7 +89,6 @@ class __Folder:
     def read_markdown(self, filename, encoding='utf-8', coerce=True):
         filepath = os.path.join(self.folder, filename)
         filepath = os.path.normpath(filepath)
-        print('\n\tmarkdown', filename, filepath)
         return read_markdown(filepath, 
                              encoding=encoding, 
                              coerce=coerce)

@@ -5,7 +5,6 @@ from pages.home import constants as cst
 from pages.main import MENU as LANDING_MENU
 
 
-utl.register_api()
 utl.init_db()
 
 
