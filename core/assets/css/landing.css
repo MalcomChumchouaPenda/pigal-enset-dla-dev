@@ -797,6 +797,11 @@ z-index: 2;
   background-size: 0 2px, 100% 2px;
 }
 
+.hero-info .breadcrumb-item::before,
+.hero-info .breadcrumb-item.active  {
+  animation: fadeInLeft 1s both 0.4s;
+}
+
 @media (max-width: 991px) {
   .hero .hero-info {
     width: 100%;
