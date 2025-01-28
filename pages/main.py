@@ -7,6 +7,7 @@ from .events.routes import bp as events_bp
 from .organisation.routes import bp as org_bp
 from .project_a.routes import bp as proj_a_bp
 from .project_b.routes import bp as proj_b_bp
+from .project_c.routes import bp as proj_c_bp
 
 
 MENU = [
@@ -16,8 +17,9 @@ MENU = [
     {'uid':'organisation', 'text':'Organisation', 'url':'/organisation'},
     {'uid':'spaces', 'text':'Espaces', 'children':[
         {'uid':'admission', 'text':'Inscription', 'url':'/inscription'},
-        {'uid':'project_a', 'text':'Projet A', 'url':'/projets/a'},
-        {'uid':'project_b', 'text':'Projet B', 'url':'/projets/b'}
+        {'uid':'project_a', 'text':'Projet A (vide)', 'url':'/projets/a'},
+        {'uid':'project_b', 'text':'Projet B (partiel)', 'url':'/projets/b'},
+        {'uid':'project_c', 'text':'Projet C (Securise)', 'url':'/projets/c'}
     ]},
     {'uid':'contact', 'text':'Contact', 'url':'#contact'}
 ]
@@ -29,4 +31,5 @@ app.register_blueprint(events_bp)
 app.register_blueprint(org_bp)
 app.register_blueprint(proj_a_bp)
 app.register_blueprint(proj_b_bp)
+app.register_blueprint(proj_c_bp)
 

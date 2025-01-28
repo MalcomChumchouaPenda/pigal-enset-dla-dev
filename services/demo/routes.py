@@ -1,24 +1,6 @@
 
 from flask import Blueprint
-from core.config import app, db
 from . import queries as qry
-from . import builders as build
-
-
-# create initial data
-with app.app_context():
-    session = db.session
-    build.init_categories(session)
-    build.init_events(session)
-    build.init_pays(session)
-    build.init_professions(session)
-    build.init_formations(session)
-    build.init_departments(session)
-    build.init_labs(session)
-    build.init_levels(session)
-    build.init_diplomas(session)
-    build.init_options(session)
-    build.init_courses(session)
 
 
 bp = Blueprint('demo', __name__,

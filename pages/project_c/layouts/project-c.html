@@ -1,16 +1,17 @@
 {% extends 'landing-page.html' %}
 
 {% block page_meta %}
-  <title>Projet B | ENSET Douala</title>
+  <title>Projet C | ENSET Douala</title>
 {% endblock %}
 
 {% block page_hero %}
   {% call hero("25") %}
     <div class="hero-info w-75 d-flex flex-column align-items-center">
-      <h1>Exemple de Projets en developpement</h1>
+      <h1>Exemple de Projets Securises</h1>
+      <h3>{{ current_user.name }}</h3>
     </div>
     <div class="hero-bg">
-      <img src="{{ url_for('project_b.static', filename='img/hero.jpg') }}" alt="">
+      <img src="{{ url_for('project_c.static', filename='hero.jpg') }}" alt="">
     </div>
   {% endcall %}
 {% endblock %}

@@ -1,27 +1,24 @@
 
 import os
-import re
 import json
 from datetime import datetime
-from importlib import import_module
-
 import markdown as md
 from flask import render_template
-from flask_security import hash_password
-
-from .config import app, db, migrate, security
+from .config import app, db, migrate
 from .config import PAGES_DIR, SERVICES_DIR, PORTALS
+from .queries import init_data
 
 
 # DATABASE METHODS
 
-def init_db():
+def init_db(creators):
     migrate.init_app(app, db)
     with app.app_context():
         db.create_all()
-        if not security.datastore.find_user(email="test@me.com"):
-            security.datastore.create_user(email="test@me.com", password=hash_password("password"))
-        db.session.commit()
+        session = db.session
+        init_data(session)
+        for creator in creators:
+            creator(session)
 
 
 # FILES I/O METHODS
@@ -39,6 +36,7 @@ def list_encoding():
     return r
 
 encodings = list_encoding()
+
 
 def read_text(filepath, encoding='utf-8', coerce=True):
     try:

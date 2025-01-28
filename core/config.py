@@ -4,8 +4,7 @@ from uuid import uuid4
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
-from flask_security import Security, SQLAlchemyUserDatastore, auth_required, hash_password
-from flask_security.models import fsqla_v3 as fsqla
+from flask_login import LoginManager
 
 
 # CONFIGURATION PATHS
@@ -23,7 +22,6 @@ app = Flask(__name__,
             template_folder='layouts',
             static_folder='assets',
             static_url_path='/assets')
-app.config['SECRET_KEY'] = uuid4().hex
 
 
 # DATABASE CONFIGURATION
@@ -38,9 +36,9 @@ default_db_path = os.path.join(STORE_DIR, '_main.db')
 migrations_dir = os.path.join(STORE_DIR, 'migrations')
 app.config["SQLALCHEMY_DATABASE_URI"] = f"sqlite:///{default_db_path}"
 app.config['SQLALCHEMY_BINDS'] = db_binds
-app.config["SQLALCHEMY_ENGINE_OPTIONS"] = {"pool_pre_ping": True,}
-app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
-db = SQLAlchemy(app)
+# app.config["SQLALCHEMY_ENGINE_OPTIONS"] = {"pool_pre_ping": True,}
+# app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
+db = SQLAlchemy(app, session_options={"autoflush": False})
 migrate = Migrate(directory=migrations_dir)
 
 
@@ -55,20 +53,23 @@ PORTALS = [
 
 # SECURITY CONFIGURATION
 
-app.config['SECURITY_PASSWORD_SALT'] = 'salt'
-app.config["REMEMBER_COOKIE_SAMESITE"] = "strict"
-app.config["SESSION_COOKIE_SAMESITE"] = "strict"
+app.config['SECRET_KEY'] = 'MY_SECRET'
+app.config['SECURITY_PASSWORD_SALT'] = 'MY_SALT'
+# app.config["REMEMBER_COOKIE_SAMESITE"] = "strict"
+# app.config["SESSION_COOKIE_SAMESITE"] = "strict"
+
+login_manager = LoginManager()
+login_manager.init_app(app)
+login_manager.login_view = "login"
+
+# fsqla.FsModels.set_db_info(db)
 
 
-# SECURITY MODELS
+# class Role(db.Model, fsqla.FsRoleMixin):
+#     pass
 
-fsqla.FsModels.set_db_info(db)
+# class User(db.Model, fsqla.FsUserMixin):
+#     pass
 
-class Role(db.Model, fsqla.FsRoleMixin):
-    pass
-
-class User(db.Model, fsqla.FsUserMixin):
-    pass
-
-user_datastore = SQLAlchemyUserDatastore(db, User, Role)
-security = Security(app, user_datastore)
+# user_datastore = SQLAlchemyUserDatastore(db, User, Role)
+# security = Security(app, user_datastore)

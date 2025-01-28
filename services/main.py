@@ -1,7 +1,10 @@
 
-from core.config import app
 from flask import Blueprint
 from .demo.routes import bp as demo_bp
+from .demo import queries as demo_qry
+
+
+DATA_CREATORS = [demo_qry.init_data]
 
 
 api = Blueprint('api', __name__,
@@ -9,6 +12,4 @@ api = Blueprint('api', __name__,
                 template_folder=None,
                 static_folder=None)
 
-
-app.register_blueprint(api)          # important ne pas modifier
 api.register_blueprint(demo_bp)

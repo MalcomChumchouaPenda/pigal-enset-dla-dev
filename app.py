@@ -1,12 +1,13 @@
 
 from core.config import app
-from core import utils as utl
+from core.utils import init_db
 from pages.home import constants as cst
 from pages.main import MENU as LANDING_MENU
+from services.main import api, DATA_CREATORS
 
 
-utl.init_db()
-
+app.register_blueprint(api)          # important ne pas modifier
+init_db(DATA_CREATORS)
 
 @app.context_processor
 def inject_constants():

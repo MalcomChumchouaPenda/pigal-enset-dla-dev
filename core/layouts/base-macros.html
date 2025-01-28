@@ -41,16 +41,23 @@
 {% endmacro %}
 
 
-{% macro nav_menu(entries, started_url='', active='') %}
+{% macro nav_menu(entries, user, started_url='', active='') %}
 <ul>
   {% for entry in entries %}
     {{ menu_item(entry, active=active) }}
   {% endfor %}
 
   {% if started_url %}
+    {% if user and user.is_authenticated %}
     <li>
-      <a class="btn btn-get-started" href="{{ started_url }}">Connexion</a>
+      <a class="btn btn-get-started" href="{{ url_for('logout') }}">Deconnexion</a>
     </li>
+    {% else %}
+    <li>
+      <a class="btn btn-get-started" href="{{ url_for('login') }}">Connexion</a>
+      
+    </li>
+    {% endif %}
   {% endif %}
 </ul>
 {% endmacro %}
