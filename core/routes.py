@@ -3,10 +3,11 @@ import os
 from flask import render_template, request, redirect
 from flask import url_for, send_from_directory, flash
 from flask_login import login_user, logout_user, login_required
-from urllib.parse import urlparse, urljoin, unquote_plus
+from urllib.parse import urlparse, urljoin
 from .config import app, login_manager
 from .config import PAGES_DIR, SERVICES_DIR
 from .schemas import User
+from .utils import default_deadline
 
 
 
@@ -70,6 +71,13 @@ def logout():
     logout_user()
     flash('Logged out successfully!', 'info')
     return redirect(url_for('home.index'))
+
+
+@app.route('/recovering')
+def recovering():
+    return render_template('landing-coming-soon.html', 
+                            title='Recuperation Mot de passe', 
+                            deadline=default_deadline())
 
 
 
