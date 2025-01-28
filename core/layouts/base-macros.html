@@ -48,16 +48,16 @@
   {% endfor %}
 
   {% if started_url %}
-    {% if user and user.is_authenticated %}
     <li>
-      <a class="btn btn-get-started" href="{{ url_for('logout') }}">Deconnexion</a>
+      {% if user and user.is_authenticated %}
+        <a class="btn btn-get-started d-flex justify-content-start" href="{{ url_for('logout') }}">
+          <i class="bi bi-person-fill profile-icon d-none d-md-block"></i>
+          <span>Deconnexion</span>
+        </a>
+      {% else %}
+        <a class="btn btn-get-started" href="{{ url_for('login') }}">Connexion</a>
+      {% endif %}
     </li>
-    {% else %}
-    <li>
-      <a class="btn btn-get-started" href="{{ url_for('login') }}">Connexion</a>
-      
-    </li>
-    {% endif %}
   {% endif %}
 </ul>
 {% endmacro %}
