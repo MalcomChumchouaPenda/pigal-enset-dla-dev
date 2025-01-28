@@ -47,7 +47,6 @@ def load_user(user_id):
     return User.query.get(user_id)
 
 
-
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     next_page = request.args.get('next')
@@ -71,6 +70,8 @@ def logout():
     logout_user()
     flash('Logged out successfully!', 'info')
     return redirect(url_for('home.index'))
+
+
 
 # @app.route('/dashboard')
 # @login_required

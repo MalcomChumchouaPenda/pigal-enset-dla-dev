@@ -1,0 +1,28 @@
+{% extends 'landing-page.html' %}
+
+{% block page_meta %}
+  <title>Projet C | ENSET Douala</title>
+{% endblock %}
+
+{% block page_hero %}
+  {% call hero("25") %}
+    <div class="hero-info w-75 d-flex flex-column align-items-center">
+      <h1>Page Reserve Admin</h1>
+      <h3>{{ current_user.name }}</h3>
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="{{ url_for('home.index') }}">Home</a></li>
+          <li class="breadcrumb-item"><a href="{{ url_for('project_c.index') }}">Projet</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Admin</li>
+        </ol>
+      </nav>
+    </div>
+    <div class="hero-bg">
+      <img src="{{ url_for('project_c.static', filename='hero.jpg') }}" alt="">
+    </div>
+  {% endcall %}
+{% endblock %}
+
+{% block page_main %}
+  {{ coming_soon_section("Section reserve a l'administration", default_deadline(), id="section") }}
+{% endblock %}

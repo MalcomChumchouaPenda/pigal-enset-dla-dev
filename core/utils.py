@@ -1,9 +1,12 @@
 
 import os
 import json
+from functools import wraps
 from datetime import datetime
 import markdown as md
-from flask import render_template
+from flask import render_template, flash
+from flask import redirect, url_for, request
+from flask_login import current_user
 from .config import app, db, migrate
 from .config import PAGES_DIR, SERVICES_DIR, PORTALS
 from .queries import init_data
@@ -141,3 +144,29 @@ def convert_to_safe(md_link):
 def inject_utils():
     return {'default_deadline':default_deadline, 
             'portals': PORTALS}
+
+
+# DECORATORS
+
+
+def roles_required(*role_ids):
+    """Decorator to require at least one of the specified roles."""
+    def wrapper(f):
+        @wraps(f)
+        def decorated_function(*args, **kwargs):
+            if not current_user.is_authenticated:
+                flash("You must be logged in to access this page.", "warning")
+                return redirect(url_for('login', next=request.path))
+
+            # Check if the user has at least one required role
+            if not any(role.id in role_ids for role in current_user.roles):
+                flash("You don't have permission to access this page.", "danger")
+                url = request.referrer or url_for('home.index')
+                title = 'Acces refuse'
+                message = "Vous n'avez pas la permission d'acceder a cette page"
+                actions = [{'text':'retour a la page precedente', 'url':url}]
+                return render_template('landing-confirmation.html', title=title,
+                                       message=message, actions=actions)
+            return f(*args, **kwargs)
+        return decorated_function
+    return wrapper

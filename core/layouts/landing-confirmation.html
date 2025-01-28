@@ -17,9 +17,15 @@
             <div class="d-flex justify-content-start my-0">
                 <div class="d-flex flex-column justify-content-start align-items-start my-0">
                 {% for action in actions %}
+                    {% if action.point %}
                     <a href="{{ url_for(action.point) }}" class="btn btn-link">
                         <h6>{{ action.text }}<i class="bi bi-arrow-right mx-1"></i></h6>
                     </a>
+                    {% else %}
+                    <a href="{{ action.url }}" class="btn btn-link">
+                        <h6>{{ action.text }}<i class="bi bi-arrow-right mx-1"></i></h6>
+                    </a>
+                    {% endif %}
                 {% endfor %}
                 </div>
             </div>  

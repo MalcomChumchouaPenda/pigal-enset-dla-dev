@@ -9,9 +9,35 @@
     <div class="hero-info w-75 d-flex flex-column align-items-center">
       <h1>Exemple de Projets Securises</h1>
       <h3>{{ current_user.name }}</h3>
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="{{ url_for('home.index') }}">Home</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Projet</li>
+        </ol>
+      </nav>
     </div>
     <div class="hero-bg">
       <img src="{{ url_for('project_c.static', filename='hero.jpg') }}" alt="">
     </div>
   {% endcall %}
+{% endblock %}
+
+
+{% block page_main %}    
+  <!-- section about -->
+  <section id="about" class="section about light-background mt-4">
+    <div class="container">
+      <div class="row gy-4">
+        <div class="col-12 about-content">
+          <p>Cette page permet l'acces a d'autres pages securisees:</p>
+          <ul>
+            <li>La page <a href="{{ url_for('project_c.admin') }}">Admin</a> pour l'administration</li>
+            <li>La page <a href="{{ url_for('project_c.teacher') }}">Teacher</a> pour les enseignants</li>
+            <li>La page <a href="{{ url_for('project_c.student') }}">Students</a> pour les etudiants</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section><!-- /section about -->
+
 {% endblock %}
