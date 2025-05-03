@@ -41,7 +41,7 @@ Template pour le developpement de Portail d'Information et de Gestion des Activi
    ```
 3. Installer les dépendances :
    ```bash
-   pip install -r requirements.txt
+   python.exe -m pip install -r requirements.txt
    ```
 4. Configurer l'application en creant un fichier `.env`:
    ```bash
