@@ -1,7 +1,0 @@
-[
-    {"name":"etudiant", "id":"ETUDI"},
-    {"name":"soudeur", "id":"SOUD"},
-    {"name":"chaudronnier", "id":"CHAUDR"},
-    {"name":"tuyauteur", "id":"TUYAU"},
-    {"name":"autres", "id":"AUTR"}
-]
