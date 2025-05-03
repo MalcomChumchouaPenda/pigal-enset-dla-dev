@@ -1,0 +1,11 @@
+{
+    "core-name":"pigal-core",
+    "core-version":"0.0.1",
+    "api-info":{
+        "title":"Pigal API",
+        "description":"Pigal API documentation",
+        "version":"1.0.0",
+        "uiversion":3,
+        "openapi":"3.0.9"
+    }
+}

@@ -1,0 +1,19 @@
+get:
+  summary: Get a course by ID
+  tags:
+    - Courses
+  parameters:
+    - name: course_id
+      in: path
+      required: true
+      schema:
+        type: string
+  responses:
+    200:
+      description: Course found
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Course'
+    404:
+      description: Course not found

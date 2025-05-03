@@ -1,0 +1,41 @@
+# EXEMPLE INTRODUCTION
+
+tags:
+  - Courses
+  
+summary: Update a course
+description: Update the title of course from the database.
+
+
+# EXEMPLE D'INPUTS (METHOD=PUT)
+
+parameters:
+  - in: path
+    name: course_id
+    required: true
+    schema:
+      type: string
+      description: The Course ID
+
+requestBody:
+  required: true
+  content:
+    application/json:
+      schema:
+        type: object
+        properties:
+          title:
+            type: string
+            example: Python Basics
+        required:
+          - title
+
+
+# EXEMPLE D'OUTPUTS
+
+responses:
+  201:
+    description: Course successfully updated
+
+  400:
+    description: Invalid input

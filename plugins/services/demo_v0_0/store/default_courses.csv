@@ -1,0 +1,18 @@
+code,nom,niveau,code_filiere,code_diplome
+EN1,Electronique 1,1,EN,DIPET1
+EN3,Electronique 3,3,EN,DIPET1
+ET1,Electrotechnique 1,1,ET,DIPET1
+ET3,Electrotechnique 3,3,ET,DIPET1
+IEE3,Ingenierie de l'Energie Electrique 3,3,IEE,LPRO
+IEE4,Ingenierie de l'Energie Electrique 4,4,IEE,MPRO
+IEE5,Ingenierie de l'Energie Electrique 5,5,IEE,MPRO
+RT3,Réseaux et Télécommunications 3,3,RT,LPRO
+RT4,Réseaux et Télécommunications 4,4,RT,MPRO
+II1,Informatique Industrielle 1,1,II,DIPET1
+II4,Informatique Industrielle 4,4,II,DIPET2
+TIC1,Technologie de l'Information et de la Communication 1,1,TIC,DIPET1
+TIC4,Technologie de l'Information et de la Communication 4,4,TIC,DIPET2
+GPI4,Gestion des Projets Informatiques 4,4,IEE,MPRO
+IAM2R,Intelligence Artificielle,5,IA,M2R
+ERM2R,Energie Renouvelable,5,ER,M2R
+CSTRM2R,Calcul et Structure,5,CSTR,M2R

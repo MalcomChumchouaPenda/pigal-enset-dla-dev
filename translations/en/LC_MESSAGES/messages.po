@@ -1,0 +1,528 @@
+# English translations for Pigal Core.
+# Copyright (C) 2025 ORGANIZATION
+# This file is distributed under the same license as the Pigal Core project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2025.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Pigal Core Dev\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2025-05-03 08:23+0100\n"
+"PO-Revision-Date: 2025-05-03 08:27+0100\n"
+"Last-Translator: \n"
+"Language-Team: en <LL@li.org>\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Generated-By: Babel 2.16.0\n"
+"X-Generator: Poedit 3.5\n"
+
+#: core/home/routes.py:18 plugins/pages/demo/routes.py:50
+#: plugins/pages/demo/templates/demo-datatables.jinja:18
+#: plugins/pages/demo/templates/demo-form-editors.jinja:18
+#: plugins/pages/demo/templates/demo-form-elements.jinja:18
+#: plugins/pages/demo/templates/demo-form-layouts.jinja:18
+#: plugins/pages/demo/templates/demo-search.jinja:17
+#: plugins/pages/demo/templates/demo-tables.jinja:18
+msgid "Accueil"
+msgstr "Home"
+
+#: core/home/routes.py:26
+msgid "identifiant"
+msgstr "identifier"
+
+#: core/home/routes.py:27
+msgid "mot de passe"
+msgstr "password"
+
+#: core/home/routes.py:43
+msgid "Informations incorrectes"
+msgstr "Incorrect information"
+
+#: core/home/routes.py:60
+msgid "Vous n'avez pas les autorisations nécessaires pour accéder à cette page."
+msgstr "You do not have the necessary authorisations to access this page."
+
+#: core/home/routes.py:61 plugins/pages/demo/routes.py:38
+msgid "Revenir a l'accueil"
+msgstr "Back to home page"
+
+#: core/home/routes.py:64
+msgid "Revenir a la page precedente"
+msgstr "Return to previous page"
+
+#: core/home/templates/home-login.jinja:14
+msgid "Connecter-vous pour continuer"
+msgstr "Login to continue"
+
+#: core/home/templates/home-login.jinja:29
+msgid "Saisissez votre identifiant"
+msgstr "Enter your username"
+
+#: core/home/templates/home-login.jinja:36
+msgid "Saisissez votre mot de passe"
+msgstr "Enter your password"
+
+#: core/home/templates/home-login.jinja:42 core/themes/dashboard/macros.jinja:81
+#: core/themes/landing/macros.jinja:61
+msgid "Connexion"
+msgstr "Login"
+
+#: core/home/templates/home-login.jinja:43
+msgid "Identifiant ou mot de passe oublié ?"
+msgstr "Forgot your username or password?"
+
+#: core/home/templates/home-login.jinja:44
+msgid "Retour a l'accueil !"
+msgstr "Back to home page !"
+
+#: core/themes/dashboard/home.jinja:5
+#: plugins/pages/demo/templates/demo-charts.jinja:5
+#: plugins/pages/demo/templates/demo-datatables.jinja:5
+#: plugins/pages/demo/templates/demo-form-editors.jinja:5
+#: plugins/pages/demo/templates/demo-form-elements.jinja:5
+#: plugins/pages/demo/templates/demo-form-layouts.jinja:5
+#: plugins/pages/demo/templates/demo-tables.jinja:5
+msgid "| ENSET Douala"
+msgstr "| ENSET Douala"
+
+#: core/themes/dashboard/home.jinja:7
+#: plugins/pages/demo/templates/demo-charts.jinja:7
+#: plugins/pages/demo/templates/demo-datatables.jinja:7
+#: plugins/pages/demo/templates/demo-form-editors.jinja:7
+#: plugins/pages/demo/templates/demo-form-elements.jinja:7
+#: plugins/pages/demo/templates/demo-form-layouts.jinja:7
+#: plugins/pages/demo/templates/demo-tables.jinja:7
+msgid "Unknown | ENSET Douala"
+msgstr "Visitor | ENSET Douala"
+
+#: core/themes/dashboard/home.jinja:16
+msgid "Espace "
+msgstr "Space "
+
+#: core/themes/dashboard/macros.jinja:16 core/themes/landing/macros.jinja:70
+msgid " <strong>(En construction)</strong>"
+msgstr " <strong>(Under construction)</strong>"
+
+#: core/themes/dashboard/macros.jinja:20 core/themes/landing/macros.jinja:74
+msgid ""
+"Cette section est en cours de maintenance ou de developpement. Elle sera "
+"disponible dans:"
+msgstr ""
+"This section is currently being maintained or developed. It will be available "
+"in:"
+
+#: core/themes/dashboard/macros.jinja:24 core/themes/landing/macros.jinja:78
+msgid "jours,"
+msgstr "days,"
+
+#: core/themes/dashboard/macros.jinja:25 core/themes/landing/macros.jinja:79
+msgid "heures,"
+msgstr "hours,"
+
+#: core/themes/dashboard/macros.jinja:26 core/themes/landing/macros.jinja:80
+msgid "minutes et"
+msgstr "minutes and"
+
+#: core/themes/dashboard/macros.jinja:27 core/themes/landing/macros.jinja:81
+msgid "secondes."
+msgstr "seconds."
+
+#: core/themes/dashboard/macros.jinja:74 core/themes/landing/macros.jinja:54
+msgid "Deconnexion"
+msgstr "Logout"
+
+#: core/themes/landing/coming-soon.jinja:14
+msgid "En construction"
+msgstr "Under construction"
+
+#: core/themes/landing/coming-soon.jinja:15
+msgid "Cette page est en construction. Elle sera disponible dans:"
+msgstr "This page is under construction. It will be available in:"
+
+#: core/themes/landing/coming-soon.jinja:21
+msgid "Jours"
+msgstr "Days"
+
+#: core/themes/landing/coming-soon.jinja:25
+msgid "Heures"
+msgstr "Hours"
+
+#: core/themes/landing/coming-soon.jinja:29
+msgid "Minutes"
+msgstr "Minutes"
+
+#: core/themes/landing/coming-soon.jinja:33
+msgid "Secondes"
+msgstr "Seconds"
+
+#: plugins/pages/demo/routes.py:12
+msgid "Pages"
+msgstr "Pages"
+
+#: plugins/pages/demo/routes.py:13
+msgid "Sections"
+msgstr "Sections"
+
+#: plugins/pages/demo/routes.py:14
+msgid "Dashboards"
+msgstr "Dashboards"
+
+#: plugins/pages/demo/routes.py:19
+msgid "Page vide"
+msgstr "Blank page"
+
+#: plugins/pages/demo/routes.py:20
+msgid "Page avec menu"
+msgstr "Page with menu"
+
+#: plugins/pages/demo/routes.py:21
+msgid "Page de message"
+msgstr "Page with message"
+
+#: plugins/pages/demo/routes.py:22
+msgid "Page Attente"
+msgstr "Coming soon page"
+
+#: plugins/pages/demo/routes.py:36
+msgid "Avertissement"
+msgstr "Warning"
+
+#: plugins/pages/demo/routes.py:37
+msgid "Ceci est un message test"
+msgstr "This is a test message"
+
+#: plugins/pages/demo/routes.py:51 plugins/pages/demo/routes.py:56
+#: plugins/pages/demo/routes.py:58
+msgid "Page 1"
+msgstr "Page 1"
+
+#: plugins/pages/demo/routes.py:52 plugins/pages/demo/routes.py:57
+#: plugins/pages/demo/routes.py:59
+msgid "Page 2"
+msgstr "Page 2"
+
+#: plugins/pages/demo/routes.py:53
+msgid "Menus"
+msgstr "Menus"
+
+#: plugins/pages/demo/routes.py:54
+msgid "Menu (ordonnee)"
+msgstr "Menu (ordered)"
+
+#: plugins/pages/demo/routes.py:55
+msgid "Menu (reordonne)"
+msgstr "Menu (reordered)"
+
+#: plugins/pages/demo/routes.py:68
+msgid "Page avec hero"
+msgstr "Page with hero"
+
+#: plugins/pages/demo/routes.py:69
+msgid "Hero large"
+msgstr "Large Hero"
+
+#: plugins/pages/demo/routes.py:70
+msgid "Hero moyen"
+msgstr "Medium Hero"
+
+#: plugins/pages/demo/routes.py:71
+msgid "Hero reduit"
+msgstr "Small Hero"
+
+#: plugins/pages/demo/routes.py:72
+msgid "Hero carousel"
+msgstr "Hero with carousel"
+
+#: plugins/pages/demo/routes.py:80
+#, python-format
+msgid "This is demo %(i)s"
+msgstr "This is demo %(i)s"
+
+#: plugins/pages/demo/routes.py:88
+msgid "Page avec footer"
+msgstr "Page with footer"
+
+#: plugins/pages/demo/routes.py:89
+msgid "Footer large"
+msgstr "Large footer"
+
+#: plugins/pages/demo/routes.py:90
+msgid "Footer moyen"
+msgstr "Medium footer"
+
+#: plugins/pages/demo/routes.py:91
+msgid "Footer reduit"
+msgstr "Small footer"
+
+#: plugins/pages/demo/routes.py:92
+msgid "Footer avec auteurs"
+msgstr "Footer with authors"
+
+#: plugins/pages/demo/routes.py:105
+msgid "Services"
+msgstr "Services"
+
+#: plugins/pages/demo/routes.py:106
+msgid "About"
+msgstr "About"
+
+#: plugins/pages/demo/routes.py:107
+msgid "Recherche"
+msgstr "Search"
+
+#: plugins/pages/demo/routes.py:108
+msgid "Evenements"
+msgstr "Events"
+
+#: plugins/pages/demo/routes.py:109
+msgid "Attente"
+msgstr "Coming soon"
+
+#: plugins/pages/demo/routes.py:125
+msgid "<strong>Enseignants</strong> formees par an"
+msgstr "<strong>Teachers</strong> trained per year"
+
+#: plugins/pages/demo/routes.py:126
+msgid "<strong>Ingenieurs</strong> formees par an"
+msgstr "<strong>Engineers</strong> trained per year"
+
+#: plugins/pages/demo/routes.py:127
+msgid "<strong>Programmes</strong> disponibles"
+msgstr "Available <strong>programs</strong>"
+
+#: plugins/pages/demo/routes.py:146
+#, python-format
+msgid "Description de l'item %(i)s pour test"
+msgstr "Item %(i)s description for test"
+
+#: plugins/pages/demo/routes.py:162
+#, python-format
+msgid "Titre de l'evenement %(i)s"
+msgstr "Event %(i)s title"
+
+#: plugins/pages/demo/routes.py:164
+msgid "Paire"
+msgstr "Even"
+
+#: plugins/pages/demo/routes.py:164
+msgid "Impaire"
+msgstr "Odd"
+
+#: plugins/pages/demo/routes.py:177
+msgid "Dashboard (avec composants)"
+msgstr "Dashboard (with components)"
+
+#: plugins/pages/demo/routes.py:178
+msgid "Dashboard (protege)"
+msgstr "Dashboard (protected)"
+
+#: plugins/pages/demo/routes.py:179
+msgid "Dashboard (etudiants)"
+msgstr "Dashboard (students)"
+
+#: plugins/pages/demo/routes.py:181
+msgid "Form Components"
+msgstr "Form Components"
+
+#: plugins/pages/demo/routes.py:182
+msgid "Form editors"
+msgstr "Form editors"
+
+#: plugins/pages/demo/routes.py:183
+msgid "Form elements"
+msgstr "Form elements"
+
+#: plugins/pages/demo/routes.py:184
+msgid "Form layouts"
+msgstr "Form layouts"
+
+#: plugins/pages/demo/routes.py:185
+msgid "Form validation"
+msgstr "Form validation"
+
+#: plugins/pages/demo/routes.py:187
+msgid "Data Components"
+msgstr "Data Components"
+
+#: plugins/pages/demo/routes.py:188
+msgid "General tables"
+msgstr "General tables"
+
+#: plugins/pages/demo/routes.py:189
+msgid "Data tables"
+msgstr "Data tables"
+
+#: plugins/pages/demo/routes.py:190
+msgid "Data charts"
+msgstr "Data charts"
+
+#: plugins/pages/demo/routes.py:195
+msgid "Cette espace presente des composants demo"
+msgstr "This area presents demo components"
+
+#: plugins/pages/demo/routes.py:250
+msgid "Welcome in a protected space"
+msgstr "Welcome in a protected space"
+
+#: plugins/pages/demo/routes.py:256
+msgid "Welcome in student space"
+msgstr "Welcome in student space"
+
+#: plugins/pages/demo/templates/demo-about.jinja:12
+msgid "Directeur de l'ENSET de Douala"
+msgstr "Director of ENSET de Douala"
+
+#: plugins/pages/demo/templates/demo-about.jinja:25
+msgid "Quelques <b>Statistiques</b>"
+msgstr "Some <b>statistics</b>"
+
+#: plugins/pages/demo/templates/demo-about.jinja:49
+msgid "Nous"
+msgstr "Us"
+
+#: plugins/pages/demo/templates/demo-about.jinja:49
+msgid "A Propos de <b>Nous</b>"
+msgstr "About <b>Us<b>"
+
+#: plugins/pages/demo/templates/demo-blank.jinja:5
+msgid "Page Vide"
+msgstr "Blank page"
+
+#: plugins/pages/demo/templates/demo-buttons.jinja:6
+msgid "Classic bootstrap buttons"
+msgstr "Classic bootstrap buttons"
+
+#: plugins/pages/demo/templates/demo-charts.jinja:15
+msgid "Demo Graphique avec Chart.js"
+msgstr "Charting demo with Chart.js"
+
+#: plugins/pages/demo/templates/demo-charts.jinja:16
+msgid ""
+"Chart.JS Examples. You can check the <a href=\"https://www.chartjs.org/docs/"
+"latest/samples/\" target=\"_blank\">official website</a> for more examples."
+msgstr ""
+"Chart.JS Examples. You can check the <a href=\"https://www.chartjs.org/docs/"
+"latest/samples/\" target=\"_blank\">official website</a> for more examples."
+
+#: plugins/pages/demo/templates/demo-datatables.jinja:15
+msgid "Datatables"
+msgstr "Data tables"
+
+#: plugins/pages/demo/templates/demo-datatables.jinja:19
+#: plugins/pages/demo/templates/demo-form-editors.jinja:19
+#: plugins/pages/demo/templates/demo-form-elements.jinja:19
+#: plugins/pages/demo/templates/demo-form-layouts.jinja:19
+#: plugins/pages/demo/templates/demo-tables.jinja:19
+msgid "Dashboard"
+msgstr "Dashboard"
+
+#: plugins/pages/demo/templates/demo-datatables.jinja:20
+msgid "Tables"
+msgstr "Tables"
+
+#: plugins/pages/demo/templates/demo-datatables.jinja:23
+msgid ""
+"Add lightweight datatables to your project with using the <a href=\"https://"
+"github.com/fiduswriter/Simple-DataTables\" target=\"_blank\">Simple "
+"DataTables</a> library. Just add <code>.datatable</code> class name to any "
+"table you wish to conver to a datatable. Check for <a href=\"https://"
+"fiduswriter.github.io/simple-datatables/demos/\" target=\"_blank\">more "
+"examples</a>."
+msgstr ""
+"Add lightweight datatables to your project with using the <a href=\"https://"
+"github.com/fiduswriter/Simple-DataTables\" target=\"_blank\">Simple "
+"DataTables</a> library. Just add <code>.datatable</code> class name to any "
+"table you wish to conver to a datatable. Check for <a href=\"https://"
+"fiduswriter.github.io/simple-datatables/demos/\" target=\"_blank\">more "
+"examples</a>."
+
+#: plugins/pages/demo/templates/demo-footer-lg.jinja:6
+msgid "Page avec un pied de page <b>lg</b>"
+msgstr "Page with footer <b>lg</b>"
+
+#: plugins/pages/demo/templates/demo-footer-md.jinja:6
+msgid "Page avec un pied de page <b>md</b>"
+msgstr "Page with a footer <b>md</b>"
+
+#: plugins/pages/demo/templates/demo-footer-sm.jinja:6
+msgid "Page avec un pied de page <b>sm</b>"
+msgstr "Page with a footer <b>sm</b>"
+
+#: plugins/pages/demo/templates/demo-form-editors.jinja:15
+msgid "Form Editors"
+msgstr "Form editors"
+
+#: plugins/pages/demo/templates/demo-form-editors.jinja:20
+msgid "Editors"
+msgstr "Editors"
+
+#: plugins/pages/demo/templates/demo-form-elements.jinja:15
+msgid "Form Elements"
+msgstr "Form elements"
+
+#: plugins/pages/demo/templates/demo-form-elements.jinja:20
+msgid "Elements"
+msgstr "Elements"
+
+#: plugins/pages/demo/templates/demo-form-layouts.jinja:15
+msgid "Form Layouts"
+msgstr "Form layouts"
+
+#: plugins/pages/demo/templates/demo-form-layouts.jinja:20
+msgid "Layouts"
+msgstr "Layouts"
+
+#: plugins/pages/demo/templates/demo-hero-carousel.jinja:17
+#: plugins/pages/demo/templates/demo-hero-lg.jinja:12
+msgid "Read More"
+msgstr "Read More"
+
+#: plugins/pages/demo/templates/demo-hero-lg.jinja:6
+msgid "Demo avec un large hero"
+msgstr "Demo with a large hero"
+
+#: plugins/pages/demo/templates/demo-hero-md.jinja:6
+msgid "Demo avec un moyen hero"
+msgstr "Demo with a medium hero"
+
+#: plugins/pages/demo/templates/demo-hero-sm.jinja:6
+msgid "Demo avec un petit hero"
+msgstr "Demo with a small hero"
+
+#: plugins/pages/demo/templates/demo-hero-sm.jinja:9
+msgid "Home"
+msgstr "Home"
+
+#: plugins/pages/demo/templates/demo-hero-sm.jinja:10
+msgid "Hero"
+msgstr "Hero"
+
+#: plugins/pages/demo/templates/demo-search.jinja:11
+msgid "Liste pour "
+msgstr "List for "
+
+#: plugins/pages/demo/templates/demo-search.jinja:13
+msgid "Liste complete"
+msgstr "Complete list"
+
+#: plugins/pages/demo/templates/demo-search.jinja:18
+msgid "Liste"
+msgstr "List"
+
+#: plugins/pages/demo/templates/demo-search.jinja:59
+msgid "Aucun resultat pour les mots cles:"
+msgstr "No results for the keywords:"
+
+#: plugins/pages/demo/templates/demo-tables.jinja:15
+msgid "General Tables"
+msgstr "General tables"
+
+#: plugins/pages/demo/templates/demo-tables.jinja:20
+msgid "General"
+msgstr "General"
+
+#~ msgid " | ENSET Douala"
+#~ msgstr " | ENSET Douala"

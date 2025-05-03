@@ -1,0 +1,91 @@
+
+/* Color System */
+:root {
+    --primary-dark-color: rgb(79, 128, 171);
+    --primary-color: rgb(66, 139, 202);
+    --primary-light-color:  rgb(96, 168, 231);
+    --secondary-dark-color: #3c3c3c;
+    --secondary-color: #444444;
+    --secondary-light-color: #edeff0e3;
+    --white-color: #ffffff;
+    --black-color: #222222;
+    --success-color: rgb(5, 109, 95);
+    --warning-color: rgb(225, 169, 48);
+    --danger-color: rgb(236, 49, 80);
+    /* --danger-color: #d63374; */
+    /* --bs-form-invalid-color: #d63374; */
+}
+
+/* Transparent color system */
+:root {
+    --primary-transparent-90: rgba(66, 139, 202, 0.90);
+    --primary-transparent-80: rgba(66, 139, 202, 0.80);
+    --primary-transparent-70: rgba(66, 139, 202, 0.70);
+    --primary-transparent-60: rgba(66, 139, 202, 0.60);
+    --primary-transparent-50: rgba(66, 139, 202, 0.50);
+    --primary-transparent-40: rgba(66, 139, 202, 0.40);
+    --primary-transparent-30: rgba(66, 139, 202, 0.30);
+    --primary-transparent-20: rgba(66, 139, 202, 0.20);
+    --primary-transparent-10: rgba(66, 139, 202, 0.10);
+    
+    --secondary-transparent-90: rgba(68, 68, 68, 0.90);
+    --secondary-transparent-80: rgba(68, 68, 68, 0.80);
+    --secondary-transparent-70: rgba(68, 68, 68, 0.70);
+    --secondary-transparent-60: rgba(68, 68, 68, 0.60);
+    --secondary-transparent-50: rgba(68, 68, 68, 0.50);
+    --secondary-transparent-40: rgba(68, 68, 68, 0.40);
+    --secondary-transparent-30: rgba(68, 68, 68, 0.30);
+    --secondary-transparent-20: rgba(68, 68, 68, 0.20);
+    --secondary-transparent-10: rgba(68, 68, 68, 0.10);
+    
+    --success-transparent-90: rgba(5, 109, 95, 0.90);
+    --success-transparent-80: rgba(5, 109, 95, 0.80);
+    --success-transparent-70: rgba(5, 109, 95, 0.70);
+    --success-transparent-60: rgba(5, 109, 95, 0.60);
+    --success-transparent-50: rgba(5, 109, 95, 0.50);
+    --success-transparent-40: rgba(5, 109, 95, 0.40);
+    --success-transparent-30: rgba(5, 109, 95, 0.30);
+    --success-transparent-20: rgba(5, 109, 95, 0.20);
+    --success-transparent-10: rgba(5, 109, 95, 0.10);
+
+    --danger-transparent-90: rgba(236, 49, 80, 0.95);
+    --danger-transparent-80: rgba(236, 49, 80, 0.85);
+    --danger-transparent-70: rgba(236, 49, 80, 0.75);
+    --danger-transparent-60: rgba(236, 49, 80, 0.65);
+    --danger-transparent-50: rgba(236, 49, 80, 0.55);
+    --danger-transparent-40: rgba(236, 49, 80, 0.45);
+    --danger-transparent-30: rgba(236, 49, 80, 0.35);
+    --danger-transparent-20: rgba(236, 49, 80, 0.25);
+    --danger-transparent-10: rgba(236, 49, 80, 0.15);
+
+    --warning-transparent-90: rgba(34, 34, 34, 0.90);
+    --warning-transparent-80: rgba(34, 34, 34, 0.80);
+    --warning-transparent-70: rgba(34, 34, 34, 0.70);
+    --warning-transparent-60: rgba(34, 34, 34, 0.60);
+    --warning-transparent-50: rgba(34, 34, 34, 0.50);
+    --warning-transparent-40: rgba(34, 34, 34, 0.40);
+    --warning-transparent-30: rgba(34, 34, 34, 0.30);
+    --warning-transparent-20: rgba(34, 34, 34, 0.20);
+    --warning-transparent-10: rgba(34, 34, 34, 0.10);
+
+    --white-transparent-90: rgba(255, 255, 255, 0.95);
+    --white-transparent-80: rgba(255, 255, 255, 0.85);
+    --white-transparent-70: rgba(255, 255, 255, 0.75);
+    --white-transparent-60: rgba(255, 255, 255, 0.65);
+    --white-transparent-50: rgba(255, 255, 255, 0.55);
+    --white-transparent-40: rgba(255, 255, 255, 0.45);
+    --white-transparent-30: rgba(255, 255, 255, 0.35);
+    --white-transparent-20: rgba(255, 255, 255, 0.25);
+    --white-transparent-10: rgba(255, 255, 255, 0.15);
+
+    --black-transparent-90: rgba(34, 34, 34, 0.90);
+    --black-transparent-80: rgba(34, 34, 34, 0.80);
+    --black-transparent-70: rgba(34, 34, 34, 0.70);
+    --black-transparent-60: rgba(34, 34, 34, 0.60);
+    --black-transparent-50: rgba(34, 34, 34, 0.50);
+    --black-transparent-40: rgba(34, 34, 34, 0.40);
+    --black-transparent-30: rgba(34, 34, 34, 0.30);
+    --black-transparent-20: rgba(34, 34, 34, 0.20);
+    --black-transparent-10: rgba(34, 34, 34, 0.10);
+}
+

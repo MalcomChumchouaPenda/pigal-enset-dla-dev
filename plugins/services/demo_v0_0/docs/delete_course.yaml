@@ -1,0 +1,29 @@
+# EXEMPLE INTRODUCTION
+
+tags:
+  - Courses
+  
+summary: Delete a course
+description: Delete a course from the database.
+operationId: delete_course
+
+
+# EXEMPLE D'INPUTS (METHOD=PUT)
+
+parameters:
+  - in: path
+    name: course_id
+    required: true
+    schema:
+      type: string
+      description: The Course ID
+
+
+# EXEMPLE D'OUTPUTS
+
+responses:
+  204:
+    description: Course successfully deleted
+
+  400:
+    description: Invalid input

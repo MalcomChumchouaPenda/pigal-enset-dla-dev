@@ -1,0 +1,19 @@
+{% extends "landing/layout.jinja" %}
+
+{% block page_sections %}
+  <!-- Features Section -->
+  <section class="m-4">  
+    <h1>{{ _('Classic bootstrap buttons') }}</h1>
+    <div class="d-flex flex-lg-row flex-column">
+      <button type="button" class="m-1 btn btn-primary">Primary</button>
+      <button type="button" class="m-1 btn btn-secondary">Secondary</button>
+      <button type="button" class="m-1 btn btn-success">Success</button>
+      <button type="button" class="m-1 btn btn-danger">Danger</button>
+      <button type="button" class="m-1 btn btn-warning">Warning</button>
+      <button type="button" class="m-1 btn btn-info">Info</button>
+      <button type="button" class="m-1 btn btn-light">Light</button>
+      <button type="button" class="m-1 btn btn-dark">Dark</button>
+      <button type="button" class="m-1 btn btn-link">Link</button>
+    </div>
+  </section><!-- End Features Section -->
+{% endblock %}

@@ -1,0 +1,94 @@
+{% extends 'dashboard/layout.jinja' %}
+
+{% block page_meta %}
+    {% if current_user.is_authenticated %}
+        <title>{{ current_user.id +  _('| ENSET Douala') }}</title>
+    {% else %}
+        <title>{{ _('Unknown | ENSET Douala') }}</title>
+    {% endif %}
+{% endblock %}
+
+{% block page_main %}
+<div class="container">
+  <div class="row ms-3 mt-0 my-2 pt-0 pb-1 pb-lg-3">
+    <div class="d-flex flex-column align-items-start align-items-lg-center">
+      <h1>{{ _('Form Editors') }}</h1>
+      <nav class="pb-3" aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="{{ url_for('home.index') }}">{{ _('Accueil') }}</a></li>
+          <li class="breadcrumb-item"><a href="{{ url_for('demo.dashboard') }}">{{ _('Dashboard') }}</a></li>
+          <li class="breadcrumb-item active" aria-current="page">{{ _('Editors') }}</li>
+        </ol>
+      </nav>
+    </div>
+  </div>
+
+  <section class="section row g-4">
+          <div class="col-lg-6">
+  
+            <div class="card my-2">
+              <div class="card-body">
+                <h5 class="card-title">Quill Editor Default</h5>
+  
+                <!-- Quill Editor Default -->
+                <div class="quill-editor-default">
+                  <p>Hello World!</p>
+                  <p>This is Quill <strong>default</strong> editor</p>
+                </div>
+                <!-- End Quill Editor Default -->
+  
+              </div>
+            </div>
+  
+            <div class="card my-2">
+              <div class="card-body">
+                <h5 class="card-title">Quill Editor Bubble</h5>
+  
+                <!-- Quill Editor Bubble -->
+                <p>Select some text to display options in poppovers</p>
+                <div class="quill-editor-bubble">
+                  <p>Hello World!</p>
+                  <p>This is Quill <strong>bubble</strong> editor</p>
+                </div>
+                <!-- End Quill Editor Bubble -->
+  
+              </div>
+            </div>
+  
+            <div class="card my-2">
+              <div class="card-body">
+                <h5 class="card-title">Quill Editor Full</h5>
+  
+                <!-- Quill Editor Full -->
+                <p>Quill editor with full toolset</p>
+                <div class="quill-editor-full">
+                  <p>Hello World!</p>
+                  <p>This is Quill <strong>full</strong> editor</p>
+                </div>
+                <!-- End Quill Editor Full -->
+  
+              </div>
+            </div>
+  
+          </div>
+  
+          <div class="col-lg-6">
+  
+            <div class="card my-2">
+              <div class="card-body">
+                <h5 class="card-title">TinyMCE Editor</h5>
+  
+                <!-- TinyMCE Editor -->
+                <textarea class="tinymce-editor">
+                  <p>Hello World!</p>
+                  <p>This is TinyMCE <strong>full</strong> editor</p>
+                </textarea><!-- End TinyMCE Editor -->
+  
+              </div>
+            </div>
+  
+          </div>
+  </section>
+</div>
+{% endblock %}
+

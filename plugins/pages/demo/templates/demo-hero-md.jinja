@@ -1,0 +1,16 @@
+{% extends "landing/layout.jinja" %}
+{% set hero_size = 'md'%}
+
+{% block page_hero %}
+    <div class="hero-info w-75 d-flex flex-column justify-content-center align-items-center">
+      <h1>{{ _('Demo avec un moyen hero') }}</h1>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt 
+        ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco 
+        laboris nisi ut aliquip ex ea commodo consequat.
+      </p>
+    </div> 
+    <div class="hero-bg">
+        <img src="{{ url_for('demo.static', filename='img/hero-bg.jpg') }}" alt="">
+    </div>
+{% endblock %}

@@ -1,0 +1,353 @@
+
+/*--------------------------------------------------------------
+# Font & Color Variables
+# Help: https://bootstrapmade.com/color-system/
+--------------------------------------------------------------*/
+
+/* Fonts */
+:root {
+  --default-font: "Roboto",  system-ui, -apple-system, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  --heading-font: "Raleway",  sans-serif;
+  --nav-font: "Poppins",  sans-serif;
+}
+
+
+/* Fonts size */
+:root {
+  --default-font-size: 14px;
+  --default-font-weight: normal;
+  --h1-font-size: 24px;
+  --h1-font-weight: 700;
+  --h2-font-size: 22px;
+  --h2-font-weight: 600;
+  --h3-font-size: 20px;
+  --h3-font-weight: 600;
+  --h4-font-size: 18px;
+  --h4-font-weight: 600;
+  --h5-font-size: 16px;
+  --h5-font-weight: 600;
+  --h6-font-size: 16px;
+  --h6-font-weight: 600;
+}
+
+
+/* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
+:root { 
+  --background-color: var(--secondary-light-color); /* Background color for the entire website, including individual sections */
+  --default-color: var(--secondary-color); /* Default color used for the majority of the text content across the entire website */
+  --heading-color: var(--black-color); /* Color for headings, subheadings and title throughout the website */
+  --accent-color: var(--primary-color); /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
+  --surface-color: var(--white-color); /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
+  --contrast-color: var(--white-color); /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
+}
+
+
+/* Smooth scroll */
+:root {
+  scroll-behavior: smooth;
+}
+
+  
+body {
+      background: var(--surface-color);
+  }
+
+
+/* General buttons */
+
+a {
+  color: var(--accent-color);
+  text-decoration: none;
+  transition: 0.3s;
+  padding-bottom: 0;
+}
+
+/* a:hover {
+  color: color-mix(in srgb, var(--accent-color), transparent 25%);
+  text-decoration: none;
+} */
+
+.btn {
+  border-radius: 5px;
+}
+
+.btn-primary {  
+  color: var(--contrast-color);
+  background: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.btn-primary:hover {  
+  background-color: color-mix(in srgb, var(--primary-color), transparent 20%);
+  border-color: transparent;
+}
+
+.btn-secondary {
+  background-color: color-mix(in srgb, var(--secondary-color), transparent 20%);
+  border-color: color-mix(in srgb, var(--secondary-color), transparent 20%);
+}
+
+.btn.btn-secondary:hover {
+  background-color: color-mix(in srgb, var(--secondary-color), transparent 30%);
+  border-color: color-mix(in srgb, var(--secondary-color), transparent 50%);
+}
+
+      
+.btn-outline-primary {  
+  color: var(--primary-color);
+  border-color: color-mix(in srgb, var(--primary-color), transparent 75%);
+}
+
+.btn-outline-primary:hover {  
+  color: var(--contrast-color);
+  background-color: var(--primary-color);
+  border-color: transparent;
+}
+
+.btn-outline-secondary{  
+  border-color: color-mix(in srgb, var(--default-color), transparent 75%);
+}
+
+
+/* General inputs  */
+
+select, input {
+  box-shadow: none;
+  font-size: var(--default-font-size);
+  font-weight: var(--default-font-weight);
+}
+
+select:focus, select.form-select:focus,
+input:focus, input.form-control:focus {
+  box-shadow: none;
+  border-color: color-mix(in srgb, var(--accent-color), transparent 50%);
+}
+
+select::placeholder, select.form-select::placeholder,
+input::placeholder, input.form-control::placeholder {
+  font-style: italic;
+  opacity: 0.5;
+}
+
+input.form-control.is-invalid {
+  border-color: color-mix(in srgb, var(--danger-color), transparent 65%);
+  background: none;
+  padding-right: inherit;
+}
+
+input.form-control.is-invalid:hover,
+input.form-control.is-invalid:focus {
+  box-shadow: none;
+  border-color: var(--danger-color);
+}
+
+.invalid-feedback {
+  color: var(--danger-color);
+}
+
+.form-label {
+  color: color-mix(in srgb, var(--default-color), transparent 35%);
+}
+
+input[type=file]::-webkit-file-upload-button,
+input[type=file]::file-selector-button {
+  background-color: var(--secondary-light-color);
+}
+
+
+/* Login Form classes */
+
+.login-logo {
+  min-height: 15vh;
+  padding-top: 25px;
+}
+
+.login-logo img {
+  width: 50px;
+  margin: 0 25px;
+  }
+
+.login-form-wrapper {
+  min-height: 70vh;
+}
+
+.login-form-wrapper .alert {
+  width: 100%;
+  border-color: transparent;
+}
+
+.login-form {
+  width: 100%;
+}
+
+.login-help {
+  color: color-mix(in srgb, var(--default-color), transparent 25%);
+}
+
+
+@media (max-width: 991px) {
+
+}
+
+
+.login-form-wrapper .btn-link,
+.login-form-wrapper a {
+  margin: 5px;
+  padding: 0 2px 1px 2px;
+  color: var(--accent-color);
+  font-size: var(--default-font-size);
+  font-weight: var(--default-font-weight);
+  text-decoration: none;
+  background-image: 
+    linear-gradient(transparent, transparent),
+    linear-gradient(color-mix(in srgb, var(--accent-color), transparent 25%), 
+                    color-mix(in srgb, var(--accent-color), transparent 25%));
+  background-size: 100% 1px, 0 1px;
+  background-position: 100% 100%, 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size 400ms;
+}
+
+.login-form-wrapper .btn-link:hover,
+.login-form-wrapper a:hover {  
+  background-size: 0 1px, 100% 1px;
+}
+
+
+.login-message-icon {
+  color: var(--accent-color);
+}
+
+
+
+/*--------------------------------------------------------------
+# Footer classes
+--------------------------------------------------------------*/
+
+.footer {
+  color: var(--default-color);
+  background-color: var(--background-color);
+  font-size: var(--default-font-size);
+  position: relative;
+  min-height: 10vh;
+}
+
+.footer .footer-top {
+  padding-top: 50px;
+  border-top: var(--default-color);
+}
+
+.footer .footer-about .logo {
+  line-height: 1;
+  margin-bottom: 25px;
+}
+
+.footer .footer-about .logo img {
+  max-height: 40px;
+  margin-right: 6px;
+}
+
+.footer .footer-about .logo span {
+  font-size: 26px;
+  font-weight: var(--h1-font-weight);
+  letter-spacing: 1px;
+  font-family: var(--heading-font);
+  color: var(--heading-color);
+}
+
+.footer .footer-about p {
+  font-size: var(--default-font-size);
+  font-family: var(--heading-font);
+}
+
+.footer .social-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  font-size: var(--h5-font-size);
+  color: var(--default-color);
+  opacity: 0.7;
+  margin-right: 5px;
+  transition: 0.3s;
+}
+
+.footer .social-links a:hover {
+  color: var(--accent-color);
+  /* border-color: var(--accent-color); */
+}
+
+.footer h4 {
+  font-size: var(--h5-font-size);
+  font-weight: bold;
+  position: relative;
+  padding-bottom: 12px;
+}
+
+.footer .footer-links {
+  margin-bottom: 30px;
+}
+
+.footer .footer-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer .footer-links ul i {
+  padding-right: 4px;
+  font-size: 12px;
+  line-height: 0;
+  color: var(--accent-color);
+}
+
+.footer .footer-links ul li {
+  padding: 10px 0;
+  display: flex;
+  align-items: center;
+}
+
+.footer .footer-links ul li:first-child {
+  padding-top: 0;
+}
+
+.footer .footer-links ul a {
+  color: var(--default-color);
+  opacity: 0.7;
+  filter: alpha(opacity=70);
+  display: inline-block;
+  line-height: 1;
+}
+
+.footer .footer-links ul a:hover {
+  color: var(--accent-color);
+}
+
+.footer .footer-contact p {
+  margin-bottom: 5px;
+}
+
+.footer .copyright {
+  padding: 25px 0;
+  border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+}
+
+.footer .copyright p {
+  font-size: 11px;
+  margin-bottom: 0;
+}
+
+.footer .credits {
+  margin-top: 6px;
+  font-size: 11px;
+}
+
+.footer .credits a {
+  color: var(--accent-color);
+}
+
+.footer .credits a:hover {
+  color: color-mix(in srgb, var(--accent-color), transparent 25%);
+}
+

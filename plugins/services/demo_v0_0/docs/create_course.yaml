@@ -1,0 +1,43 @@
+# EXEMPLE INTRODUCTION
+
+tags:
+  - Courses
+
+summary: Create a new course
+description: Add a new course to the database.
+operationId: create_course
+
+
+# EXEMPLE D'INPUTS (METHOD=POST)
+
+requestBody:
+  required: true
+  content:
+    application/json:
+      schema:
+        type: object
+        properties:
+          id:
+            type: string
+            example: PYTH
+          title:
+            type: string
+            example: Python Basics
+        required:
+          - id
+          - title
+
+
+# EXEMPLE D'OUTPUTS
+
+responses:
+  201:
+    description: Course successfully created
+    schema:
+      type: object
+      properties:
+        message:
+          type: string
+          example: course added
+  400:
+    description: Invalid input

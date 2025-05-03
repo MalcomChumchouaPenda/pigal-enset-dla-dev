@@ -1,0 +1,52 @@
+{% extends "dashboard/login.jinja" %}
+{% set head_title='Login' %}
+
+{% block page_form %}
+    <p>{{ error }}</p>
+    <form class="login-form container d-flex flex-column align-items-center" 
+          method="POST" action="{{ url_for('home.login', next=next) }}">
+
+        {{ form.csrf_token }}
+
+        <!-- Header -->
+        <div class="row w-100 py-5 d-flex justify-content-center">
+            <div class="col-10 text-center">
+                <h4>{{ _('Connecter-vous pour continuer') }}</h4>
+            </div>
+        </div>
+        
+        {% if error %}
+        <div class="field row my-2 w-100 d-flex justify-content-center">
+            <div class="col-10 col-lg-4 text-center">
+                <div class="alert alert-danger fade show">{{ error }}</div>
+            </div>
+        </div>
+        {% endif %}
+
+        <!-- Identifiant -->
+        <div class="field row my-2 w-100 d-flex justify-content-center">
+            <div class="col-10 col-lg-4">
+                {{ form.id(class_="form-control", placeholder=_("Saisissez votre identifiant"), size=20) }}           
+            </div>
+        </div><!-- End Identifiant -->
+
+        <!-- Securite -->
+        <div class="field row my-2 w-100 d-flex justify-content-center">
+            <div class="col-10 col-lg-4">   
+                {{ form.pwd(class_="form-control", placeholder=_("Saisissez votre mot de passe")) }}        
+            </div>
+        </div><!-- End Securite -->
+
+        <div class="row pt-5 w-100 d-flex justify-content-center">
+            <div class="col-10 col-lg-4 flex-column align-items-start">
+                <input class="btn btn-primary w-100" type="submit" value="{{ _('Connexion') }}">
+                <a class="btn btn-link mt-5" href="#">{{ _('Identifiant ou mot de passe oublié ?') }}</a>
+                <a class="btn btn-link mt-1" href="{{ url_for('home.index') }}">{{ _("Retour a l'accueil !") }}</a>
+            </div>
+        </div>
+    </form>
+{% endblock %}
+
+{% block page_authors %}
+    <a>Malcom Chumchoua Penda</a>
+{% endblock %}

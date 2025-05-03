@@ -1,0 +1,171 @@
+
+
+{# Brand of website #}
+{% macro brand() %}
+  <a class="logo d-flex flex-nowrap align-items-center me-4" href="#">
+    <img src="{{ url_for('static', filename='landing/assets/img/logo.png') }}" alt="">
+    <div class="d-flex align-items-end justify-content-start">
+      <h1 class="sitename text-nowrap">ENSET Douala</h1>
+      <i class="bi bi-circle-fill"></i>
+    </div>
+  </a>
+{% endmacro %}
+
+
+{% macro menu_item(entry, active='') %}
+    {% if entry.children|length == 0 %}
+    <li class="{% if entry.id == active %} active {% endif %}">
+      {% if entry.endpoint %}
+        <a href="{{ url_for(entry.endpoint) }}">{{ entry.text }}</a>
+      {% elif entry.url %}
+        <a href="{{ entry.url }}">{{ entry.text }}</a>
+      {% else %}
+        <a href="#">{{ entry.text }}</a>
+      {% endif %}
+    </li>
+    {% else %}
+    <li class="dropdown">
+      <a href="#">
+        <span>{{ entry.text }}</span> 
+        <i class="bi bi-chevron-down toggle-dropdown"></i>
+      </a>
+      <ul>
+        {% for child in entry.children %}
+          {{ menu_item(child, active=active) }}
+        {% endfor %}
+      </ul>
+    </li>
+    {% endif %}
+{% endmacro %}
+
+{# Menu of NavBar #}
+{% macro menu(root, user, active='') %}
+  <ul class="flex-grow-1 align-items-center">
+    {% for entry in root.children %}
+      {{ menu_item(entry, active=active) }}
+    {% endfor %}
+    <li class="d-flex ms-auto special-links justify-content-center">
+      {% if user and user.is_authenticated %}
+      {# <a class="btn-switch-lang ps-1 pe-3 py-2" href="{{ url_for('home.profile') }}"></a>#}
+        <a class="btn btn-light ps-1 pe-3 py-2" href="#">
+          <i class="bi bi-person-fill me-1 fs-6"></i>
+          <span>{{ user.id }}</span>
+        </a>
+        <a class="btn btn-primary" href="{{ url_for('home.logout', next=request.path) }}">{{_('Deconnexion')}}</a>
+      {% else %}        
+        {% if get_locale() == 'fr' %}
+          <a class="btn btn-light" href="{{ url_for('change_lang', lang='en') }}">English</a>
+        {% else %}
+          <a class="btn btn-light" href="{{ url_for('change_lang', lang='fr') }}">Francais</a>
+        {% endif %}
+        <a class="btn btn-primary" href="{{ url_for('home.login', next=request.path) }}">{{_('Connexion')}}</a>
+      {% endif %}
+    </li>
+  </ul>
+{% endmacro %}
+
+
+{% macro coming_soon_section(title, deadline, id="") %}
+<section id="{{ id }}" class="coming-soon my-3">
+    {{ section_title(title, subtitle = title + _(" <strong>(En construction)</strong>"))}}    
+    <div class="container coming-soon-content">
+        <div class="row gy-1">
+            <div class="col-12">
+              {{_('Cette section est en cours de maintenance ou de developpement. Elle sera disponible dans:')}}
+            </div>
+            <div class="col-12 countdown" data-count="{{ deadline }}">
+              <i class="me-2 bi bi-clock"></i>
+              <span><em class="count-days">0</em> {{_('jours,')}}</span> 
+              <span><em class="count-hours">0</em> {{_('heures,')}}</span>
+              <span><em class="count-minutes">0</em> {{_('minutes et')}}</span>
+              <span><em class="count-seconds">0</em> {{_('secondes.')}}</span>
+            </div>
+        </div>
+    </div>
+  </section>
+{% endmacro %}
+
+
+{% macro section_title(title, subtitle="") %}
+<div class="container section-title">
+    <h2>{{ title }}</h2>
+    {% if subtitle|length > 0 %}
+      <div class="sub-title">
+        {{ subtitle | safe }}
+      </div>
+    {% endif %}
+</div>
+{% endmacro %}
+
+
+{% macro full_footer(contact, links) %}
+<div id="contact" class="container footer-top">
+  <div class="row gy-4 px-4 px-md-1">
+    <div class="col-md-6 col-12 footer-about">
+      <a href="#" class="logo d-flex align-items-center">
+        <span class="sitename">ENSET Douala</span>
+      </a>
+      <div class="footer-contact mt-1">
+        <p>{{ contact.addresse }}</p>
+        <p>{{ contact.ville }}</p>
+        <p class="mt-3"><strong>Tel:</strong> <span>{{ contact.tel }}</span></p>
+        <p><strong>Email:</strong> <span>{{ contact.email }}</span></p>
+      </div>
+      <div class="social-links d-flex mt-4">
+        <a href="{{ contact.twitter }}"><i class="bi bi-twitter-x"></i></a>
+        <a href="{{ contact.facebook }}"><i class="bi bi-facebook"></i></a>
+        <a href="{{ contact.instagram }}"><i class="bi bi-instagram"></i></a>
+        <a href="{{ contact.linkedin }}"><i class="bi bi-linkedin"></i></a>
+      </div>
+    </div>
+
+    <div class="col-md-6 col-12">
+      <div class="row">
+        {% for parent in links %}
+        <div class="col-lg-6 col-md-12 footer-links">
+          <h4 class="pt-4 pt-md-0">{{ parent.group }}</h4>
+          <ul>
+          {% for child in parent.links %}
+            <li>
+              <i class="bi bi-chevron-right"></i>
+              <a href="{{ child.url }}">{{ child.nom }}</a>
+            </li>
+          {% endfor %}
+          </ul>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>    
+</div>
+{% endmacro %}
+
+
+{% macro light_footer(contact) %}
+<div id="contact" class="container footer-top">
+  <div class="row gy-4 px-4 px-lg-1">
+    <div class="col-lg-4 col-md-6 col-12 footer-about">
+      <div class="footer-contact">
+        <p><h6>ENSET Douala</h6></p>
+        <p>{{ contact.addresse }}</p>
+        <p>{{ contact.ville }}</p>
+      </div>
+    </div>
+    <div class="col-lg-4 col-md-6 col-12 footer-about d-flex justify-content-start justify-content-lg-center justify-content-md-end">
+      <div class="footer-contact">
+        <p><h6>Contact </h6></p>
+        <p><strong>Tel:</strong> <span>{{ contact.tel }}</span></p>
+        <p><strong>Email:</strong> <span>{{ contact.email }}</span></p>
+      </div>
+    </div>
+    <div class="col-lg-4 col-12 footer-about d-flex justify-content-start justify-content-lg-end align-items-center">
+      <div class="social-links d-flex">
+        <a href="{{ contact.twitter }}"><i class="bi bi-twitter-x"></i></a>
+        <a href="{{ contact.facebook }}"><i class="bi bi-facebook"></i></a>
+        <a href="{{ contact.instagram }}"><i class="bi bi-instagram"></i></a>
+        <a href="{{ contact.linkedin }}"><i class="bi bi-linkedin"></i></a>
+      </div>        
+    </div>
+  </div>
+</div>
+{% endmacro %}

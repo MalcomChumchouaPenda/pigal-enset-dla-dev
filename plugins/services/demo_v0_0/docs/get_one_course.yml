@@ -1,0 +1,36 @@
+# EXEMPLE INTRODUCTION
+
+tags:
+  - Courses
+  
+summary: Récupérer un cours
+description: Get one course from the database.
+
+
+# EXEMPLE D'INPUTS (DANS LE PATH)
+      
+parameters:
+  - in: path
+    name: course_id                 # <- Note the name is the same as in the path
+    required: true
+    schema:
+      type: string                  # <- les types peuvent des integers, ...
+      description: The Course ID
+
+
+# EXEMPLE D'OUTPUTS
+
+responses:
+  200:
+    description: Un cours
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            id:
+              type: string
+            title:
+              type: string
+  404:
+    description: Aucun cours trouvee

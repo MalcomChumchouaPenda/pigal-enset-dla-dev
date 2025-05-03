@@ -1,0 +1,15 @@
+delete:
+  summary: Delete a course
+  tags:
+    - Courses
+  parameters:
+    - name: course_id
+      in: path
+      required: true
+      schema:
+        type: string
+  responses:
+    204:
+      description: Course deleted
+    404:
+      description: Course not found

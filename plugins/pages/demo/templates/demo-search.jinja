@@ -1,0 +1,66 @@
+
+{% extends "landing/layout.jinja" %}
+{% set footer_size='sm' %}
+
+{% block page_sections %}
+  <section class="mt-2 mb-4 px-4">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 d-flex flex-column align-items-start">
+              {% if keywords %}
+                <h1 class="pt-2 pb-1">{{ _('Liste pour ') + keywords + ' ...' }}</h1>
+              {% else %}
+                <h1 class="pt-2 pb-1">{{ _('Liste complete') }}</h1>
+              {% endif %}
+              <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item"><a href="{{ url_for('home.index') }}">{{ _('Accueil') }}</a></li>
+                  <li class="breadcrumb-item active" aria-current="page">{{ _('Liste') }}</li>
+                </ol>
+              </nav>
+            </div>
+            <div class="col-12 col-lg-8 mt-4">
+              <form method="post" action="{{ url_for('demo.search', keywords=keywords) }}">
+                  <div class="input-group mb-3">
+                      <input type="text" name="keywords" class="form-control" placeholder="Rechercher" aria-label="Search filter" aria-describedby="button-addon2">
+                      <button class="btn btn-primary" type="submit" id="button-addon2">
+                          <i class="bi bi-search"></i>
+                      </button>
+                  </div>                                          
+              </form>
+            </div>
+        </div>
+    </div>
+  </section>
+
+  <section class="px-4">
+    <div class="container">
+      <div class="row">
+      {% if results | length > 0 %}
+          <div class="col-12 px-0">
+            {{ pagination.info }}
+            <ul class="list-group w-100 pt-4 courses">
+              {% for item in results %}
+                <li class="list-group-item course-item">
+                  <h4 class="d-flex flex-lg-row flex-column">
+                    {{ item.id }}
+                  </h4>
+                  <p>{{ item.text }}</p>
+                </li>
+              {% endfor %}
+            </ul>
+            <div class="d-flex justify-content-center">
+              {{ pagination.links }}
+            </div>
+          </div>
+      {% else %}
+          <div class="col-12 px-4">
+            <div class="alert alert-secondary" role="alert">
+              {{ _('Aucun resultat pour les mots cles:') }} <b>{{ keywords }}</b>
+            </div>
+          </div>
+      {% endif %}
+      </div>
+    </div>  
+ </section>
+{% endblock %}

@@ -1,0 +1,32 @@
+{% extends "landing/layout.jinja" %}
+{% set hero_size = 'lg'%}
+
+{% block page_hero %}
+  <div id="hero-carousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="4000" data-bs-pause="false">
+    {% for item in items %}
+      <!-- Carousel Item -->
+      <div class="carousel-item {% if loop.first %} active {% endif %}">
+            <img src="{{ url_for('demo.static', filename=item.image) }}" alt="">
+            <div class="carousel-container">
+              <h2 class="my-4">{{ item.title }}</h2>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut 
+                labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
+                nisi ut aliquip ex ea commodo consequat.
+              </p>
+              <a href="#about" class="btn-primary">{{ _('Read More') }}</a>
+            </div>
+      </div><!-- End Carousel Item -->
+    {% endfor %}
+
+    <a class="carousel-control-prev" href="#hero-carousel" role="button" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
+    </a>
+
+    <a class="carousel-control-next" href="#hero-carousel" role="button" data-bs-slide="next">
+      <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
+    </a>
+
+    <ol class="carousel-indicators"></ol>
+  </div>
+{% endblock %}

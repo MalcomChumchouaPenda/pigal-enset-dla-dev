@@ -1,0 +1,25 @@
+put:
+  summary: Update a course
+  tags:
+    - Courses
+  parameters:
+    - name: course_id
+      in: path
+      required: true
+      schema:
+        type: string
+  requestBody:
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: '#/components/schemas/CourseInput'
+  responses:
+    200:
+      description: Course updated
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Course'
+    404:
+      description: Course not found

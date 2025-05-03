@@ -1,0 +1,29 @@
+# EXEMPLE INTRODUCTION
+
+tags:
+  - Courses
+  - Demo
+  
+summary: Récupérer tous les cours
+description: Get all course to the database.
+
+
+# EXEMPLE D'OUTPUTS (DETAILLE)
+
+responses:
+  200:
+    description: Liste des cours retournée avec succès
+    content:
+      application/json:
+        schema:
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                type: string
+              title:
+                type: string
+
+  500:
+    description: Erreur interne du serveur

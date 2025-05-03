@@ -1,0 +1,65 @@
+{% extends 'dashboard/layout.jinja' %}
+
+{% block page_meta %}
+    {% if current_user.is_authenticated %}
+        <title>{{ current_user.id +  _('| ENSET Douala') }}</title>
+    {% else %}
+        <title>{{ _('Unknown | ENSET Douala') }}</title>
+    {% endif %}
+{% endblock %}
+
+{% block page_main %}
+<div class="container">
+        <div class="row ms-3 mt-0 my-2 pt-0 pb-1 pb-lg-3">
+            <div class="d-flex flex-column align-items-start align-items-lg-center">
+                <h1>{{ _('Datatables') }}</h1>
+                <nav class="pb-3" aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="{{ url_for('home.index') }}">{{ _('Accueil') }}</a></li>
+                        <li class="breadcrumb-item"><a href="{{ url_for('demo.dashboard') }}">{{ _("Dashboard") }}</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">{{ _('Tables') }}</li>
+                    </ol>
+                </nav>
+                <p>{{ _('Add lightweight datatables to your project with using the <a href="https://github.com/fiduswriter/Simple-DataTables" target="_blank">Simple DataTables</a> library. Just add <code>.datatable</code> class name to any table you wish to conver to a datatable. Check for <a href="https://fiduswriter.github.io/simple-datatables/demos/" target="_blank">more examples</a>.') }}}</p>
+            </div>
+        </div>
+
+        <section class="section row g-4">
+              <!-- Table with stripped rows -->
+              <div class="col-12">
+                <div class="card">
+                  <div class="card-body">
+                    <h5 class="card-title">Line Chart</h5>
+                    <table class="table datatable">
+                      <thead>
+                        <tr>
+                          <th>
+                            <b>N</b>ame
+                          </th>
+                          <th>Ext.</th>
+                          <th>City</th>
+                          <th data-type="date" data-format="YYYY/DD/MM">Start Date</th>
+                          <th>Completion</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                      {% for addr in addresses %}
+                        <tr>
+                          <td>{{ addr.name }}</td>
+                          <td>{{ addr.ext }}</td>
+                          <td>{{ addr.city }}</td>
+                          <td>{{ addr.start_date }}</td>
+                          <td>{{ addr.progress }}</td>
+                        </tr>
+                      {% endfor %}
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div><!-- End Table with stripped rows -->
+        </section>
+            
+
+</div>
+{% endblock %}
+

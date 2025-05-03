@@ -1,0 +1,29 @@
+{% extends "landing/layout.jinja" %} 
+
+{% block page_sections %}
+  <section class="events">
+    <div class="container pt-5">
+      <div class="row gy-5 pt-5">
+        {% for item in items %}
+        <div class="col-lg-4 col-md-6">
+          <div class="card" data-aos="fade-up" data-aos-delay="200">
+            <div class="card-body">
+              <img src="{{ item.image }}" alt="" class="img-fluid">
+              <h5 class="events-title ms-0 mt-3 mb-0 ps-0 py-2">
+                <a class="stretched-link" href="#">{{ item.title }}</a>
+              </h5>
+              <div class="d-flex justify-content-between">
+                <div class="events-category">{{ item.category }}</div>
+                <span class="events-date mx-2"><i class="bi bi-clock mx-2"></i>{{ item.date }}</span>
+              </div>
+            </div>
+          </div>
+        </div><!-- End post list item -->
+        {% endfor %}
+      </div><!-- End blog posts list -->
+      <div class="d-flex justify-content-center py-5">
+        {{ pagination.links }}
+      </div>
+    </div>
+  </section>
+{% endblock %}

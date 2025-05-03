@@ -1,0 +1,11 @@
+code_filiere,nom_filiere,code_formation,code_unite
+EN,Electronique,FI,GEL
+ET,Electrotechnique,FI,GEL
+IEE,Ingenierie de l'Energie Electrique,CPS,GEL
+RT,Réseaux et Télécommunications,CPS,GEL
+II,Informatique Industrielle,FI,GINFO
+TIC,Technologie de l'Information et de la Communication,FI,GINFO
+GPI,Gestion des Projets Informatiques,CPS,GINFO
+IA,Intelligence Artificielle,M2R,GIA
+ER,Energie Renouvelable,M2R,LME
+CSTR,Calcul et Structure,M2R,LME

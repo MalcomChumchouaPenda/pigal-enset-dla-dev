@@ -1,0 +1,61 @@
+{% extends "landing/layout.jinja" %}
+
+{% block page_sections %}
+  <!-- Speechs Section -->
+  <section class="mt-4">
+    <div class="container">
+      <div class="row gy-4 speech-item d-flex flex-lg-row flex-column-reverse">
+            <!-- Speech Author -->
+            <div class="col-lg-3 speech-author">
+              <img src="{{ url_for('demo.static', filename='img/person-6.png') }}" alt="">
+              <h6 class="speech-author-name">Pr Ndjiakomo Essiane Salome</h6>
+              <p class="speech-author-role">{{ _("Directeur de l'ENSET de Douala") }}</p>
+            </div> <!-- End Speech Author -->
+
+            <!-- Speech Content -->
+            <div class="col-lg-6 speech-content">
+              {{ speech }}
+            </div> <!-- End Speech Content -->
+      </div>
+    </div>
+  </section><!-- End Speechs Section -->
+
+  <!-- Stats Section -->
+  <section class="stats mt-4">
+    {{ landing.section_title('Stats', subtitle=_('Quelques <b>Statistiques</b>')) }}
+    <div class="container">
+
+      <div class="row gy-4 my-2">
+        {% for item in stats %}
+          <div class="col-lg-4 col-md-6 my-0">
+            <div class="stats-item">
+              <i class="{{ item.icon }}"></i>
+              <span data-purecounter-start="0" 
+                    data-purecounter-end="{{ item.value }}" 
+                    data-purecounter-duration="1" 
+                    class="purecounter">
+              </span>
+              <p>{{ item.text | safe }}</p>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+  <!-- End Stats Section -->
+
+  <!-- section about -->
+  <section class="about light-background mt-4">
+    {{ landing.section_title(_('Nous'), subtitle=_('A Propos de <b>Nous</b>')) }}
+    <div class="container">
+      <div class="row gy-4">
+        <div class="col-lg-6 col-12 about-content">
+          {{ left_about }}
+        </div>
+        <div class="col-lg-6 col-12 about-content">
+          {{ right_about }}
+        </div>
+      </div>
+    </div>
+  </section><!-- /section about -->
+{% endblock %}

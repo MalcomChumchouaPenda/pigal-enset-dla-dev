@@ -1,0 +1,51 @@
+{% extends 'dashboard/layout.jinja' %}
+
+{% block page_meta %}
+    {% if current_user.is_authenticated %}
+        <title>{{ current_user.id +  _('| ENSET Douala') }}</title>
+    {% else %}
+        <title>{{ _('Unknown | ENSET Douala') }}</title>
+    {% endif %}
+{% endblock %}
+
+{% block page_main %}
+    <div class="container">
+        <div class="row ms-3 my-2">
+            <div class="d-flex flex-column align-items-start align-items-lg-center">
+                <h3>
+                    {{ _('Espace ') }} 
+                    {% if current_user.is_authenticated %} 
+                        {{ current_user.id }}
+                    {% endif %}
+                </h3>
+                <p class="pt-2 pb-1 pb-lg-5">{{ welcome }}</p>
+            </div>
+        </div>
+
+        <div class="section row ms-3 me-2 g-4 pb-4 pt-2 {% if domains | length < 2 %}d-flex justify-content-center{% endif %}">
+            {% for domain in domains %}
+                {% if domain.id in domain_ids %}
+                <div class="col-lg-6 col-12">
+                    <div class="dashboards-info">
+                        <h5>{{ domain.text }}</h5>
+                        <ul class="mt-4 ps-2">
+                            {% for dashboard in domain.dashboards %}
+                            <li class="my-2">
+                                <i class="bi bi-chevron-right"></i>
+                                {% if dashboard.endpoint %}
+                                    <a href="{{ url_for(dashboard.endpoint) }}" class="card-link">{{ dashboard.text }}</a>
+                                {% elif dashboard.url %}
+                                    <a href="{{ dashboard.url }}" class="card-link">{{ dashboard.text }}</a>
+                                {% else %}
+                                    <a href="#" class="card-link">{{ dashboard.text }}</a>
+                                {% endif %}
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,39 @@
+
+{% extends "landing/layout.jinja" %}
+{% set hero_size = 'xs' %}
+{% set footer_size = 'sm' %}
+
+{% block page_meta %}
+  <title>{{ title }} | ENSET Douala</title>
+{% endblock %}
+
+{% block page_sections %}
+  <section class="container text-center coming-soon-lg" data-aos="fade-up" data-aos-delay="100">
+    <div class="row justify-content-center">
+      <div class="col-lg-12">
+        <h2>{{_('En construction')}}</h2>
+        <p>{{_('Cette page est en construction. Elle sera disponible dans:')}}</p>
+      </div>
+        
+      <div class="countdown d-flex justify-content-center" data-count="{{ deadline }}">
+        <div>
+          <h3 class="count-days">482</h3>
+          <h4>{{_('Jours')}}</h4>
+        </div>
+        <div>
+          <h3 class="count-hours">6</h3>
+          <h4>{{_('Heures')}}</h4>
+        </div>
+        <div>
+          <h3 class="count-minutes">49</h3>
+          <h4>{{_('Minutes')}}</h4>
+        </div>
+        <div>
+          <h3 class="count-seconds">21</h3>
+          <h4>{{_('Secondes')}}</h4>
+        </div>
+      </div>
+    </div>         
+  </section>
+{% endblock %}
+   
