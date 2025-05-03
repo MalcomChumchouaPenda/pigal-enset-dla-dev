@@ -1,22 +1,31 @@
 {% extends "landing/layout.jinja" %}
 {% set main_title='Accueil' %}
 {% set page_id='home' %}
+{% set hero_size = 'lg'%}
+{% set footer_size = 'lg'%}
 
-{% block main %}
-    <h1>Bienvenue dans cette demo</h1>
-    <p>Vous pouvez acceder aux pages suivantes:</p>
-    <ul>
-        <li><a href="{{ url_for('home.unprotected') }}">page non protege</a></li>
-        <li><a href="{{ url_for('home.protected') }}">page reserve (login obligatoire)</a></li>
-        <li><a href="{{ url_for('home.student') }}">page reserve aux etudiants</a></li>
-    </ul>
-    <img sr="{{ url_for('static', filename='favicon.png')}}" alt="test logo">
-    <br>
-    <p>Voici les menus disponibles (mise en forme grace a une macro <b>menu</b> du theme2)</p>
-    <p>{{ theme2.menu(menus['home_menu']) }}</p>
-    <br>
-    <span>
-        <a href="{{ url_for('home.login') }}">Se connecter</a>
-        <a href="{{ url_for('home.logout') }}">Se deconnecter</a>
-    </span>
+{% block page_hero %}
+  <div id="hero-carousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="4000" data-bs-pause="false">
+    {% for hero in heros %}
+      <!-- Carousel Item -->
+      <div class="carousel-item {% if loop.first %} active {% endif %}">
+            <img src="{{ url_for('home.static', filename=hero.img) }}" alt="">
+            <div class="carousel-container">
+              {{ hero.msg | safe_md }}
+            </div>
+      </div><!-- End Carousel Item -->
+    {% endfor %}
+
+    <a class="carousel-control-prev" href="#hero-carousel" role="button" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
+    </a>
+
+    <a class="carousel-control-next" href="#hero-carousel" role="button" data-bs-slide="next">
+      <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
+    </a>
+
+    <ol class="carousel-indicators"></ol>
+  </div>
 {% endblock %}
+
+

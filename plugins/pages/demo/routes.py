@@ -30,9 +30,6 @@ ui.register_entry('home_demo1', 'home_demo1_4', _l('Page Attente'), endpoint='de
 
 
 @ui.route('/')
-def index():
-    return render_template('demo.jinja')
-
 @ui.route('/blank')
 def blank():
     return render_template('demo-blank.jinja')

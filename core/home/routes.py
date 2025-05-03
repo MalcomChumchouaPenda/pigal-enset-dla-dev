@@ -1,4 +1,5 @@
 
+import os
 from flask import render_template, request, url_for, redirect
 from flask_babel import gettext as _
 from flask_babel import lazy_gettext as _l
@@ -8,7 +9,7 @@ from wtforms import StringField, PasswordField
 from wtforms.validators import DataRequired
 
 from core.config import login_manager
-from core.utils import UiBlueprint
+from core.utils import UiBlueprint, read_json
 from core.auth.tasks import connect_user, disconnect_user
 
 
@@ -17,10 +18,26 @@ ui.register_menu('msg_menu')
 ui.register_menu('home_menu')
 ui.register_entry('home_menu', 'home', _l('Accueil'), endpoint='home.index', rank=0)
 
+static_dir = os.path.join(os.path.dirname(__file__), 'static')
+
 
 @ui.route('/')
 def index():
-    return render_template('home.jinja')
+    heros = []
+    for i in range(3):
+        msg = os.path.join(static_dir, f'md/hero-msg-{i+1}.md')
+        img = f'img/hero-bg-{i+1}.jpg'
+        heros.append(dict(msg=msg, img=img))
+    speech = os.path.join(static_dir, 'md/speech.md')
+    left = os.path.join(static_dir, 'md/about-left.md')
+    right = os.path.join(static_dir, 'md/about-right.md')
+    about = dict(left=left, right=right)
+    events = []
+    features = read_json(os.path.join(static_dir, 'json/features.json'))
+    stats = read_json(os.path.join(static_dir, 'json/stats.json'))
+    return render_template('home.jinja', heros=heros, speech=speech,
+                           about=about, events=events, stats=stats,
+                           features=features)
 
 class LoginForm(FlaskForm):
     id = StringField(_l('identifiant'), validators=[DataRequired()])
