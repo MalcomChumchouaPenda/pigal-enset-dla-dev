@@ -15,8 +15,7 @@ MENU = [
     {'uid':'courses', 'text':'Formations', 'url':'/formations'},
     {'uid':'events', 'text':'Actualités', 'url':'/actualites'},
     {'uid':'organisation', 'text':'Organisation', 'url':'/organisation'},
-    {'uid':'spaces', 'text':'Espaces', 'children':[
-        {'uid':'admission', 'text':'Inscription', 'url':'/inscription'},
+    {'uid':'projects', 'text':'Projets', 'children':[
         {'uid':'project_a', 'text':'Projet A (vide)', 'url':'/projets/a'},
         {'uid':'project_b', 'text':'Projet B (partiel)', 'url':'/projets/b'},
         {'uid':'project_c', 'text':'Projet C (Securise)', 'url':'/projets/c'}
