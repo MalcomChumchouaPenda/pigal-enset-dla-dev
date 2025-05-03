@@ -130,8 +130,9 @@ class RoleApi(Resource):
         remove_role(db.session, id)
         return {"message": "Role deleted"}
 
+
 @ns.route("/users/<int:user_id>/roles")
-class UserRoles(Resource):
+class UserRolesApi(Resource):
 
     @ns.roles_accepted('developper')
     def post(self, user_id):
