@@ -9,7 +9,8 @@ def init_data():
         roles = [
             Role(id='admin', name='Admin'),
             Role(id='teacher', name='Teacher'),
-            Role(id='student', name='Student')
+            Role(id='student', name='Student'),
+            Role(id='developper', name='Developper')
         ]
         db.session.add_all(roles)
         db.session.commit()
@@ -19,6 +20,7 @@ def init_data():
             dict(id='admin1', pwd='adminpass', role='admin'),
             dict(id='teacher1', pwd='teacherpass', role='teacher'),
             dict(id='student1', pwd='studentpass', role='student'),
+            dict(id='dev1', pwd='devpass', role='developper'),
         ]
         for row in users_data:
             role = Role.query.filter_by(id=row['role']).one()

@@ -109,7 +109,7 @@ def test_user_forbidden(client, ns, name, pwd):
 def test_get_users(client):
     response = client.get("/api/auth/users")
     assert response.status_code == 200
-    assert len(response.json) == 3
+    assert len(response.json) == 4
 
 def test_get_users_by_role(client):
     response = client.get("/api/auth/users?role=teacher")
@@ -163,3 +163,47 @@ def test_update_user_lang(client, app):
 def test_delete_user(client):
     response = client.delete("/api/auth/users/teacher1")
     assert response.status_code == 204
+
+
+@pytest.mark.parametrize("name,pwd,code", [
+    ('dev1', 'devpass', 201), 
+    ('admin1', 'adminpass', 403)
+    ])
+def test_add_role(client, name, pwd, code):
+    client.post('/api/auth/login', json={"id": name, "password": pwd})
+    response = client.post("/api/auth/roles", json={"id": '1', "name": "Editor"})
+    assert response.status_code == code
+
+
+@pytest.mark.parametrize("name,pwd,code", [
+    ('dev1', 'devpass', 200), 
+    ('admin1', 'adminpass', 403)
+    ])
+def test_remove_role(client, name, pwd, code):
+    client.post('/api/auth/login', json={"id": name, "password": pwd})
+    client.post("/api/auth/roles", json={"id": '2', "name": "Editor"})
+    response = client.delete("/api/auth/roles/2")
+    assert response.status_code == code
+
+
+@pytest.mark.parametrize("name,pwd,code", [
+    ('dev1', 'devpass', 200), 
+    ('admin1', 'adminpass', 403)
+    ])
+def test_add_roles_to_user(client, name, pwd, code):
+    client.post('/api/auth/login', json={"id": name, "password": pwd})
+    client.post("/api/auth/roles", json={"id": '3', "name": "User"})
+    response = client.post("/api/auth/users/1/roles", json={"role_ids": [3]})
+    assert response.status_code == code
+
+
+@pytest.mark.parametrize("name,pwd,code", [
+    ('dev1', 'devpass', 200), 
+    ('admin1', 'adminpass', 403)
+    ])
+def test_remove_roles_from_user(client, name, pwd, code):
+    client.post('/api/auth/login', json={"id": name, "password": pwd})
+    client.post("/api/auth/roles", json={"id": '4', "name": "Viewer"})
+    client.post("/api/auth/users/2/roles", json={"role_ids": ['4']})
+    response = client.delete("/api/auth/users/2/roles", json={"role_ids": ['4']})
+    assert response.status_code == code

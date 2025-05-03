@@ -1,13 +1,21 @@
 
 from flask import request
 from flask_login import current_user
-from flask_restx import Namespace, Resource, fields
+from flask_restx import Resource, fields
 from core.config import db, login_manager
+from core.utils import ApiNamespace
 from .models import User, Role
-from .tasks import connect_user, disconnect_user
+from .tasks import (
+    connect_user, 
+    disconnect_user,
+    add_role,
+    remove_role,
+    add_roles_to_user,
+    remove_roles_to_user
+)
 
 
-ns = Namespace('auth', description="Systeme d'authentification")
+ns = ApiNamespace('auth', description="Systeme d'authentification")
 
 
 @login_manager.user_loader
@@ -95,3 +103,44 @@ class UserApi(Resource):
         session.commit()
         return "", 204
 
+
+# API / ROLE ROUTES
+
+role_model = ns.model("role", {
+    "id": fields.Integer(required=True),
+    "name": fields.String(required=True),
+})
+
+@ns.route("/roles")
+class RolesApi(Resource):
+
+    @ns.expect(role_model)
+    @ns.roles_accepted('developper')
+    def post(self):
+        data = ns.payload
+        add_role(db.session, data["id"], data["name"])
+        return {"message": "Role added"}, 201
+
+
+@ns.route("/roles/<int:id>")
+class RoleApi(Resource):
+
+    @ns.roles_accepted('developper')
+    def delete(self, id):
+        remove_role(db.session, id)
+        return {"message": "Role deleted"}
+
+@ns.route("/users/<int:user_id>/roles")
+class UserRoles(Resource):
+
+    @ns.roles_accepted('developper')
+    def post(self, user_id):
+        role_ids = ns.payload.get("role_ids", [])
+        add_roles_to_user(db.session, user_id, *role_ids)
+        return {"message": "Roles added to user"}
+
+    @ns.roles_accepted('developper')
+    def delete(self, user_id):
+        role_ids = ns.payload.get("role_ids", [])
+        remove_roles_to_user(db.session, user_id, *role_ids)
+        return {"message": "Roles removed from user"}
