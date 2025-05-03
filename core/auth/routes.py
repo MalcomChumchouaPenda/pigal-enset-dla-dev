@@ -18,12 +18,19 @@ from .tasks import (
 ns = ApiNamespace('auth', description="Systeme d'authentification")
 
 
+credential_model = ns.model('credential', {
+    'id': fields.String,
+    'password': fields.String
+})
+
 @login_manager.user_loader
 def load_user(user_id):
     return User.query.filter_by(id=user_id).first()
 
 @ns.route('/login')
 class LoginApi(Resource):
+
+    @ns.expect(credential_model)
     def post(self):
         data = request.json
         if connect_user(data['id'], data['password']):
@@ -107,12 +114,18 @@ class UserApi(Resource):
 # API / ROLE ROUTES
 
 role_model = ns.model("role", {
-    "id": fields.Integer(required=True),
+    "id": fields.String(required=True),
     "name": fields.String(required=True),
 })
 
 @ns.route("/roles")
 class RolesApi(Resource):
+    
+    @ns.marshal_list_with(role_model)
+    def get(self):
+        roles = Role.query.all()
+        return roles
+
 
     @ns.expect(role_model)
     @ns.roles_accepted('developper')
