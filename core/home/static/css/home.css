@@ -1,0 +1,20 @@
+
+
+.home-hero h1,
+.home-hero h2,
+.home-hero h3,
+.home-hero h4,
+.home-hero h5,
+.home-hero h6 {
+    margin: 10px 0 10px 0;
+
+}
+
+.home-hero p {
+    padding: 15px 0 10px 0;
+
+}
+
+.home-hero p .btn-primary{
+    margin: 0 !important;
+}

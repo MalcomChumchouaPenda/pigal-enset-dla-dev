@@ -32,7 +32,11 @@ def index():
     left = os.path.join(static_dir, 'md/about-left.md')
     right = os.path.join(static_dir, 'md/about-right.md')
     about = dict(left=left, right=right)
-    events = []
+    events = [{'title':_("Titre de l'evenement %(i)s", i=i),
+              'image': url_for('demo.static', filename=f'img/event-{i}.jpg'),
+              'category': _('Paire') if i%2 == 0 else _('Impaire'),
+              'date': '10/02/2021'}
+                for i in range(1, 7)]
     features = read_json(os.path.join(static_dir, 'json/features.json'))
     stats = read_json(os.path.join(static_dir, 'json/stats.json'))
     return render_template('home.jinja', heros=heros, speech=speech,
