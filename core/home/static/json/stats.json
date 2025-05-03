@@ -1,17 +1,20 @@
 [
     {
         "icon":"bi bi-emoji-smile",
-        "text":"<strong>Enseignants formees par an</strong> dans les domaines techniques ou industrielles",
+        "text_en":"<strong>Teachers trained per year</strong> in technical or industrial fields",
+        "text_fr":"<strong>Enseignants formees par an</strong> dans les domaines techniques ou industrielles",
         "value": 250
     },
     {
         "icon":"bi bi-journal-richtext",
-        "text":"<strong>Ingenieurs et professionnels formees par an</strong> en cours du jour ou du soir",
+        "text_en":"<strong>Engineers and professionals trained per year</strong> in day or evening courses",
+        "text_fr":"<strong>Ingenieurs et professionnels formees par an</strong> en cours du jour ou du soir",
         "value": 540
     },
     {
         "icon":"bi bi-headset",
-        "text":"<strong>Programmes disponibles</strong> de formation professionnelle ou de recherche",
+        "text_en":"<strong>Professional or research training</strong> programmes available",
+        "text_fr":"<strong>Programmes disponibles</strong> de formation professionnelle ou de recherche",
         "value": 1500
     }
 ]

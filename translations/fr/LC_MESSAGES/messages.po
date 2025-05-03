@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Pigal Core Dev\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2025-05-03 08:23+0100\n"
-"PO-Revision-Date: 2025-05-03 08:28+0100\n"
+"POT-Creation-Date: 2025-05-03 13:39+0100\n"
+"PO-Revision-Date: 2025-05-03 13:40+0100\n"
 "Last-Translator: \n"
 "Language-Team: fr <LL@li.org>\n"
 "Language: fr\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Generated-By: Babel 2.16.0\n"
 "X-Generator: Poedit 3.5\n"
 
-#: core/home/routes.py:18 plugins/pages/demo/routes.py:50
+#: core/home/routes.py:19 plugins/pages/demo/routes.py:54
 #: plugins/pages/demo/templates/demo-datatables.jinja:18
 #: plugins/pages/demo/templates/demo-form-editors.jinja:18
 #: plugins/pages/demo/templates/demo-form-elements.jinja:18
@@ -29,27 +29,40 @@ msgstr ""
 msgid "Accueil"
 msgstr "Accueil"
 
-#: core/home/routes.py:26
+#: core/home/routes.py:37 plugins/pages/demo/routes.py:166
+#, python-format
+msgid "Titre de l'evenement %(i)s"
+msgstr "Titre de l'evenement %(i)s"
+
+#: core/home/routes.py:39 plugins/pages/demo/routes.py:168
+msgid "Paire"
+msgstr "Paire"
+
+#: core/home/routes.py:39 plugins/pages/demo/routes.py:168
+msgid "Impaire"
+msgstr "Impaire"
+
+#: core/home/routes.py:51
 msgid "identifiant"
 msgstr "identifiant"
 
-#: core/home/routes.py:27
+#: core/home/routes.py:52
 msgid "mot de passe"
 msgstr "mot de passe"
 
-#: core/home/routes.py:43
+#: core/home/routes.py:68
 msgid "Informations incorrectes"
 msgstr "Informations incorrectes"
 
-#: core/home/routes.py:60
+#: core/home/routes.py:85
 msgid "Vous n'avez pas les autorisations nécessaires pour accéder à cette page."
 msgstr "Vous n'avez pas les autorisations nécessaires pour accéder à cette page."
 
-#: core/home/routes.py:61 plugins/pages/demo/routes.py:38
+#: core/home/routes.py:86 plugins/pages/demo/routes.py:42
 msgid "Revenir a l'accueil"
 msgstr "Revenir a l'accueil"
 
-#: core/home/routes.py:64
+#: core/home/routes.py:89
 msgid "Revenir a la page precedente"
 msgstr "Revenir a la page precedente"
 
@@ -158,216 +171,203 @@ msgstr "Minutes"
 msgid "Secondes"
 msgstr "Secondes"
 
-#: plugins/pages/demo/routes.py:12
+#: plugins/pages/demo/routes.py:19
 msgid "Pages"
 msgstr "Pages"
 
-#: plugins/pages/demo/routes.py:13
+#: plugins/pages/demo/routes.py:20
 msgid "Sections"
 msgstr "Sections"
 
-#: plugins/pages/demo/routes.py:14
+#: plugins/pages/demo/routes.py:21
 msgid "Dashboards"
 msgstr "Panneaux"
 
-#: plugins/pages/demo/routes.py:19
+#: plugins/pages/demo/routes.py:26
 msgid "Page vide"
 msgstr "Page vide"
 
-#: plugins/pages/demo/routes.py:20
+#: plugins/pages/demo/routes.py:27
 msgid "Page avec menu"
 msgstr "Page avec menu"
 
-#: plugins/pages/demo/routes.py:21
+#: plugins/pages/demo/routes.py:28
 msgid "Page de message"
 msgstr "Page de message"
 
-#: plugins/pages/demo/routes.py:22
+#: plugins/pages/demo/routes.py:29
 msgid "Page Attente"
 msgstr "Page Attente"
 
-#: plugins/pages/demo/routes.py:36
+#: plugins/pages/demo/routes.py:40
 msgid "Avertissement"
 msgstr "Avertissement"
 
-#: plugins/pages/demo/routes.py:37
+#: plugins/pages/demo/routes.py:41
 msgid "Ceci est un message test"
 msgstr "Ceci est un message test"
 
-#: plugins/pages/demo/routes.py:51 plugins/pages/demo/routes.py:56
-#: plugins/pages/demo/routes.py:58
+#: plugins/pages/demo/routes.py:55 plugins/pages/demo/routes.py:60
+#: plugins/pages/demo/routes.py:62
 msgid "Page 1"
 msgstr "Page 1"
 
-#: plugins/pages/demo/routes.py:52 plugins/pages/demo/routes.py:57
-#: plugins/pages/demo/routes.py:59
+#: plugins/pages/demo/routes.py:56 plugins/pages/demo/routes.py:61
+#: plugins/pages/demo/routes.py:63
 msgid "Page 2"
 msgstr "Page 2"
 
-#: plugins/pages/demo/routes.py:53
+#: plugins/pages/demo/routes.py:57
 msgid "Menus"
 msgstr "Menus"
 
-#: plugins/pages/demo/routes.py:54
+#: plugins/pages/demo/routes.py:58
 msgid "Menu (ordonnee)"
 msgstr "Menu (ordonnee)"
 
-#: plugins/pages/demo/routes.py:55
+#: plugins/pages/demo/routes.py:59
 msgid "Menu (reordonne)"
 msgstr "Menu (reordonne)"
 
-#: plugins/pages/demo/routes.py:68
+#: plugins/pages/demo/routes.py:72
 msgid "Page avec hero"
 msgstr "Page avec hero"
 
-#: plugins/pages/demo/routes.py:69
+#: plugins/pages/demo/routes.py:73
 msgid "Hero large"
 msgstr "Hero large"
 
-#: plugins/pages/demo/routes.py:70
+#: plugins/pages/demo/routes.py:74
 msgid "Hero moyen"
 msgstr "Hero moyen"
 
-#: plugins/pages/demo/routes.py:71
+#: plugins/pages/demo/routes.py:75
 msgid "Hero reduit"
 msgstr "Hero reduit"
 
-#: plugins/pages/demo/routes.py:72
+#: plugins/pages/demo/routes.py:76
 msgid "Hero carousel"
 msgstr "Hero carousel"
 
-#: plugins/pages/demo/routes.py:80
+#: plugins/pages/demo/routes.py:84
 #, python-format
 msgid "This is demo %(i)s"
 msgstr "Il s'agit d'une démo %(i)s"
 
-#: plugins/pages/demo/routes.py:88
+#: plugins/pages/demo/routes.py:92
 msgid "Page avec footer"
 msgstr "Pied de page"
 
-#: plugins/pages/demo/routes.py:89
+#: plugins/pages/demo/routes.py:93
 msgid "Footer large"
 msgstr "Pied de page large"
 
-#: plugins/pages/demo/routes.py:90
+#: plugins/pages/demo/routes.py:94
 msgid "Footer moyen"
 msgstr "Pied de page moyen"
 
-#: plugins/pages/demo/routes.py:91
+#: plugins/pages/demo/routes.py:95
 msgid "Footer reduit"
 msgstr "Pied de page reduit"
 
-#: plugins/pages/demo/routes.py:92
+#: plugins/pages/demo/routes.py:96
 msgid "Footer avec auteurs"
 msgstr "Pied de page avec auteurs"
 
-#: plugins/pages/demo/routes.py:105
+#: plugins/pages/demo/routes.py:109
 msgid "Services"
 msgstr "Services"
 
-#: plugins/pages/demo/routes.py:106
+#: plugins/pages/demo/routes.py:110
 msgid "About"
 msgstr "A propos"
 
-#: plugins/pages/demo/routes.py:107
+#: plugins/pages/demo/routes.py:111
 msgid "Recherche"
 msgstr "Recherche"
 
-#: plugins/pages/demo/routes.py:108
+#: plugins/pages/demo/routes.py:112
 msgid "Evenements"
 msgstr "Evenements"
 
-#: plugins/pages/demo/routes.py:109
+#: plugins/pages/demo/routes.py:113
 msgid "Attente"
 msgstr "Attente"
 
-#: plugins/pages/demo/routes.py:125
+#: plugins/pages/demo/routes.py:129
 msgid "<strong>Enseignants</strong> formees par an"
 msgstr "<strong>Enseignants</strong> formees par an"
 
-#: plugins/pages/demo/routes.py:126
+#: plugins/pages/demo/routes.py:130
 msgid "<strong>Ingenieurs</strong> formees par an"
 msgstr "<strong>Ingenieurs</strong> formees par an"
 
-#: plugins/pages/demo/routes.py:127
+#: plugins/pages/demo/routes.py:131
 msgid "<strong>Programmes</strong> disponibles"
 msgstr "<strong>Programmes</strong> disponibles"
 
-#: plugins/pages/demo/routes.py:146
+#: plugins/pages/demo/routes.py:150
 #, python-format
 msgid "Description de l'item %(i)s pour test"
 msgstr "Description de l'item %(i)s pour test"
 
-#: plugins/pages/demo/routes.py:162
-#, python-format
-msgid "Titre de l'evenement %(i)s"
-msgstr "Titre de l'evenement %(i)s"
-
-#: plugins/pages/demo/routes.py:164
-msgid "Paire"
-msgstr "Paire"
-
-#: plugins/pages/demo/routes.py:164
-msgid "Impaire"
-msgstr "Impaire"
-
-#: plugins/pages/demo/routes.py:177
+#: plugins/pages/demo/routes.py:181
 msgid "Dashboard (avec composants)"
 msgstr "Panneau des composants"
 
-#: plugins/pages/demo/routes.py:178
+#: plugins/pages/demo/routes.py:182
 msgid "Dashboard (protege)"
 msgstr "Panneau protege"
 
-#: plugins/pages/demo/routes.py:179
+#: plugins/pages/demo/routes.py:183
 msgid "Dashboard (etudiants)"
 msgstr "Panneau etudiants"
 
-#: plugins/pages/demo/routes.py:181
+#: plugins/pages/demo/routes.py:185
 msgid "Form Components"
 msgstr "Composants formulaire"
 
-#: plugins/pages/demo/routes.py:182
+#: plugins/pages/demo/routes.py:186
 msgid "Form editors"
 msgstr "Editeurs de texte"
 
-#: plugins/pages/demo/routes.py:183
+#: plugins/pages/demo/routes.py:187
 msgid "Form elements"
 msgstr "Éléments de formulaire"
 
-#: plugins/pages/demo/routes.py:184
+#: plugins/pages/demo/routes.py:188
 msgid "Form layouts"
 msgstr "Mise en page de formulaires"
 
-#: plugins/pages/demo/routes.py:185
+#: plugins/pages/demo/routes.py:189
 msgid "Form validation"
 msgstr "Validation formulaire"
 
-#: plugins/pages/demo/routes.py:187
+#: plugins/pages/demo/routes.py:191
 msgid "Data Components"
 msgstr "Composants pour données"
 
-#: plugins/pages/demo/routes.py:188
+#: plugins/pages/demo/routes.py:192
 msgid "General tables"
 msgstr "Tableaux généraux"
 
-#: plugins/pages/demo/routes.py:189
+#: plugins/pages/demo/routes.py:193
 msgid "Data tables"
 msgstr "Tableaux de données"
 
-#: plugins/pages/demo/routes.py:190
+#: plugins/pages/demo/routes.py:194
 msgid "Data charts"
 msgstr "Graphiques de données"
 
-#: plugins/pages/demo/routes.py:195
+#: plugins/pages/demo/routes.py:199
 msgid "Cette espace presente des composants demo"
 msgstr "Cette espace presente des composants demo"
 
-#: plugins/pages/demo/routes.py:250
+#: plugins/pages/demo/routes.py:254
 msgid "Welcome in a protected space"
 msgstr "Bienvenue dans un espace protégé"
 
-#: plugins/pages/demo/routes.py:256
+#: plugins/pages/demo/routes.py:260
 msgid "Welcome in student space"
 msgstr "Bienvenue dans l'espace étudiant"
 

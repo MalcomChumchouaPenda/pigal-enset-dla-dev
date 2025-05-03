@@ -9,7 +9,7 @@ from wtforms import StringField, PasswordField
 from wtforms.validators import DataRequired
 
 from core.config import login_manager
-from core.utils import UiBlueprint, read_json
+from core.utils import UiBlueprint, read_json, get_locale
 from core.auth.tasks import connect_user, disconnect_user
 
 
@@ -23,22 +23,26 @@ static_dir = os.path.join(os.path.dirname(__file__), 'static')
 
 @ui.route('/')
 def index():
+    locale = get_locale() 
+    print('\n\tlocale', locale)
     heros = []
     for i in range(3):
-        msg = os.path.join(static_dir, f'md/hero-msg-{i+1}.md')
+        msg = os.path.join(static_dir, f'md/hero-msg-{i+1}-{locale}.md')
         img = f'img/hero-bg-{i+1}.jpg'
         heros.append(dict(msg=msg, img=img))
-    speech = os.path.join(static_dir, 'md/speech.md')
-    left = os.path.join(static_dir, 'md/about-left.md')
-    right = os.path.join(static_dir, 'md/about-right.md')
+    speech = os.path.join(static_dir, f'md/speech-{locale}.md')
+    left = os.path.join(static_dir, f'md/about-left-{locale}.md')
+    right = os.path.join(static_dir, f'md/about-right-{locale}.md')
     about = dict(left=left, right=right)
     events = [{'title':_("Titre de l'evenement %(i)s", i=i),
               'image': url_for('demo.static', filename=f'img/event-{i}.jpg'),
               'category': _('Paire') if i%2 == 0 else _('Impaire'),
               'date': '10/02/2021'}
                 for i in range(1, 7)]
-    features = read_json(os.path.join(static_dir, 'json/features.json'))
+    features = read_json(os.path.join(static_dir, f'json/features-{locale}.json'))
     stats = read_json(os.path.join(static_dir, 'json/stats.json'))
+    for stat in stats:
+        stat['text'] = stat[f'text_{locale}']
     return render_template('home.jinja', heros=heros, speech=speech,
                            about=about, events=events, stats=stats,
                            features=features)

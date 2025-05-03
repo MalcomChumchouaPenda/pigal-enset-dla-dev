@@ -1,0 +1,18 @@
+[
+    {
+        "title": "Adapted training courses",
+        "description": "Find out about our courses and evening classes in technical education, industrial technology, management science and research",
+        "action": "Find out more"
+    },
+    {
+        "title": "An efficient team",
+        "description": "Discover our organisation dedicated to the success of these students and the well-being of its members",
+        "action": "Find out more"
+    },
+    {
+        "title": "Online services",
+        "description": "Get information or carry out administrative or academic operations online via portals dedicated to teachers, students and administrative staff",
+        "endpoint": "home.login",
+        "action": "Login"
+    }
+]
