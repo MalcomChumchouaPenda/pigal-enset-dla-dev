@@ -197,6 +197,7 @@ def register_pages(app):
 def register_page(app, ui_root, url_prefix):
     try:
         routes = import_module(f'{ui_root}.routes')
+        menus = import_module(f'{ui_root}.menus')
         app.register_blueprint(routes.ui, url_prefix=url_prefix)
         app.ui_entries.extend(routes.ui.entries)
         for domain_id, domain in routes.ui.domains.items():
