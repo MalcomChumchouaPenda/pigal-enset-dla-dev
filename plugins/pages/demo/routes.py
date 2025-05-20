@@ -39,12 +39,6 @@ def coming_soon():
                            title='demo')
 
 
-# PAGES (POUR UN MENU SPECIAL)
-
-@ui.route('/menu')
-def menu():
-    return render_template('demo-menu.jinja')
-
 
 # PAGES (DIFFERENTS HEROS)
 
