@@ -59,12 +59,14 @@
   --btn-large-margin:  0 0 0 20px; 
   --btn-medium-margin:  0 0 0 10px; 
   --btn-small-margin:  0 0 0 5px; 
+  --top-margin: 5px;
 }
 
 /* Smooth scroll */
 :root {
   scroll-behavior: smooth;
 }
+
 
 /*--------------------------------------------------------------
 # General Styling & Shared Classes
@@ -317,7 +319,7 @@ input[type=file]::file-selector-button {
 }
 
 #main {
-  margin-top: 60px;
+  margin-top: var(--top-margin);
   padding: 20px 30px;
   transition: all 0.3s;
 }
@@ -662,7 +664,7 @@ input[type=file]::file-selector-button {
 .header {
   transition: all 0.5s;
   z-index: 997;
-  height: 60px;
+  height: var(--top-margin);
   box-shadow: 0px 2px 20px rgba(1, 41, 112, 0.1);
   background-color: #fff;
   padding-left: 20px;
@@ -698,7 +700,7 @@ input[type=file]::file-selector-button {
   }
 
   .header .search-bar-show {
-    top: 60px;
+    top: var(--top-margin);
     visibility: visible;
     opacity: 1;
   }
@@ -882,7 +884,7 @@ input[type=file]::file-selector-button {
 --------------------------------------------------------------*/
 .sidebar {
   position: fixed;
-  top: 60px;
+  top: var(--top-margin);
   left: 0;
   bottom: 0;
   width: 300px;

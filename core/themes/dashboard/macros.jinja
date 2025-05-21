@@ -59,9 +59,9 @@
 {% endmacro %}
 
 {# Menu of Sidebar #}
-{% macro sidebar(root, user, active='') %}
+{% macro sidebar(active='', name='sidebar') %}
   <ul class="sidebar-nav" id="sidebar-nav">
-    {% for entry in root.children %}
+    {% for entry in menus[name].children %}
       {{ nav_item(entry, active=active) }}
     {% endfor %}
   </ul>

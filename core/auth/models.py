@@ -16,6 +16,8 @@ class Role(db.Model):
 
 class User(db.Model, UserMixin):
     id = db.Column(db.String(100), primary_key=True)
+    first_name = db.Column(db.String(100), nullable=True)
+    last_name = db.Column(db.String(100), nullable=False)
     lang = db.Column(db.String(3), nullable=True, default='fr')
     password_hash = db.Column(db.String(255), nullable=False)
     roles = db.relationship('Role', secondary=user_roles, 

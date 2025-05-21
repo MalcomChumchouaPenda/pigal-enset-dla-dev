@@ -135,7 +135,7 @@ class RolesApi(Resource):
         return {"message": "Role added"}, 201
 
 
-@ns.route("/roles/<int:id>")
+@ns.route("/roles/<id>")
 class RoleApi(Resource):
 
     @ns.roles_accepted('developper')
@@ -144,7 +144,7 @@ class RoleApi(Resource):
         return {"message": "Role deleted"}
 
 
-@ns.route("/users/<int:user_id>/roles")
+@ns.route("/users/<user_id>/roles")
 class UserRolesApi(Resource):
 
     @ns.roles_accepted('developper')

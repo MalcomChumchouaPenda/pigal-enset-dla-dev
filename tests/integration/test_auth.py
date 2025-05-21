@@ -123,7 +123,8 @@ def test_get_user_by_id(client):
     assert user['id'] == 'teacher1'
 
 def test_add_user(client, app):
-    data = {"lang":"fr", "password":"test"}
+    data = {"lang":"fr", "password":"test", 
+            "first_name":"Test", "last_name":"Test"}
     response = client.post("/api/auth/users/test1", 
                             data=json.dumps(data), 
                             content_type="application/json")
@@ -134,7 +135,10 @@ def test_add_user(client, app):
         user = db.session.query(User).filter_by(id='test1').one()
         assert user.lang == "fr"
         assert user.check_password("test")
+        assert user.first_name == 'Test'
+        assert user.last_name == 'Test'
     
+
 def test_update_user_password(client, app):
     data = {"password":"test"}
     response = client.put("/api/auth/users/teacher1", 
@@ -193,7 +197,7 @@ def test_remove_role(client, name, pwd, code):
 def test_add_roles_to_user(client, name, pwd, code):
     client.post('/api/auth/login', json={"id": name, "password": pwd})
     client.post("/api/auth/roles", json={"id": '3', "name": "User"})
-    response = client.post("/api/auth/users/1/roles", json={"role_ids": [3]})
+    response = client.post(f"/api/auth/users/{name}/roles", json={"role_ids": [3]})
     assert response.status_code == code
 
 
@@ -204,6 +208,6 @@ def test_add_roles_to_user(client, name, pwd, code):
 def test_remove_roles_from_user(client, name, pwd, code):
     client.post('/api/auth/login', json={"id": name, "password": pwd})
     client.post("/api/auth/roles", json={"id": '4', "name": "Viewer"})
-    client.post("/api/auth/users/2/roles", json={"role_ids": ['4']})
-    response = client.delete("/api/auth/users/2/roles", json={"role_ids": ['4']})
+    client.post(f"/api/auth/users/{name}/roles", json={"role_ids": ['4']})
+    response = client.delete(f"/api/auth/users/{name}/roles", json={"role_ids": ['4']})
     assert response.status_code == code

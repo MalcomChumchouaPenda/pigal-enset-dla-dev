@@ -17,14 +17,14 @@ def init_data():
     
     if not User.query.first():
         users_data = [
-            dict(id='admin1', pwd='adminpass', role='admin'),
-            dict(id='teacher1', pwd='teacherpass', role='teacher'),
-            dict(id='student1', pwd='studentpass', role='student'),
-            dict(id='dev1', pwd='devpass', role='developper'),
+            dict(id='admin1', name='Admin', pwd='adminpass', role='admin'),
+            dict(id='teacher1', name='Teacher', pwd='teacherpass', role='teacher'),
+            dict(id='student1', name='Student', pwd='studentpass', role='student'),
+            dict(id='dev1', name='Developper', pwd='devpass', role='developper'),
         ]
         for row in users_data:
             role = Role.query.filter_by(id=row['role']).one()
-            user = User(id=row['id'], roles=[role])
+            user = User(id=row['id'], last_name=row['name'], roles=[role])
             user.set_password(row['pwd'])
             db.session.add(user)
         db.session.commit()

@@ -11,7 +11,7 @@ from core.auth.tasks import (
 
 @pytest.fixture
 def user():
-    user = User(id='1', password_hash="alice")
+    user = User(id='1', last_name='alice', password_hash="alice")
     db.session.add(user)
     db.session.commit()
     return user
