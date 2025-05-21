@@ -51,14 +51,14 @@
           <i class="bi bi-person-fill me-1 fs-6"></i>
           <span>{{ user.id }}</span>
         </a>
-        <a class="btn btn-primary" href="{{ url_for('home.logout', next=request.path) }}">{{_('Deconnexion')}}</a>
+        <a class="btn btn-primary" href="{{ url_for('home.logout') }}">{{_('Deconnexion')}}</a>
       {% else %}        
         {% if get_locale() == 'fr' %}
           <a class="btn btn-light" href="{{ url_for('change_lang', lang='en') }}">English</a>
         {% else %}
           <a class="btn btn-light" href="{{ url_for('change_lang', lang='fr') }}">Francais</a>
         {% endif %}
-        <a class="btn btn-primary" href="{{ url_for('home.login', next=request.path) }}">{{_('Connexion')}}</a>
+        <a class="btn btn-primary" href="{{ url_for('home.login') }}">{{_('Connexion')}}</a>
       {% endif %}
     </li>
   </ul>

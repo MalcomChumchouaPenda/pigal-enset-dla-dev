@@ -52,15 +52,15 @@ class LoginForm(FlaskForm):
 def login():
     form = LoginForm()
     next = request.args.get('next')
-    if next is None:
-        next = request.referrer
+    # if next is None:
+    #     next = request.referrer
     if form.validate_on_submit():
         user_id = form.id.data
         password = form.pwd.data
         if connect_user(user_id, password):
             if next:
                 return redirect(next)
-            return redirect(url_for('home.index'))
+            return redirect(url_for('home.dashboard'))
         error = _("Informations incorrectes")
         return render_template('home-login.jinja', form=form, next=next, error=error)
     return render_template('home-login.jinja', form=form,  next=next)
@@ -84,4 +84,11 @@ def access_denied():
     if prev is not None:
         actions.append({'text':_("Revenir a la page precedente"), 'url':prev})
     return render_template('landing/error.jinja', number=403, actions=actions, message=msg), 403
+
+
+@ui.route('/dashboard')
+@ui.login_required
+def dashboard():
+    welcome = _("Cette ert espace presente des composants demo")
+    return render_template('home-dashboard.jinja', welcome=welcome)
 

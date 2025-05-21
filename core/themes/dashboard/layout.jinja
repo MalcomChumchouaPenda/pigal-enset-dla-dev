@@ -44,7 +44,7 @@
 
 <!-- Layout variables -->
 {% set page_id = page_id | default('') %}
-{% set menu_name = menu_name | default('home_menu') %}
+{% set menu_name = menu_name | default('navbar') %}
 {% set hero_size = hero_size | default('xs') %}
 
 <!-- Jinja macros -->
@@ -58,54 +58,70 @@
     <script src="{{ url_for('static', filename='dashboard/assets/js/preloader.js') }}"></script>
     <!-- End preloader -->
 
-    <!-- Header  -->
-    <header id="header" class="fixed-top">
-      <div class="container-fluid d-flex align-items-center">
-      {% block page_header %}
+  <!-- ======= Header ======= -->
+  <header id="header" class="header fixed-top d-flex align-items-center">
+
+    <div class="d-flex align-items-center justify-content-between">
 
         <!-- Header logo -->
         {{ dashboard.brand() }}
+        
+    </div><!-- End Logo -->
 
-        <!-- Header menu -->
-        <nav class="nav-menu d-flex flex-grow-1 align-items-center">
-            {{ dashboard.menu(menus[menu_name], current_user, active=page_id) }}
-            <i class="mobile-nav-toggle d-xl-none bi bi-list ms-auto"></i>
-        </nav><!-- End Header menu -->
+    <nav class="header-nav ms-auto d-flex me-4">
+        <ul class="flex-grow-1 align-items-center">
+            <li class="d-flex ms-auto special-links justify-content-center">
+            {% if current_user and current_user.is_authenticated %}
+                <a class="btn btn-light ps-1 pe-3 py-2 d-none d-lg-inline" href="#">
+                    <i class="bi bi-person-fill me-1 fs-6"></i>
+                    <span>{{ current_user.id }}</span>
+                </a>
+                <a class="btn btn-primary d-none d-lg-inline" href="{{ url_for('home.logout', next=request.path) }}">{{ _('Deconnexion') }}</a>
+            {% else %}        
+                <a class="btn btn-danger d-none d-lg-inline" href="{{ url_for('home.login', next=request.path) }}">{{ _('Connexion') }}</a>
+            {% endif %}
+            </li>
+        </ul>
+        <i class="bi bi-list toggle-sidebar-btn mx-4 d-lg-none d-inline"></i>
+    </nav><!-- End Icons Navigation -->
+
+  </header><!-- End Header -->
+
+  <!-- ======= Sidebar ======= -->
+  <aside id="sidebar" class="sidebar">
+
+    {{ dashboard.sidebar(menus['sidebar'], current_user, active=page_id) }}
     
-      {% endblock %}
-      </div>
-    </header><!-- End Header -->
+  </aside><!-- End Sidebar-->
 
-    <div class="main-wrapper d-flex flex-column">
-        <!-- Main  -->
-        <main id="main" class="flex-grow-1">
-            {% block page_main %}
-            <p class="w-100 text-center py-5 my-5">Demo Main</p>
-            {% endblock %}
-        </main>
-        
-        <!-- Footer  -->
-        <footer id="footer">
+  <main id="main" class="main">
 
-            <!-- Footer Copyright -->
-            <div class="container copyright text-center mt-4">
-                <p>© 
-                    <span>Copyright</span> 
-                    <strong class="px-1 sitename">CINFO ENSET</strong> 
-                    <span>All Rights Reserved</span>
-                </p>
-                <div class="credits">
-                    <span>Designed by </span>
-                    {% block page_authors %}
-                    <a href="">Demo Author 1, </a>
-                    <a href="">Demo Author 2</a>
-                    {% endblock %}
-                </div>
-            </div><!-- End Footer copyright -->
+    <div class="pagetitle">
+    {% block dashboard_header %}
+      <h1>Blank dashboard</h1>
+    {% endblock %}
+    </div><!-- End Page Title -->
 
-        </footer><!-- ENd Footer -->
-        
+
+    <section class="section dashboard">
+    {% block dashboard_content %}{% endblock %}
+    </section>
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer" class="footer">
+    <div class="copyright">
+      &copy; Copyright <strong><span>NiceAdmin</span></strong>. All Rights Reserved
     </div>
+    <div class="credits">
+      <!-- All the links in the footer should remain intact. -->
+      <!-- You can delete the links only if you purchased the pro version. -->
+      <!-- Licensing information: https://bootstrapmade.com/license/ -->
+      <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/ -->
+      Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+    </div>
+  </footer><!-- End Footer -->
 
 
     <!-- Scroll Top -->

@@ -55,6 +55,7 @@ class SideBar:
 
 
 # navbar = _NavBar()
-navbar = Entry('home_menu', 'home_menu')
-BARS = [navbar]
+navbar = Entry('navbar', 'navbar')
+sidebar = Entry('sidebar', 'sidebar')
+BARS = [navbar, sidebar]
 
