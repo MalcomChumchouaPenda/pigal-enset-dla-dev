@@ -4,6 +4,5 @@ from core.utils import navbar, sidebar
 
 
 navbar.add('home', _l('Accueil'), endpoint='home.index')
-sidebar.add('home', _l('Accueil'), endpoint='home.dashboard')
-test1 = sidebar.add('test1', 'Test1')
-test1.add('test2', 'Test2')
+sidebar.add('home', _l('Accueil'), endpoint='home.dashboard', rank=-1)
+sidebar.add('profile', _l('Profile'), rank=-1)
