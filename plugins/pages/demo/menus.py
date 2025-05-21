@@ -3,34 +3,34 @@ from flask_babel import lazy_gettext as _l
 from core.utils import navbar
 
 
-navbar.add_entry('home_menu', 'demo_menu', _l('Demo'))
-navbar.add_entry('demo_menu', 'demo_submenu1', _l('Pages'))
-navbar.add_entry('demo_menu', 'demo_submenu2', _l('Sections'))
-navbar.add_entry('demo_menu', 'demo_submenu3', _l('Dashboards'), rank=2)
+demomenu = navbar.add('demo_menu', _l('Demo'))
+submenu1 = demomenu.add('demo_submenu1', _l('Pages'))
+submenu2 = demomenu.add('demo_submenu2', _l('Sections'))
+submenu3 = demomenu.add('demo_submenu3', _l('Dashboards'), rank=2)
 
-navbar.add_entry('demo_submenu1', 'demo_submenu1_1', _l('Page vide'), endpoint='demo.blank', rank=0)
-navbar.add_entry('demo_submenu1', 'demo_submenu1_3', _l('Page de message'), url='/demo/message', rank=1)
-navbar.add_entry('demo_submenu1', 'demo_submenu1_4', _l('Page Attente'), endpoint='demo.coming_soon', rank=2)
+submenu1.add('demo_submenu1_1', _l('Page vide'), endpoint='demo.blank', rank=0)
+submenu1.add('demo_submenu1_3', _l('Page de message'), url='/demo/message', rank=1)
+submenu1.add('demo_submenu1_4', _l('Page Attente'), endpoint='demo.coming_soon', rank=2)
 
-navbar.add_entry('demo_submenu1', 'demo_submenu1_5_1', _l('Page avec hero large'), url='/demo/hero/lg', rank=3)
-navbar.add_entry('demo_submenu1', 'demo_submenu1_5_2', _l('Page avec hero moyen'), url='/demo/hero/md', rank=3)
-navbar.add_entry('demo_submenu1', 'demo_submenu1_5_3', _l('Page avec hero reduit'), url='/demo/hero/sm', rank=3)
-navbar.add_entry('demo_submenu1', 'demo_submenu1_5_4', _l('Page avec hero carousel'), url='/demo/hero/carousel', rank=3)
+submenu1.add('demo_submenu1_5_1', _l('Page avec hero large'), url='/demo/hero/lg', rank=3)
+submenu1.add('demo_submenu1_5_2', _l('Page avec hero moyen'), url='/demo/hero/md', rank=3)
+submenu1.add('demo_submenu1_5_3', _l('Page avec hero reduit'), url='/demo/hero/sm', rank=3)
+submenu1.add('demo_submenu1_5_4', _l('Page avec hero carousel'), url='/demo/hero/carousel', rank=3)
 
-navbar.add_entry('demo_submenu1', 'demo_submenu1_6_1', _l('Page avec footer large'), url='/demo/footer/lg', rank=4)
-navbar.add_entry('demo_submenu1', 'demo_submenu1_6_2', _l('Page avec footer moyen'), url='/demo/footer/md', rank=4)
-navbar.add_entry('demo_submenu1', 'demo_submenu1_6_3', _l('Page avec footer reduit'), url='/demo/footer/sm', rank=4)
-navbar.add_entry('demo_submenu1', 'demo_submenu1_6_4', _l('Page avec footer avec auteurs'), url='/demo/footer/authors', rank=4)
+submenu1.add('demo_submenu1_6_1', _l('Page avec footer large'), url='/demo/footer/lg', rank=4)
+submenu1.add('demo_submenu1_6_2', _l('Page avec footer moyen'), url='/demo/footer/md', rank=4)
+submenu1.add('demo_submenu1_6_3', _l('Page avec footer reduit'), url='/demo/footer/sm', rank=4)
+submenu1.add('demo_submenu1_6_4', _l('Page avec footer avec auteurs'), url='/demo/footer/authors', rank=4)
 
-navbar.add_entry('demo_submenu2', 'demo_submenu2_1', _l('Services'), endpoint='demo.services', rank=0)
-navbar.add_entry('demo_submenu2', 'demo_submenu2_2', _l('About'), endpoint='demo.about', rank=1)
-navbar.add_entry('demo_submenu2', 'demo_submenu2_3', _l('Recherche'), endpoint='demo.search', rank=2)
-navbar.add_entry('demo_submenu2', 'demo_submenu2_4', _l('Evenements'), endpoint='demo.events', rank=3)
-navbar.add_entry('demo_submenu2', 'demo_submenu2_5', _l('Attente'), endpoint='demo.coming_soon_sections', rank=4)
+submenu2.add('demo_submenu2_1', _l('Services'), endpoint='demo.services', rank=0)
+submenu2.add('demo_submenu2_2', _l('About'), endpoint='demo.about', rank=1)
+submenu2.add('demo_submenu2_3', _l('Recherche'), endpoint='demo.search', rank=2)
+submenu2.add('demo_submenu2_4', _l('Evenements'), endpoint='demo.events', rank=3)
+submenu2.add('demo_submenu2_5', _l('Attente'), endpoint='demo.coming_soon_sections', rank=4)
 
-navbar.add_entry('demo_submenu3', 'demo_submenu3_1', _l('Dashboard (avec composants)'), endpoint='demo.dashboard', rank=0)
-navbar.add_entry('demo_submenu3', 'demo_submenu3_2', _l('Dashboard (protege)'), endpoint='demo.protected', rank=1)
-navbar.add_entry('demo_submenu3', 'demo_submenu3_3', _l('Dashboard (etudiants)'), endpoint='demo.student', rank=2)
+submenu3.add('demo_submenu3_1', _l('Dashboard (avec composants)'), endpoint='demo.dashboard', rank=0)
+submenu3.add('demo_submenu3_2', _l('Dashboard (protege)'), endpoint='demo.protected', rank=1)
+submenu3.add('demo_submenu3_3', _l('Dashboard (etudiants)'), endpoint='demo.student', rank=2)
 
 
 # ui.register_domain('g1',_l('Form Components'))

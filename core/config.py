@@ -12,6 +12,8 @@ from flask_marshmallow import Marshmallow
 from flask_restx import Api
 
 from core.utils import (
+    navbar,
+    BARS,
     get_locale,
     default_deadline,
     url_for_entry,
@@ -124,6 +126,8 @@ def create_app():
     init_globals(app)
     init_filters(app)
 
+    app.navbar = navbar
+
     app.ui_entries = []
     app.entries = {}
     app.menus = {}
@@ -199,7 +203,7 @@ def register_page(app, ui_root, url_prefix):
         routes = import_module(f'{ui_root}.routes')
         menus = import_module(f'{ui_root}.menus')
         app.register_blueprint(routes.ui, url_prefix=url_prefix)
-        app.ui_entries = menus.navbar.entries
+        # app.ui_entries = menus.navbar.entries
         for domain_id, domain in routes.ui.domains.items():
             if domain_id in app.domains:
                 app.domains[domain_id]['dashboards'].extend(domain['dashboards'])
@@ -212,6 +216,13 @@ def register_page(app, ui_root, url_prefix):
 
 
 def build_menus(app):
+    menus = app.menus
+    for bar in BARS:
+        menus[bar.id] = bar.to_dict()
+    app.jinja_env.globals.update(menus=menus)  
+
+
+def prev_build_menus(app):
     menus = app.menus
     entries = app.entries
     for entry in app.ui_entries:

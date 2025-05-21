@@ -5,4 +5,4 @@ from core.utils import navbar
 
 # navbar.add_menu('msg_menu')
 # navbar.add_menu('home_menu')
-navbar.add_entry('home_menu', 'home', _l('Accueil'), endpoint='home.index', rank=0)
+navbar.add('home', _l('Accueil'), endpoint='home.index')
