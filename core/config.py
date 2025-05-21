@@ -199,7 +199,7 @@ def register_page(app, ui_root, url_prefix):
         routes = import_module(f'{ui_root}.routes')
         menus = import_module(f'{ui_root}.menus')
         app.register_blueprint(routes.ui, url_prefix=url_prefix)
-        app.ui_entries.extend(routes.ui.entries)
+        app.ui_entries = menus.navbar.entries
         for domain_id, domain in routes.ui.domains.items():
             if domain_id in app.domains:
                 app.domains[domain_id]['dashboards'].extend(domain['dashboards'])
