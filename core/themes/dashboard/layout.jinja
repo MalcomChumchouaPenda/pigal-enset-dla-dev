@@ -87,41 +87,53 @@
 
   </header><!-- End Header -->
 
-  <!-- ======= Sidebar ======= -->
+  <!-- Sidebar -->
   <aside id="sidebar" class="sidebar">
 
     {{ dashboard.sidebar(menus['sidebar'], current_user, active=page_id) }}
     
   </aside><!-- End Sidebar-->
 
-  <main id="main" class="main">
+  <div class="main-wrapper d-flex flex-column">
 
-    <div class="pagetitle">
-    {% block dashboard_header %}
-      <h1>Blank dashboard</h1>
-    {% endblock %}
-    </div><!-- End Page Title -->
+    <!-- Main  -->
+    <main id="main" class="main flex-grow-1">
+
+      <div class="pagetitle">
+      {% block page_header %}
+        <h1>Blank dashboard</h1>
+      {% endblock %}
+      </div><!-- End Page Title -->
 
 
-    <section class="section dashboard">
-    {% block dashboard_content %}{% endblock %}
-    </section>
+      <section class="section dashboard">
+      {% block page_main %}{% endblock %}
+      </section>
 
-  </main><!-- End #main -->
+    </main><!-- End #main -->
 
-  <!-- ======= Footer ======= -->
-  <footer id="footer" class="footer">
-    <div class="copyright">
-      &copy; Copyright <strong><span>NiceAdmin</span></strong>. All Rights Reserved
-    </div>
-    <div class="credits">
-      <!-- All the links in the footer should remain intact. -->
-      <!-- You can delete the links only if you purchased the pro version. -->
-      <!-- Licensing information: https://bootstrapmade.com/license/ -->
-      <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/ -->
-      Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
-    </div>
-  </footer><!-- End Footer -->
+    <!-- Footer  -->
+    <footer id="footer">
+
+      <!-- Footer Copyright -->
+      <div class="container copyright text-center mt-4">
+        <p>© 
+          <span>Copyright</span> 
+          <strong class="px-1 sitename">CINFO ENSET</strong> 
+          <span>All Rights Reserved</span>
+        </p>
+        <div class="credits">
+          <span>Designed by </span>
+          {% block page_authors %}
+            <a href="">Demo Author 1, </a>
+            <a href="">Demo Author 2</a>
+          {% endblock %}
+        </div>
+      </div><!-- End Footer copyright -->
+
+    </footer><!-- ENd Footer -->
+
+  </div>
 
 
     <!-- Scroll Top -->
