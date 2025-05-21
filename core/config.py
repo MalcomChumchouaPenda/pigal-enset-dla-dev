@@ -127,9 +127,6 @@ def create_app():
     init_filters(app)
 
     app.navbar = navbar
-
-    app.ui_entries = []
-    app.entries = {}
     app.menus = {}
     app.domains = {}
     app.register_blueprint(api_bp, url_prefix='/api')
@@ -203,7 +200,6 @@ def register_page(app, ui_root, url_prefix):
         routes = import_module(f'{ui_root}.routes')
         menus = import_module(f'{ui_root}.menus')
         app.register_blueprint(routes.ui, url_prefix=url_prefix)
-        # app.ui_entries = menus.navbar.entries
         for domain_id, domain in routes.ui.domains.items():
             if domain_id in app.domains:
                 app.domains[domain_id]['dashboards'].extend(domain['dashboards'])
@@ -219,29 +215,7 @@ def build_menus(app):
     menus = app.menus
     for bar in BARS:
         menus[bar.id] = bar.to_dict()
-    app.jinja_env.globals.update(menus=menus)  
-
-
-def prev_build_menus(app):
-    menus = app.menus
-    entries = app.entries
-    for entry in app.ui_entries:
-        if entry['id'] in entries:
-            app.logger.warning(f'duplicated entry for {entry}')
-            continue
-        entries[entry['id']] = entry
-
-    f = lambda x: (x['rank'], x['text'])
-    for entry in sorted(app.ui_entries, key=f):
-        if entry['parentid'] is None:
-            menus[entry['id']] = entry
-        else:
-            parentid = entry['parentid']
-            parentmenu = entries[parentid]
-            parentmenu['children'].append(entry)
-            if parentid not in menus:
-                menus[parentid] = parentmenu
-    app.jinja_env.globals.update(menus=menus)  
+    app.jinja_env.globals.update(menus=menus)    
 
 
 def build_domains(app):
