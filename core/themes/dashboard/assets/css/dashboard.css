@@ -515,7 +515,7 @@ input[type=file]::file-selector-button {
   font-size: 18px;
   font-weight: 500;
   color: #012970;
-  font-family: "Poppins", sans-serif;
+  font-family: var(--default-font);
 }
 
 .card-title span {
@@ -535,7 +535,7 @@ input[type=file]::file-selector-button {
 /* Alerts */
 .alert-heading {
   font-weight: 500;
-  font-family: "Poppins", sans-serif;
+  font-family: var(--default-font);
   font-size: 20px;
 }
 
@@ -584,7 +584,7 @@ input[type=file]::file-selector-button {
 /* Breadcrumbs */
 .breadcrumb {
   font-size: 14px;
-  font-family: "Nunito", sans-serif;
+  font-family: var(--default-font);
   color: #899bbd;
   font-weight: 600;
 }
