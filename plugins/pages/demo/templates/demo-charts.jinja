@@ -1,22 +1,12 @@
 {% extends 'dashboard/layout.jinja' %}
 
-{% block page_meta %}
-    {% if current_user.is_authenticated %}
-        <title>{{ current_user.id +  _('| ENSET Douala') }}</title>
-    {% else %}
-        <title>{{ _('Unknown | ENSET Douala') }}</title>
-    {% endif %}
+{% block page_header %}
+  <h1>{{ _('Data charts') }}</h1>
+  <p>{{ _('Chart.JS Examples. You can check the <a href="https://www.chartjs.org/docs/latest/samples/" target="_blank">official website</a> for more examples.') }}</p>
 {% endblock %}
 
 {% block page_main %}
   <div class="container">
-    <div class="row ms-3 mt-0 my-2 pt-0 pb-1 pb-lg-3">
-      <div class="d-flex flex-column align-items-start align-items-lg-center">
-        <h3>{{ _("Demo Graphique avec Chart.js") }}</h3>
-        <p>{{ _('Chart.JS Examples. You can check the <a href="https://www.chartjs.org/docs/latest/samples/" target="_blank">official website</a> for more examples.') }}</p>
-      </div>
-    </div>
-
     <section class="section row g-4">
 
           <!-- Line Chart -->

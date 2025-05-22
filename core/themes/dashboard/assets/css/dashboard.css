@@ -59,7 +59,8 @@
   --btn-large-margin:  0 0 0 20px; 
   --btn-medium-margin:  0 0 0 10px; 
   --btn-small-margin:  0 0 0 5px; 
-  --top-margin: 5px;
+  --top-margin: 60px;
+  --sidebar-margin: 250px;
 }
 
 /* Smooth scroll */
@@ -324,7 +325,7 @@ input[type=file]::file-selector-button {
   transition: all 0.3s;
 }
 
-@media (max-width: 1199px) {
+@media (max-width: 991px) {
   #main {
     padding: 20px;
   }
@@ -631,6 +632,7 @@ input[type=file]::file-selector-button {
 /*--------------------------------------------------------------
 # Header
 --------------------------------------------------------------*/
+
 #header .logo {
   line-height: 1;
 }
@@ -654,38 +656,41 @@ input[type=file]::file-selector-button {
   color: var(--primary-light-color);
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 992px) {
   #header .logo {
     width: 280px;
   }
 }
 
-
-.header {
+#header {
   transition: all 0.5s;
   z-index: 997;
   height: var(--top-margin);
-  box-shadow: 0px 2px 20px rgba(1, 41, 112, 0.1);
-  background-color: #fff;
+  /* box-shadow: 0px 2px 20px rgba(1, 41, 112, 0.1); */
+  background-color: transparent;
   padding-left: 20px;
   /* Toggle Sidebar Button */
   /* Search Bar */
 }
 
-.header .toggle-sidebar-btn {
+#header .toggle-sidebar-btn {
   font-size: 32px;
   padding-left: 10px;
   cursor: pointer;
   color: #012970;
 }
 
-.header .search-bar {
+#header .search-bar {
   min-width: 360px;
   padding: 0 20px;
 }
 
-@media (max-width: 1199px) {
-  .header .search-bar {
+@media (max-width: 991px) {
+  #header {
+    background-color: var(--nav-color);
+  }
+
+  #header .search-bar {
     position: fixed;
     top: 50px;
     left: 0;
@@ -699,18 +704,18 @@ input[type=file]::file-selector-button {
     opacity: 0;
   }
 
-  .header .search-bar-show {
+  #header .search-bar-show {
     top: var(--top-margin);
     visibility: visible;
     opacity: 1;
   }
 }
 
-.header .search-form {
+#header .search-form {
   width: 100%;
 }
 
-.header .search-form input {
+#header .search-form input {
   border: 0;
   font-size: 14px;
   color: #012970;
@@ -721,21 +726,21 @@ input[type=file]::file-selector-button {
   width: 100%;
 }
 
-.header .search-form input:focus,
-.header .search-form input:hover {
+#header .search-form input:focus,
+#header .search-form input:hover {
   outline: none;
   box-shadow: 0 0 10px 0 rgba(1, 41, 112, 0.15);
   border: 1px solid rgba(1, 41, 112, 0.3);
 }
 
-.header .search-form button {
+#header .search-form button {
   border: 0;
   padding: 0;
   margin-left: -30px;
   background: none;
 }
 
-.header .search-form button i {
+#header .search-form button i {
   color: #012970;
 }
 
@@ -882,15 +887,15 @@ input[type=file]::file-selector-button {
 /*--------------------------------------------------------------
 # Sidebar
 --------------------------------------------------------------*/
-.sidebar {
+#sidebar {
   position: fixed;
-  top: var(--top-margin);
+  top: 0;
   left: 0;
   bottom: 0;
-  width: 300px;
+  width: var(--sidebar-margin);
   z-index: 996;
   transition: all 0.3s;
-  padding: 20px;
+  padding: var(--top-margin) 20px 20px 20px;
   overflow-y: auto;
   scrollbar-width: thin;
   scrollbar-color: #aab7cf transparent;
@@ -898,50 +903,50 @@ input[type=file]::file-selector-button {
   background-color: #fff;
 }
 
-@media (max-width: 1199px) {
-  .sidebar {
-    left: -300px;
+@media (max-width: 991px) {
+  #sidebar {
+    left: -var(--sidebar-margin);
   }
 }
 
-.sidebar::-webkit-scrollbar {
+#sidebar::-webkit-scrollbar {
   width: 5px;
   height: 8px;
   background-color: #fff;
 }
 
-.sidebar::-webkit-scrollbar-thumb {
+#sidebar::-webkit-scrollbar-thumb {
   background-color: #aab7cf;
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 992px) {
 
   #main,
   #footer {
-    margin-left: 300px;
+    margin-left: var(--sidebar-margin);
   }
 }
 
-@media (max-width: 1199px) {
-  .toggle-sidebar .sidebar {
+@media (max-width: 991px) {
+  .toggle-sidebar #sidebar {
     left: 0;
   }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 992px) {
 
   .toggle-sidebar #main,
   .toggle-sidebar #footer {
     margin-left: 0;
   }
 
-  .toggle-sidebar .sidebar {
-    left: -300px;
+  .toggle-sidebar #sidebar {
+    left: -var(--sidebar-margin);
   }
 }
 
 .sidebar-nav {
-  padding: 0;
+  padding: 15px 0 0 0;
   margin: 0;
   list-style: none;
 }

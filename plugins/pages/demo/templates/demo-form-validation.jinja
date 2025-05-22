@@ -1,24 +1,18 @@
 {% extends 'dashboard/layout.jinja' %}
 
-{% block page_meta %}
-<title>{{ current_user.id }} | ENSET Douala</title>
+{% block page_header %}
+  <h1>{{ _('Form Validation') }}</h1>
+  <nav class="pb-3" aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="{{ url_for('home.index') }}">{{ _('Accueil') }}</a></li>
+      <li class="breadcrumb-item"><a href="{{ url_for('demo.dashboard') }}">{{ _("Dashboard") }}</a></li>
+      <li class="breadcrumb-item active" aria-current="page">{{ _('Validation') }}</li>
+    </ol>
+  </nav>
 {% endblock %}
 
 {% block page_main %}
 <div class="container">
-        <div class="row ms-3 mt-0 my-2 pt-0 pb-1 pb-lg-3">
-            <div class="d-flex flex-column align-items-start align-items-lg-center">
-                <h1>Form Validation</h1>
-                <nav class="pb-3" aria-label="breadcrumb">
-                    <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="{{ url_for('home.index') }}">Accueil</a></li>
-                        <li class="breadcrumb-item"><a href="{{ url_for('demo.dashboard') }}">Dashboard</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Validation</li>
-                    </ol>
-                </nav>
-            </div>
-        </div>
-
         <section class="section row g-4">
           <div class="col-lg-6">
   
