@@ -89,6 +89,6 @@ def access_denied():
 @ui.route('/dashboard')
 @ui.login_required
 def dashboard():
-    welcome = _("Cette ert espace presente des composants demo")
+    welcome = _("Bienvenue dans cette espace")
     return render_template('home-dashboard.jinja', welcome=welcome)
 

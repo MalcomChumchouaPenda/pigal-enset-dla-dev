@@ -1,2 +1,20 @@
-{% extends "dashboard/layout.jinja" %}
+{% extends 'dashboard/layout.jinja' %}
 {% set page_id='home_dash' %}
+
+{% block page_header %}{% endblock %}
+
+{% block page_main %}
+    <div class="container">
+        <div class="row me-3 my-2">
+            <div class="d-flex flex-column align-items-start align-items-lg-center">
+                <h3>
+                    {{ _('Espace ') }} 
+                    {% if current_user.is_authenticated %} 
+                        {{ current_user.id }}
+                    {% endif %}
+                </h3>
+                <p class="pt-2 pb-1 pb-lg-5">{{ welcome }}</p>
+            </div>
+        </div>
+    </div>
+{% endblock %}
