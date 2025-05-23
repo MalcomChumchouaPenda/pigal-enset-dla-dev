@@ -92,3 +92,17 @@ def dashboard():
     welcome = _("Bienvenue dans cette espace")
     return render_template('home-dashboard.jinja', welcome=welcome)
 
+@ui.route('/student')
+@ui.roles_accepted('student')
+def student_dashboard():
+    return redirect(url_for('home.dashboard'))
+
+@ui.route('/teacher')
+@ui.roles_accepted('teacher')
+def teacher_dashboard():
+    return redirect(url_for('home.dashboard'))
+
+@ui.route('/admin')
+@ui.roles_accepted('admin')
+def admin_dashboard():
+    return redirect(url_for('home.dashboard'))

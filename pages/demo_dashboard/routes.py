@@ -64,21 +64,3 @@ def form_layouts():
 def form_validation():
     return render_template('demo-dashboard-form-validation.jinja')
 
-
-# @ui.route('/unprotected')
-# def unprotected():
-#     message="Welcome in a free space"
-#     return render_template('home-space.jinja', message=message)
-
-@ui.route('/protected')
-@ui.login_required
-def protected():
-    message = _("Welcome in a protected space")
-    return render_template('dashboard/home.jinja',welcome=message)
-
-@ui.route('/student')
-@ui.roles_accepted('student')
-def student():
-    message = _("Welcome in student space")
-    return render_template('dashboard/home.jinja',welcome=message)
-
