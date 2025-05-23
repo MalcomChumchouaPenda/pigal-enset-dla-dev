@@ -1,17 +1,17 @@
 
 /* Color System */
 :root {
-    --primary-dark-color: rgb(79, 128, 171);
-    --primary-color: rgb(66, 139, 202);
+    --primary-dark-color: rgb(38, 102, 158);
+    --primary-color: #428bca;
     --primary-light-color:  rgb(96, 168, 231);
     --secondary-dark-color: #3c3c3c;
     --secondary-color: #444444;
     --secondary-light-color: #edeff0e3;
     --white-color: #ffffff;
     --black-color: #222222;
-    --success-color: rgb(5, 109, 95);
-    --warning-color: rgb(225, 169, 48);
-    --danger-color: rgb(236, 49, 80);
+    --success-color: #056d5f;
+    --warning-color: #e1a930;
+    --danger-color: #ec3150;
     /* --danger-color: #d63374; */
     /* --bs-form-invalid-color: #d63374; */
 }

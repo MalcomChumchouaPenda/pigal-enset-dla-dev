@@ -42,9 +42,13 @@
   /**
    * Sidebar toggle
    */
-  if (select('.toggle-sidebar-btn')) {
+  
+  const toggleSidebarBtn = select('.toggle-sidebar-btn');
+  if (toggleSidebarBtn) {
     on('click', '.toggle-sidebar-btn', function(e) {
-      select('body').classList.toggle('toggle-sidebar')
+      select('body').classList.toggle('toggle-sidebar');
+      toggleSidebarBtn.classList.toggle('bi-list');
+      toggleSidebarBtn.classList.toggle('bi-x');
     })
   }
 

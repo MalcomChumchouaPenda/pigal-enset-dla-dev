@@ -32,13 +32,13 @@
 
 /* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
 :root { 
-  --background-color: var(--white-color); /* Background color for the entire website, including individual sections */
+  --background-color: var(--secondary-light-color); /* Background color for the entire website, including individual sections */
   --default-color: var(--secondary-color); /* Default color used for the majority of the text content across the entire website */
   --heading-color: var(--black-color); /* Color for headings, subheadings and title throughout the website */
   --accent-color: var(--primary-color); /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
   --surface-color: var(--white-color); /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
   --contrast-color: var(--white-color); /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
-  --inverted-background-color: var(--secondary-light-color); /* Inverted background color for the entire website, including individual sections */
+  --inverted-background-color: var(--secondary-color); /* Inverted background color for the entire website, including individual sections */
 }
 
 /* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
@@ -325,11 +325,29 @@ input[type=file]::file-selector-button {
   transition: all 0.3s;
 }
 
+
+/* desktop sidebar  */
+
+@media (min-width: 992px) {
+
+  #main {
+    margin-left: var(--sidebar-margin);
+    margin-top: 20px;
+  }
+
+}
+
+
+/* mobile sidebar  */
+
 @media (max-width: 991px) {
+
   #main {
     padding: 20px;
   }
+
 }
+
 
 /*--------------------------------------------------------------
 # Page Title
@@ -342,7 +360,7 @@ input[type=file]::file-selector-button {
   font-size: 24px;
   margin-bottom: 0;
   font-weight: 600;
-  color: #012970;
+  color: var(--primary-dark-color);
 }
 
 /*--------------------------------------------------------------
@@ -355,7 +373,7 @@ input[type=file]::file-selector-button {
   right: 15px;
   bottom: 15px;
   z-index: 99999;
-  background: #4154f1;
+  background: var(--primary-color);
   width: 40px;
   height: 40px;
   border-radius: 4px;
@@ -514,7 +532,7 @@ input[type=file]::file-selector-button {
   padding: 20px 0 15px 0;
   font-size: 18px;
   font-weight: 500;
-  color: #012970;
+  color: var(--primary-dark-color);
   font-family: var(--default-font);
 }
 
@@ -560,7 +578,7 @@ input[type=file]::file-selector-button {
 }
 
 .accordion-button:not(.collapsed) {
-  color: #012970;
+  color: var(--primary-dark-color);
   background-color: #f6f9ff;
 }
 
@@ -572,7 +590,7 @@ input[type=file]::file-selector-button {
 
 .accordion-flush .accordion-button:not(.collapsed) {
   box-shadow: none;
-  color: #4154f1;
+  color: var(--primary-color);
 }
 
 .accordion-flush .accordion-body {
@@ -620,14 +638,15 @@ input[type=file]::file-selector-button {
 
 .nav-tabs-bordered .nav-link:hover,
 .nav-tabs-bordered .nav-link:focus {
-  color: #4154f1;
+  color: var(--primary-color);
 }
 
 .nav-tabs-bordered .nav-link.active {
   background-color: #fff;
-  color: #4154f1;
-  border-bottom: 2px solid #4154f1;
+  color: var(--primary-color);
+  border-bottom: 2px solid var(--primary-color);
 }
+
 
 /*--------------------------------------------------------------
 # Header
@@ -656,11 +675,6 @@ input[type=file]::file-selector-button {
   color: var(--primary-light-color);
 }
 
-@media (min-width: 992px) {
-  #header .logo {
-    width: 280px;
-  }
-}
 
 #header {
   transition: all 0.5s;
@@ -675,9 +689,9 @@ input[type=file]::file-selector-button {
 
 #header .toggle-sidebar-btn {
   font-size: 32px;
-  padding-left: 10px;
+  padding: 10px;
   cursor: pointer;
-  color: #012970;
+  color: var(--primary-dark-color);
 }
 
 #header .search-bar {
@@ -685,31 +699,6 @@ input[type=file]::file-selector-button {
   padding: 0 20px;
 }
 
-@media (max-width: 991px) {
-  #header {
-    background-color: var(--nav-color);
-  }
-
-  #header .search-bar {
-    position: fixed;
-    top: 50px;
-    left: 0;
-    right: 0;
-    padding: 20px;
-    box-shadow: 0px 0px 15px 0px rgba(1, 41, 112, 0.1);
-    background: white;
-    z-index: 9999;
-    transition: 0.3s;
-    visibility: hidden;
-    opacity: 0;
-  }
-
-  #header .search-bar-show {
-    top: var(--top-margin);
-    visibility: visible;
-    opacity: 1;
-  }
-}
 
 #header .search-form {
   width: 100%;
@@ -718,7 +707,7 @@ input[type=file]::file-selector-button {
 #header .search-form input {
   border: 0;
   font-size: 14px;
-  color: #012970;
+  color: var(--primary-dark-color);
   border: 1px solid rgba(1, 41, 112, 0.2);
   padding: 7px 38px 7px 8px;
   border-radius: 3px;
@@ -741,8 +730,32 @@ input[type=file]::file-selector-button {
 }
 
 #header .search-form button i {
-  color: #012970;
+  color: var(--primary-dark-color);
 }
+
+
+/* desktop header */
+
+@media (min-width: 992px) {
+
+  #header {
+    display: none;
+  }
+
+}
+
+
+/* mobile header */
+
+@media (max-width: 991px) {
+
+  #header {
+    display: flex;
+    background-color: color-mix(in srgb, var(--nav-color), transparent 10%);
+  }
+
+}
+
 
 /*--------------------------------------------------------------
 # Header Nav
@@ -758,13 +771,13 @@ input[type=file]::file-selector-button {
 
 .header-nav .nav-icon {
   font-size: 22px;
-  color: #012970;
+  color: var(--primary-dark-color);
   margin-right: 25px;
   position: relative;
 }
 
 .header-nav .nav-profile {
-  color: #012970;
+  color: var(--primary-dark-color);
 }
 
 .header-nav .nav-profile img {
@@ -884,9 +897,11 @@ input[type=file]::file-selector-button {
   background-color: #f6f9ff;
 }
 
+
 /*--------------------------------------------------------------
 # Sidebar
 --------------------------------------------------------------*/
+
 #sidebar {
   position: fixed;
   top: 0;
@@ -895,19 +910,37 @@ input[type=file]::file-selector-button {
   width: var(--sidebar-margin);
   z-index: 996;
   transition: all 0.3s;
-  padding: var(--top-margin) 20px 20px 20px;
   overflow-y: auto;
   scrollbar-width: thin;
   scrollbar-color: #aab7cf transparent;
-  box-shadow: 0px 0px 20px rgba(1, 41, 112, 0.1);
-  background-color: #fff;
+  /* box-shadow: 0px 0px 20px rgba(1, 41, 112, 0.1); */
+  background-color: var(--background-color);
 }
 
-@media (max-width: 991px) {
-  #sidebar {
-    left: -var(--sidebar-margin);
-  }
+
+#sidebar .logo {
+  line-height: 1;
 }
+
+#sidebar .logo img {
+  max-height: 25px;
+  margin-right: 10px;
+}
+
+#sidebar .logo h1 {
+  font-size: 22px;
+  margin: 0;
+  font-weight: 700;
+  color: var(--heading-color);
+}
+
+#sidebar .logo i {
+  font-size: 5px;
+  padding-left: 5px;
+  padding-bottom: 6px;
+  color: var(--primary-light-color);
+}
+
 
 #sidebar::-webkit-scrollbar {
   width: 5px;
@@ -919,31 +952,6 @@ input[type=file]::file-selector-button {
   background-color: #aab7cf;
 }
 
-@media (min-width: 992px) {
-
-  #main,
-  #footer {
-    margin-left: var(--sidebar-margin);
-  }
-}
-
-@media (max-width: 991px) {
-  .toggle-sidebar #sidebar {
-    left: 0;
-  }
-}
-
-@media (min-width: 992px) {
-
-  .toggle-sidebar #main,
-  .toggle-sidebar #footer {
-    margin-left: 0;
-  }
-
-  .toggle-sidebar #sidebar {
-    left: -var(--sidebar-margin);
-  }
-}
 
 .sidebar-nav {
   padding: 15px 0 0 0;
@@ -974,35 +982,35 @@ input[type=file]::file-selector-button {
   align-items: center;
   font-size: 15px;
   font-weight: 600;
-  color: #4154f1;
+  /* color: var(--primary-color); */
   transition: 0.3;
-  background: #f6f9ff;
+  background: transparent;
   padding: 10px 15px;
   border-radius: 4px;
 }
 
 .sidebar-nav .nav-link i {
   font-size: 16px;
+  font-weight: 800;
   margin-right: 10px;
-  color: #4154f1;
+  /* color: var(--primary-color); */
 }
 
-.sidebar-nav .nav-link.collapsed {
-  color: #012970;
+/* .sidebar-nav .nav-link.collapsed {
+  color: var(--primary-dark-color);
   background: #fff;
 }
 
 .sidebar-nav .nav-link.collapsed i {
   color: #899bbd;
-}
+} */
 
 .sidebar-nav .nav-link:hover {
-  color: #4154f1;
-  background: #f6f9ff;
+  color: var(--primary-color);
 }
 
 .sidebar-nav .nav-link:hover i {
-  color: #4154f1;
+  color: var(--primary-color);
 }
 
 .sidebar-nav .nav-link .bi-chevron-down {
@@ -1025,7 +1033,7 @@ input[type=file]::file-selector-button {
   align-items: center;
   font-size: 14px;
   font-weight: 600;
-  color: #012970;
+  /* color: var(--primary-dark-color); */
   transition: 0.3;
   padding: 10px 0 10px 40px;
   transition: 0.3s;
@@ -1040,17 +1048,66 @@ input[type=file]::file-selector-button {
 
 .sidebar-nav .nav-content a:hover,
 .sidebar-nav .nav-content a.active {
-  color: #4154f1;
+  color: var(--primary-color);
 }
 
 .sidebar-nav .nav-content a.active i {
-  background-color: #4154f1;
+  background-color: var(--primary-color);
 }
+
+
+/* mobile sidebar */
+
+@media (max-width: 991px) {
+
+  #sidebar {
+    left: -var(--sidebar-margin);
+    padding: var(--top-margin) 20px 20px 20px;
+    display: none !important;
+  }
+
+  .toggle-sidebar #sidebar {
+    left: 0;
+    display: flex !important;
+    width: 100%;
+    background-color: var(--nav-color);
+    transition: all 0.3s;
+  }
+
+  #sidebar .logo {
+    display: none !important;
+  }
+
+  .sidebar-nav {
+    width: 100%;
+  }
+
+}
+
+
+/* desktop sidebar  */
+
+@media (min-width: 992px) {
+
+  #sidebar {
+    padding: 20px;
+  }
+
+  #sidebar .logo {
+    width: 280px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }
+
+}
+
 
 /*--------------------------------------------------------------
 # Dashboard
 --------------------------------------------------------------*/
+
 /* Filter dropdown */
+
 .dashboard .filter {
   position: absolute;
   right: 0px;
@@ -1067,7 +1124,7 @@ input[type=file]::file-selector-button {
 
 .dashboard .filter .icon:hover,
 .dashboard .filter .icon:focus {
-  color: #4154f1;
+  color: var(--primary-color);
 }
 
 .dashboard .filter .dropdown-header {
@@ -1095,7 +1152,7 @@ input[type=file]::file-selector-button {
 
 .dashboard .info-card h6 {
   font-size: 28px;
-  color: #012970;
+  color: var(--primary-dark-color);
   font-weight: 700;
   margin: 0;
   padding: 0;
@@ -1111,7 +1168,7 @@ input[type=file]::file-selector-button {
 }
 
 .dashboard .sales-card .card-icon {
-  color: #4154f1;
+  color: var(--primary-color);
   background: #f6f6fe;
 }
 
@@ -1191,12 +1248,12 @@ input[type=file]::file-selector-button {
 }
 
 .dashboard .news h4 a {
-  color: #012970;
+  color: var(--primary-dark-color);
   transition: 0.3s;
 }
 
 .dashboard .news h4 a:hover {
-  color: #4154f1;
+  color: var(--primary-color);
 }
 
 .dashboard .news p {
@@ -1248,9 +1305,11 @@ input[type=file]::file-selector-button {
   max-width: 60px;
 }
 
+
 /*--------------------------------------------------------------
 # Icons list page
 --------------------------------------------------------------*/
+
 .iconslist {
   display: grid;
   max-width: 100%;
@@ -1263,7 +1322,7 @@ input[type=file]::file-selector-button {
   background-color: #fff;
   border-radius: 0.25rem;
   text-align: center;
-  color: #012970;
+  color: var(--primary-dark-color);
   padding: 15px 0;
 }
 
@@ -1284,9 +1343,11 @@ input[type=file]::file-selector-button {
   color: #666;
 }
 
+
 /*--------------------------------------------------------------
 # Profie Page
 --------------------------------------------------------------*/
+
 .profile .profile-card img {
   max-width: 120px;
 }
@@ -1312,7 +1373,7 @@ input[type=file]::file-selector-button {
 }
 
 .profile .profile-card .social-links a:hover {
-  color: #012970;
+  color: var(--primary-dark-color);
 }
 
 .profile .profile-overview .row {
@@ -1321,7 +1382,7 @@ input[type=file]::file-selector-button {
 }
 
 .profile .profile-overview .card-title {
-  color: #012970;
+  color: var(--primary-dark-color);
 }
 
 .profile .profile-overview .label {
@@ -1338,22 +1399,26 @@ input[type=file]::file-selector-button {
   max-width: 120px;
 }
 
+
 /*--------------------------------------------------------------
 # F.A.Q Page
 --------------------------------------------------------------*/
+
 .faq .basic h6 {
   font-size: 18px;
   font-weight: 600;
-  color: #4154f1;
+  color: var(--primary-color);
 }
 
 .faq .basic p {
   color: #6980aa;
 }
 
+
 /*--------------------------------------------------------------
 # Contact
 --------------------------------------------------------------*/
+
 .contact .info-box {
   padding: 28px 30px;
 }
@@ -1361,12 +1426,12 @@ input[type=file]::file-selector-button {
 .contact .info-box i {
   font-size: 38px;
   line-height: 0;
-  color: #4154f1;
+  color: var(--primary-color);
 }
 
 .contact .info-box h3 {
   font-size: 20px;
-  color: #012970;
+  color: var(--primary-dark-color);
   font-weight: 700;
   margin: 20px 0 10px 0;
 }
@@ -1428,7 +1493,7 @@ input[type=file]::file-selector-button {
 
 .contact .php-email-form input:focus,
 .contact .php-email-form textarea:focus {
-  border-color: #4154f1;
+  border-color: var(--primary-color);
 }
 
 .contact .php-email-form input {
@@ -1440,7 +1505,7 @@ input[type=file]::file-selector-button {
 }
 
 .contact .php-email-form button[type=submit] {
-  background: #4154f1;
+  background: var(--primary-color);
   border: 0;
   padding: 10px 30px;
   color: #fff;
@@ -1462,9 +1527,11 @@ input[type=file]::file-selector-button {
   }
 }
 
+
 /*--------------------------------------------------------------
 # Error 404
 --------------------------------------------------------------*/
+
 .error-404 {
   padding: 30px;
 }
@@ -1472,7 +1539,7 @@ input[type=file]::file-selector-button {
 .error-404 h1 {
   font-size: 180px;
   font-weight: 700;
-  color: #4154f1;
+  color: var(--primary-color);
   margin-bottom: 0;
   line-height: 150px;
 }
@@ -1480,7 +1547,7 @@ input[type=file]::file-selector-button {
 .error-404 h2 {
   font-size: 24px;
   font-weight: 700;
-  color: #012970;
+  color: var(--primary-dark-color);
   margin-bottom: 30px;
 }
 
@@ -1617,6 +1684,17 @@ input[type=file]::file-selector-button {
 
 #footer .credits a:hover {
   color: color-mix(in srgb, var(--accent-color), transparent 25%);
+}
+
+
+/* desktop sidebar  */
+
+@media (min-width: 992px) {
+
+  #footer {
+    margin-left: var(--sidebar-margin);
+  }
+
 }
 
 

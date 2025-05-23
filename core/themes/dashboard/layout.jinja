@@ -64,37 +64,37 @@
     <!-- End preloader -->
 
   <!-- Header -->
-  <header id="header" class="fixed-top d-flex align-items-center">
+  <header id="header" class="fixed-top">
 
     <!-- Header logo -->
     <div class="d-flex align-items-center justify-content-between">
       {{ dashboard.brand(current_user) }}
     </div><!-- End Logo -->
 
-    <nav class="header-nav ms-auto d-flex me-4">
-        <ul class="flex-grow-1 align-items-center">
-            <li class="d-flex ms-auto special-links justify-content-center">
-            {% if current_user and current_user.is_authenticated %}
-                <a class="btn btn-primary d-none d-lg-inline" href="{{ url_for('home.logout', next=request.path) }}">{{ _('Deconnexion') }}</a>
-            {% else %}        
-                <a class="btn btn-danger d-none d-lg-inline" href="{{ url_for('home.login', next=request.path) }}">{{ _('Connexion') }}</a>
-            {% endif %}
-            </li>
-        </ul>
-        <i class="bi bi-list toggle-sidebar-btn mx-4 d-lg-none d-inline"></i>
+    <!-- Icons Navigation -->
+    <nav class="header-nav ms-auto d-flex me-2">
+      <i class="bi bi-list toggle-sidebar-btn mx-2 d-lg-none d-inline"></i>
     </nav><!-- End Icons Navigation -->
 
   </header><!-- End Header -->
 
   <!-- Sidebar -->
   <aside id="sidebar">
-      {{ dashboard.sidebar(active=page_id) }}
+      {{ dashboard.sidebar(current_user, active=page_id) }}
   </aside><!-- End Sidebar-->
 
   <div class="main-wrapper d-flex flex-column">
 
       <!-- Main  -->
       <main id="main" class="main flex-grow-1">
+
+        <div class="d-flex ms-auto special-links justify-content-end w-100">
+        {% if current_user and current_user.is_authenticated %}
+          <a class="btn btn-primary d-none d-lg-inline" href="{{ url_for('home.logout', next=request.path) }}">{{ _('Deconnexion') }}</a>
+        {% else %}        
+          <a class="btn btn-danger d-none d-lg-inline" href="{{ url_for('home.login', next=request.path) }}">{{ _('Connexion') }}</a>
+        {% endif %}
+        </div>
 
         <div class="pagetitle">
         {% block page_header %}

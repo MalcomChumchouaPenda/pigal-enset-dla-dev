@@ -5,6 +5,7 @@
     <img src="{{ url_for('static', filename='landing/assets/img/logo.png') }}" alt="">
     <div class="d-flex align-items-end justify-content-start">
       <h1 class="sitename text-nowrap">{{ user.id }}</h1>
+      <i class="bi bi-circle-fill"></i>
     </div>
   </a>
 {% endmacro %}
@@ -58,7 +59,8 @@
 {% endmacro %}
 
 {# Menu of Sidebar #}
-{% macro sidebar(active='', name='sidebar') %}
+{% macro sidebar(user, active='', name='sidebar') %}
+  {{ brand(user) }}
   <ul class="sidebar-nav" id="sidebar-nav">
     {% for entry in menus[name].children %}
       {{ nav_item(entry, active=active) }}
