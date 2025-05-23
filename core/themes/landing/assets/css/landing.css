@@ -1312,15 +1312,6 @@ z-index: 1;
   border-color: transparent;
 }
 
-/* main mobile section */
-
-@media (max-width: 991px) {
-  #main > section {
-    scroll-margin-top: 76px;
-    padding: 90px 25px 20px 10px;
-  }
-}
-
 
 /* Section titles */
 #main > section h1 {
@@ -1364,6 +1355,7 @@ z-index: 1;
 }
 
 #main > section .section-title {
+  padding-top: 15px;
   padding-bottom: 25px;
   position: relative;
 }
@@ -1444,6 +1436,16 @@ https://nickymeuleman.netlify.app/blog/css-animated-wrapping-underline
 #main > section .btn-link:hover, 
 #main > section a:hover{  
   background-size: 0 0.12em, 100% 0.12em;
+}
+
+
+/* main mobile section */
+
+@media (max-width: 991px) {
+  #main > section {
+    scroll-margin-top: 76px;
+    padding: 20px 25px 20px 10px;
+  }
 }
 
 
