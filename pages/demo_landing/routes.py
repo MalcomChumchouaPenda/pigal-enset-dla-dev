@@ -20,7 +20,7 @@ static_dir = os.path.join(os.path.dirname(__file__), 'static')
 @ui.route('/')
 @ui.route('/blank')
 def blank():
-    return render_template('demo-blank.jinja')
+    return render_template('demo-landing-blank.jinja')
 
 @ui.route('/message')
 def message():
@@ -41,38 +41,38 @@ def coming_soon():
 
 @ui.route('/hero/<size>')
 def hero(size):
-    return render_template(f'demo-hero-{size}.jinja')
+    return render_template(f'demo-landing-hero-{size}.jinja')
 
 @ui.route('/hero/carousel')
 def hero_carousel():
     items = [{'title': _('This is demo %(i)s', i=i),
               'image': f'img/slides-{i}.jpg'}
                 for i in range(1, 4)]
-    return render_template('demo-hero-carousel.jinja', items=items)
+    return render_template('demo-landing-hero-carousel.jinja', items=items)
 
 
 # PAGES (DIFFERENTS FOOTERS)
 
 @ui.route('/footer/<size>')
 def footer(size):
-    return render_template(f'demo-footer-{size}.jinja')
+    return render_template(f'demo-landing-footer-{size}.jinja')
 
 @ui.route('/footer/authors')
 def authors():
-    return render_template('demo-footer-authors.jinja')
+    return render_template('demo-landing-footer-authors.jinja')
 
 
 # SECTIONS DE PAGE
 
 @ui.route('/sections/coming-soon')
 def coming_soon_sections():
-    return render_template('demo-coming-soon-sections.jinja')
+    return render_template('demo-landing-coming-soon.jinja')
 
 @ui.route('/services')
 def services():
     locale = get_locale()
     itemspath = os.path.join(static_dir, f'json/services_{locale}.json')
-    return render_template('demo-services.jinja', items=read_json(itemspath))
+    return render_template('demo-landing-services.jinja', items=read_json(itemspath))
 
 @ui.route('/about')
 def about():
@@ -84,7 +84,7 @@ def about():
     speechpath = os.path.join(static_dir, 'md/speech.md')
     leftaboutpath = os.path.join(static_dir, 'md/about-left.md')
     rightaboutpath = os.path.join(static_dir, 'md/about-right.md')
-    return render_template('demo-about.jinja', 
+    return render_template('demo-landing-about.jinja', 
                            stats=items,
                            speech=read_markdown(speechpath), 
                            left_about=read_markdown(leftaboutpath), 
@@ -106,7 +106,7 @@ def search():
         
     page = int(request.args.get('page', 1))
     items, pagination = paginate_items(items, page, per_page=10)
-    return render_template('demo-search.jinja',
+    return render_template('demo-landing-search.jinja',
                            pagination=pagination,
                            keywords=keywords,
                            results=items)
@@ -115,14 +115,14 @@ def search():
 @ui.route('/events')
 def events():
     items = [{'title':_("Titre de l'evenement %(i)s", i=i),
-              'image': url_for('demo.static', filename=f'img/event-{i}.jpg'),
+              'image': url_for('demo_landing.static', filename=f'img/event-{i}.jpg'),
               'category': _('Paire') if i%2 == 0 else _('Impaire'),
               'date': '10/02/2021'}
                 for i in range(1, 7)]
         
     page = int(request.args.get('page', 1))
     items, pagination = paginate_items(items, page, per_page=12)
-    return render_template('demo-events.jinja',
+    return render_template('demo-landing-events.jinja',
                            pagination=pagination,
                            items=items)
 
