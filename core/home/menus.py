@@ -10,7 +10,4 @@ workspacemenu.add('teacher_dash', _l('Enseignants'), endpoint='home.teacher_dash
 workspacemenu.add('admin_dash', _l('Administration'), endpoint='home.admin_dashboard')
 
 sidebar.add('home_dash', _l('Accueil'), endpoint='home.dashboard', rank=-1)
-sidebar.add('profile_dash', _l('Profile'), rank=-1)
-
-# sidebar.add('home_dash', _l('Accueil'), endpoint='home.dashboard', rank=-1, icon="bi bi-house-fill")
-# sidebar.add('profile_dash', _l('Profile'), rank=-1, icon="bi bi-person-circle")
+sidebar.add('profile_dash', _l('Profile'), endpoint='home.profile', rank=-1)

@@ -1312,6 +1312,65 @@ input[type=file]::file-selector-button {
 }
 
 
+
+/*--------------------------------------------------------------
+# Coming soon section
+--------------------------------------------------------------*/
+
+.coming-soon-lg {
+  margin-top: 100px;
+}
+
+.coming-soon-lg .countdown {
+  margin-top: 25px;
+}
+
+.coming-soon-lg .countdown div {
+  text-align: center;
+  border: none;
+  border-radius: 8px;
+  margin: 10px 10px;
+  width: 100px;
+  padding: 15px 0;
+  background-color: var(--secondary-light-color);
+}
+
+.coming-soon-lg .countdown div h3 {
+  font-family: var(--default-font);
+  font-weight: 700;
+  font-size: 32px;
+  margin-bottom: 15px;
+}
+
+.coming-soon-lg .countdown div h4 {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+@media (max-width: 991px) {
+
+  .coming-soon-lg {
+    padding: 0 50px;
+  }
+
+  .coming-soon-lg .countdown div {
+    width: 70px;
+    padding: 10px 0;
+    margin: 10px 8px;
+  }
+
+  .coming-soon-lg .countdown div h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+
+  .coming-soon-lg .countdown div h4 {
+    font-size: 12px;
+    font-weight: 500;
+  }
+}
+
+
 /*--------------------------------------------------------------
 # Icons list page
 --------------------------------------------------------------*/

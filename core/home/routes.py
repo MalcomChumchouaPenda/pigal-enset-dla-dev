@@ -9,7 +9,7 @@ from wtforms import StringField, PasswordField
 from wtforms.validators import DataRequired
 
 from core.config import login_manager
-from core.utils import UiBlueprint, read_json, get_locale
+from core.utils import UiBlueprint, read_json, get_locale, default_deadline
 from core.auth.tasks import connect_user, disconnect_user
 
 
@@ -84,6 +84,12 @@ def access_denied():
     if prev is not None:
         actions.append({'text':_("Revenir a la page precedente"), 'url':prev})
     return render_template('landing/error.jinja', number=403, actions=actions, message=msg), 403
+
+@ui.route('/profile')
+def profile():
+    return render_template('dashboard/coming-soon.jinja',
+                           deadline=default_deadline(), 
+                           title=_('Profile'))
 
 
 @ui.route('/dashboard')
