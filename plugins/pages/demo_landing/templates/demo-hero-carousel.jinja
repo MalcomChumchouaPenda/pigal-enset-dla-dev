@@ -7,7 +7,7 @@
     {% for item in items %}
       <!-- Carousel Item -->
       <div class="carousel-item {% if loop.first %} active {% endif %}">
-            <img src="{{ url_for('demo.static', filename=item.image) }}" alt="">
+            <img src="{{ url_for('demo_landing.static', filename=item.image) }}" alt="">
             <div class="carousel-container">
               <h2 class="my-4">{{ item.title }}</h2>
               <p>

@@ -1,0 +1,17 @@
+[
+    {
+        "title":"Des formations adaptees",
+        "description":"Decouvrer nos formations en cours ou du soir dans l'enseignement technique, les domaines techniques industrielles, les sciences de gestion ou la recherche",
+        "action":"En savoir plus"
+    },
+    {
+        "title":"Une equipe efficace",
+        "description":"Decouvrer notre organisation mis au service de la reussite de ces etudiants et du bien etre de ses membres",
+        "action": "En savoir plus"
+    },
+    {
+        "title":"Des services en ligne",
+        "description":"Obtenez des informations ou realiser des operations administratives ou academiques en ligne grace a des portails dedies aux enseignants, etudiants et personnels administratifs",
+        "action":"Se connecter"
+    }
+]
