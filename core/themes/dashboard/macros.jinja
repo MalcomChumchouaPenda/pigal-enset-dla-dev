@@ -31,22 +31,41 @@
   </section>
 {% endmacro %}
 
+{% macro nav_item_icon(entry) %}
+  {% if entry.icon %}
+    <i class="{{ entry.icon }}"></i>
+  {% else %}
+    {% if entry.children|length == 0 %}
+      <i class="bi bi-check-square-fill"></i>
+    {% else%}
+      {# <i class="bi bi-layers-fill"></i> #}
+      <i class="bi bi-slash-square-fill"></i>
+    {% endif %}
+  {% endif %}
+{% endmacro %}
+
 
 {% macro nav_item(entry, active='') %}
-    {% if entry.children|length == 0 %}
+  {% if entry.children|length == 0 %}
     <li class="nav-item {% if entry.id == active %} active {% endif %}">
       {% if entry.endpoint %}
-        <a class="nav-link" href="{{ url_for(entry.endpoint) }}">{{ entry.text }}</a>
+        <a class="nav-link" href="{{ url_for(entry.endpoint) }}">
+          {{ nav_item_icon(entry) }} <span>{{ entry.text }}</span>
+        </a>
       {% elif entry.url %}
-        <a class="nav-link" href="{{ entry.url }}">{{ entry.text }}</a>
+        <a class="nav-link" href="{{ entry.url }}">
+          {{ nav_item_icon(entry) }} <span>{{ entry.text }}</span>
+        </a>
       {% else %}
-        <a class="nav-link" href="#">{{ entry.text }}</a>
+        <a class="nav-link" href="#">
+          {{ nav_item_icon(entry) }} <span>{{ entry.text }}</span>
+        </a>
       {% endif %}
     </li>
-    {% else %}
+  {% else %}
     <li class="nav-item">
       <a class="nav-link collapsed" data-bs-target="#{{ entry.id }}" data-bs-toggle="collapse" href="#">
-        <span>{{ entry.text }}</span> 
+        {{ nav_item_icon(entry) }} <span>{{ entry.text }}</span>
         <i class="bi bi-chevron-down ms-auto"></i>
       </a>
       <ul id="{{ entry.id }}" class="nav-content collapse " data-bs-parent="#{{ entry.parentid }}">
@@ -55,7 +74,7 @@
         {% endfor %}
       </ul>
     </li>
-    {% endif %}
+  {% endif %}
 {% endmacro %}
 
 {# Menu of Sidebar #}

@@ -8,7 +8,8 @@ class Entry:
                  parentid=None,
                  endpoint=None, 
                  url=None,
-                 rank=0):
+                 rank=0,
+                 icon=None):
         super().__init__()
         self.id = id
         self.text = text
@@ -16,12 +17,13 @@ class Entry:
         self.endpoint = endpoint
         self.url = url
         self.rank = rank
+        self.icon = icon
         self.children = OrderedDict()
 
-    def add(self, id, text, endpoint=None, url=None, rank=0):
+    def add(self, id, text, endpoint=None, url=None, rank=0, icon=None):
         entry = Entry(id, text, parentid=self.id, 
                       endpoint=endpoint, url=url,
-                      rank=rank)
+                      rank=rank, icon=icon)
         self.children[id] = entry
         return entry
 
@@ -32,6 +34,7 @@ class Entry:
                 'endpoint':self.endpoint,
                 'url':self.url,
                 'rank':self.rank,
+                'icon':self.icon,
                 'children':[]
                 }
 
@@ -41,20 +44,6 @@ class Entry:
         return data
 
 
-    # def register_domain(self, id_, text, rank=0):
-    #     if id_ not in self.domains:
-    #         domain = dict(id=id_, text=text, rank=rank, dashboards=[])
-    #         self.domains[id_] = domain
-
-    # def register_dashboard(self, domainid, id_, text, endpoint=None, url=None):
-    #     dashboard = dict(id=id_, text=text, endpoint=endpoint, url=url)
-    #     self.domains[domainid]['dashboards'].append(dashboard)
-
-class SideBar:
-    '''Sidebar of dashboard pages'''
-
-
-# navbar = _NavBar()
 navbar = Entry('navbar', 'navbar')
 sidebar = Entry('sidebar', 'sidebar')
 BARS = [navbar, sidebar]

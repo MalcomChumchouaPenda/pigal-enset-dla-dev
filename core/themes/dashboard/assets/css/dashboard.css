@@ -12,21 +12,21 @@
 
 /* Fonts size */
 :root {
-  --default-font-size: 14px;
+  --default-font-size: 12px;
   --default-font-weight: normal;
-  --h1-font-size: 24px;
+  --h1-font-size: 20px;
   --h1-font-weight: 700;
-  --h2-font-size: 22px;
+  --h2-font-size: 18px;
   --h2-font-weight: 600;
-  --h3-font-size: 20px;
+  --h3-font-size: 16px;
   --h3-font-weight: 600;
-  --h4-font-size: 18px;
+  --h4-font-size: 14px;
   --h4-font-weight: 600;
-  --h5-font-size: 16px;
+  --h5-font-size: 12px;
   --h5-font-weight: 600;
-  --h6-font-size: 16px;
+  --h6-font-size: 12px;
   --h6-font-weight: 600;
-  --nav-font-size: 12px;
+  --nav-font-size: 10px;
   --nav-font-weight: 500;
 }
 
@@ -985,7 +985,7 @@ input[type=file]::file-selector-button {
   /* color: var(--primary-color); */
   transition: 0.3;
   background: transparent;
-  padding: 10px 15px;
+  padding: 5px 15px 5px 5px;
   border-radius: 4px;
 }
 
@@ -1023,7 +1023,7 @@ input[type=file]::file-selector-button {
 }
 
 .sidebar-nav .nav-content {
-  padding: 5px 0 0 0;
+  padding: 10px 0 5px 0;
   margin: 0;
   list-style: none;
 }
@@ -1035,12 +1035,12 @@ input[type=file]::file-selector-button {
   font-weight: 600;
   /* color: var(--primary-dark-color); */
   transition: 0.3;
-  padding: 10px 0 10px 40px;
+  padding: 5px 0 5px 30px;
   transition: 0.3s;
 }
 
 .sidebar-nav .nav-content a i {
-  font-size: 6px;
+  font-size: 14px;
   margin-right: 8px;
   line-height: 0;
   border-radius: 50%;
