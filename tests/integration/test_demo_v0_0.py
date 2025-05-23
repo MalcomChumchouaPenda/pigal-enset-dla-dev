@@ -1,7 +1,7 @@
 
 import pytest
 from core.config import db
-from plugins.services.demo_v0_0.models import Course
+from services.demo_v0_0.models import Course
 
 
 @pytest.fixture

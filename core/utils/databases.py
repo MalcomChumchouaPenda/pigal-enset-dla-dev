@@ -67,7 +67,7 @@ class ExtendedSQLAlchemy(SQLAlchemy):
                 modelspath = os.path.join(SERVICES_DIR, name, 'models.py')
                 if not os.path.isfile(modelspath):
                     continue
-                models = import_module(f'plugins.services.{name}.models')
+                models = import_module(f'services.{name}.models')
                 bind_keys.extend(self._list_bind_keys(models))
         return bind_keys
 

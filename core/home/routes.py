@@ -31,7 +31,7 @@ def index():
     right = os.path.join(static_dir, f'md/about-right-{locale}.md')
     about = dict(left=left, right=right)
     events = [{'title':_("Titre de l'evenement %(i)s", i=i),
-              'image': url_for('demo.static', filename=f'img/event-{i}.jpg'),
+              'image': url_for('demo_landing.static', filename=f'img/event-{i}.jpg'),
               'category': _('Paire') if i%2 == 0 else _('Impaire'),
               'date': '10/02/2021'}
                 for i in range(1, 7)]

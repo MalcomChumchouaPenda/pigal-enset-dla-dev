@@ -192,7 +192,7 @@ def register_pages(app):
                 continue
             rootname = nameparts[0].replace('_', '-')
             url_prefix = f'/{rootname}'
-            ui_root = f'plugins.pages.{name}'
+            ui_root = f'pages.{name}'
             register_page(app, ui_root, url_prefix)
             
 def register_page(app, ui_root, url_prefix):
@@ -238,7 +238,7 @@ def register_services(app, env_name):
             rootname = rootname.replace('_', '-')
             version = version.replace('_', '.')
             url_prefix = f'/{rootname}/{version}'
-            service_root = f'plugins.services.{name}'
+            service_root = f'services.{name}'
             register_service(app, env_name, service_root, url_prefix)
 
 def register_service(app, env_name, service_root, url_prefix):
