@@ -35,7 +35,9 @@ class User(db.Model, UserMixin):
                 return True
         return False
 
-    def has_roles(self, *role_ids):
+    def has_roles(self, role_ids):
+        if role_ids is None or len(role_ids) == 0:
+            return True
         for role_id in role_ids:
             for role in self.roles:
                 if role.id == role_id:

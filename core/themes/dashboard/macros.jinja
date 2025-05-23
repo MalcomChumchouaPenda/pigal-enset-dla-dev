@@ -45,35 +45,37 @@
 {% endmacro %}
 
 
-{% macro nav_item(entry, active='') %}
-  {% if entry.children|length == 0 %}
-    <li class="nav-item {% if entry.id == active %} active {% endif %}">
-      {% if entry.endpoint %}
-        <a class="nav-link" href="{{ url_for(entry.endpoint) }}">
+{% macro nav_item(user, entry, active='') %}
+  {% if user.has_roles(entry.accepted)%}
+    {% if entry.children|length == 0 %}
+      <li class="nav-item {% if entry.id == active %} active {% endif %}">
+        {% if entry.endpoint %}
+          <a class="nav-link" href="{{ url_for(entry.endpoint) }}">
+            {{ nav_item_icon(entry) }} <span>{{ entry.text }}</span>
+          </a>
+        {% elif entry.url %}
+          <a class="nav-link" href="{{ entry.url }}">
+            {{ nav_item_icon(entry) }} <span>{{ entry.text }}</span>
+          </a>
+        {% else %}
+          <a class="nav-link" href="#">
+            {{ nav_item_icon(entry) }} <span>{{ entry.text }}</span>
+          </a>
+        {% endif %}
+      </li>
+    {% else %}
+      <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#{{ entry.id }}" data-bs-toggle="collapse" href="#">
           {{ nav_item_icon(entry) }} <span>{{ entry.text }}</span>
+          <i class="bi bi-chevron-down ms-auto"></i>
         </a>
-      {% elif entry.url %}
-        <a class="nav-link" href="{{ entry.url }}">
-          {{ nav_item_icon(entry) }} <span>{{ entry.text }}</span>
-        </a>
-      {% else %}
-        <a class="nav-link" href="#">
-          {{ nav_item_icon(entry) }} <span>{{ entry.text }}</span>
-        </a>
-      {% endif %}
-    </li>
-  {% else %}
-    <li class="nav-item">
-      <a class="nav-link collapsed" data-bs-target="#{{ entry.id }}" data-bs-toggle="collapse" href="#">
-        {{ nav_item_icon(entry) }} <span>{{ entry.text }}</span>
-        <i class="bi bi-chevron-down ms-auto"></i>
-      </a>
-      <ul id="{{ entry.id }}" class="nav-content collapse " data-bs-parent="#{{ entry.parentid }}">
-        {% for child in entry.children %}
-          {{ nav_item(child, active=active) }}
-        {% endfor %}
-      </ul>
-    </li>
+        <ul id="{{ entry.id }}" class="nav-content collapse " data-bs-parent="#{{ entry.parentid }}">
+          {% for child in entry.children %}
+            {{ nav_item(user, child, active=active) }}
+          {% endfor %}
+        </ul>
+      </li>
+    {% endif %}
   {% endif %}
 {% endmacro %}
 
@@ -82,7 +84,7 @@
   {{ brand(user) }}
   <ul class="sidebar-nav" id="sidebar-nav">
     {% for entry in menus[name].children %}
-      {{ nav_item(entry, active=active) }}
+      {{ nav_item(user, entry, active=active) }}
     {% endfor %}
   </ul>
 {% endmacro %}
