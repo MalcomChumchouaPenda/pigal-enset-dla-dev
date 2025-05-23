@@ -62,7 +62,6 @@
       let currentElement = myDiv.parentElement;
       while (currentElement) {
         // Perform actions on the current parent element here
-        console.log(currentElement.classList);
         if (currentElement.classList.contains('nav-content') && currentElement.classList.contains('collapse')) {
           currentElement.classList.add('show');
         }
