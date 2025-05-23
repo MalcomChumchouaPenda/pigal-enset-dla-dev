@@ -4,7 +4,7 @@
   <a class="logo d-flex flex-nowrap align-items-center me-4" href="#">
     <img src="{{ url_for('static', filename='landing/assets/img/logo.png') }}" alt="">
     <div class="d-flex align-items-end justify-content-start">
-      <h1 class="sitename text-nowrap">{{ user.id }}</h1>
+      <h1 class="sitename text-nowrap">{{ user.id | upper }}</h1>
       <i class="bi bi-circle-fill"></i>
     </div>
   </a>

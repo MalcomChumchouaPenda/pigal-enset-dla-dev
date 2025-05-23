@@ -34,12 +34,12 @@ submenu2.add('coming_section_pg', _l('Attente'), endpoint='demo.coming_soon_sect
 
 
 formmenu = sidebar.add('form_menu', _l('Forms'))
-formmenu.add('form_menu_1', _l('Form editors'), endpoint='demo.form_editors')
-formmenu.add('form_menu_2', _l('Form elements'), endpoint='demo.form_elements')
-formmenu.add('form_menu_3', _l('Form layouts'), endpoint='demo.form_layouts')
-formmenu.add('form_menu_4', _l('Form validation'), endpoint='demo.form_validation')
+formmenu.add('form_editors_pg', _l('Form editors'), endpoint='demo.form_editors')
+formmenu.add('form_elements_pg', _l('Form elements'), endpoint='demo.form_elements')
+formmenu.add('form_layouts_pg', _l('Form layouts'), endpoint='demo.form_layouts')
+formmenu.add('form_validation_pg', _l('Form validation'), endpoint='demo.form_validation')
 
 datamenu = sidebar.add('data_menu', _l('Data'))
-datamenu.add('data_menu_1', _l('General tables'), endpoint='demo.tables')
-datamenu.add('data_menu_2', _l('Data tables'), endpoint='demo.datatables')
-datamenu.add('data_menu_3', _l('Data charts'), endpoint='demo.charts')
+datamenu.add('tables_pg', _l('General tables'), endpoint='demo.tables')
+datamenu.add('datatables_pg', _l('Data tables'), endpoint='demo.datatables')
+datamenu.add('charts_pg', _l('Data charts'), endpoint='demo.charts')
