@@ -321,7 +321,7 @@ input[type=file]::file-selector-button {
 
 #main {
   margin-top: var(--top-margin);
-  padding: 20px 30px;
+  /* padding: 20px 30px; */
   transition: all 0.3s;
 }
 
@@ -333,6 +333,7 @@ input[type=file]::file-selector-button {
   #main {
     margin-left: var(--sidebar-margin);
     margin-top: 20px;
+    padding: 20px 40px 10px 0;
   }
 
 }
@@ -1758,6 +1759,7 @@ input[type=file]::file-selector-button {
 
   #footer {
     margin-left: var(--sidebar-margin);
+    padding: 20px 40px 10px 0;
   }
 
 }
