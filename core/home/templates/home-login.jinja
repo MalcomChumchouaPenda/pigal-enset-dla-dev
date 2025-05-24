@@ -1,4 +1,4 @@
-{% extends "dashboard/login.jinja" %}
+{% extends "login/layout.jinja" %}
 {% set head_title='Login' %}
 
 {% block page_form %}
@@ -40,8 +40,10 @@
         <div class="row pt-5 w-100 d-flex justify-content-center">
             <div class="col-10 col-lg-4 flex-column align-items-start">
                 <input class="btn btn-primary w-100" type="submit" value="{{ _('Connexion') }}">
-                <a class="btn btn-link mt-5" href="#">{{ _('Identifiant ou mot de passe oublié ?') }}</a>
-                <a class="btn btn-link mt-1" href="{{ url_for('home.index') }}">{{ _("Retour a l'accueil !") }}</a>
+                <ul class="login-links">
+                    <li><a class="btn btn-link mt-5" href="#">{{ _('Identifiant ou mot de passe oublié ?') }}</a></li>
+                    <li><a class="btn btn-link mt-1" href="{{ url_for('home.index') }}">{{ _("Retour a l'accueil !") }}</a></li>
+                </ul>
             </div>
         </div>
     </form>

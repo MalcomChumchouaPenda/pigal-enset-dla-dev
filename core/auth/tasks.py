@@ -26,6 +26,20 @@ def disconnect_user():
     )
     return True
 
+
+def add_user(session, id, last_name, password, first_name=None):
+    user = User(id=id, last_name=last_name, first_name=first_name)
+    user.set_password(password)
+    session.add(user)
+    session.commit()
+
+def remove_user(session, id):
+    user = User.query.get(id)
+    if user:
+        session.delete(user)
+        session.commit()
+
+
 def add_role(session, id, name):
     if not Role.query.get(id):
         role = Role(id=id, name=name)
@@ -40,6 +54,7 @@ def remove_role(session, id):
 
 def add_roles_to_user(session, userid, *role_ids):
     user = User.query.get(userid)
+    print(user, userid)
     if user:
         for role_id in role_ids:
             role = Role.query.get(role_id)

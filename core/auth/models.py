@@ -22,12 +22,16 @@ class User(db.Model, UserMixin):
     password_hash = db.Column(db.String(255), nullable=False)
     roles = db.relationship('Role', secondary=user_roles, 
                             backref=db.backref('users', lazy='dynamic'))
+    
+    @classmethod
+    def hash_password(cls, password):
+        return password
 
     def set_password(self, password):
-        self.password_hash = generate_password_hash(password)
+        self.password_hash = password
     
     def check_password(self, password):
-        return check_password_hash(self.password_hash, password)
+        return self.password_hash == self.hash_password(password)
 
     def has_role(self, role_id):
         for role in self.roles:

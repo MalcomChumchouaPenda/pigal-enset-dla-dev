@@ -12,22 +12,22 @@
 
 /* Fonts size */
 :root {
-  --default-font-size: 12px;
+  --default-font-size: 14px;
   --default-font-weight: normal;
-  --h1-font-size: 20px;
+  --h1-font-size: 24px;
   --h1-font-weight: 700;
-  --h2-font-size: 18px;
+  --h2-font-size: 22px;
   --h2-font-weight: 600;
-  --h3-font-size: 16px;
+  --h3-font-size: 20px;
   --h3-font-weight: 600;
-  --h4-font-size: 14px;
+  --h4-font-size: 18px;
   --h4-font-weight: 600;
-  --h5-font-size: 12px;
+  --h5-font-size: 16px;
   --h5-font-weight: 600;
-  --h6-font-size: 12px;
+  --h6-font-size: 14px;
   --h6-font-weight: 600;
-  --nav-font-size: 10px;
-  --nav-font-weight: 500;
+  --nav-font-size: 14px;
+  --nav-font-weight: 400;
 }
 
 /* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
@@ -79,6 +79,8 @@ body {
   color: var(--default-color);
   background-color: var(--background-color);
   font-family: var(--default-font);
+  font-size: var(--default-font-size);
+  font-weight: var(--default-font-weight);
   min-height: 100vh;
 }
 
@@ -114,6 +116,39 @@ body {
   }
 }
 
+/* General text */
+
+h1 {
+  font-size: var(--h1-font-size);
+  font-weight: var(--h1-font-weight);
+}
+
+h2 {
+  font-size: var(--h2-font-size);
+  font-weight: var(--h2-font-weight);
+}
+
+h3 {
+  font-size: var(--h3-font-size);
+  font-weight: var(--h3-font-weight);
+}
+
+h4 {
+  font-size: var(--h4-font-size);
+  font-weight: var(--h4-font-weight);
+}
+
+h5 {
+  font-size: var(--h5-font-size);
+  font-weight: var(--h5-font-weight);
+}
+
+h6 {
+  font-size: var(--h6-font-size);
+  font-weight: var(--h6-font-weight);
+}
+
+
 /* General buttons */
 
 a {
@@ -134,6 +169,8 @@ a {
 --------------------------------------------------------------*/
 
 .btn {
+  font-size: var(--nav-font-size);
+  font-weight: var(--nav-font-weight);
   border-radius: 5px;
 }
 

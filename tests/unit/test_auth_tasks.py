@@ -1,12 +1,32 @@
 import pytest
+from werkzeug.security import generate_password_hash
 from core.config import db
 from core.auth.models import User, Role
 from core.auth.tasks import (
+    add_user,
+    remove_user,
     add_role, 
     remove_role, 
     add_roles_to_user, 
     remove_roles_to_user
 )
+
+
+def test_add_user(app):
+    add_user(db.session, '1', 'test', 'testpass', first_name='pretest')
+    user = User.query.get('1')
+    assert user is not None
+    assert user.id == '1'
+    assert user.last_name == "test"
+    assert user.first_name == 'pretest'
+    assert user.password_hash == user.hash_password('testpass')
+
+
+def test_remove_user(app):
+    add_user(db.session, '1', 'test', "testpass")
+    remove_user(db.session, '1')
+    user = User.query.get('1')
+    assert user is None
 
 
 @pytest.fixture
