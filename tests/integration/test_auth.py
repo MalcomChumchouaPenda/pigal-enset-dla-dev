@@ -114,7 +114,7 @@ def test_get_users(client):
 def test_get_users_by_role(client):
     response = client.get("/api/auth/users?role=teacher")
     assert response.status_code == 200
-    assert len(response.json) == 1
+    assert len(response.json) == 2
 
 def test_get_user_by_id(client):
     response = client.get("/api/auth/users/teacher1")

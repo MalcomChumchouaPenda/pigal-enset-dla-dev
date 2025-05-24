@@ -1,0 +1,47 @@
+{% extends 'dashboard/layout.jinja' %}
+{% set page_id = 'tooltips_pg' %}
+
+{% block page_header %}
+    <h1>{{_('Tooltips')}}</h1>
+    <nav class="pb-3" aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{{ url_for('home.dashboard') }}">{{ _("Accueil") }}</a></li>
+            <li class="breadcrumb-item">{{ _('Components') }}</li>
+            <li class="breadcrumb-item active" aria-current="page">{{ _('Tooltips') }}</li>
+        </ol>
+    </nav>
+{% endblock %}
+
+
+{% block page_main %}
+   <section class="section">
+    <div class="row">
+     <div class="col-lg-12">
+      <div class="card">
+       <div class="card-body">
+        <h5 class="card-title">
+         Tooltips Examples
+        </h5>
+        <p>
+         Hover over the buttons below to see the four tooltips directions: top, right, bottom, and left.
+        </p>
+        <!-- Tooltips Examples -->
+        <button class="btn btn-secondary" data-bs-placement="top" data-bs-toggle="tooltip" title="Tooltip on top" type="button">
+         Tooltip on top
+        </button>
+        <button class="btn btn-secondary" data-bs-placement="right" data-bs-toggle="tooltip" title="Tooltip on right" type="button">
+         Tooltip on right
+        </button>
+        <button class="btn btn-secondary" data-bs-placement="bottom" data-bs-toggle="tooltip" title="Tooltip on bottom" type="button">
+         Tooltip on bottom
+        </button>
+        <button class="btn btn-secondary" data-bs-placement="left" data-bs-toggle="tooltip" title="Tooltip on left" type="button">
+         Tooltip on left
+        </button>
+        <!-- End Tooltips Examples -->
+       </div>
+      </div>
+     </div>
+    </div>
+   </section>
+{% endblock %}

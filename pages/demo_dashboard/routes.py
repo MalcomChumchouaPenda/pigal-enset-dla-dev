@@ -34,6 +34,72 @@ def echarts():
     return render_template('demo-dashboard-echarts.jinja')
 
 
+@ui.route('/alerts')
+@ui.roles_accepted('developper')
+def alerts():
+    return render_template('demo-dashboard-alerts.jinja')
+
+
+@ui.route('/badges')
+@ui.roles_accepted('developper')
+def badges():
+    return render_template('demo-dashboard-badges.jinja')
+
+
+@ui.route('/buttons')
+@ui.roles_accepted('developper')
+def buttons():
+    return render_template('demo-dashboard-buttons.jinja')
+
+
+@ui.route('/cards')
+@ui.roles_accepted('developper')
+def cards():
+    return render_template('demo-dashboard-cards.jinja')
+
+
+@ui.route('/list-group')
+@ui.roles_accepted('developper')
+def list_group():
+    return render_template('demo-dashboard-list-group.jinja')
+
+
+@ui.route('/modal')
+@ui.roles_accepted('developper')
+def modal():
+    return render_template('demo-dashboard-modal.jinja')
+
+
+@ui.route('/pagination')
+@ui.roles_accepted('developper')
+def pagination():
+    return render_template('demo-dashboard-pagination.jinja')
+
+
+@ui.route('/progress')
+@ui.roles_accepted('developper')
+def progress():
+    return render_template('demo-dashboard-progress.jinja')
+
+
+@ui.route('/spinners')
+@ui.roles_accepted('developper')
+def spinners():
+    return render_template('demo-dashboard-spinners.jinja')
+
+
+@ui.route('/tabs')
+@ui.roles_accepted('developper')
+def tabs():
+    return render_template('demo-dashboard-tabs.jinja')
+
+
+@ui.route('/tooltips')
+@ui.roles_accepted('developper')
+def tooltips():
+    return render_template('demo-dashboard-tooltips.jinja')
+
+
 @ui.route('/tables')
 @ui.roles_accepted('developper')
 def tables():

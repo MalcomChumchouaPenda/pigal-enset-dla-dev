@@ -1,0 +1,246 @@
+{% extends 'dashboard/layout.jinja' %}
+{% set page_id = 'buttons_pg' %}
+
+{% block page_header %}
+    <h1>{{_('Buttons')}}</h1>
+    <nav class="pb-3" aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{{ url_for('home.dashboard') }}">{{ _("Accueil") }}</a></li>
+            <li class="breadcrumb-item">{{ _('Components') }}</li>
+            <li class="breadcrumb-item active" aria-current="page">{{ _('Buttons') }}</li>
+        </ol>
+    </nav>
+{% endblock %}
+
+
+{% block page_main %}
+   <section class="section">
+    <div class="row">
+     <div class="col-lg-6">
+      <div class="card">
+       <div class="card-body">
+        <h5 class="card-title">
+         Default Buttons
+        </h5>
+        <button class="btn btn-primary" type="button">
+         Primary
+        </button>
+        <button class="btn btn-secondary" type="button">
+         Secondary
+        </button>
+        <button class="btn btn-success" type="button">
+         Success
+        </button>
+        <button class="btn btn-danger" type="button">
+         Danger
+        </button>
+        <button class="btn btn-warning" type="button">
+         Warning
+        </button>
+        <button class="btn btn-info" type="button">
+         Info
+        </button>
+        <button class="btn btn-light" type="button">
+         Light
+        </button>
+        <button class="btn btn-dark" type="button">
+         Dark
+        </button>
+        <button class="btn btn-link" type="button">
+         Link
+        </button>
+       </div>
+      </div>
+      <div class="card">
+       <div class="card-body">
+        <h5 class="card-title">
+         Rounded Buttons
+        </h5>
+        <button class="btn btn-primary rounded-pill" type="button">
+         Primary
+        </button>
+        <button class="btn btn-secondary rounded-pill" type="button">
+         Secondary
+        </button>
+        <button class="btn btn-success rounded-pill" type="button">
+         Success
+        </button>
+        <button class="btn btn-danger rounded-pill" type="button">
+         Danger
+        </button>
+        <button class="btn btn-warning rounded-pill" type="button">
+         Warning
+        </button>
+        <button class="btn btn-info rounded-pill" type="button">
+         Info
+        </button>
+        <button class="btn btn-light rounded-pill" type="button">
+         Light
+        </button>
+        <button class="btn btn-dark rounded-pill" type="button">
+         Dark
+        </button>
+       </div>
+      </div>
+      <div class="card">
+       <div class="card-body">
+        <h5 class="card-title">
+         Icon Buttons
+        </h5>
+        <button class="btn btn-primary" type="button">
+         <i class="bi bi-star me-1">
+         </i>
+         With Text
+        </button>
+        <button class="btn btn-secondary" type="button">
+         <i class="bi bi-collection">
+         </i>
+        </button>
+        <button class="btn btn-success" type="button">
+         <i class="bi bi-check-circle">
+         </i>
+        </button>
+        <button class="btn btn-danger" type="button">
+         <i class="bi bi-exclamation-octagon">
+         </i>
+        </button>
+        <button class="btn btn-warning" type="button">
+         <i class="bi bi-exclamation-triangle">
+         </i>
+        </button>
+        <button class="btn btn-info" type="button">
+         <i class="bi bi-info-circle">
+         </i>
+        </button>
+        <button class="btn btn-dark" type="button">
+         <i class="bi bi-folder">
+         </i>
+        </button>
+       </div>
+      </div>
+      <div class="card">
+       <div class="card-body">
+        <h5 class="card-title">
+         Button Groups
+        </h5>
+        <div aria-label="Basic example" class="btn-group" role="group">
+         <button class="btn btn-primary" type="button">
+          Left
+         </button>
+         <button class="btn btn-primary" type="button">
+          Middle
+         </button>
+         <button class="btn btn-primary" type="button">
+          Right
+         </button>
+        </div>
+        <div aria-label="Basic mixed styles example" class="btn-group" role="group">
+         <button class="btn btn-danger" type="button">
+          Left
+         </button>
+         <button class="btn btn-warning" type="button">
+          Middle
+         </button>
+         <button class="btn btn-success" type="button">
+          Right
+         </button>
+        </div>
+        <div aria-label="Basic outlined example" class="btn-group" role="group">
+         <button class="btn btn-outline-primary" type="button">
+          Left
+         </button>
+         <button class="btn btn-outline-primary" type="button">
+          Middle
+         </button>
+         <button class="btn btn-outline-primary" type="button">
+          Right
+         </button>
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="col-lg-6">
+      <div class="card">
+       <div class="card-body">
+        <h5 class="card-title">
+         Outline Buttons
+        </h5>
+        <button class="btn btn-outline-primary" type="button">
+         Primary
+        </button>
+        <button class="btn btn-outline-secondary" type="button">
+         Secondary
+        </button>
+        <button class="btn btn-outline-success" type="button">
+         Success
+        </button>
+        <button class="btn btn-outline-danger" type="button">
+         Danger
+        </button>
+        <button class="btn btn-outline-warning" type="button">
+         Warning
+        </button>
+        <button class="btn btn-outline-info" type="button">
+         Info
+        </button>
+        <button class="btn btn-outline-light" type="button">
+         Light
+        </button>
+        <button class="btn btn-outline-dark" type="button">
+         Dark
+        </button>
+       </div>
+      </div>
+      <div class="card">
+       <div class="card-body">
+        <h5 class="card-title">
+         Button Sizes
+        </h5>
+        <button class="btn btn-primary btn-sm" type="button">
+         Small
+        </button>
+        <button class="btn btn-secondary" type="button">
+         Normal
+        </button>
+        <button class="btn btn-success btn-lg" type="button">
+         Large
+        </button>
+        <button class="btn btn-outline-danger btn-sm" type="button">
+         Small
+        </button>
+        <button class="btn btn-outline-warning" type="button">
+         Normal
+        </button>
+        <button class="btn btn-outline-info btn-lg" type="button">
+         Large
+        </button>
+        <div class="d-grid gap-2 mt-3">
+         <button class="btn btn-primary" type="button">
+          Block Button
+         </button>
+        </div>
+       </div>
+      </div>
+      <div class="card">
+       <div class="card-body">
+        <h5 class="card-title">
+         Button States
+        </h5>
+        <button class="btn btn-primary" type="button">
+         Normal
+        </button>
+        <button class="btn btn-primary" disabled="" type="button">
+         Disabled
+        </button>
+        <button class="btn btn-outline-primary" type="button">
+         Normal
+        </button>
+        <button class="btn btn-outline-primary" disabled="" type="button">
+         Disabled
+        </button>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section>
+{% endblock %}
