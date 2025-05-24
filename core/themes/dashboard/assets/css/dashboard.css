@@ -148,6 +148,30 @@ h6 {
   font-weight: var(--h6-font-weight);
 }
 
+#main .text-primary {
+  color: var(--primary-dark-color) !important;
+}
+
+#main .text-secondary {
+  color: var(--secondary-color) !important;
+}
+
+#main .text-success {
+  color: var(--success-color) !important;
+}
+
+#main .text-danger {
+  color: var(--danger-color) !important;
+}
+
+#main .text-warning {
+  color: var(--warning-color) !important;
+}
+
+#main .text-info {
+  color: var(--info-color) !important;
+}
+
 
 /* General buttons */
 
@@ -288,7 +312,7 @@ a {
 
 .btn-outline-primary {  
   color: var(--primary-color);
-  border-color: color-mix(in srgb, var(--primary-color), transparent 75%);
+  border-color: color-mix(in srgb, var(--primary-color), transparent 25%);
 }
 
 .btn-outline-primary:hover {  
@@ -299,6 +323,50 @@ a {
 
 .btn-outline-secondary{  
   border-color: color-mix(in srgb, var(--default-color), transparent 75%);
+}
+
+.btn-outline-success {  
+  color: var(--success-color);
+  border-color: color-mix(in srgb, var(--success-color), transparent 25%);
+}
+
+.btn-outline-success:hover {  
+  color: var(--contrast-color);
+  background-color: var(--success-color);
+  border-color: transparent;
+}
+
+.btn-outline-danger {  
+  color: var(--danger-color);
+  border-color: color-mix(in srgb, var(--danger-color), transparent 25%);
+}
+
+.btn-outline-danger:hover {  
+  color: var(--contrast-color);
+  background-color: var(--danger-color);
+  border-color: transparent;
+}
+
+.btn-outline-warning {  
+  color: var(--warning-color);
+  border-color: color-mix(in srgb, var(--warning-color), transparent 25%);
+}
+
+.btn-outline-warning:hover {  
+  color: var(--contrast-color);
+  background-color: var(--warning-color);
+  border-color: transparent;
+}
+
+.btn-outline-info {  
+  color: var(--info-color);
+  border-color: color-mix(in srgb, var(--info-color), transparent 25%);
+}
+
+.btn-outline-info:hover {  
+  color: var(--contrast-color);
+  background-color: var(--info-color);
+  border-color: transparent;
 }
 
 
@@ -345,7 +413,7 @@ input[type=file]::file-selector-button {
   background-color: var(--secondary-light-color);
 }
 
-
+input
 /*--------------------------------------------------------------
 # Main Classes
 --------------------------------------------------------------*/
@@ -362,6 +430,66 @@ input[type=file]::file-selector-button {
   transition: all 0.3s;
 }
 
+#main .bg-primary {
+  background-color: var(--primary-dark-color) !important;
+}
+
+#main .bg-secondary {
+  background-color: var(--secondary-color) !important;
+}
+
+#main .bg-success {
+  background-color: var(--success-color) !important;
+}
+
+#main .bg-danger {
+  background-color: var(--danger-color) !important;
+}
+
+#main .bg-warning {
+  background-color: var(--warning-color) !important;
+}
+
+#main .bg-info {
+  background-color: var(--info-color) !important;
+}
+
+
+/* Light Backgrounds */
+.bg-primary-light {
+  background-color: #cfe2ff;
+  border-color: #cfe2ff;
+}
+
+.bg-secondary-light {
+  background-color: #e2e3e5;
+  border-color: #e2e3e5;
+}
+
+.bg-success-light {
+  background-color: #d1e7dd;
+  border-color: #d1e7dd;
+}
+
+.bg-danger-light {
+  background-color: #f8d7da;
+  border-color: #f8d7da;
+}
+
+.bg-warning-light {
+  background-color: #fff3cd;
+  border-color: #fff3cd;
+}
+
+.bg-info-light {
+  background-color: #cff4fc;
+  border-color: #cff4fc;
+}
+
+.bg-dark-light {
+  background-color: #d3d3d4;
+  border-color: #d3d3d4;
+}
 
 /* desktop sidebar  */
 
@@ -401,6 +529,77 @@ input[type=file]::file-selector-button {
   color: var(--primary-dark-color);
 }
 
+
+
+/*--------------------------------------------------------------
+# Alerts Classes
+--------------------------------------------------------------*/
+
+
+/*--------------------------------------------------------------
+# Badges Classes
+--------------------------------------------------------------*/
+
+
+/*--------------------------------------------------------------
+# List Classes
+--------------------------------------------------------------*/
+
+.list-group .list-group-item {
+  border-color: color-mix(in srgb, var(--secondary-dark-color), transparent 75%);
+}
+
+.list-group .list-group-item.active {
+  background-color: var(--primary-dark-color);
+}
+
+/*--------------------------------------------------------------
+# Paginations Classes
+--------------------------------------------------------------*/
+
+.pagination li.page-item .page-link {
+  color: var(--primary-dark-color);
+}
+
+.pagination li.page-item.active .page-link {
+  color: var(--contrast-color);
+  background-color: var(--primary-dark-color);
+}
+
+
+/*--------------------------------------------------------------
+# Progress Classes
+--------------------------------------------------------------*/
+
+.progress .progress-bar {
+  background-color: var(--primary-color);
+}
+
+
+/*--------------------------------------------------------------
+# Spinners Classes
+--------------------------------------------------------------*/
+
+
+/*--------------------------------------------------------------
+# Tabs Classes
+--------------------------------------------------------------*/
+
+#main .nav-tabs .nav-item .nav-link {
+  color: var(--primary-dark-color);
+}
+
+#main .nav-pills .nav-link {
+  color: var(--primary-dark-color) !important;
+}
+
+#main .nav-pills .nav-link.active {
+  color: var(--contrast-color) !important;
+  background-color: var(--primary-dark-color) !important;
+}
+
+
+
 /*--------------------------------------------------------------
 # Back to top button
 --------------------------------------------------------------*/
@@ -420,13 +619,13 @@ input[type=file]::file-selector-button {
 
 .back-to-top i {
   font-size: 24px;
-  color: #fff;
+  color: var(--white-color);
   line-height: 0;
 }
 
 .back-to-top:hover {
-  background: #6776f4;
-  color: #fff;
+  background: var(--primary-light-color);
+  color: var(--white-color);
 }
 
 .back-to-top.active {
@@ -490,7 +689,7 @@ input[type=file]::file-selector-button {
     content: "";
     width: 13px;
     height: 13px;
-    background: #fff;
+    background: var(--white-color);
     position: absolute;
     top: -7px;
     right: 20px;
@@ -514,41 +713,6 @@ input[type=file]::file-selector-button {
   }
 }
 
-/* Light Backgrounds */
-.bg-primary-light {
-  background-color: #cfe2ff;
-  border-color: #cfe2ff;
-}
-
-.bg-secondary-light {
-  background-color: #e2e3e5;
-  border-color: #e2e3e5;
-}
-
-.bg-success-light {
-  background-color: #d1e7dd;
-  border-color: #d1e7dd;
-}
-
-.bg-danger-light {
-  background-color: #f8d7da;
-  border-color: #f8d7da;
-}
-
-.bg-warning-light {
-  background-color: #fff3cd;
-  border-color: #fff3cd;
-}
-
-.bg-info-light {
-  background-color: #cff4fc;
-  border-color: #cff4fc;
-}
-
-.bg-dark-light {
-  background-color: #d3d3d4;
-  border-color: #d3d3d4;
-}
 
 /* Card */
 .card {
@@ -561,7 +725,7 @@ input[type=file]::file-selector-button {
 .card-header,
 .card-footer {
   border-color: #ebeef4;
-  background-color: #fff;
+  background-color: var(--white-color);
   color: #798eb3;
   padding: 15px;
 }
@@ -680,7 +844,7 @@ input[type=file]::file-selector-button {
 }
 
 .nav-tabs-bordered .nav-link.active {
-  background-color: #fff;
+  background-color: var(--white-color);
   color: var(--primary-dark-color);
   border-bottom: 2px solid var(--primary-dark-color);
 }
@@ -983,7 +1147,7 @@ input[type=file]::file-selector-button {
 #sidebar::-webkit-scrollbar {
   width: 5px;
   height: 8px;
-  background-color: #fff;
+  background-color: var(--white-color);
 }
 
 #sidebar::-webkit-scrollbar-thumb {
@@ -1036,7 +1200,7 @@ input[type=file]::file-selector-button {
 
 /* .sidebar-nav .nav-link.collapsed {
   color: var(--primary-dark-color);
-  background: #fff;
+  background: var(--white-color);
 }
 
 .sidebar-nav .nav-link.collapsed i {
@@ -1256,7 +1420,7 @@ input[type=file]::file-selector-button {
   line-height: 0;
   border-radius: 50%;
   flex-shrink: 0;
-  border: 3px solid #fff;
+  border: 3px solid var(--white-color);
   flex-grow: 0;
 }
 
@@ -1422,7 +1586,7 @@ input[type=file]::file-selector-button {
 }
 
 .iconslist .icon {
-  background-color: #fff;
+  background-color: var(--white-color);
   border-radius: 0.25rem;
   text-align: center;
   color: var(--primary-dark-color);
@@ -1548,7 +1712,7 @@ input[type=file]::file-selector-button {
 
 .contact .php-email-form .error-message {
   display: none;
-  color: #fff;
+  color: var(--white-color);
   background: #ed3c0d;
   text-align: left;
   padding: 15px;
@@ -1558,7 +1722,7 @@ input[type=file]::file-selector-button {
 
 .contact .php-email-form .sent-message {
   display: none;
-  color: #fff;
+  color: var(--white-color);
   background: #18d26e;
   text-align: center;
   padding: 15px;
@@ -1568,7 +1732,7 @@ input[type=file]::file-selector-button {
 
 .contact .php-email-form .loading {
   display: none;
-  background: #fff;
+  background: var(--white-color);
   text-align: center;
   padding: 15px;
   margin-bottom: 24px;
@@ -1611,7 +1775,7 @@ input[type=file]::file-selector-button {
   background: var(--primary-color);
   border: 0;
   padding: 10px 30px;
-  color: #fff;
+  color: var(--white-color);
   transition: 0.4s;
   border-radius: 4px;
 }
@@ -1656,7 +1820,7 @@ input[type=file]::file-selector-button {
 
 .error-404 .btn {
   background: #51678f;
-  color: #fff;
+  color: var(--white-color);
   padding: 8px 30px;
 }
 
