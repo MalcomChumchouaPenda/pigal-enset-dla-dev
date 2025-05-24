@@ -13,7 +13,11 @@ formmenu.add('form_elements_pg', _l('Form elements'), endpoint='demo_dashboard.f
 formmenu.add('form_layouts_pg', _l('Form layouts'), endpoint='demo_dashboard.form_layouts')
 formmenu.add('form_validation_pg', _l('Form validation'), endpoint='demo_dashboard.form_validation')
 
-datamenu = sidebar.add('data_menu', _l('Data'), accepted=['developper'])
-datamenu.add('tables_pg', _l('General tables'), endpoint='demo_dashboard.tables')
-datamenu.add('datatables_pg', _l('Data tables'), endpoint='demo_dashboard.datatables')
-datamenu.add('charts_pg', _l('Data charts'), endpoint='demo_dashboard.charts')
+tablemenu = sidebar.add('table_menu', _l('Tables'), accepted=['developper'])
+tablemenu.add('tables_pg', _l('General tables'), endpoint='demo_dashboard.tables')
+tablemenu.add('datatables_pg', _l('Data tables'), endpoint='demo_dashboard.datatables')
+
+chartmenu = sidebar.add('charts_menu', _l('Charts'), accepted=['developper'])
+chartmenu.add('charts_pg', _l('Basic charts'), endpoint='demo_dashboard.charts')
+chartmenu.add('apexcharts_pg', _l('Apex charts'), endpoint='demo_dashboard.apexcharts')
+chartmenu.add('echarts_pg', _l('Echarts'), endpoint='demo_dashboard.echarts')

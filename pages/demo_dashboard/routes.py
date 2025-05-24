@@ -22,6 +22,18 @@ static_dir = os.path.join(os.path.dirname(__file__), 'static')
 def charts():
     return render_template('demo-dashboard-charts.jinja')
 
+@ui.route('/apexcharts')
+@ui.roles_accepted('developper')
+def apexcharts():
+    return render_template('demo-dashboard-apexcharts.jinja')
+
+
+@ui.route('/echarts')
+@ui.roles_accepted('developper')
+def echarts():
+    return render_template('demo-dashboard-echarts.jinja')
+
+
 @ui.route('/tables')
 @ui.roles_accepted('developper')
 def tables():
